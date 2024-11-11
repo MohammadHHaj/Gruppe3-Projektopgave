@@ -1,50 +1,42 @@
 body {
   background-color: whitesmoke;
 }
-
+/*lad body element være i toppen*/
+/*headerstart*/
 #header {
   border-radius: 10px;
   border-style: solid;
   border-color: black;
   border-width: 5px;
   width: 100%;
+  height: 75px;
 }
-
-/* From Uiverse.io by Yaya12085 */
+/*headerstart*/
+/*Sidemenustart*/
 .radio-input input {
   display: none;
 }
 
 .radio-input {
-  --container_height: 300px;
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align items to the left */
   justify-content: space-between;
-  padding: 10px;
-  gap: var(--padding);
   color: #000000;
-  height: var(--container_height);
-  overflow: hidden;
-  width: 8%;
+  height: 300px;
 }
 
 .radio-input label {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: fit-content; /* Fit width to content */
   cursor: pointer;
-  gap: 4px;
   z-index: 1;
   font-weight: 600;
   font-size: 14px;
-  padding: 5px; /* Reduce padding for a smaller button */
+  padding: 25px;
 }
 
-.radio-input label svg {
+.venstrepics {
   width: 30px;
   height: 30px;
 }
@@ -52,13 +44,13 @@ body {
 .selection {
   display: none;
   position: absolute;
-  height: calc(var(--container_height) / 3 - 12px);
-  z-index: 0;
+  width: 70px;
+  height: 90px;
   inset: 6px;
   border-radius: 10px;
   transition: 0.15s ease;
 }
-
+/* teksten der ændrer farve når man trykker på den*/
 .radio-input label:has(input:checked) {
   color: #fff;
 }
@@ -67,22 +59,18 @@ body {
   display: inline-block;
 }
 
-.radio-input label:has(input:checked) svg {
-  stroke: white;
-  stroke-width: 10px;
-}
-
 .radio-input label:nth-child(1):has(input:checked) ~ .selection {
-  transform: translateY(calc(var(--container_height) * 0 / 3));
+  transform: translateY(0px); /*Str og farve på den første*/
   background-color: #000000;
 }
 
 .radio-input label:nth-child(2):has(input:checked) ~ .selection {
-  transform: translateY(calc(var(--container_height) * 1 / 3));
+  transform: translateY(100px); /*str og farve på den anden*/
   background-color: #1f9cf1;
 }
 
 .radio-input label:nth-child(3):has(input:checked) ~ .selection {
-  transform: translateY(calc(var(--container_height) * 2 / 3));
+  transform: translateY(200px); /*str og farve på den trejde*/
   background-color: #ff9801;
 }
+/*Sidemenuslut*/
