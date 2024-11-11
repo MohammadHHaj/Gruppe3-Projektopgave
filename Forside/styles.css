@@ -1,0 +1,76 @@
+body {
+  background-color: whitesmoke;
+}
+/*lad body element være i toppen*/
+/*headerstart*/
+#header {
+  border-radius: 10px;
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+  width: 100%;
+  height: 75px;
+}
+/*headerstart*/
+/*Sidemenustart*/
+.radio-input input {
+  display: none;
+}
+
+.radio-input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #000000;
+  height: 300px;
+}
+
+.radio-input label {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 25px;
+}
+
+.venstrepics {
+  width: 30px;
+  height: 30px;
+}
+
+.selection {
+  display: none;
+  position: absolute;
+  width: 70px;
+  height: 90px;
+  inset: 6px;
+  border-radius: 10px;
+  transition: 0.15s ease;
+}
+/* teksten der ændrer farve når man trykker på den*/
+.radio-input label:has(input:checked) {
+  color: #fff;
+}
+
+.radio-input label:has(input:checked) ~ .selection {
+  display: inline-block;
+}
+
+.radio-input label:nth-child(1):has(input:checked) ~ .selection {
+  transform: translateY(0px); /*Str og farve på den første*/
+  background-color: #000000;
+}
+
+.radio-input label:nth-child(2):has(input:checked) ~ .selection {
+  transform: translateY(100px); /*str og farve på den anden*/
+  background-color: #1f9cf1;
+}
+
+.radio-input label:nth-child(3):has(input:checked) ~ .selection {
+  transform: translateY(200px); /*str og farve på den trejde*/
+  background-color: #ff9801;
+}
+/*Sidemenuslut*/
