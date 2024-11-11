@@ -48,7 +48,7 @@ body {
   height: 90px;
   inset: 6px;
   border-radius: 10px;
-  transition: 0.15s ease;
+  transition: 0.4s ease-out;
 }
 /* teksten der ændrer farve når man trykker på den*/
 .radio-input label:has(input:checked) {
