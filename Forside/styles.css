@@ -11,7 +11,7 @@ body {
   width: fit-content;
   display: flex;
   list-style: none;
-  margin-left: 87px;
+  margin-left: 136px;
 }
 .submenu {
   max-height: 200px;
@@ -131,7 +131,6 @@ body {
   text-align: center;
   transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
 }
-
 .submenu .submenu-item:last-child .submenu-link {
   border-bottom: none;
 }
