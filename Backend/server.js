@@ -14,6 +14,7 @@ const db = new pg.Pool({
         rejectUnauthorized: false,
     } : undefined,
 });
+
 const dbResult = await db.query('select now()');
 console.log('Database connection established on', dbResult.rows[0].now);
 
@@ -30,7 +31,7 @@ async function onGetAlbums(request, response) {
     const start = query.start;
     const dbResult = await db.query(`
         select   SELECT * FROM internet_acces
-        where    year($1, 'YYYY') <= year)
+        where    year($1, 'YYYY') = year)
         order by country asc`,
         [start]);
     response.send(dbResult.rows);
@@ -44,3 +45,4 @@ function onEachRequest(request, response, next) {
 function onServerReady() {
     console.log('Webserver running on port', port);
 }
+
