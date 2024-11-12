@@ -2,16 +2,9 @@ body {
   background-color: whitesmoke;
 }
 /*lad body element være i toppen*/
-/*headerstart*/
-#header {
-  border-radius: 10px;
-  border-style: solid;
-  border-color: black;
-  border-width: 5px;
-  width: 100%;
-  height: 75px;
+#mellemlag {
+  display: flex;
 }
-/*headerstart*/
 /*Sidemenustart*/
 .radio-input input {
   display: none;
@@ -74,3 +67,17 @@ body {
   background-color: #ff9801;
 }
 /*Sidemenuslut*/
+/*Containertilkortetstart*/
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+  width: 100%;
+  height: 550px;
+  position: relative;
+  top: 50px;
+}
+/*Containertilkortetslut*/
