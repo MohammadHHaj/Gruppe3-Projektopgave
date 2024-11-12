@@ -61,12 +61,12 @@ body {
 
 .radio-input label:nth-child(1):has(input:checked) ~ .selection {
   transform: translateY(0px); /*Str og farve på den første*/
-  background-color: #000000;
+  background-color: #0a6700;
 }
 
 .radio-input label:nth-child(2):has(input:checked) ~ .selection {
   transform: translateY(100px); /*str og farve på den anden*/
-  background-color: #1f9cf1;
+  background-color: #0065a8;
 }
 
 .radio-input label:nth-child(3):has(input:checked) ~ .selection {
