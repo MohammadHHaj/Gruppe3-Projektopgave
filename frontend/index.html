@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adgangsindsigt</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="d3.v7.js"></script>
     <meta
       name="description"
       content="Følg den absolut bedste studiegruppe, på rejsen mod succes! Tryk på linket for at se banebrydende indhold og forkæl dig selv med fortrolig data fremvidst i verdensklasse visualiseringer. Ja, i fleretal. Vi er bare bedre!"
@@ -82,8 +83,18 @@
       </div>
       <!--Container div slut.-->
     </div>
-    <script src="mapdata.js"></script>
-    <script src="worldmap.js"></script>
+    <p>
+      Find albums released between <input type="number" id="year" min="1990" max="2022" value="2000">
+      <button onclick="fetchData()">Go!</button>
+      <div id="visuals"></div>
+  </p>
+   
+   
+  <script src="script.js"></script>
+  <script src="mapdata.js"></script>
+  <script src="worldmap.js"></script>
   </body>
+
+ 
 </html>
 <!--Hej-->
