@@ -1,0 +1,250 @@
+body {
+  background-color: whitesmoke;
+}
+/*lad body element være i toppen*/
+/*Tidsvælgerstart*/
+.menu {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000000;
+  width: fit-content;
+  display: flex;
+  list-style: none;
+  margin-left: 136px;
+}
+.submenu {
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.submenu::-webkit-scrollbar {
+  display: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.menu .link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 36px;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.menu .link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0a3cff;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.menu .link svg {
+  width: 14px;
+  height: 14px;
+  fill: #000000;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.menu .item {
+  position: relative;
+}
+
+.menu .item .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 150px; /* Adjust based on your design */
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  z-index: 1;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  overflow-x: hidden;
+}
+
+.menu .item .submenu::-webkit-scrollbar {
+  display: none;
+}
+
+.menu .item:hover .submenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu .item:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+  border-top: transparent;
+  border-color: #0a3cff;
+}
+
+.menu .item:hover .link {
+  color: #ffffff;
+  border-radius: 16px 16px 0 0;
+}
+
+.menu .item:hover .link::after {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+.menu .item:hover .link svg {
+  fill: #ffffff;
+  transform: rotate(-180deg);
+}
+
+.submenu .submenu-item {
+  width: 100%;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.submenu .submenu-link {
+  display: block;
+  padding: 12px 24px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.submenu .submenu-item:last-child .submenu-link {
+  border-bottom: none;
+}
+
+.submenu .submenu-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  width: 100%;
+  height: 100%;
+  background-color: #0a3cff;
+  z-index: -1;
+  transform-origin: left;
+  transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.submenu .submenu-link:hover:before {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+.submenu .submenu-link:hover {
+  color: #ffffff;
+}
+
+/*Tidsvælgerslut*/
+#mellemlag {
+  display: flex;
+}
+/*Sidemenustart*/
+.radio-input input {
+  display: none;
+}
+
+.radio-input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #000000;
+  height: 300px;
+}
+
+.radio-input label {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 25px;
+}
+
+.venstrepics {
+  width: 30px;
+  height: 30px;
+}
+
+.selection {
+  display: none;
+  position: absolute;
+  width: 70px;
+  height: 90px;
+  inset: 6px;
+  border-radius: 10px;
+  transition: 0.4s ease-out;
+}
+/* teksten der ændrer farve når man trykker på den*/
+.radio-input label:has(input:checked) {
+  color: #fff;
+}
+
+.radio-input label:has(input:checked) ~ .selection {
+  display: inline-block;
+}
+
+.radio-input label:nth-child(1):has(input:checked) ~ .selection {
+  transform: translateY(0px); /*Str og farve på den første*/
+  background-color: #0a6700;
+}
+
+.radio-input label:nth-child(2):has(input:checked) ~ .selection {
+  transform: translateY(100px); /*str og farve på den anden*/
+  background-color: #0065a8;
+}
+
+.radio-input label:nth-child(3):has(input:checked) ~ .selection {
+  transform: translateY(200px); /*str og farve på den trejde*/
+  background-color: #ff9801;
+}
+/*Sidemenuslut*/
+/*Containertilkortetstart*/
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+  width: 100%;
+  height: 550px;
+  position: relative;
+  top: 5px;
+}
+/*Containertilkortetslut*/
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
