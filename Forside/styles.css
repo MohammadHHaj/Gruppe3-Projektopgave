@@ -224,4 +224,21 @@ body {
   position: relative;
   top: 5px;
 }
+/*Forlaget*/
+#forlaget {
+  background-color: black; /*whitesmoke; vi bruger sort til at design lortet. det skal skiftes til whitesmoke indtil aflevering*/
+  width: 10%; /*Både w og h skal være 100% for at fungere ordenligt.*/
+  height: 10%;
+  position: absolute;
+  top: -1.1px;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+  z-index: 10;
+  border-top: none;
+
+  /*Her skriver jeg noget width 100% samt height. Baggrund-color: whitesmoke;*/
+}
+/*Forlaget*/
 /*Containertilkortetslut*/
