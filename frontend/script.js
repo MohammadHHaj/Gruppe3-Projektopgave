@@ -1,11 +1,11 @@
-
-function fetchAlbums() {
+function fetchData() {
     const year = d3.select('#year').property('value');
-    d3.json(`/api/albums=${year}`).then((internet_usage) => {
-        if (internet_usage.length === 0) {
+    d3.json(`/api/internet_usage?year=${year}`).then((data) => {
+        console.log(data);
+        if (data.length === 0) {
             d3.select('#visuals').html('No albums found.')
         }
-        const headers = Object.keys(internet_usage[0]);
+        const headers = Object.keys(data[0]);
         const table = d3.select('#visuals')
             .html('')
             .append('table');
@@ -18,7 +18,7 @@ function fetchAlbums() {
             .text((d) => d);
         table.append('tbody')
             .selectAll('tr')
-            .data(internet_usage)
+            .data(data)
             .enter()
             .append('tr')
             .selectAll('td')
@@ -26,10 +26,7 @@ function fetchAlbums() {
             .enter()
             .append('td')
             .text((d) => d);
-    })
-    .catch((error) => {
-        console.error('Error fetching albums:', error);
-        d3.select('#visuals').html('Failed to load albums.');
     });
 }
+
 
