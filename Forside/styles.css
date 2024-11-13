@@ -7,12 +7,8 @@ body {
 .submenu {
   max-height: 200px;
   overflow-y: auto;
-  scrollbar-color: #888 #0000;
+  scrollbar-color: grey #0000;
   scrollbar-width: thin;
-}
-/* Thumb er den del af scrollbaren som du bruger til at rykke op og ned.*/
-.submenu::-webkit-scrollbar-thumb {
-  border-radius: 100vw;
 }
 .menu {
   font-size: 16px;
@@ -79,17 +75,14 @@ body {
   overflow-x: hidden;
 }
 .menu .item:hover .submenu {
-  display: flex;
-  flex-direction: column;
-}
-
-.menu .item:hover .submenu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
   pointer-events: auto;
   border-top: transparent;
   border-color: #0a3cff;
+  display: flex;
+  flex-direction: column;
 }
 
 .menu .item:hover .link {
@@ -99,12 +92,14 @@ body {
 
 .menu .item:hover .link::after {
   transform: scaleX(1);
-  transform-origin: right;
+  transform-origin: right; /*Retning på det blå der kommer frem*/
 }
 
 .menu .item:hover .link svg {
   fill: #ffffff;
-  transform: rotate(-180deg);
+  transform: rotate(
+    -180deg
+  ); /*Svg er den "arrow" det laver en 180 når man hover over. */
 }
 
 .submenu .submenu-item {
@@ -114,7 +109,7 @@ body {
 
 .submenu .submenu-link {
   display: block;
-  padding: 12px 24px;
+  padding: 12px 6px;
   width: 100%;
   position: relative;
   text-align: center;
@@ -144,7 +139,7 @@ body {
 }
 
 .submenu .submenu-link:hover {
-  color: #ffffff;
+  color: #ffffff; /*Farverne på på teksten når man hover over*/
 }
 
 /*Tidsvælgerslut*/
