@@ -17,7 +17,7 @@ body {
   width: fit-content;
   display: flex;
   list-style: none;
-  margin-left: 136px;
+  margin-left: 157px;
 }
 .menu a {
   text-decoration: none;
@@ -168,6 +168,8 @@ body {
   font-weight: 600;
   font-size: 14px;
   padding: 25px;
+  position: relative;
+  left: -14px;
 }
 
 .venstrepics {
@@ -188,19 +190,20 @@ body {
 .radio-input label:has(input:checked) {
   color: #fff;
 }
-
+.midten {
+  align-items: center;
+}
 .radio-input label:has(input:checked) ~ .selection {
   display: inline-block;
 }
-
 .radio-input label:nth-child(1):has(input:checked) ~ .selection {
   transform: translateY(0px); /*Str og farve på den første*/
-  background-color: #0a6700;
+  background-color: #0065a8;
 }
 
 .radio-input label:nth-child(2):has(input:checked) ~ .selection {
   transform: translateY(100px); /*str og farve på den anden*/
-  background-color: #0065a8;
+  background-color: #0a6700;
 }
 
 .radio-input label:nth-child(3):has(input:checked) ~ .selection {
@@ -217,7 +220,7 @@ body {
   border-style: solid;
   border-color: black;
   width: 100%;
-  height: 550px;
+  height: auto;
   position: relative;
   top: 5px;
 }
