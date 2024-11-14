@@ -5,94 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adgangsindsigt</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="d3.v7.js"></script>
+    <script src="/frontend/d3.v7.js"></script>
     <meta
       name="description"
       content="Følg den absolut bedste studiegruppe, på rejsen mod succes! Tryk på linket for at se banebrydende indhold og forkæl dig selv med fortrolig data fremvidst i verdensklasse visualiseringer. Ja, i fleretal. Vi er bare bedre!"
     />
+
   </head>
   <body>
     <!--tidsvælger-->
-    <div class="menu">
-      <div class="item">
-        <a href="#" class="link">
-          <span>Årstal</span>
-          <svg viewBox="0 0 360 360" xml:space="preserve">
-            <g id="SVGRepo_iconCarrier">
-              <path
-                id="XMLID_225_"
-                d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
-              ></path>
-            </g>
-          </svg>
-        </a>
-        <div class="submenu">
-          <div class="submenu-item">
-            <a href="#" class="submenu-link">1990</a>
-          </div>
-          <div class="submenu-item">
-            <a href="#" class="submenu-link">1991</a>
-          </div>
-          <div class="submenu-item">
-            <a href="#" class="submenu-link">1992</a>
-          </div>
-          <div class="submenu-item">
-            <a href="#" class="submenu-link">1993</a>
-          </div>
-          <div class="submenu-item">
-            <a href="#" class="submenu-link">1994</a>
-          </div>
-          <div class="submenu-item">
-            <a href="#" class="submenu-link">1995</a>
-          </div>
-          <div class="submenu-item">
-            <a href="#" class="submenu-link">1996</a>
-          </div>
-          <div class="submenu-item">
-            <a href="#" class="submenu-link">1997</a>
-          </div>
-        </div>
+    <div id="tidsvælger">
+      <button id="left-arrow">&#9664;</button> <!-- Left arrow -->
+      <button onclick="fetchData()">Go!</button>
+      <div id="years-container">
+        <div id="years"></div> <!-- Container for years -->
       </div>
+      <button id="right-arrow">&#9654;</button>
     </div>
     <!--Tidsvælgerslut-->
     <div id="mellemlag">
       <!--Knapperne i siden-->
       <div class="radio-input">
-        <label>
-          <input name="value-radio" id="Mobil" type="radio" />
-          <img class="venstrepics" src="eksempel.avif" alt="Alternativtekst" />
-          <span>Mobil</span>
-        </label>
-        <!--NY-->
-        <label>
-          <input name="value-radio" id="wifi" type="radio" />
-          <img class="venstrepics" src="eksempel.avif" alt="Alternativtekst" />
+        <label class="midten">
+          <input name="value-radio" id="Wifi" type="radio" />
+          <img class="venstrepics" src="/frontend/Billedefolder/eksempel.avif" alt="Alternativtekst" />
           <span>Wifi</span>
         </label>
         <!--NY-->
-        <label>
-          <input name="value-radio" id="Andet" type="radio" />
-          <img class="venstrepics" src="eksempel.avif" alt="Alternativtekst" />
-          <span>Begge</span>
+        <label class="midten">
+          <input name="value-radio" id="Mobil" type="radio" />
+          <img class="venstrepics" src="/frontend/Billedefolder/eksempel.avif" alt="Alternativtekst" />
+          <span>Mobil</span>
+        </label>
+        <!--NY-->
+        <label class="midten">
+          <input name="value-radio" id="Computer" class="" type="radio" />
+          <img class="venstrepics" src="/frontend/Billedefolder/eksempel.avif" alt="Alternativtekst" />
+          <span>Computer</span>
         </label>
         <span class="selection"></span>
       </div>
       <!--Container diven er diven der indeholder kortet-->
       <div id="container">
+        <div id="forlaget">Vælg en kammerat herud til venstre</div>
         <div id="map"></div>
       </div>
       <!--Container div slut.-->
     </div>
     <p>
-      Find albums released between <input type="number" id="year" min="1990" max="2022" value="2000">
       <button onclick="fetchData()">Go!</button>
       <div id="visuals"></div>
   </p>
-   
-   
-  <script src="script.js"></script>
-  <script src="mapdata.js"></script>
-  <script src="worldmap.js"></script>
+    <script src="/frontend/Kanin.js"></script>
+    <script src="/frontend/script.js"></script>
+    <script src="/frontend/mapdata.js"></script>
+    <script src="/frontend/worldmap.js"></script>
   </body>
 
  
