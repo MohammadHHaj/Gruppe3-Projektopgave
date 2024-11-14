@@ -26,3 +26,38 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+const yearsContainer = document.getElementById("years");
+const leftArrow = document.getElementById("left-arrow");
+const rightArrow = document.getElementById("right-arrow");
+
+// Generate years from 1990 to 2022 and add to container
+for (let year = 1990; year <= 2022; year++) {
+  const yearDiv = document.createElement("div");
+  yearDiv.innerText = year;
+  yearDiv.classList.add("year");
+  yearsContainer.appendChild(yearDiv);
+}
+
+// Horizontal scroll on drag
+let isDragging = false;
+let startX, scrollLeft;
+
+yearsContainer.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  startX = e.pageX - yearsContainer.offsetLeft;
+  scrollLeft = yearsContainer.scrollLeft;
+});
+
+yearsContainer.addEventListener("mouseleave", () => (isDragging = false));
+yearsContainer.addEventListener("mouseup", () => (isDragging = false));
+yearsContainer.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+  e.preventDefault();
+  const x = e.pageX - yearsContainer.offsetLeft;
+  const walk = (x - startX) * 2; // Scroll speed
+  yearsContainer.scrollLeft = scrollLeft - walk;
+});
+
+// Arrow buttons to scroll
+leftArrow.addEventListener("click", () => (yearsContainer.scrollLeft -= 50));
+rightArrow.addEventListener("click", () => (yearsContainer.scrollLeft += 50));
