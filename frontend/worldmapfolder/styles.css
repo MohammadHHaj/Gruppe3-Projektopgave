@@ -176,38 +176,38 @@ body {
   width: 30px;
   height: 30px;
 }
-
 .selection {
-  display: none;
   position: absolute;
   width: 70px;
   height: 90px;
   inset: 6px;
   border-radius: 10px;
-  transition: 0.4s ease-out;
-}
-/* teksten der ændrer farve når man trykker på den*/
-.radio-input label:has(input:checked) {
-  color: #fff;
+  transition: opacity 0.4s ease-out, background-color 0.4s ease-out,
+    transform 0.4s ease-out;
+  background-color: transparent; /* Start transparent */
+  opacity: 0; /* Start invisible */
 }
 .midten {
-  align-items: center;
+  align-items: center; /*Center både tekst og billede*/
 }
+/* Show and apply the transition when checked */
 .radio-input label:has(input:checked) ~ .selection {
-  display: inline-block;
+  opacity: 1;
 }
+
+/* Baggrundsfarverne til venstreknapperne*/
 .radio-input label:nth-child(1):has(input:checked) ~ .selection {
-  transform: translateY(0px); /*Str og farve på den første*/
+  transform: translateY(0px);
   background-color: #0065a8;
 }
 
 .radio-input label:nth-child(2):has(input:checked) ~ .selection {
-  transform: translateY(100px); /*str og farve på den anden*/
+  transform: translateY(100px);
   background-color: #0a6700;
 }
 
 .radio-input label:nth-child(3):has(input:checked) ~ .selection {
-  transform: translateY(200px); /*str og farve på den trejde*/
+  transform: translateY(200px);
   background-color: #ff9801;
 }
 /*Sidemenuslut*/
@@ -227,18 +227,20 @@ body {
 /*Forlaget*/
 #forlaget {
   background-color: black; /*whitesmoke; vi bruger sort til at design lortet. det skal skiftes til whitesmoke indtil aflevering*/
-  width: 10%; /*Både w og h skal være 100% for at fungere ordenligt.*/
-  height: 10%;
+  width: 100%; /*Både w og h skal være 100% for at fungere ordenligt.*/
+  height: 100%;
   position: absolute;
   top: -1.1px;
-  border-radius: 5px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: black;
   z-index: 10;
-  border-top: none;
+  color: white; /*Tekstens farve*/
+  transition: height 0.5s ease, opacity 0.5s ease;
+  overflow: hidden;
+}
 
-  /*Her skriver jeg noget width 100% samt height. Baggrund-color: whitesmoke;*/
+.hidden {
+  /*Class' bliver lavet i js.*/
+  height: 0;
+  opacity: 0;
 }
 /*Forlaget*/
 /*Containertilkortetslut*/

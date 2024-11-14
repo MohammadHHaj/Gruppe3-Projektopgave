@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adgangsindsigt</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="/frontend/d3.v7.js"></script>
     <meta
       name="description"
       content="Følg den absolut bedste studiegruppe, på rejsen mod succes! Tryk på linket for at se banebrydende indhold og forkæl dig selv med fortrolig data fremvidst i verdensklasse visualiseringer. Ja, i fleretal. Vi er bare bedre!"
     />
+
   </head>
   <body>
     <!--tidsvælger-->
@@ -59,26 +61,26 @@
       <div class="radio-input">
         <label class="midten">
           <input name="value-radio" id="Wifi" type="radio" />
-          <img class="venstrepics" src="eksempel.avif" alt="Alternativtekst" />
+          <img class="venstrepics" src="/frontend/Billedefolder/eksempel.avif" alt="Alternativtekst" />
           <span>Wifi</span>
         </label>
         <!--NY-->
         <label class="midten">
           <input name="value-radio" id="Mobil" type="radio" />
-          <img class="venstrepics" src="eksempel.avif" alt="Alternativtekst" />
+          <img class="venstrepics" src="/frontend/Billedefolder/eksempel.avif" alt="Alternativtekst" />
           <span>Mobil</span>
         </label>
         <!--NY-->
         <label class="midten">
           <input name="value-radio" id="Computer" class="" type="radio" />
-          <img class="venstrepics" src="eksempel.avif" alt="Alternativtekst" />
+          <img class="venstrepics" src="/frontend/Billedefolder/eksempel.avif" alt="Alternativtekst" />
           <span>Computer</span>
         </label>
         <span class="selection"></span>
       </div>
       <!--Container diven er diven der indeholder kortet-->
       <div id="container">
-        <div id="forlaget"></div>
+        <div id="forlaget">Vælg en kammerat herud til venstre</div>
         <div id="map"></div>
       </div>
       <!--Container div slut.-->
@@ -88,11 +90,10 @@
       <button onclick="fetchData()">Go!</button>
       <div id="visuals"></div>
   </p>
-    <script src="Kanin.js"></script>
-    <script src="script.js"></script>
-    <script src="mapdata.js"></script>
-    <script src="worldmap.js"></script>
-    <script src="d3.v7.js"></script>
+    <script src="/frontend/Kanin.js"></script>
+    <script src="/frontend/script.js"></script>
+    <script src="/frontend/mapdata.js"></script>
+    <script src="/frontend/worldmap.js"></script>
   </body>
 
  
