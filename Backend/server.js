@@ -55,7 +55,8 @@ async function onGetData(request, response) {
             FROM internet_acces
             WHERE year = $1
             ORDER BY country ASC
-        `, [year]);  // Passer årstallet som parameter til SQL-forespørgslen
+            `,
+            [year]);  // Passer årstallet som parameter til SQL-forespørgslen
 
         response.json(dbResult.rows);  // Sender resultatet tilbage som JSON
     } catch (error) {

@@ -20,8 +20,8 @@ const dbResult = await db.query('select now()');
 console.log('Database connection established on', dbResult.rows[0].now);
 
 console.log('Recreating tables...');
-db.query(`
-drop table if exists internet_acces
+await db.query(`
+drop table if exists internet_acces;
 
 CREATE TABLE internet_acces(
 country varchar(30),
@@ -33,7 +33,7 @@ primary key(country,year)
 console.log('Tables recreated.');
 
 console.log('Copying data from CSV files...');
-copyIntoTable(db, `
+await copyIntoTable(db, `
 	COPY internet_acces (country,year,internet_usage)
     FROM stdin
     WITH CSV HEADER`, 'data/internet.csv');
