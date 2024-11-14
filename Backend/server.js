@@ -23,6 +23,7 @@ const server = express();
 server.use(express.static('frontend'));
 server.use(onEachRequest);
 server.get("/api/internet_usage", onGetData);
+server.get("/api/internet_wifi", onGetData);
 server.listen(port, onServerReady);
 
 // async function onGetData(request, response) {
@@ -40,7 +41,8 @@ server.listen(port, onServerReady);
 //         `)
 // };
 async function onGetData(request, response) {
-    const year = request.query.year;  // Sørg for at få årstallet fra query-parameteren
+    const year = request.query.year;  // Sørger for at få årstallet fra query-parameteren
+    const countryId = request.query.country_id;
     console.log(`${year} årstal hentet`);
 
     if (!year) {
@@ -57,6 +59,18 @@ async function onGetData(request, response) {
             ORDER BY country ASC
             `,
             [year]);  // Passer årstallet som parameter til SQL-forespørgslen
+
+        const dbWifi = await db.query(`
+                SELECT country_id,
+                       country_name AS country,
+                       year,
+                       COALESCE(internet_usage, 0.0) AS internet_usage
+                FROM internet_acces
+                JOIN countries_temp USING (internet_acces)
+                WHERE country_id = $1
+                ORDER BY country ASC
+                `,
+                [countryId]);  // Passer årstallet som parameter til SQL-forespørgslen
 
         response.json(dbResult.rows);  // Sender resultatet tilbage som JSON
     } catch (error) {

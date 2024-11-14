@@ -21,7 +21,8 @@ console.log('Database connection established on', dbResult.rows[0].now);
 
 console.log('Recreating tables...');
 await db.query(`
-drop table if exists internet_acces;
+DROP TABLE IF EXISTS internet_acces;
+DROP TABLE IF EXISTS countries_temp;
 
 CREATE TABLE internet_acces(
 country varchar(30),
@@ -29,6 +30,12 @@ year integer,
 internet_usage float default 0.0,
 primary key(country,year)
 );
+
+CREATE TEMPORARY TABLE countries_temp(
+country_id serial PRIMARY KEY,
+country_name varChar(30) not null unique
+);
+
 `);
 console.log('Tables recreated.');
 
@@ -38,6 +45,12 @@ await copyIntoTable(db, `
     FROM stdin
     WITH CSV HEADER`, 'data/internet.csv');
 
+await db.query(`
+    INSERT INTO countries_temp(country_name) 
+    SELECT DISTINCT country
+    FROM internet_acces
+    ORDER BY country;
+    `);
     
 await db.end();
 console.log('Data copied.');

@@ -1157,7 +1157,7 @@ var simplemaps_worldmap_mapdata={
         "GL",
         "BM"
       ]
-    },
+    }, 
     "1": {
       name: "South America",
       states: [
