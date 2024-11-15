@@ -18,13 +18,14 @@ const db = new pg.Pool({
       }
     : undefined,
 });
+
 const dbResult = await db.query("select now()");
 console.log("Database connection established on", dbResult.rows[0].now);
 
 console.log("Recreating tables...");
 await db.query(`
 DROP TABLE IF EXISTS internet_acces;
-DROP TABLE IF EXISTS countries_temp;
+DROP TABLE IF EXISTS telephones;
 
 CREATE TABLE internet_acces(
 country varchar(30),
@@ -33,9 +34,11 @@ internet_usage float default 0.0,
 primary key(country,year)
 );
 
-CREATE TEMPORARY TABLE countries_temp(
-country_id serial PRIMARY KEY,
-country_name varChar(30) not null unique
+CREATE TABLE telephones(
+	country varChar(30) not null,
+	year integer not null,
+	telephones_per_100 float not null,
+	PRIMARY KEY (country,year)
 );
 
 `);
@@ -47,16 +50,18 @@ await copyIntoTable(
   `
 	COPY internet_acces (country,year,internet_usage)
     FROM stdin
-    WITH CSV HEADER`,
-  "data/internet.csv"
+    WITH CSV HEADER`,"data/internet.csv"
 );
 
-await db.query(`
-    INSERT INTO countries_temp(country_name) 
-    SELECT DISTINCT country
-    FROM internet_acces
-    ORDER BY country;
-    `);
+await copyIntoTable(
+  db,
+  `
+	COPY telephones(country,year,telephones_per_100)
+  FROM stdin
+  WITH CSV HEADER`,"data/telephones.csv"
+
+);
+
 
 await db.end();
 console.log("Data copied.");
