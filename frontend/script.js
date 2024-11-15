@@ -4,27 +4,27 @@
 function fetchDataWifi() {
   const year = d3.select("#year").attr("data-selected-year");
   d3.json(`/api/internet_usage?type=wifi&year=${year}`).then((Wifidata) => {
-    updateMap(Wifidata, year);
+    updateMap(Wifidata, year, "internet_usage");  // Send dataType til updateMap
   });
 }
 
 function fetchDataMobil() {
   const year = d3.select("#year").attr("data-selected-year");
   d3.json(`/api/telephones_100?type=mobil&year=${year}`).then((Mobildata) => {
-    updateMap(Mobildata, year);
+    updateMap(Mobildata, year, "telephones_per_100");  // Send dataType til updateMap
   });
 }
 
-function fetchDataComputer() {
-  const year = d3.select("#year").attr("data-selected-year");
-  d3.json(`/api/internet_usage?type=computer&year=${year}`).then(
-    (Computerdata) => {
-      updateMap(Computerdata, year);
-    }
-  );
-}
+// function fetchDataComputer() {
+//   const year = d3.select("#year").attr("data-selected-year");
+//   d3.json(`/api/internet_usage?type=computer&year=${year}`).then(
+//     (Computerdata) => {
+//       updateMap(Computerdata, year);
+//     }
+//   );
+// }
 
-function updateMap(data, year) {
+function updateMap(data, year, dataType) {
   if (data.length === 0) {
     d3.select("#visuals").html("No data found for this year.");
     return;
@@ -33,24 +33,20 @@ function updateMap(data, year) {
   data.forEach((countryData) => {
     const countryId = countryIdMap[countryData.country];
     if (countryId && simplemaps_worldmap_mapdata.state_specific[countryId]) {
-      simplemaps_worldmap_mapdata.state_specific[countryId].color =
-        calculateColor(countryData.internet_usage);
-      simplemaps_worldmap_mapdata.state_specific[
-        countryId
-      ].description = `${countryData.country} - år ${year} - Internetforbrug: ${countryData.internet_usage}%`;
-    } else {
-      console.warn(`Country element for "${countryData.country}" not found`);
-    }
-  });
-
-  data.forEach((countryData) => {
-    const countryId = countryIdMap[countryData.country];
-    if (countryId && simplemaps_worldmap_mapdata.state_specific[countryId]) {
-      simplemaps_worldmap_mapdata.state_specific[countryId].color =
-        calculateColor(countryData.internet_usage);
-      simplemaps_worldmap_mapdata.state_specific[
-        countryId
-      ].description = `${countryData.country} - år ${year} - Telefoner pr. 100 indbygger : ${countryData.telephones_per_100}`;
+      // Opdater farven baseret på den relevante værdi
+     
+      // Skift beskrivelsen baseret på dataType
+      if (dataType === "internet_usage") {
+        simplemaps_worldmap_mapdata.state_specific[countryId].color =
+        calculateColor(countryData[dataType]);
+        simplemaps_worldmap_mapdata.state_specific[countryId].description = 
+          `${countryData.country} - år ${year} - Internetforbrug: ${countryData.internet_usage}%`;
+      } else if (dataType === "telephones_per_100") {
+        simplemaps_worldmap_mapdata.state_specific[countryId].color =
+        calculateColorMobil(countryData[dataType]);
+        simplemaps_worldmap_mapdata.state_specific[countryId].description = 
+          `${countryData.country} - år ${year} - Telefoner pr. 100 indbygger: ${countryData.telephones_per_100}`;
+      }
     } else {
       console.warn(`Country element for "${countryData.country}" not found`);
     }
@@ -81,6 +77,14 @@ function calculateColor(usage) {
   else if (usage <= 80) return "#357fef";
   return "#f23030";
 }
+
+function calculateColorMobil(usage) {
+  if (usage <= 20) return "#9badff";
+  else if (usage <= 50) return "#f99117";
+  else if (usage <= 80) return "#357fef";
+  return "#f23030";
+}
+
 
 const countryIdMap = {
   Afghanistan: "AF",
