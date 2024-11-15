@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const laget = document.getElementById("forlaget");
+//document.addEventListener("DOMContentLoaded", function () {
+/*const laget = document.getElementById("forlaget");
   const btnclick = [
     document.getElementById("Mobil"),
     document.getElementById("Wifi"),
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //Giver sig selv, linje 1 sørger for at document bliver loadet først, også søger funktionerne efter,
   //efter knapperne. Dette er til at undgå at js,en ikke søger efter en knap som ikke var loadet ind.
   //Som selfølgelig ville have resulteret i at funktionen ikke ville fungere
-  btnclick.forEach((button) => {
+ btnclick.forEach((button) => {
     if (button) {
       console.log(`Fjerning af forlaget igennem knap fungerede.`);
       button.addEventListener("click", function () {
@@ -46,3 +46,4 @@ const highlightYear = (yearDiv) => {
   yearDiv.classList.add("selected");
   console.log(yearDiv.dataset.year);
 };
+*/
