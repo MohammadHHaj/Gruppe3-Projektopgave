@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import { pipeline } from "node:stream/promises";
 import fs from "node:fs";
 import { from as copyFrom } from "pg-copy-streams";
-
+//Henter dotenv
 dotenv.config();
 console.log("Connecting to database", process.env.PG_DATABASE);
 const db = new pg.Pool({

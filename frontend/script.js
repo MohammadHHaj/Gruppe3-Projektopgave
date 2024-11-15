@@ -22,7 +22,6 @@ function fetchDataComputer() {
   });
 }
 
-// Funktion til at opdatere kortet med data
 function updateMap(data, year) {
   if (data.length === 0) {
     d3.select("#visuals").html("No data found for this year.");
@@ -45,7 +44,6 @@ function updateMap(data, year) {
   simplemaps_worldmap.refresh();
 }
 
-// Lyt efter valg af radioknap
 document.getElementById("year-selector").addEventListener("click", function () {
   const wifiSelected = document.getElementById("Wifi").checked;
   const mobilSelected = document.getElementById("Mobil").checked;
@@ -62,14 +60,13 @@ document.getElementById("year-selector").addEventListener("click", function () {
   }
 });
 
-// Beregner farve baseret på internetbrug i procent
 function calculateColor(usage) {
   if (usage <= 20) return "#7badff";
   else if (usage <= 50) return "#5a9ff7";
   else if (usage <= 80) return "#357fef";
   return "#f23030";
 }
-// Mapping af lande til ISO-koder, så de kan findes på kortet
+
 const countryIdMap = {
   Afghanistan: "AF",
   Albania: "AL",
