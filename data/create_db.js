@@ -22,7 +22,6 @@ console.log('Database connection established on', dbResult.rows[0].now);
 console.log('Recreating tables...');
 await db.query(`
 DROP TABLE IF EXISTS internet_acces;
-DROP TABLE IF EXISTS countries_temp;
 
 CREATE TABLE internet_acces(
 country varchar(30),
@@ -31,10 +30,7 @@ internet_usage float default 0.0,
 primary key(country,year)
 );
 
-CREATE TEMPORARY TABLE countries_temp(
-country_id serial PRIMARY KEY,
-country_name varChar(30) not null unique
-);
+
 
 `);
 console.log('Tables recreated.');
