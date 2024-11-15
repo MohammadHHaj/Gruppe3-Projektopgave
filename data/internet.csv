@@ -7,7 +7,6 @@ Andorra,1990,0.0
 UAE,1990,0.0
 Argentina,1990,0.0
 Armenia,1990,0.0
-American Samoa,1990,0.0
 Antigua and Barbuda,1990,0.0
 Australia,1990,0.585
 Austria,1990,0.13
@@ -68,7 +67,6 @@ Gabon,1990,0.0
 UK,1990,0.0874
 Georgia,1990,0.0
 Ghana,1990,0.0
-Gibraltar,1990,0.0
 Guinea,1990,0.0
 Gambia,1990,0.0
 Guinea-Bissau,1990,0.0
@@ -280,7 +278,6 @@ Gabon,1991,0
 UK,1991,0.174
 Georgia,1991,0
 Ghana,1991,0
-Gibraltar,1991,0
 Guinea,1991,0
 Gambia,1991,0
 Guinea-Bissau,1991,0
@@ -432,7 +429,6 @@ Andorra,1992,0.0
 UAE,1992,0.0
 Argentina,1992,0.00299
 Armenia,1992,0.0
-American Samoa,1992,0.0
 Antigua and Barbuda,1992,0.0
 Australia,1992,1.77
 Austria,1992,0.643
@@ -493,7 +489,6 @@ Gabon,1992,0.0
 UK,1992,0.261
 Georgia,1992,0.0
 Ghana,1992,0.0
-Gibraltar,1992,0.0
 Guinea,1992,0.0
 Gambia,1992,0.0
 Guinea-Bissau,1992,0.0
@@ -645,7 +640,6 @@ Andorra,1993,0.0
 UAE,1993,0.0
 Argentina,1993,0.0295
 Armenia,1993,0.0
-American Samoa,1993,0.0
 Antigua and Barbuda,1993,0.0
 Australia,1993,1.97
 Austria,1993,0.765
@@ -706,7 +700,6 @@ Gabon,1993,0.0
 UK,1993,0.52
 Georgia,1993,0.0
 Ghana,1993,0.0
-Gibraltar,1993,0.0
 Guinea,1993,0.0
 Gambia,1993,0.0
 Guinea-Bissau,1993,0.0
@@ -858,7 +851,6 @@ Andorra,1994,0.0
 UAE,1994,0.0
 Argentina,1994,0.0437
 Armenia,1994,0.00912
-American Samoa,1994,0.0
 Antigua and Barbuda,1994,0.0
 Australia,1994,2.23
 Austria,1994,1.39
@@ -919,7 +911,6 @@ Gabon,1994,0.0
 UK,1994,1.04
 Georgia,1994,0.0
 Ghana,1994,0.0
-Gibraltar,1994,0.0
 Guinea,1994,0.00014
 Gambia,1994,0.0
 Guinea-Bissau,1994,0.0
@@ -1071,7 +1062,6 @@ Andorra,1995,0
 UAE,1995,0.103
 Argentina,1995,0.0863
 Armenia,1995,0.0527
-American Samoa,1995,0
 Antigua and Barbuda,1995,2.2
 Australia,1995,2.76
 Austria,1995,1.89
@@ -1132,7 +1122,6 @@ Gabon,1995,0
 UK,1995,1.9
 Georgia,1995,0.0118
 Ghana,1995,0.00035
-Gibraltar,1995,0
 Guinea,1995,0.00067
 Gambia,1995,0.00922
 Guinea-Bissau,1995,0
@@ -1284,7 +1273,6 @@ Andorra,1996,1.53
 UAE,1996,0.375
 Argentina,1996,0.142
 Armenia,1996,0.0946
-American Samoa,1996,0.0
 Antigua and Barbuda,1996,2.86
 Australia,1996,3.28
 Austria,1996,6.91
@@ -1345,7 +1333,6 @@ Gabon,1996,0.0
 UK,1996,4.12
 Georgia,1996,0.0401
 Ghana,1996,0.00565
-Gibraltar,1996,0.0
 Guinea,1996,0.00195
 Gambia,1996,0.0355
 Guinea-Bissau,1996,0.0
@@ -1497,7 +1484,6 @@ Andorra,1997,3.05
 UAE,1997,3.3
 Argentina,1997,0.28
 Armenia,1997,0.112
-American Samoa,1997,0.0
 Antigua and Barbuda,1997,3.48
 Australia,1997,16.4
 Austria,1997,9.53
@@ -1558,7 +1544,6 @@ Gabon,1997,0.048
 UK,1997,7.39
 Georgia,1997,0.0609
 Ghana,1997,0.0275
-Gibraltar,1997,2.66
 Guinea,1997,0.0038
 Gambia,1997,0.0513
 Guinea-Bissau,1997,0.0164
@@ -1710,7 +1695,6 @@ Andorra,1998,6.89
 UAE,1998,6.91
 Argentina,1998,0.831
 Armenia,1998,0.129
-American Samoa,1998,0.0
 Antigua and Barbuda,1998,4.07
 Australia,1998,30.8
 Austria,1998,15.4
@@ -1771,7 +1755,6 @@ Gabon,1998,0.17
 UK,1998,13.7
 Georgia,1998,0.103
 Ghana,1998,0.0322
-Gibraltar,1998,4.18
 Guinea,1998,0.0062
 Gambia,1998,0.206
 Guinea-Bissau,1998,0.0241
@@ -1923,7 +1906,6 @@ Andorra,1999,7.64
 UAE,1999,14.9
 Argentina,1999,3.28
 Armenia,1999,0.971
-American Samoa,1999,0.0
 Antigua and Barbuda,1999,5.3
 Australia,1999,40.8
 Austria,1999,23.0
@@ -1984,7 +1966,6 @@ Gabon,1999,0.249
 UK,1999,21.3
 Georgia,1999,0.416
 Ghana,1999,0.105
-Gibraltar,1999,5.94
 Guinea,1999,0.0608
 Gambia,1999,0.716
 Guinea-Bissau,1999,0.118
@@ -2136,7 +2117,6 @@ Andorra,2000,10.5
 UAE,2000,23.6
 Argentina,2000,7.04
 Armenia,2000,1.3
-American Samoa,2000,0.0
 Antigua and Barbuda,2000,6.48
 Australia,2000,46.8
 Austria,2000,33.7
@@ -2197,7 +2177,6 @@ Gabon,2000,1.22
 UK,2000,26.8
 Georgia,2000,0.485
 Ghana,2000,0.154
-Gibraltar,2000,19.1
 Guinea,2000,0.0954
 Gambia,2000,0.922
 Guinea-Bissau,2000,0.23
@@ -2349,7 +2328,6 @@ Andorra,2001,0.0
 UAE,2001,26.3
 Argentina,2001,9.78
 Armenia,2001,1.63
-American Samoa,2001,0.0
 Antigua and Barbuda,2001,8.9
 Australia,2001,52.7
 Austria,2001,39.2
@@ -2410,7 +2388,6 @@ Gabon,2001,1.35
 UK,2001,33.5
 Georgia,2001,0.992
 Ghana,2001,0.2
-Gibraltar,2001,21.2
 Guinea,2001,0.176
 Gambia,2001,1.34
 Guinea-Bissau,2001,0.3
@@ -2562,7 +2539,6 @@ Andorra,2002,11.3
 UAE,2002,28.3
 Argentina,2002,10.9
 Armenia,2002,1.96
-American Samoa,2002,0.0
 Antigua and Barbuda,2002,12.5
 Australia,2002,0.0
 Austria,2002,36.6
@@ -2623,7 +2599,6 @@ Gabon,2002,1.94
 UK,2002,56.5
 Georgia,2002,1.59
 Ghana,2002,0.83
-Gibraltar,2002,23.7
 Guinea,2002,0.402
 Gambia,2002,1.8
 Guinea-Bissau,2002,1.02
@@ -2775,7 +2750,6 @@ Andorra,2003,13.5
 UAE,2003,29.5
 Argentina,2003,11.9
 Armenia,2003,4.58
-American Samoa,2003,0.0
 Antigua and Barbuda,2003,17.2
 Australia,2003,0.0
 Austria,2003,42.7
@@ -2836,7 +2810,6 @@ Gabon,2003,2.66
 UK,2003,64.8
 Georgia,2003,2.56
 Ghana,2003,1.19
-Gibraltar,2003,28.3
 Guinea,2003,0.451
 Gambia,2003,2.44
 Guinea-Bissau,2003,1.35
@@ -2988,7 +2961,6 @@ Andorra,2004,26.8
 UAE,2004,30.1
 Argentina,2004,16.0
 Armenia,2004,4.9
-American Samoa,2004,0.0
 Antigua and Barbuda,2004,24.3
 Australia,2004,0.0
 Austria,2004,54.3
@@ -3049,7 +3021,6 @@ Gabon,2004,2.98
 UK,2004,65.6
 Georgia,2004,3.89
 Ghana,2004,1.72
-Gibraltar,2004,32.9
 Guinea,2004,0.509
 Gambia,2004,3.31
 Guinea-Bissau,2004,1.81
@@ -3201,7 +3172,6 @@ Andorra,2005,37.6
 UAE,2005,40.0
 Argentina,2005,17.7
 Armenia,2005,5.25
-American Samoa,2005,0.0
 Antigua and Barbuda,2005,27.0
 Australia,2005,63.0
 Austria,2005,58.0
@@ -3262,7 +3232,6 @@ Gabon,2005,4.89
 UK,2005,70.0
 Georgia,2005,6.08
 Ghana,2005,1.83
-Gibraltar,2005,39.1
 Guinea,2005,0.542
 Gambia,2005,3.8
 Guinea-Bissau,2005,1.9
@@ -3414,7 +3383,6 @@ Andorra,2006,48.9
 UAE,2006,52.0
 Argentina,2006,20.9
 Armenia,2006,5.63
-American Samoa,2006,0.0
 Antigua and Barbuda,2006,30.0
 Australia,2006,66.0
 Austria,2006,63.6
@@ -3475,7 +3443,6 @@ Gabon,2006,5.49
 UK,2006,68.8
 Georgia,2006,7.53
 Ghana,2006,2.72
-Gibraltar,2006,45.3
 Guinea,2006,0.637
 Gambia,2006,5.24
 Guinea-Bissau,2006,2.06
@@ -3627,7 +3594,6 @@ Andorra,2007,70.9
 UAE,2007,61.0
 Argentina,2007,25.9
 Armenia,2007,6.02
-American Samoa,2007,0.0
 Antigua and Barbuda,2007,34.0
 Australia,2007,69.5
 Austria,2007,69.4
@@ -3688,7 +3654,6 @@ Gabon,2007,5.77
 UK,2007,75.1
 Georgia,2007,8.26
 Ghana,2007,3.85
-Gibraltar,2007,51.6
 Guinea,2007,0.78
 Gambia,2007,6.21
 Guinea-Bissau,2007,2.21
@@ -3840,7 +3805,6 @@ Andorra,2008,70.0
 UAE,2008,63.0
 Argentina,2008,28.1
 Armenia,2008,6.21
-American Samoa,2008,0.0
 Antigua and Barbuda,2008,38.0
 Australia,2008,71.7
 Austria,2008,72.9
@@ -3901,7 +3865,6 @@ Gabon,2008,7.5
 UK,2008,78.4
 Georgia,2008,10.0
 Ghana,2008,4.27
-Gibraltar,2008,58.0
 Guinea,2008,0.92
 Gambia,2008,6.88
 Guinea-Bissau,2008,2.35
@@ -4053,7 +4016,6 @@ Andorra,2009,78.5
 UAE,2009,64.0
 Argentina,2009,34.0
 Armenia,2009,15.3
-American Samoa,2009,0.0
 Antigua and Barbuda,2009,42.0
 Australia,2009,74.3
 Austria,2009,73.5
@@ -4114,7 +4076,6 @@ Gabon,2009,9.5
 UK,2009,83.6
 Georgia,2009,20.1
 Ghana,2009,5.44
-Gibraltar,2009,65.1
 Guinea,2009,0.94
 Gambia,2009,7.63
 Guinea-Bissau,2009,2.3
@@ -4266,7 +4227,6 @@ Andorra,2010,81.0
 UAE,2010,68.0
 Argentina,2010,45.0
 Armenia,2010,25.0
-American Samoa,2010,0.0
 Antigua and Barbuda,2010,47.0
 Australia,2010,76.0
 Austria,2010,75.2
@@ -4327,7 +4287,6 @@ Gabon,2010,13.0
 UK,2010,85.0
 Georgia,2010,26.9
 Ghana,2010,7.8
-Gibraltar,2010,65.0
 Guinea,2010,1.0
 Gambia,2010,9.2
 Guinea-Bissau,2010,2.45
@@ -4479,7 +4438,6 @@ Andorra,2011,81.0
 UAE,2011,78.0
 Argentina,2011,51.0
 Armenia,2011,32.0
-American Samoa,2011,0.0
 Antigua and Barbuda,2011,52.0
 Australia,2011,79.5
 Austria,2011,78.7
@@ -4540,7 +4498,6 @@ Gabon,2011,18.0
 UK,2011,85.4
 Georgia,2011,31.5
 Ghana,2011,9.0
-Gibraltar,2011,65.0
 Guinea,2011,2.0
 Gambia,2011,10.9
 Guinea-Bissau,2011,2.67
@@ -4692,7 +4649,6 @@ Andorra,2012,82.7
 UAE,2012,85.0
 Argentina,2012,55.8
 Armenia,2012,37.5
-American Samoa,2012,0.0
 Antigua and Barbuda,2012,58.0
 Australia,2012,79.0
 Austria,2012,80.0
@@ -4753,7 +4709,6 @@ Gabon,2012,24.0
 UK,2012,87.5
 Georgia,2012,36.9
 Ghana,2012,10.6
-Gibraltar,2012,65.0
 Guinea,2012,3.1
 Gambia,2012,12.4
 Guinea-Bissau,2012,2.89
@@ -4905,7 +4860,6 @@ Andorra,2013,84.4
 UAE,2013,88.0
 Argentina,2013,59.9
 Armenia,2013,41.9
-American Samoa,2013,0.0
 Antigua and Barbuda,2013,63.4
 Australia,2013,83.5
 Austria,2013,80.6
@@ -4966,7 +4920,6 @@ Gabon,2013,30.5
 UK,2013,89.8
 Georgia,2013,43.3
 Ghana,2013,15.0
-Gibraltar,2013,0.0
 Guinea,2013,4.5
 Gambia,2013,14.0
 Guinea-Bissau,2013,3.1
@@ -5118,7 +5071,6 @@ Andorra,2014,86.1
 UAE,2014,90.4
 Argentina,2014,64.7
 Armenia,2014,54.6
-American Samoa,2014,0.0
 Antigua and Barbuda,2014,67.8
 Australia,2014,84.0
 Austria,2014,81.0
@@ -5179,7 +5131,6 @@ Gabon,2014,38.1
 UK,2014,91.6
 Georgia,2014,49.1
 Ghana,2014,19.0
-Gibraltar,2014,0.0
 Guinea,2014,6.4
 Gambia,2014,15.6
 Guinea-Bissau,2014,3.32
@@ -5331,7 +5282,6 @@ Andorra,2015,87.9
 UAE,2015,90.5
 Argentina,2015,68.0
 Armenia,2015,59.1
-American Samoa,2015,0.0
 Antigua and Barbuda,2015,70.0
 Australia,2015,84.6
 Austria,2015,83.9
@@ -5392,7 +5342,6 @@ Gabon,2015,45.8
 UK,2015,92.0
 Georgia,2015,47.6
 Ghana,2015,23.0
-Gibraltar,2015,0.0
 Guinea,2015,9.2
 Gambia,2015,17.6
 Guinea-Bissau,2015,6.1
@@ -5544,7 +5493,6 @@ Andorra,2016,89.7
 UAE,2016,90.6
 Argentina,2016,71.0
 Armenia,2016,64.3
-American Samoa,2016,0.0
 Antigua and Barbuda,2016,73.0
 Australia,2016,86.5
 Austria,2016,84.3
@@ -5605,7 +5553,6 @@ Gabon,2016,48.1
 UK,2016,94.8
 Georgia,2016,58.5
 Ghana,2016,28.0
-Gibraltar,2016,94.4
 Guinea,2016,13.1
 Gambia,2016,19.9
 Guinea-Bissau,2016,13.8
@@ -5757,7 +5704,6 @@ Andorra,2017,91.6
 UAE,2017,94.8
 Argentina,2017,74.3
 Armenia,2017,64.7
-American Samoa,2017,0.0
 Antigua and Barbuda,2017,76.2
 Australia,2017,86.5
 Austria,2017,87.9
@@ -5818,7 +5764,6 @@ Gabon,2017,50.3
 UK,2017,90.4
 Georgia,2017,59.7
 Ghana,2017,37.9
-Gibraltar,2017,0.0
 Guinea,2017,18.7
 Gambia,2017,22.5
 Guinea-Bissau,2017,14.8
@@ -5970,7 +5915,6 @@ Andorra,2018,0.0
 UAE,2018,98.5
 Argentina,2018,77.7
 Armenia,2018,68.2
-American Samoa,2018,0.0
 Antigua and Barbuda,2018,79.6
 Australia,2018,90.0
 Austria,2018,87.5
@@ -6031,7 +5975,6 @@ Gabon,2018,59.6
 UK,2018,90.7
 Georgia,2018,62.7
 Ghana,2018,43.0
-Gibraltar,2018,0.0
 Guinea,2018,21.8
 Gambia,2018,28.3
 Guinea-Bissau,2018,15.7
@@ -6183,7 +6126,6 @@ Andorra,2019,90.7
 UAE,2019,99.2
 Argentina,2019,79.9
 Armenia,2019,66.5
-American Samoa,2019,0.0
 Antigua and Barbuda,2019,83.2
 Australia,2019,93.6
 Austria,2019,87.8
@@ -6244,7 +6186,6 @@ Gabon,2019,68.7
 UK,2019,92.5
 Georgia,2019,68.8
 Ghana,2019,22.1
-Gibraltar,2019,0.0
 Guinea,2019,23.4
 Gambia,2019,35.6
 Guinea-Bissau,2019,22.9
@@ -6396,7 +6337,6 @@ Andorra,2020,93.2
 UAE,2020,100.0
 Argentina,2020,85.5
 Armenia,2020,76.5
-American Samoa,2020,0.0
 Antigua and Barbuda,2020,86.9
 Australia,2020,94.7
 Austria,2020,87.5
@@ -6457,7 +6397,6 @@ Gabon,2020,72.3
 UK,2020,94.8
 Georgia,2020,72.5
 Ghana,2020,62.5
-Gibraltar,2020,0.0
 Guinea,2020,29.4
 Gambia,2020,44.8
 Guinea-Bissau,2020,28.2
@@ -6609,7 +6548,6 @@ Andorra,2021,93.9
 UAE,2021,100.0
 Argentina,2021,87.2
 Armenia,2021,78.6
-American Samoa,2021,0.0
 Antigua and Barbuda,2021,87.1
 Australia,2021,95.0
 Austria,2021,92.5
@@ -6670,7 +6608,6 @@ Gabon,2021,73.1
 UK,2021,95.3
 Georgia,2021,76.4
 Ghana,2021,68.6
-Gibraltar,2021,0.0
 Guinea,2021,31.3
 Gambia,2021,49.7
 Guinea-Bissau,2021,28.5
@@ -6822,7 +6759,6 @@ Andorra,2022,94.5
 UAE,2022,100.0
 Argentina,2022,88.4
 Armenia,2022,77.0
-American Samoa,2022,0.0
 Antigua and Barbuda,2022,91.4
 Australia,2022,94.9
 Austria,2022,93.6
@@ -6883,7 +6819,6 @@ Gabon,2022,73.7
 UK,2022,95.3
 Georgia,2022,78.7
 Ghana,2022,69.8
-Gibraltar,2022,0.0
 Guinea,2022,33.9
 Gambia,2022,54.2
 Guinea-Bissau,2022,31.6
@@ -7035,7 +6970,6 @@ Andorra,2023,0.0
 UAE,2023,100.0
 Argentina,2023,89.2
 Armenia,2023,0.0
-American Samoa,2023,0.0
 Antigua and Barbuda,2023,0.0
 Australia,2023,0.0
 Austria,2023,95.3
@@ -7096,7 +7030,6 @@ Gabon,2023,0.0
 UK,2023,0.0
 Georgia,2023,81.9
 Ghana,2023,0.0
-Gibraltar,2023,0.0
 Guinea,2023,0.0
 Gambia,2023,0.0
 Guinea-Bissau,2023,0.0
