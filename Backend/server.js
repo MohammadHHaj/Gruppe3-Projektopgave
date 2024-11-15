@@ -23,23 +23,10 @@ const server = express();
 server.use(express.static('frontend'));
 server.use(onEachRequest);
 server.get("/api/internet_usage", onGetData);
-server.get("/api/internet_wifi", onGetData);
+server.get("/api/telephones_100", onGetTelephones);
 server.listen(port, onServerReady);
 
-// async function onGetData(request, response) {
-//     const query = request.query;
-//     const year = query.start;
-//     console.log(year + "årstal hentet");
-    
-//     const dbResult = await db.query(`
-//         SELECT country,
-//         year,
-//         COALESCE(internet_usage,0.0) AS internet_usage
-//         FROM internet_acces
-//         WHERE YEAR = $1
-//         ORDER BY country ASC
-//         `)
-// };
+
 async function onGetData(request, response) {
     const year = request.query.year;  // Sørger for at få årstallet fra query-parameteren
     console.log(`${year} årstal hentet`);
@@ -54,6 +41,33 @@ async function onGetData(request, response) {
                    year,
                    COALESCE(internet_usage, 0.0) AS internet_usage
             FROM internet_acces
+            WHERE year = $1
+            ORDER BY country ASC
+            `,
+            [year]);  // Passer årstallet som parameter til SQL-forespørgslen
+
+        response.json(dbResult.rows);  // Sender resultatet tilbage som JSON
+    } catch (error) {
+        console.error('Database query failed:', error);
+        response.status(500).send('Internal server error');
+    }
+}
+
+//Ny function som henter alt data fra telephones og udvælger dataen.
+async function onGetTelephones(request, response) {
+    const year = request.query.year;  // Sørger for at få årstallet fra query-parameteren
+    console.log(`${year} årstal hentet`);
+
+    if (!year) {
+        return response.status(400).send('Year parameter is required');
+    }
+
+    try {
+        const dbResult = await db.query(`
+            SELECT country,
+                year,
+                telephones_per_100
+            FROM telephones
             WHERE year = $1
             ORDER BY country ASC
             `,
