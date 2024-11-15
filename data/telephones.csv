@@ -7,7 +7,6 @@ Andorra,1990,0.0
 UAE,1990,1.77
 Argentina,1990,0.0368
 Armenia,1990,0.0
-American Samoa,1990,0.0
 Antigua and Barbuda,1990,0.0
 Australia,1990,1.08
 Austria,1990,0.96
@@ -68,7 +67,6 @@ Gabon,1990,0.0
 UK,1990,1.95
 Georgia,1990,0.0
 Ghana,1990,0.0
-Gibraltar,1990,0.0
 Guinea,1990,0.0
 Gambia,1990,0.0
 Guinea-Bissau,1990,0.0
@@ -79,7 +77,6 @@ Greenland,1990,0.0
 Guatemala,1990,0.00323
 Guam,1990,0.0
 Guyana,1990,0.0
-"Hong Kong, China",1990,2.29
 Honduras,1990,0.0
 Croatia,1990,0.00492
 Haiti,1990,0.0
@@ -103,7 +100,7 @@ Kiribati,1990,0.0
 St. Kitts and Nevis,1990,0.0
 South Korea,1990,0.181
 Kuwait,1990,1.24
-Lao,1990,0.0
+Laos,1990,0.0
 Lebanon,1990,0.0
 Liberia,1990,0.0
 Libya,1990,0.0
@@ -114,7 +111,6 @@ Lesotho,1990,0.0
 Lithuania,1990,0.0
 Luxembourg,1990,0.216
 Latvia,1990,0.0
-"Macao, China",1990,0.637
 Morocco,1990,0.00364
 Monaco,1990,0.0
 Moldova,1990,0.0
@@ -171,7 +167,7 @@ San Marino,1990,0.0
 Somalia,1990,0.0
 Sao Tome and Principe,1990,0.0
 Suriname,1990,0.0
-Slovak Republic,1990,0.0
+Slovakia,1990,0.0
 Slovenia,1990,0.0
 Sweden,1990,5.4
 Eswatini,1990,0.0
@@ -214,7 +210,6 @@ Andorra,1991,0.0
 UAE,1991,2.14
 Argentina,1991,0.0755
 Armenia,1991,0.0
-American Samoa,1991,0.0
 Australia,1991,1.69
 Austria,1991,1.49
 Azerbaijan,1991,0.0
@@ -274,7 +269,6 @@ Gabon,1991,0.0
 UK,1991,2.2
 Georgia,1991,0.0
 Ghana,1991,0.0
-Gibraltar,1991,0.0
 Guinea,1991,0.0
 Gambia,1991,0.0
 Guinea-Bissau,1991,0.0
@@ -285,7 +279,6 @@ Greenland,1991,0.0
 Guatemala,1991,0.0131
 Guam,1991,0.616
 Guyana,1991,0.0
-"Hong Kong, China",1991,3.2
 Honduras,1991,0.0
 Croatia,1991,0.0417
 Haiti,1991,0.0
@@ -308,7 +301,7 @@ Cambodia,1991,0.0
 Kiribati,1991,0.0
 South Korea,1991,0.373
 Kuwait,1991,3.21
-Lao,1991,0.0
+Laos,1991,0.0
 Lebanon,1991,0.0
 Liberia,1991,0.0
 Libya,1991,0.0
@@ -317,7 +310,6 @@ Lesotho,1991,0.0
 Lithuania,1991,0.0
 Luxembourg,1991,0.295
 Latvia,1991,0.0
-"Macao, China",1991,1.34
 Morocco,1991,0.00594
 Monaco,1991,0.0
 Moldova,1991,0.0
@@ -371,7 +363,7 @@ El Salvador,1991,0.0
 Somalia,1991,0.0
 Sao Tome and Principe,1991,0.0
 Suriname,1991,0.0
-Slovak Republic,1991,0.00225
+Slovakia,1991,0.00225
 Slovenia,1991,0.0263
 Sweden,1991,6.61
 Eswatini,1991,0.0
@@ -410,7 +402,6 @@ Andorra,1992,1.34
 UAE,1992,2.31
 Argentina,1992,0.139
 Armenia,1992,0.0
-American Samoa,1992,1.4
 Australia,1992,2.85
 Austria,1992,2.2
 Azerbaijan,1992,0.0
@@ -469,7 +460,6 @@ Gabon,1992,0.027
 UK,1992,2.62
 Georgia,1992,0.0
 Ghana,1992,0.00246
-Gibraltar,1992,0.0
 Guinea,1992,0.0
 Gambia,1992,0.0181
 Guinea-Bissau,1992,0.0
@@ -480,7 +470,6 @@ Greenland,1992,0.307
 Guatemala,1992,0.0224
 Guam,1992,0.909
 Guyana,1992,0.113
-"Hong Kong, China",1992,3.88
 Honduras,1992,0.0
 Croatia,1992,0.132
 Haiti,1992,0.0
@@ -503,7 +492,7 @@ Cambodia,1992,0.0
 Kiribati,1992,0.0
 South Korea,1992,0.608
 Kuwait,1992,3.15
-Lao,1992,0.00636
+Laos,1992,0.00636
 Lebanon,1992,0.0
 Liberia,1992,0.0
 Libya,1992,0.0
@@ -512,7 +501,6 @@ Lesotho,1992,0.0
 Lithuania,1992,0.00703
 Luxembourg,1992,0.286
 Latvia,1992,0.0386
-"Macao, China",1992,2.82
 Morocco,1992,0.0125
 Monaco,1992,0.0
 Moldova,1992,0.0
@@ -568,7 +556,7 @@ San Marino,1992,3.78
 Somalia,1992,0.0
 Sao Tome and Principe,1992,0.0
 Suriname,1992,0.0
-Slovak Republic,1992,0.029
+Slovakia,1992,0.029
 Slovenia,1992,0.176
 Sweden,1992,7.59
 Eswatini,1992,0.0
@@ -607,7 +595,6 @@ Andorra,1993,1.32
 UAE,1993,3.17
 Argentina,1993,0.329
 Armenia,1993,0.0
-American Samoa,1993,1.76
 Australia,1993,3.91
 Austria,1993,2.79
 Azerbaijan,1993,0.0
@@ -666,7 +653,6 @@ Gabon,1993,0.113
 UK,1993,3.93
 Georgia,1993,0.0
 Ghana,1993,0.0105
-Gibraltar,1993,0.0
 Guinea,1993,0.0006
 Gambia,1993,0.0391
 Guinea-Bissau,1993,0.0
@@ -677,7 +663,6 @@ Greenland,1993,0.786
 Guatemala,1993,0.0304
 Guam,1993,1.31
 Guyana,1993,0.138
-"Hong Kong, China",1993,4.78
 Honduras,1993,0.0
 Croatia,1993,0.237
 Haiti,1993,0.0
@@ -700,7 +685,7 @@ Cambodia,1993,0.047
 Kiribati,1993,0.0
 South Korea,1993,1.05
 Kuwait,1993,3.89
-Lao,1993,0.00726
+Laos,1993,0.00726
 Lebanon,1993,0.0
 Liberia,1993,0.0
 Libya,1993,0.0
@@ -709,7 +694,6 @@ Lesotho,1993,0.0
 Lithuania,1993,0.0328
 Luxembourg,1993,1.28
 Latvia,1993,0.144
-"Macao, China",1993,3.98
 Morocco,1993,0.0257
 Monaco,1993,3.71
 Moldova,1993,0.0
@@ -766,7 +750,7 @@ San Marino,1993,5.38
 Somalia,1993,0.0
 Sao Tome and Principe,1993,0.0
 Suriname,1993,0.255
-Slovak Republic,1993,0.0587
+Slovakia,1993,0.0587
 Slovenia,1993,0.326
 Sweden,1993,8.92
 Eswatini,1993,0.0
@@ -805,7 +789,6 @@ Andorra,1994,1.28
 UAE,1994,3.93
 Argentina,1994,0.699
 Armenia,1994,0.0
-American Samoa,1994,2.29
 Australia,1994,6.85
 Austria,1994,3.51
 Azerbaijan,1994,0.00639
@@ -863,7 +846,6 @@ Gabon,1994,0.236
 UK,1994,6.82
 Georgia,1994,0.0
 Ghana,1994,0.0196
-Gibraltar,1994,0.0
 Guinea,1994,0.0112
 Gambia,1994,0.0673
 Guinea-Bissau,1994,0.0
@@ -874,7 +856,6 @@ Greenland,1994,1.73
 Guatemala,1994,0.104
 Guam,1994,2.77
 Guyana,1994,0.167
-"Hong Kong, China",1994,7.86
 Honduras,1994,0.0
 Croatia,1994,0.45
 Haiti,1994,0.0
@@ -897,7 +878,7 @@ Cambodia,1994,0.0963
 Kiribati,1994,0.0
 South Korea,1994,2.13
 Kuwait,1994,5.19
-Lao,1994,0.013
+Laos,1994,0.013
 Lebanon,1994,0.0
 Liberia,1994,0.0
 Libya,1994,0.0
@@ -907,7 +888,6 @@ Lesotho,1994,0.0
 Lithuania,1994,0.12
 Luxembourg,1994,3.21
 Latvia,1994,0.321
-"Macao, China",1994,5.52
 Morocco,1994,0.0519
 Monaco,1994,8.19
 Moldova,1994,0.0
@@ -964,7 +944,7 @@ San Marino,1994,7.74
 Somalia,1994,0.0
 Sao Tome and Principe,1994,0.0
 Suriname,1994,0.324
-Slovak Republic,1994,0.111
+Slovakia,1994,0.111
 Slovenia,1994,0.82
 Sweden,1994,15.8
 Eswatini,1994,0.0
@@ -1004,7 +984,6 @@ Andorra,1995,4.49
 UAE,1995,5.3
 Argentina,1995,1.16
 Armenia,1995,0.0
-American Samoa,1995,2.34
 Australia,1995,12.5
 Austria,1995,4.83
 Azerbaijan,1995,0.0761
@@ -1064,7 +1043,6 @@ Gabon,1995,0.357
 UK,1995,9.9
 Georgia,1995,0.00308
 Ghana,1995,0.0355
-Gibraltar,1995,2.41
 Guinea,1995,0.0127
 Gambia,1995,0.116
 Guinea-Bissau,1995,0.0
@@ -1075,7 +1053,6 @@ Greenland,1995,3.68
 Guatemala,1995,0.289
 Guam,1995,3.31
 Guyana,1995,0.165
-"Hong Kong, China",1995,12.8
 Honduras,1995,0.0
 Croatia,1995,0.701
 Haiti,1995,0.0
@@ -1098,7 +1075,7 @@ Cambodia,1995,0.129
 Kiribati,1995,0.0
 South Korea,1995,3.62
 Kuwait,1995,7.11
-Lao,1995,0.0312
+Laos,1995,0.0312
 Lebanon,1995,3.03
 Liberia,1995,0.0
 Libya,1995,0.0
@@ -1108,7 +1085,6 @@ Lesotho,1995,0.0
 Lithuania,1995,0.395
 Luxembourg,1995,6.58
 Latvia,1995,0.584
-"Macao, China",1995,9.05
 Morocco,1995,0.109
 Monaco,1995,9.55
 Moldova,1995,0.00031
@@ -1164,7 +1140,7 @@ San Marino,1995,9.4
 Somalia,1995,0.0
 Sao Tome and Principe,1995,0.0
 Suriname,1995,0.388
-Slovak Republic,1995,0.23
+Slovakia,1995,0.23
 Slovenia,1995,1.37
 Sweden,1995,22.9
 Eswatini,1995,0.0
@@ -1204,7 +1180,6 @@ Andorra,1996,8.56
 UAE,1996,7.53
 Argentina,1996,1.88
 Armenia,1996,0.00909
-American Samoa,1996,2.39
 Antigua and Barbuda,1996,1.86
 Australia,1996,21.9
 Austria,1996,7.52
@@ -1264,7 +1239,6 @@ Gabon,1996,0.591
 UK,1996,12.5
 Georgia,1996,0.0483
 Ghana,1996,0.0715
-Gibraltar,1996,3.64
 Guinea,1996,0.0124
 Gambia,1996,0.242
 Guinea-Bissau,1996,0.0
@@ -1275,7 +1249,6 @@ Greenland,1996,7.37
 Guatemala,1996,0.408
 Guam,1996,3.81
 Guyana,1996,0.159
-"Hong Kong, China",1996,21.5
 Honduras,1996,0.0387
 Croatia,1996,1.36
 Haiti,1996,0.0
@@ -1299,7 +1272,7 @@ Kiribati,1996,0.0
 St. Kitts and Nevis,1996,0.696
 South Korea,1996,6.97
 Kuwait,1996,8.87
-Lao,1996,0.0751
+Laos,1996,0.0751
 Lebanon,1996,4.91
 Liberia,1996,0.0
 Libya,1996,0.0
@@ -1309,7 +1282,6 @@ Lesotho,1996,0.0645
 Lithuania,1996,1.37
 Luxembourg,1996,10.9
 Latvia,1996,1.12
-"Macao, China",1996,11.1
 Morocco,1996,0.157
 Monaco,1996,17.0
 Moldova,1996,0.0208
@@ -1364,7 +1336,7 @@ San Marino,1996,9.03
 Somalia,1996,0.0
 Sao Tome and Principe,1996,0.0
 Suriname,1996,0.544
-Slovak Republic,1996,0.535
+Slovakia,1996,0.535
 Slovenia,1996,2.07
 Sweden,1996,28.4
 Eswatini,1996,0.0
@@ -1405,7 +1377,6 @@ Andorra,1997,13.3
 UAE,1997,11.3
 Argentina,1997,5.61
 Armenia,1997,0.153
-American Samoa,1997,2.52
 Antigua and Barbuda,1997,1.97
 Australia,1997,24.9
 Austria,1997,14.6
@@ -1465,7 +1436,6 @@ Gabon,1997,0.805
 UK,1997,15.2
 Georgia,1997,0.647
 Ghana,1997,0.12
-Gibraltar,1997,5.88
 Guinea,1997,0.0366
 Gambia,1997,0.359
 Guinea-Bissau,1997,0.0
@@ -1476,7 +1446,6 @@ Greenland,1997,11.6
 Guatemala,1997,0.589
 Guam,1997,3.68
 Guyana,1997,0.185
-"Hong Kong, China",1997,34.6
 Honduras,1997,0.235
 Croatia,1997,2.56
 Haiti,1997,0.0
@@ -1500,7 +1469,7 @@ Kiribati,1997,0.0
 St. Kitts and Nevis,1997,0.47
 South Korea,1997,15.0
 Kuwait,1997,11.9
-Lao,1997,0.0954
+Laos,1997,0.0954
 Lebanon,1997,9.1
 Liberia,1997,0.0
 Libya,1997,0.204
@@ -1510,7 +1479,6 @@ Lesotho,1997,0.177
 Lithuania,1997,4.47
 Luxembourg,1997,16.1
 Latvia,1997,3.09
-"Macao, China",1997,12.8
 Morocco,1997,0.268
 Monaco,1997,22.5
 Moldova,1997,0.0501
@@ -1565,7 +1533,7 @@ San Marino,1997,9.18
 Somalia,1997,0.0
 Sao Tome and Principe,1997,0.0
 Suriname,1997,0.499
-Slovak Republic,1997,3.73
+Slovakia,1997,3.73
 Slovenia,1997,4.7
 Sweden,1997,36.0
 Eswatini,1997,0.0
@@ -1605,7 +1573,6 @@ Andorra,1998,21.7
 UAE,1998,16.9
 Argentina,1998,7.37
 Armenia,1998,0.242
-American Samoa,1998,2.65
 Antigua and Barbuda,1998,2.07
 Australia,1998,26.4
 Austria,1998,28.7
@@ -1666,7 +1633,6 @@ Gabon,1998,0.801
 UK,1998,25.5
 Georgia,1998,1.33
 Ghana,1998,0.223
-Gibraltar,1998,8.85
 Guinea,1998,0.27
 Gambia,1998,0.372
 Guinea-Bissau,1998,0.0
@@ -1677,7 +1643,6 @@ Greenland,1998,15.9
 Guatemala,1998,0.996
 Guam,1998,8.21
 Guyana,1998,0.192
-"Hong Kong, China",1998,48.5
 Honduras,1998,0.553
 Croatia,1998,3.92
 Haiti,1998,0.124
@@ -1701,7 +1666,7 @@ Kiribati,1998,0.0256
 St. Kitts and Nevis,1998,0.995
 South Korea,1998,30.3
 Kuwait,1998,13.7
-Lao,1998,0.123
+Laos,1998,0.123
 Lebanon,1998,12.1
 Liberia,1998,0.0
 Libya,1998,0.402
@@ -1712,7 +1677,6 @@ Lesotho,1998,0.495
 Lithuania,1998,7.3
 Luxembourg,1998,30.8
 Latvia,1998,6.8
-"Macao, China",1998,19.6
 Morocco,1998,0.415
 Monaco,1998,35.6
 Moldova,1998,0.161
@@ -1767,7 +1731,7 @@ San Marino,1998,19.2
 Somalia,1998,0.0
 Sao Tome and Principe,1998,0.0
 Suriname,1998,1.3
-Slovak Republic,1998,8.66
+Slovakia,1998,8.66
 Slovenia,1998,8.13
 Sweden,1998,46.5
 Eswatini,1998,0.468
@@ -1807,7 +1771,6 @@ Andorra,1999,31.4
 UAE,1999,26.9
 Argentina,1999,10.5
 Armenia,1999,0.255
-American Samoa,1999,3.13
 Antigua and Barbuda,1999,11.5
 Australia,1999,33.6
 Austria,1999,53.2
@@ -1868,7 +1831,6 @@ Gabon,1999,0.717
 UK,1999,46.4
 Georgia,1999,3.03
 Ghana,1999,0.365
-Gibraltar,1999,13.2
 Guinea,1999,0.308
 Gambia,1999,0.38
 Guinea-Bissau,1999,0.0
@@ -1879,7 +1841,6 @@ Greenland,1999,24.1
 Guatemala,1999,2.95
 Guam,1999,12.6
 Guyana,1999,0.371
-"Hong Kong, China",1999,64.4
 Honduras,1999,1.21
 Croatia,1999,6.41
 Haiti,1999,0.305
@@ -1903,7 +1864,7 @@ Kiribati,1999,0.229
 St. Kitts and Nevis,1999,1.56
 South Korea,1999,50.4
 Kuwait,1999,16.0
-Lao,1999,0.226
+Laos,1999,0.226
 Lebanon,1999,14.8
 Liberia,1999,0.0
 Libya,1999,0.593
@@ -1914,7 +1875,6 @@ Lesotho,1999,0.602
 Lithuania,1999,9.14
 Luxembourg,1999,48.7
 Latvia,1999,11.3
-"Macao, China",1999,27.8
 Morocco,1999,1.3
 Monaco,1999,40.4
 Moldova,1999,0.418
@@ -1970,7 +1930,7 @@ San Marino,1999,36.3
 Somalia,1999,0.0
 Sao Tome and Principe,1999,0.0
 Suriname,1999,3.72
-Slovak Republic,1999,12.4
+Slovakia,1999,12.4
 Slovenia,1999,31.8
 Sweden,1999,57.9
 Eswatini,1999,1.37
@@ -2010,7 +1970,6 @@ Andorra,2000,35.6
 UAE,2000,43.6
 Argentina,2000,17.5
 Armenia,2000,0.552
-American Samoa,2000,3.42
 Antigua and Barbuda,2000,29.3
 Australia,2000,45.0
 Austria,2000,76.4
@@ -2071,7 +2030,6 @@ Gabon,2000,9.43
 UK,2000,73.8
 Georgia,2000,4.57
 Ghana,2000,0.661
-Gibraltar,2000,20.0
 Guinea,2000,0.505
 Gambia,2000,0.39
 Guinea-Bissau,2000,0.0
@@ -2082,7 +2040,6 @@ Greenland,2000,26.9
 Guatemala,2000,7.3
 Guam,2000,17.0
 Guyana,2000,5.25
-"Hong Kong, China",2000,80.9
 Honduras,2000,2.33
 Croatia,2000,22.7
 Haiti,2000,0.658
@@ -2106,7 +2063,7 @@ Kiribati,2000,0.338
 St. Kitts and Nevis,2000,2.64
 South Korea,2000,57.3
 Kuwait,2000,24.6
-Lao,2000,0.234
+Laos,2000,0.234
 Lebanon,2000,17.2
 Liberia,2000,0.0518
 Libya,2000,0.776
@@ -2117,7 +2074,6 @@ Lesotho,2000,1.08
 Lithuania,2000,14.6
 Luxembourg,2000,69.6
 Latvia,2000,16.8
-"Macao, China",2000,32.7
 Morocco,2000,8.13
 Monaco,2000,42.9
 Moldova,2000,3.27
@@ -2174,7 +2130,7 @@ San Marino,2000,54.1
 Somalia,2000,0.917
 Sao Tome and Principe,2000,0.0
 Suriname,2000,8.57
-Slovak Republic,2000,23.1
+Slovakia,2000,23.1
 Slovenia,2000,61.3
 Sweden,2000,71.8
 Eswatini,2000,3.2
@@ -2214,7 +2170,6 @@ Andorra,2001,43.4
 UAE,2001,55.3
 Argentina,2001,18.0
 Armenia,2001,0.814
-American Samoa,2001,3.7
 Antigua and Barbuda,2001,32.8
 Australia,2001,57.8
 Austria,2001,81.4
@@ -2275,7 +2230,6 @@ Gabon,2001,11.5
 UK,2001,78.3
 Georgia,2001,7.27
 Ghana,2001,1.21
-Gibraltar,2001,35.3
 Guinea,2001,0.659
 Gambia,2001,3.72
 Guinea-Bissau,2001,0.0
@@ -2286,7 +2240,6 @@ Greenland,2001,28.2
 Guatemala,2001,9.55
 Guam,2001,20.2
 Guyana,2001,9.91
-"Hong Kong, China",2001,84.9
 Honduras,2001,3.48
 Croatia,2001,38.9
 Haiti,2001,1.07
@@ -2310,7 +2263,7 @@ Kiribati,2001,0.436
 St. Kitts and Nevis,2001,4.57
 South Korea,2001,61.7
 Kuwait,2001,44.1
-Lao,2001,0.535
+Laos,2001,0.535
 Lebanon,2001,17.5
 Liberia,2001,0.0671
 Libya,2001,0.948
@@ -2321,7 +2274,6 @@ Lesotho,2001,2.85
 Lithuania,2001,28.6
 Luxembourg,2001,92.7
 Latvia,2001,27.8
-"Macao, China",2001,44.3
 Morocco,2001,16.4
 Monaco,2001,44.1
 Moldova,2001,5.36
@@ -2378,7 +2330,7 @@ San Marino,2001,58.0
 Somalia,2001,0.937
 Sao Tome and Principe,2001,0.0
 Suriname,2001,17.9
-Slovak Republic,2001,39.9
+Slovakia,2001,39.9
 Slovenia,2001,74.2
 Sweden,2001,80.7
 Eswatini,2001,5.28
@@ -2418,7 +2370,6 @@ Andorra,2002,46.3
 UAE,2002,66.8
 Argentina,2002,17.3
 Armenia,2002,2.3
-American Samoa,2002,3.5
 Antigua and Barbuda,2002,49.5
 Australia,2002,65.1
 Austria,2002,83.4
@@ -2479,7 +2430,6 @@ Gabon,2002,20.8
 UK,2002,82.9
 Georgia,2002,12.4
 Ghana,2002,1.86
-Gibraltar,2002,43.6
 Guinea,2002,1.06
 Gambia,2002,6.57
 Guinea-Bissau,2002,0.0
@@ -2490,7 +2440,6 @@ Greenland,2002,35.2
 Guatemala,2002,12.8
 Guam,2002,43.4
 Guyana,2002,10.4
-"Hong Kong, China",2002,93.4
 Honduras,2002,4.65
 Croatia,2002,51.6
 Haiti,2002,1.62
@@ -2514,7 +2463,7 @@ Kiribati,2002,0.536
 St. Kitts and Nevis,2002,10.8
 South Korea,2002,68.3
 Kuwait,2002,59.9
-Lao,2002,0.984
+Laos,2002,0.984
 Lebanon,2002,17.4
 Liberia,2002,0.163
 Libya,2002,1.3
@@ -2525,7 +2474,6 @@ Lesotho,2002,6.91
 Lithuania,2002,46.8
 Luxembourg,2002,106.0
 Latvia,2002,39.4
-"Macao, China",2002,61.4
 Morocco,2002,21.0
 Monaco,2002,45.9
 Moldova,2002,8.15
@@ -2582,7 +2530,7 @@ San Marino,2002,59.9
 Somalia,2002,1.06
 Sao Tome and Principe,2002,1.32
 Suriname,2002,21.9
-Slovak Republic,2002,54.4
+Slovakia,2002,54.4
 Slovenia,2002,84.0
 Sweden,2002,89.1
 Eswatini,2002,6.47
@@ -2624,7 +2572,6 @@ Andorra,2003,70.2
 UAE,2003,77.9
 Argentina,2003,20.5
 Armenia,2003,3.71
-American Samoa,2003,3.62
 Antigua and Barbuda,2003,59.0
 Australia,2003,72.8
 Austria,2003,89.6
@@ -2685,7 +2632,6 @@ Gabon,2003,21.8
 UK,2003,91.0
 Georgia,2003,17.7
 Ghana,2003,3.73
-Gibraltar,2003,56.2
 Guinea,2003,1.27
 Gambia,2003,9.53
 Guinea-Bissau,2003,0.0969
@@ -2696,7 +2642,6 @@ Greenland,2003,52.4
 Guatemala,2003,16.2
 Guam,2003,48.8
 Guyana,2003,18.1
-"Hong Kong, China",2003,107.0
 Honduras,2003,5.27
 Croatia,2003,56.9
 Haiti,2003,3.63
@@ -2720,7 +2665,7 @@ Kiribati,2003,0.558
 St. Kitts and Nevis,2003,47.4
 South Korea,2003,70.7
 Kuwait,2003,67.6
-Lao,2003,1.97
+Laos,2003,1.97
 Lebanon,2003,17.7
 Liberia,2003,1.53
 Libya,2003,2.29
@@ -2731,7 +2676,6 @@ Lesotho,2003,6.32
 Lithuania,2003,60.6
 Luxembourg,2003,119.0
 Latvia,2003,53.2
-"Macao, China",2003,78.7
 Morocco,2003,24.7
 Monaco,2003,46.7
 Moldova,2003,11.6
@@ -2788,7 +2732,7 @@ San Marino,2003,59.1
 Somalia,2003,2.05
 Sao Tome and Principe,2003,3.13
 Suriname,2003,33.5
-Slovak Republic,2003,68.5
+Slovakia,2003,68.5
 Slovenia,2003,87.4
 Sweden,2003,98.2
 Eswatini,2003,8.03
@@ -2830,7 +2774,6 @@ Andorra,2004,75.9
 UAE,2004,92.2
 Argentina,2004,34.9
 Armenia,2004,6.63
-American Samoa,2004,3.9
 Antigua and Barbuda,2004,68.4
 Australia,2004,82.7
 Austria,2004,97.8
@@ -2891,7 +2834,6 @@ Gabon,2004,34.5
 UK,2004,99.5
 Georgia,2004,21.1
 Ghana,2004,7.74
-Gibraltar,2004,64.0
 Guinea,2004,1.73
 Gambia,2004,10.9
 Guinea-Bissau,2004,2.93
@@ -2902,7 +2844,6 @@ Greenland,2004,68.6
 Guatemala,2004,24.7
 Guam,2004,59.8
 Guyana,2004,22.6
-"Hong Kong, China",2004,119.0
 Honduras,2004,9.58
 Croatia,2004,63.8
 Haiti,2004,4.46
@@ -2926,7 +2867,7 @@ Kiribati,2004,0.639
 St. Kitts and Nevis,2004,62.3
 South Korea,2004,76.7
 Kuwait,2004,82.4
-Lao,2004,3.54
+Laos,2004,3.54
 Lebanon,2004,19.3
 Liberia,2004,3.02
 Libya,2004,8.79
@@ -2937,7 +2878,6 @@ Lesotho,2004,9.88
 Lithuania,2004,89.1
 Luxembourg,2004,103.0
 Latvia,2004,67.9
-"Macao, China",2004,90.9
 Morocco,2004,31.0
 Monaco,2004,48.9
 Moldova,2004,19.4
@@ -2995,7 +2935,7 @@ Somalia,2004,4.94
 Serbia,2004,51.2
 Sao Tome and Principe,2004,4.91
 Suriname,2004,41.7
-Slovak Republic,2004,79.5
+Slovakia,2004,79.5
 Slovenia,2004,92.6
 Sweden,2004,97.6
 Eswatini,2004,13.6
@@ -3097,7 +3037,6 @@ Gabon,2005,50.5
 UK,2005,108.0
 Georgia,2005,29.6
 Ghana,2005,12.8
-Gibraltar,2005,68.6
 Guinea,2005,2.07
 Gambia,2005,14.9
 Guinea-Bissau,2005,7.16
@@ -3107,7 +3046,6 @@ Grenada,2005,42.5
 Greenland,2005,81.7
 Guatemala,2005,34.3
 Guyana,2005,37.0
-"Hong Kong, China",2005,123.0
 Honduras,2005,16.9
 Croatia,2005,82.4
 Haiti,2005,5.49
@@ -3132,7 +3070,7 @@ St. Kitts and Nevis,2005,109.0
 South Korea,2005,80.1
 Kosovo,2005,32.3
 Kuwait,2005,61.8
-Lao,2005,11.2
+Laos,2005,11.2
 Lebanon,2005,21.4
 Liberia,2005,4.9
 Libya,2005,34.3
@@ -3143,7 +3081,6 @@ Lesotho,2005,12.6
 Lithuania,2005,129.0
 Luxembourg,2005,110.0
 Latvia,2005,83.8
-"Macao, China",2005,109.0
 Morocco,2005,40.7
 Monaco,2005,53.5
 Moldova,2005,27.2
@@ -3200,7 +3137,7 @@ Somalia,2005,4.78
 Serbia,2005,73.7
 Sao Tome and Principe,2005,7.39
 Suriname,2005,45.1
-Slovak Republic,2005,84.5
+Slovakia,2005,84.5
 Slovenia,2005,87.8
 Sweden,2005,101.0
 Eswatini,2005,18.7
@@ -3301,7 +3238,6 @@ Gabon,2006,59.8
 UK,2006,115.0
 Georgia,2006,43.3
 Ghana,2006,22.5
-Gibraltar,2006,74.4
 Gambia,2006,23.6
 Guinea-Bissau,2006,11.1
 Equatorial Guinea,2006,13.3
@@ -3310,7 +3246,6 @@ Grenada,2006,41.6
 Greenland,2006,94.9
 Guatemala,2006,53.5
 Guyana,2006,52.7
-"Hong Kong, China",2006,136.0
 Honduras,2006,28.9
 Croatia,2006,99.5
 Haiti,2006,13.0
@@ -3335,7 +3270,7 @@ St. Kitts and Nevis,2006,109.0
 South Korea,2006,83.7
 Kosovo,2006,32.3
 Kuwait,2006,49.9
-Lao,2006,17.0
+Laos,2006,17.0
 Lebanon,2006,23.4
 Liberia,2006,8.1
 Libya,2006,65.8
@@ -3346,7 +3281,6 @@ Lesotho,2006,18.1
 Lithuania,2006,142.0
 Luxembourg,2006,151.0
 Latvia,2006,99.1
-"Macao, China",2006,127.0
 Morocco,2006,52.0
 Monaco,2006,57.2
 Moldova,2006,34.4
@@ -3402,7 +3336,7 @@ Somalia,2006,5.1
 Serbia,2006,89.4
 Sao Tome and Principe,2006,11.1
 Suriname,2006,61.3
-Slovak Republic,2006,91.0
+Slovakia,2006,91.0
 Slovenia,2006,90.4
 Sweden,2006,106.0
 Eswatini,2006,23.2
@@ -3502,7 +3436,6 @@ Gabon,2007,75.4
 UK,2007,121.0
 Georgia,2007,66.5
 Ghana,2007,32.1
-Gibraltar,2007,80.0
 Guinea,2007,20.9
 Gambia,2007,45.3
 Guinea-Bissau,2007,20.4
@@ -3512,7 +3445,6 @@ Grenada,2007,46.0
 Greenland,2007,117.0
 Guatemala,2007,86.9
 Guyana,2007,71.2
-"Hong Kong, China",2007,154.0
 Honduras,2007,52.8
 Croatia,2007,114.0
 Haiti,2007,26.5
@@ -3537,7 +3469,7 @@ St. Kitts and Nevis,2007,137.0
 South Korea,2007,92.0
 Kosovo,2007,32.3
 Kuwait,2007,56.9
-Lao,2007,24.5
+Laos,2007,24.5
 Lebanon,2007,26.2
 Liberia,2007,15.5
 Libya,2007,73.8
@@ -3548,7 +3480,6 @@ Lesotho,2007,24.3
 Lithuania,2007,150.0
 Luxembourg,2007,143.0
 Latvia,2007,102.0
-"Macao, China",2007,154.0
 Morocco,2007,64.3
 Monaco,2007,64.1
 Moldova,2007,48.6
@@ -3605,7 +3536,7 @@ Somalia,2007,5.4
 Serbia,2007,114.0
 Sao Tome and Principe,2007,17.7
 Suriname,2007,72.0
-Slovak Republic,2007,113.0
+Slovakia,2007,113.0
 Slovenia,2007,95.3
 Sweden,2007,110.0
 Eswatini,2007,35.1
@@ -3706,7 +3637,6 @@ Gabon,2008,81.3
 UK,2008,121.0
 Georgia,2008,71.0
 Ghana,2008,47.6
-Gibraltar,2008,85.5
 Guinea,2008,28.1
 Gambia,2008,64.1
 Guinea-Bissau,2008,33.6
@@ -3716,7 +3646,6 @@ Grenada,2008,53.4
 Greenland,2008,98.7
 Guatemala,2008,107.0
 Guyana,2008,59.4
-"Hong Kong, China",2008,164.0
 Honduras,2008,76.7
 Croatia,2008,104.0
 Haiti,2008,33.4
@@ -3741,7 +3670,7 @@ St. Kitts and Nevis,2008,158.0
 South Korea,2008,94.2
 Kosovo,2008,32.3
 Kuwait,2008,56.6
-Lao,2008,33.0
+Laos,2008,33.0
 Lebanon,2008,29.2
 Liberia,2008,22.6
 Libya,2008,118.0
@@ -3752,7 +3681,6 @@ Lesotho,2008,29.7
 Lithuania,2008,156.0
 Luxembourg,2008,145.0
 Latvia,2008,107.0
-"Macao, China",2008,176.0
 Morocco,2008,72.3
 Monaco,2008,69.0
 Moldova,2008,63.6
@@ -3809,7 +3737,7 @@ Somalia,2008,5.48
 Serbia,2008,131.0
 Sao Tome and Principe,2008,29.1
 Suriname,2008,123.0
-Slovak Republic,2008,103.0
+Slovakia,2008,103.0
 Slovenia,2008,101.0
 Sweden,2008,109.0
 Eswatini,2008,48.8
@@ -3908,7 +3836,6 @@ Gabon,2009,87.7
 UK,2009,123.0
 Georgia,2009,73.6
 Ghana,2009,60.6
-Gibraltar,2009,92.8
 Guinea,2009,34.8
 Gambia,2009,69.9
 Guinea-Bissau,2009,36.7
@@ -3918,7 +3845,6 @@ Grenada,2009,101.0
 Greenland,2009,94.7
 Guatemala,2009,121.0
 Guyana,2009,65.0
-"Hong Kong, China",2009,178.0
 Honduras,2009,101.0
 Croatia,2009,107.0
 Haiti,2009,37.5
@@ -3943,7 +3869,7 @@ St. Kitts and Nevis,2009,160.0
 South Korea,2009,98.7
 Kosovo,2009,32.3
 Kuwait,2009,93.7
-Lao,2009,51.9
+Laos,2009,51.9
 Lebanon,2009,48.3
 Liberia,2009,27.8
 Libya,2009,150.0
@@ -3954,7 +3880,6 @@ Lesotho,2009,32.9
 Lithuania,2009,156.0
 Luxembourg,2009,145.0
 Latvia,2009,108.0
-"Macao, China",2009,191.0
 Morocco,2009,79.3
 Monaco,2009,71.0
 Moldova,2009,57.0
@@ -4012,7 +3937,7 @@ Somalia,2009,5.46
 Serbia,2009,135.0
 Sao Tome and Principe,2009,45.4
 Suriname,2009,141.0
-Slovak Republic,2009,102.0
+Slovakia,2009,102.0
 Slovenia,2009,103.0
 Sweden,2009,112.0
 Eswatini,2009,60.7
@@ -4112,7 +4037,6 @@ Gabon,2010,94.1
 UK,2010,122.0
 Georgia,2010,104.0
 Ghana,2010,68.2
-Gibraltar,2010,96.0
 Guinea,2010,38.9
 Gambia,2010,76.3
 Guinea-Bissau,2010,43.2
@@ -4122,7 +4046,6 @@ Grenada,2010,107.0
 Greenland,2010,102.0
 Guatemala,2010,124.0
 Guyana,2010,74.9
-"Hong Kong, China",2010,193.0
 Honduras,2010,112.0
 Croatia,2010,113.0
 Haiti,2010,40.6
@@ -4147,7 +4070,7 @@ St. Kitts and Nevis,2010,169.0
 South Korea,2010,104.0
 Kosovo,2010,32.3
 Kuwait,2010,135.0
-Lao,2010,63.3
+Laos,2010,63.3
 Lebanon,2010,57.3
 Liberia,2010,39.1
 Libya,2010,168.0
@@ -4158,7 +4081,6 @@ Lesotho,2010,48.8
 Lithuania,2010,156.0
 Luxembourg,2010,143.0
 Latvia,2010,110.0
-"Macao, China",2010,201.0
 Morocco,2010,98.9
 Monaco,2010,70.6
 Moldova,2010,69.3
@@ -4218,7 +4140,7 @@ Serbia,2010,136.0
 South Sudan,2010,15.4
 Sao Tome and Principe,2010,56.4
 Suriname,2010,95.4
-Slovak Republic,2010,110.0
+Slovakia,2010,110.0
 Slovenia,2010,103.0
 Sweden,2010,117.0
 Eswatini,2010,66.0
@@ -4317,7 +4239,6 @@ Gabon,2011,134.0
 UK,2011,122.0
 Georgia,2011,116.0
 Ghana,2011,80.8
-Gibraltar,2011,103.0
 Guinea,2011,46.2
 Gambia,2011,70.1
 Guinea-Bissau,2011,45.5
@@ -4327,7 +4248,6 @@ Grenada,2011,105.0
 Greenland,2011,104.0
 Guatemala,2011,131.0
 Guyana,2011,71.0
-"Hong Kong, China",2011,213.0
 Honduras,2011,93.5
 Croatia,2011,118.0
 Haiti,2011,42.2
@@ -4351,7 +4271,7 @@ Kiribati,2011,12.5
 St. Kitts and Nevis,2011,162.0
 South Korea,2011,107.0
 Kuwait,2011,157.0
-Lao,2011,85.4
+Laos,2011,85.4
 Lebanon,2011,68.5
 Liberia,2011,48.3
 Libya,2011,162.0
@@ -4362,7 +4282,6 @@ Lesotho,2011,60.5
 Lithuania,2011,159.0
 Luxembourg,2011,148.0
 Latvia,2011,111.0
-"Macao, China",2011,237.0
 Morocco,2011,112.0
 Monaco,2011,93.6
 Moldova,2011,89.5
@@ -4422,7 +4341,7 @@ Serbia,2011,141.0
 South Sudan,2011,17.6
 Sao Tome and Principe,2011,61.8
 Suriname,2011,96.6
-Slovak Republic,2011,111.0
+Slovakia,2011,111.0
 Slovenia,2011,105.0
 Sweden,2011,121.0
 Eswatini,2011,69.3
@@ -4522,7 +4441,6 @@ Gabon,2012,139.0
 UK,2012,123.0
 Georgia,2012,124.0
 Ghana,2012,95.4
-Gibraltar,2012,108.0
 Guinea,2012,51.8
 Gambia,2012,74.1
 Guinea-Bissau,2012,63.5
@@ -4532,7 +4450,6 @@ Grenada,2012,112.0
 Greenland,2012,106.0
 Guatemala,2012,137.0
 Guyana,2012,73.5
-"Hong Kong, China",2012,227.0
 Honduras,2012,83.8
 Croatia,2012,115.0
 Haiti,2012,60.3
@@ -4556,7 +4473,7 @@ Kiribati,2012,16.1
 St. Kitts and Nevis,2012,159.0
 South Korea,2012,108.0
 Kuwait,2012,150.0
-Lao,2012,66.1
+Laos,2012,66.1
 Lebanon,2012,72.5
 Liberia,2012,54.9
 Libya,2012,163.0
@@ -4567,7 +4484,6 @@ Lesotho,2012,75.2
 Lithuania,2012,163.0
 Luxembourg,2012,143.0
 Latvia,2012,128.0
-"Macao, China",2012,277.0
 Morocco,2012,117.0
 Monaco,2012,95.7
 Moldova,2012,102.0
@@ -4627,11 +4543,10 @@ Serbia,2012,127.0
 South Sudan,2012,21.5
 Sao Tome and Principe,2012,64.3
 Suriname,2012,102.0
-Slovak Republic,2012,113.0
+Slovakia,2012,113.0
 Slovenia,2012,108.0
 Sweden,2012,124.0
 Eswatini,2012,72.4
-Sint Maarten (Dutch part),2012,196.0
 Seychelles,2012,143.0
 Syria,2012,57.4
 Chad,2012,34.5
@@ -4738,7 +4653,6 @@ Grenada,2013,114.0
 Greenland,2013,108.0
 Guatemala,2013,141.0
 Guyana,2013,74.3
-"Hong Kong, China",2013,233.0
 Honduras,2013,86.7
 Croatia,2013,110.0
 Haiti,2013,69.8
@@ -4762,7 +4676,7 @@ Kiribati,2013,17.7
 St. Kitts and Nevis,2013,161.0
 South Korea,2013,109.0
 Kuwait,2013,176.0
-Lao,2013,69.9
+Laos,2013,69.9
 Lebanon,2013,68.4
 Liberia,2013,57.6
 Libya,2013,171.0
@@ -4773,7 +4687,6 @@ Lesotho,2013,86.3
 Lithuania,2013,151.0
 Luxembourg,2013,145.0
 Latvia,2013,126.0
-"Macao, China",2013,290.0
 Morocco,2013,126.0
 Monaco,2013,100.0
 Moldova,2013,108.0
@@ -4832,7 +4745,7 @@ Serbia,2013,129.0
 South Sudan,2013,25.7
 Sao Tome and Principe,2013,64.7
 Suriname,2013,154.0
-Slovak Republic,2013,115.0
+Slovakia,2013,115.0
 Slovenia,2013,110.0
 Sweden,2013,125.0
 Eswatini,2013,79.9
@@ -4932,7 +4845,6 @@ Gabon,2014,149.0
 UK,2014,121.0
 Georgia,2014,143.0
 Ghana,2014,108.0
-Gibraltar,2014,117.0
 Guinea,2014,76.6
 Gambia,2014,104.0
 Guinea-Bissau,2014,63.6
@@ -4942,7 +4854,6 @@ Grenada,2014,99.3
 Greenland,2014,109.0
 Guatemala,2014,108.0
 Guyana,2014,75.5
-"Hong Kong, China",2014,231.0
 Honduras,2014,84.6
 Croatia,2014,104.0
 Haiti,2014,65.0
@@ -4966,7 +4877,7 @@ Kiribati,2014,26.1
 St. Kitts and Nevis,2014,136.0
 South Korea,2014,113.0
 Kuwait,2014,202.0
-Lao,2014,69.0
+Laos,2014,69.0
 Lebanon,2014,69.9
 Liberia,2014,71.4
 Libya,2014,139.0
@@ -4977,7 +4888,6 @@ Lesotho,2014,102.0
 Lithuania,2014,142.0
 Luxembourg,2014,144.0
 Latvia,2014,119.0
-"Macao, China",2014,307.0
 Morocco,2014,129.0
 Monaco,2014,93.3
 Moldova,2014,112.0
@@ -5037,7 +4947,7 @@ Serbia,2014,131.0
 South Sudan,2014,25.6
 Sao Tome and Principe,2014,65.1
 Suriname,2014,163.0
-Slovak Republic,2014,118.0
+Slovakia,2014,118.0
 Slovenia,2014,112.0
 Sweden,2014,126.0
 Eswatini,2014,81.4
@@ -5138,7 +5048,6 @@ Gabon,2015,139.0
 UK,2015,122.0
 Georgia,2015,147.0
 Ghana,2015,121.0
-Gibraltar,2015,127.0
 Guinea,2015,92.6
 Gambia,2015,121.0
 Guinea-Bissau,2015,69.2
@@ -5148,7 +5057,6 @@ Grenada,2015,101.0
 Greenland,2015,109.0
 Guatemala,2015,113.0
 Guyana,2015,71.9
-"Hong Kong, China",2015,226.0
 Honduras,2015,86.6
 Croatia,2015,104.0
 Haiti,2015,69.1
@@ -5172,7 +5080,7 @@ Kiribati,2015,35.1
 St. Kitts and Nevis,2015,153.0
 South Korea,2015,116.0
 Kuwait,2015,196.0
-Lao,2015,54.9
+Laos,2015,54.9
 Lebanon,2015,72.8
 Liberia,2015,79.2
 Libya,2015,157.0
@@ -5183,7 +5091,6 @@ Lesotho,2015,101.0
 Lithuania,2015,141.0
 Luxembourg,2015,142.0
 Latvia,2015,130.0
-"Macao, China",2015,308.0
 Morocco,2015,124.0
 Monaco,2015,92.5
 Moldova,2015,113.0
@@ -5244,7 +5151,7 @@ Serbia,2015,129.0
 South Sudan,2015,25.9
 Sao Tome and Principe,2015,92.0
 Suriname,2015,130.0
-Slovak Republic,2015,123.0
+Slovakia,2015,123.0
 Slovenia,2015,113.0
 Sweden,2015,128.0
 Eswatini,2015,83.0
@@ -5344,7 +5251,6 @@ Gabon,2016,142.0
 UK,2016,120.0
 Georgia,2016,147.0
 Ghana,2016,130.0
-Gibraltar,2016,126.0
 Guinea,2016,93.1
 Gambia,2016,122.0
 Guinea-Bissau,2016,70.1
@@ -5353,7 +5259,6 @@ Greece,2016,117.0
 Grenada,2016,99.2
 Guatemala,2016,112.0
 Guyana,2016,77.0
-"Hong Kong, China",2016,236.0
 Honduras,2016,82.8
 Croatia,2016,105.0
 Haiti,2016,60.7
@@ -5377,7 +5282,7 @@ Kiribati,2016,43.9
 St. Kitts and Nevis,2016,160.0
 South Korea,2016,119.0
 Kuwait,2016,189.0
-Lao,2016,57.4
+Laos,2016,57.4
 Lebanon,2016,68.3
 Liberia,2016,66.2
 Libya,2016,122.0
@@ -5388,7 +5293,6 @@ Lesotho,2016,106.0
 Lithuania,2016,143.0
 Luxembourg,2016,131.0
 Latvia,2016,134.0
-"Macao, China",2016,314.0
 Morocco,2016,118.0
 Monaco,2016,89.8
 Moldova,2016,117.0
@@ -5446,7 +5350,7 @@ Serbia,2016,129.0
 South Sudan,2016,24.4
 Sao Tome and Principe,2016,87.0
 Suriname,2016,139.0
-Slovak Republic,2016,129.0
+Slovakia,2016,129.0
 Slovenia,2016,114.0
 Sweden,2016,126.0
 Eswatini,2016,87.1
@@ -5546,7 +5450,6 @@ Gabon,2017,124.0
 UK,2017,120.0
 Georgia,2017,146.0
 Ghana,2017,122.0
-Gibraltar,2017,126.0
 Guinea,2017,95.6
 Gambia,2017,125.0
 Guinea-Bissau,2017,76.3
@@ -5556,7 +5459,6 @@ Grenada,2017,93.6
 Greenland,2017,111.0
 Guatemala,2017,121.0
 Guyana,2017,84.3
-"Hong Kong, China",2017,247.0
 Honduras,2017,85.5
 Croatia,2017,103.0
 Haiti,2017,58.0
@@ -5580,7 +5482,7 @@ Kiribati,2017,38.3
 St. Kitts and Nevis,2017,161.0
 South Korea,2017,124.0
 Kuwait,2017,173.0
-Lao,2017,53.0
+Laos,2017,53.0
 Lebanon,2017,72.0
 Liberia,2017,55.5
 Libya,2017,94.4
@@ -5591,7 +5493,6 @@ Lesotho,2017,110.0
 Lithuania,2017,150.0
 Luxembourg,2017,133.0
 Latvia,2017,126.0
-"Macao, China",2017,321.0
 Morocco,2017,123.0
 Monaco,2017,89.0
 Moldova,2017,118.0
@@ -5650,7 +5551,7 @@ Serbia,2017,123.0
 South Sudan,2017,26.2
 Sao Tome and Principe,2017,83.6
 Suriname,2017,135.0
-Slovak Republic,2017,131.0
+Slovakia,2017,131.0
 Slovenia,2017,116.0
 Sweden,2017,124.0
 Eswatini,2017,89.2
@@ -5744,7 +5645,6 @@ Gabon,2018,134.0
 UK,2018,119.0
 Georgia,2018,145.0
 Ghana,2018,133.0
-Gibraltar,2018,126.0
 Guinea,2018,95.7
 Gambia,2018,130.0
 Guinea-Bissau,2018,76.9
@@ -5753,7 +5653,6 @@ Greece,2018,114.0
 Grenada,2018,97.4
 Greenland,2018,110.0
 Guatemala,2018,121.0
-"Hong Kong, China",2018,266.0
 Honduras,2018,77.5
 Croatia,2018,105.0
 Haiti,2018,60.0
@@ -5777,7 +5676,7 @@ Kiribati,2018,43.6
 St. Kitts and Nevis,2018,150.0
 South Korea,2018,128.0
 Kuwait,2018,164.0
-Lao,2018,51.5
+Laos,2018,51.5
 Lebanon,2018,74.3
 St. Lucia,2018,104.0
 Liechtenstein,2018,124.0
@@ -5786,7 +5685,6 @@ Lesotho,2018,72.0
 Lithuania,2018,131.0
 Luxembourg,2018,131.0
 Latvia,2018,107.0
-"Macao, China",2018,335.0
 Morocco,2018,124.0
 Monaco,2018,88.3
 Moldova,2018,116.0
@@ -5841,7 +5739,7 @@ Serbia,2018,121.0
 South Sudan,2018,18.4
 Sao Tome and Principe,2018,76.9
 Suriname,2018,127.0
-Slovak Republic,2018,133.0
+Slovakia,2018,133.0
 Slovenia,2018,117.0
 Sweden,2018,124.0
 Eswatini,2018,89.9
@@ -5942,7 +5840,6 @@ Gabon,2019,133.0
 UK,2019,121.0
 Georgia,2019,143.0
 Ghana,2019,130.0
-Gibraltar,2019,124.0
 Guinea,2019,100.0
 Gambia,2019,103.0
 Guinea-Bissau,2019,80.7
@@ -5952,7 +5849,6 @@ Grenada,2019,94.7
 Greenland,2019,110.0
 Guatemala,2019,122.0
 Guyana,2019,97.4
-"Hong Kong, China",2019,286.0
 Honduras,2019,75.9
 Croatia,2019,107.0
 Haiti,2019,61.3
@@ -5976,7 +5872,7 @@ Kiribati,2019,44.0
 St. Kitts and Nevis,2019,137.0
 South Korea,2019,133.0
 Kuwait,2019,165.0
-Lao,2019,64.3
+Laos,2019,64.3
 Lebanon,2019,73.3
 Liberia,2019,38.9
 Libya,2019,174.0
@@ -5987,7 +5883,6 @@ Lesotho,2019,75.6
 Lithuania,2019,130.0
 Luxembourg,2019,132.0
 Latvia,2019,108.0
-"Macao, China",2019,421.0
 Morocco,2019,128.0
 Monaco,2019,91.2
 Moldova,2019,116.0
@@ -6048,7 +5943,7 @@ Serbia,2019,122.0
 South Sudan,2019,21.3
 Sao Tome and Principe,2019,77.2
 Suriname,2019,136.0
-Slovak Republic,2019,136.0
+Slovakia,2019,136.0
 Slovenia,2019,119.0
 Sweden,2019,126.0
 Eswatini,2019,91.9
@@ -6150,7 +6045,6 @@ Gabon,2020,133.0
 UK,2020,118.0
 Georgia,2020,135.0
 Ghana,2020,126.0
-Gibraltar,2020,108.0
 Guinea,2020,104.0
 Gambia,2020,104.0
 Guinea-Bissau,2020,94.9
@@ -6160,7 +6054,6 @@ Grenada,2020,96.0
 Greenland,2020,118.0
 Guatemala,2020,117.0
 Guyana,2020,107.0
-"Hong Kong, China",2020,291.0
 Honduras,2020,68.8
 Croatia,2020,107.0
 Haiti,2020,64.7
@@ -6184,7 +6077,7 @@ Kiribati,2020,43.2
 St. Kitts and Nevis,2020,131.0
 South Korea,2020,136.0
 Kuwait,2020,155.0
-Lao,2020,63.3
+Laos,2020,63.3
 Lebanon,2020,75.7
 Liberia,2020,32.5
 Libya,2020,175.0
@@ -6195,7 +6088,6 @@ Lesotho,2020,69.3
 Lithuania,2020,130.0
 Luxembourg,2020,133.0
 Latvia,2020,108.0
-"Macao, China",2020,413.0
 Morocco,2020,134.0
 Monaco,2020,96.1
 Moldova,2020,111.0
@@ -6256,7 +6148,7 @@ Serbia,2020,120.0
 South Sudan,2020,12.7
 Sao Tome and Principe,2020,79.7
 Suriname,2020,148.0
-Slovak Republic,2020,134.0
+Slovakia,2020,134.0
 Slovenia,2020,120.0
 Sweden,2020,123.0
 Eswatini,2020,106.0
@@ -6358,7 +6250,6 @@ Gabon,2021,134.0
 UK,2021,119.0
 Georgia,2021,148.0
 Ghana,2021,123.0
-Gibraltar,2021,105.0
 Guinea,2021,102.0
 Gambia,2021,101.0
 Guinea-Bissau,2021,109.0
@@ -6368,7 +6259,6 @@ Grenada,2021,81.1
 Greenland,2021,118.0
 Guatemala,2021,126.0
 Guyana,2021,106.0
-"Hong Kong, China",2021,319.0
 Honduras,2021,73.6
 Croatia,2021,108.0
 Haiti,2021,63.9
@@ -6392,7 +6282,7 @@ Kiribati,2021,40.8
 St. Kitts and Nevis,2021,119.0
 South Korea,2021,141.0
 Kuwait,2021,163.0
-Lao,2021,65.0
+Laos,2021,65.0
 Lebanon,2021,76.7
 Liberia,2021,31.8
 Libya,2021,207.0
@@ -6403,7 +6293,6 @@ Lesotho,2021,79.8
 Lithuania,2021,134.0
 Luxembourg,2021,137.0
 Latvia,2021,115.0
-"Macao, China",2021,186.0
 Morocco,2021,137.0
 Monaco,2021,102.0
 Moldova,2021,127.0
@@ -6464,7 +6353,7 @@ Serbia,2021,124.0
 South Sudan,2021,30.5
 Sao Tome and Principe,2021,84.8
 Suriname,2021,148.0
-Slovak Republic,2021,135.0
+Slovakia,2021,135.0
 Slovenia,2021,123.0
 Sweden,2021,124.0
 Eswatini,2021,120.0
@@ -6550,12 +6439,10 @@ Gabon,2022,125.0
 UK,2022,121.0
 Georgia,2022,156.0
 Ghana,2022,120.0
-Gibraltar,2022,112.0
 Guinea-Bissau,2022,126.0
 Equatorial Guinea,2022,53.3
 Greece,2022,109.0
 Guatemala,2022,115.0
-"Hong Kong, China",2022,292.0
 Honduras,2022,76.1
 Croatia,2022,111.0
 Hungary,2022,104.0
@@ -6582,7 +6469,6 @@ Sri Lanka,2022,143.0
 Lesotho,2022,67.5
 Lithuania,2022,139.0
 Latvia,2022,117.0
-"Macao, China",2022,175.0
 Monaco,2022,107.0
 Moldova,2022,127.0
 Madagascar,2022,70.2
@@ -6627,7 +6513,7 @@ Somalia,2022,50.3
 South Sudan,2022,30.0
 Sao Tome and Principe,2022,86.8
 Suriname,2022,150.0
-Slovak Republic,2022,132.0
+Slovakia,2022,132.0
 Slovenia,2022,126.0
 Sweden,2022,125.0
 Eswatini,2022,122.0
@@ -6650,5 +6536,6 @@ Vietnam,2022,140.0
 Vanuatu,2022,78.2
 Samoa,2022,60.4
 South Africa,2022,167.0
+Yemen,2022,48.3
 Zambia,2022,99.1
 Zimbabwe,2022,87.6
