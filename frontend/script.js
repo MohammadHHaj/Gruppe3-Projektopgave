@@ -10,7 +10,7 @@ function fetchDataWifi() {
 
 function fetchDataMobil() {
   const year = d3.select("#year").attr("data-selected-year");
-  d3.json(`/api/internet_usage?type=mobil&year=${year}`).then((Mobildata) => {
+  d3.json(`/api/telephones_100?type=mobil&year=${year}`).then((Mobildata) => {
     updateMap(Mobildata, year);
   });
 }
@@ -38,6 +38,19 @@ function updateMap(data, year) {
       simplemaps_worldmap_mapdata.state_specific[
         countryId
       ].description = `${countryData.country} - år ${year} - Internetforbrug: ${countryData.internet_usage}%`;
+    } else {
+      console.warn(`Country element for "${countryData.country}" not found`);
+    }
+  });
+
+  data.forEach((countryData) => {
+    const countryId = countryIdMap[countryData.country];
+    if (countryId && simplemaps_worldmap_mapdata.state_specific[countryId]) {
+      simplemaps_worldmap_mapdata.state_specific[countryId].color =
+        calculateColor(countryData.internet_usage);
+      simplemaps_worldmap_mapdata.state_specific[
+        countryId
+      ].description = `${countryData.country} - år ${year} - Telefoner pr. 100 indbygger : ${countryData.telephones_per_100}`;
     } else {
       console.warn(`Country element for "${countryData.country}" not found`);
     }
