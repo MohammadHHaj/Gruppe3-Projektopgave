@@ -25,23 +25,35 @@ btnclick.forEach((button) => {
     });
   }
 });
-const yearsContainer = document.getElementById("years");
-let selectedYearDiv;
+const yearInput = document.getElementById("year");
+let selectedYear = parseInt(yearInput.value, 10); // Initial selected year
 
-// Populate and set up years
-for (let year = 1990; year <= 2022; year++) {
-  const yearDiv = document.createElement("div");
-  yearDiv.innerText = year;
-  yearDiv.className = "year";
-  yearDiv.dataset.year = year;
-  yearDiv.onclick = () => highlightYear(yearDiv); // Highlight on click
-  //yearsContainer.appendChild(yearDiv);
-}
-
-// Highlight and log selected year
-const highlightYear = (yearDiv) => {
-  selectedYearDiv?.classList.remove("selected");
-  selectedYearDiv = yearDiv;
-  yearDiv.classList.add("selected");
-  console.log(yearDiv.dataset.year);
+// Update the displayed year and log it
+const updateYear = (newYear) => {
+  if (newYear >= 1990 && newYear <= 2022) {
+    yearInput.value = newYear; // Update the input value
+    selectedYear = newYear;
+    console.log(newYear); // Log the selected year
+  }
 };
+
+// Handle keyboard interactions for horizontal scrolling
+yearInput.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight") {
+    updateYear(selectedYear + 1); // Increment year
+    e.preventDefault();
+  } else if (e.key === "ArrowLeft") {
+    updateYear(selectedYear - 1); // Decrement year
+    e.preventDefault();
+  }
+});
+
+// Handle direct user input (only allow valid years)
+yearInput.addEventListener("input", (e) => {
+  const newValue = parseInt(e.target.value, 10);
+  if (newValue >= 1990 && newValue <= 2022) {
+    updateYear(newValue);
+  } else {
+    e.target.value = selectedYear; // Reset to the last valid value
+  }
+});

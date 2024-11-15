@@ -7,29 +7,20 @@ body {
   border-radius: 5px;
   border: black solid 2px;
   height: 30px;
-  width: 145px;
+  width: 300px;
   box-shadow: 0px 0px 3px black;
   margin-top: 32px;
   position: relative;
   display: flex;
   align-items: center;
-  overflow: hidden;
-  left: 48%;
-  top: -15px;
   overflow-x: scroll;
+  scrollbar-width: none; /* Firefox */
 }
+
 #year-selector::-webkit-scrollbar {
-  display: none;
+  display: none; /* Chrome, Safari, Opera */
 }
-/*
-#arrow {
-  transform: rotate(270deg);
-  position: absolute;
-  left: 50%;
-  top: -10px;
-  pointer-events: none;
-}
-*/
+
 #years {
   display: flex;
   gap: 10px; /* Space between years */
@@ -47,6 +38,7 @@ body {
 .selected {
   color: grey;
 }
+
 /*Tidsvælgerslut*/
 #mellemlag {
   display: flex;
