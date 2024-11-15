@@ -72,21 +72,31 @@ document.getElementById("year-selector").addEventListener("click", function () {
 });
 
 function calculateColor(usage) {
-  if (usage <= 20) return "#7badff";
-  else if (usage <= 50) return "#5a9ff7";
-  else if (usage <= 80) return "#357fef";
-  return "#f23030";
+  if (usage <= 0) return "darkgray";
+  else if (usage <= 20) return "#D0E8F2";
+  else if (usage <= 40) return "#90C3E0";
+  else if (usage <= 60) return "#5A9FCE";
+  else if (usage <= 80) return "#297CBF";
+  return "#0B4D8C";
 }
 
 function calculateColorMobil(usage) {
-  if (usage <= 20) return "#9badff";
-  else if (usage <= 50) return "#f99117";
-  else if (usage <= 80) return "#357fef";
-  return "#f23030";
+  if (usage <= 0) return "darkgray";
+  else if (usage <= 20) return "#D4EED1"; //Meget lys grøn
+  else if (usage <= 40) return "#A3D18C"; //lys grøn
+  else if (usage <= 60) return "#6FBF4B "; //mellem grøn
+  else if (usage <= 80) return "#3E9D25"; //mørkere grøn
+  return "#1D8A13"; //mørk grøn
 }
 
-
-
+// function calculateColorMobil(usage) {
+//   if (usage <= 0) return "darkgray";
+//   else if (usage <= 20) return "#FAD4D4"; // meget lys rød
+//   else if (usage <= 40) return "#F28B8B"; // lys rød
+//   else if (usage <= 60) return "#E64949"; // mellem rød
+//   else if (usage <= 80) return "#B22222"; // mørkere rød
+//   return "#7D0B0B"; // mørk rød
+// }
 
 const countryIdMap = {
   Afghanistan: "AF",
