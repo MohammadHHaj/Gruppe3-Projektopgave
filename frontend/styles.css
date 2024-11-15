@@ -8,7 +8,7 @@ body {
   border-radius: 5px;
   border: black solid 2px;
   height: 30px;
-  width: 145px;
+  width: 250px;
   box-shadow: 0px 0px 3px black;
   margin-top: 32px;
   position: relative;
@@ -16,6 +16,8 @@ body {
   align-items: center;
   overflow-x: scroll;
   overflow-y: hidden;
+  left: 551px;
+  top: -13px;
 }
 
 #year-selector::-webkit-scrollbar {
@@ -24,7 +26,7 @@ body {
 
 #year {
   display: flex;
-  gap: 10px; /* Space between years */
+  gap: 5px; /* Space between years */
   white-space: nowrap;
 }
 
