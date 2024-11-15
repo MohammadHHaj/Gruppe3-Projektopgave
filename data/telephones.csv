@@ -99,6 +99,7 @@ Cambodia,1990,0.0
 Kiribati,1990,0.0
 St. Kitts and Nevis,1990,0.0
 South Korea,1990,0.181
+Kosovo,1990,0.0
 Kuwait,1990,1.24
 Laos,1990,0.0
 Lebanon,1990,0.0
@@ -194,7 +195,6 @@ Uzbekistan,1990,0.0
 St. Vincent and the Grenadines,1990,0.0
 Venezuela,1990,0.0376
 British Virgin Islands,1990,0.0
-Virgin Islands (U.S.),1990,0.0
 Vietnam,1990,0.0
 Vanuatu,1990,0.0
 Samoa,1990,0.0
@@ -301,6 +301,7 @@ Kyrgyz Republic,1991,0.0
 Cambodia,1991,0.0
 Kiribati,1991,0.0
 South Korea,1991,0.373
+Kosovo,1991,0.0
 Kuwait,1991,3.21
 Laos,1991,0.0
 Lebanon,1991,0.0
@@ -494,6 +495,7 @@ Kyrgyz Republic,1992,0.0
 Cambodia,1992,0.0
 Kiribati,1992,0.0
 South Korea,1992,0.608
+Kosovo,1992,0.0
 Kuwait,1992,3.15
 Laos,1992,0.00636
 Lebanon,1992,0.0
@@ -690,6 +692,7 @@ Kyrgyz Republic,1993,0.0
 Cambodia,1993,0.047
 Kiribati,1993,0.0
 South Korea,1993,1.05
+Kosovo,1993,0.0
 Kuwait,1993,3.89
 Laos,1993,0.00726
 Lebanon,1993,0.0
@@ -886,6 +889,7 @@ Kyrgyz Republic,1994,0.0
 Cambodia,1994,0.0963
 Kiribati,1994,0.0
 South Korea,1994,2.13
+Kosovo,1994,0.0
 Kuwait,1994,5.19
 Laos,1994,0.013
 Lebanon,1994,0.0
@@ -1085,6 +1089,7 @@ Kyrgyz Republic,1995,0.0
 Cambodia,1995,0.129
 Kiribati,1995,0.0
 South Korea,1995,3.62
+Kosovo,1995,0.0
 Kuwait,1995,7.11
 Laos,1995,0.0312
 Lebanon,1995,3.03
@@ -1283,6 +1288,7 @@ Cambodia,1996,0.207
 Kiribati,1996,0.0
 St. Kitts and Nevis,1996,0.696
 South Korea,1996,6.97
+Kosovo,1996,0.0703
 Kuwait,1996,8.87
 Laos,1996,0.0751
 Lebanon,1996,4.91
@@ -1480,6 +1486,7 @@ Cambodia,1997,0.294
 Kiribati,1997,0.0
 St. Kitts and Nevis,1997,0.47
 South Korea,1997,15.0
+Kosovo,1997,1.1
 Kuwait,1997,11.9
 Laos,1997,0.0954
 Lebanon,1997,9.1
@@ -1569,7 +1576,7 @@ USA,1997,20.3
 Uzbekistan,1997,0.0722
 St. Vincent and the Grenadines,1997,0.303
 Venezuela,1997,4.65
-Virgin Islands (U.S.),1997,15.1
+British Virgin Islands,1997,8.92
 Vietnam,1997,0.211
 Vanuatu,1997,0.116
 Samoa,1997,0.429
@@ -1767,7 +1774,7 @@ USA,1998,25.1
 Uzbekistan,1998,0.111
 St. Vincent and the Grenadines,1998,0.657
 Venezuela,1998,8.55
-Virgin Islands (U.S.),1998,23.4
+British Virgin Islands,1998,12.45
 Vietnam,1998,0.289
 Vanuatu,1998,0.12
 Samoa,1998,0.82
@@ -1966,7 +1973,7 @@ USA,1999,30.8
 Uzbekistan,1999,0.164
 St. Vincent and the Grenadines,1999,1.25
 Venezuela,1999,15.8
-Virgin Islands (U.S.),1999,27.8
+British Virgin Islands,1999,16.0
 Vietnam,1999,0.421
 Vanuatu,1999,0.16
 Samoa,1999,1.33
@@ -2166,7 +2173,7 @@ USA,2000,38.8
 Uzbekistan,2000,0.213
 St. Vincent and the Grenadines,2000,2.07
 Venezuela,2000,22.3
-Virgin Islands (U.S.),2000,32.4
+British Virgin Islands,2000,21.2
 Vietnam,2000,0.998
 Vanuatu,2000,0.19
 Samoa,2000,1.36
@@ -2366,7 +2373,7 @@ USA,2001,45.0
 Uzbekistan,2001,0.507
 St. Vincent and the Grenadines,2001,6.59
 Venezuela,2001,26.0
-Virgin Islands (U.S.),2001,38.0
+British Virgin Islands,2001,25.2
 Vietnam,2001,1.57
 Vanuatu,2001,0.178
 Samoa,2001,1.35
@@ -2568,7 +2575,6 @@ Uzbekistan,2002,0.731
 St. Vincent and the Grenadines,2002,8.8
 Venezuela,2002,25.8
 British Virgin Islands,2002,37.6
-Virgin Islands (U.S.),2002,41.9
 Vietnam,2002,2.36
 Vanuatu,2002,2.42
 Samoa,2002,1.45
@@ -2770,7 +2776,7 @@ USA,2003,55.2
 Uzbekistan,2003,1.24
 St. Vincent and the Grenadines,2003,55.6
 Venezuela,2003,27.2
-Virgin Islands (U.S.),2003,46.0
+British Virgin Islands,2003,6.62
 Vietnam,2003,3.37
 Vanuatu,2003,3.76
 Samoa,2003,5.6
@@ -2878,6 +2884,7 @@ Cambodia,2004,6.62
 Kiribati,2004,0.639
 St. Kitts and Nevis,2004,62.3
 South Korea,2004,76.7
+Kosovo,2004,23.3
 Kuwait,2004,82.4
 Laos,2004,3.54
 Lebanon,2004,19.3
@@ -2973,7 +2980,7 @@ USA,2004,62.9
 Uzbekistan,2004,2.07
 St. Vincent and the Grenadines,2004,63.9
 Venezuela,2004,32.1
-Virgin Islands (U.S.),2004,60.1
+British Virgin Islands,2004,6.62
 Vietnam,2004,6.03
 Vanuatu,2004,4.94
 Samoa,2004,8.51
@@ -3174,7 +3181,7 @@ USA,2005,68.6
 Uzbekistan,2005,2.71
 St. Vincent and the Grenadines,2005,63.0
 Venezuela,2005,46.9
-Virgin Islands (U.S.),2005,75.4
+British Virgin Islands,2005,6.62
 Vietnam,2005,11.5
 Vanuatu,2005,5.83
 Samoa,2005,12.7
@@ -3373,6 +3380,7 @@ USA,2006,76.6
 Uzbekistan,2006,9.4
 St. Vincent and the Grenadines,2006,78.6
 Venezuela,2006,69.3
+British Virgin Islands,2006,6.62
 Vietnam,2006,22.5
 Vanuatu,2006,6.73
 Samoa,2006,24.0
@@ -5986,7 +5994,6 @@ Uzbekistan,2019,101.0
 St. Vincent and the Grenadines,2019,91.9
 Venezuela,2019,63.8
 British Virgin Islands,2019,129.0
-Virgin Islands (U.S.),2019,79.3
 Vietnam,2019,142.0
 Vanuatu,2019,87.1
 Samoa,2019,39.6
@@ -6191,7 +6198,6 @@ Uzbekistan,2020,99.6
 St. Vincent and the Grenadines,2020,95.9
 Venezuela,2020,58.1
 British Virgin Islands,2020,114.0
-Virgin Islands (U.S.),2020,79.6
 Vietnam,2020,144.0
 Vanuatu,2020,79.0
 Samoa,2020,32.1
@@ -6396,7 +6402,6 @@ Uzbekistan,2021,103.0
 St. Vincent and the Grenadines,2021,94.2
 Venezuela,2021,60.3
 British Virgin Islands,2021,121.0
-Virgin Islands (U.S.),2021,79.9
 Vietnam,2021,139.0
 Vanuatu,2021,78.3
 Samoa,2021,31.5
@@ -6552,6 +6557,7 @@ USA,2022,110.0
 Uzbekistan,2022,103.0
 St. Vincent and the Grenadines,2022,100.0
 Venezuela,2022,63.4
+British Virgin Islands,2022,132.5
 Vietnam,2022,140.0
 Vanuatu,2022,78.2
 Samoa,2022,60.4
