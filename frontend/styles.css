@@ -1,5 +1,6 @@
 body {
   background-color: whitesmoke;
+  overflow-x: hidden;
 }
 /*lad body element være i toppen*/
 /*Tidsvælgerstart*/
@@ -7,32 +8,32 @@ body {
   border-radius: 5px;
   border: black solid 2px;
   height: 30px;
-  width: 300px;
+  width: 145px;
   box-shadow: 0px 0px 3px black;
   margin-top: 32px;
   position: relative;
   display: flex;
   align-items: center;
   overflow-x: scroll;
-  scrollbar-width: none; /* Firefox */
+  overflow-y: hidden;
 }
 
 #year-selector::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
-#years {
+#year {
   display: flex;
   gap: 10px; /* Space between years */
+  white-space: nowrap;
 }
 
 .year {
   padding: 0 5px;
   user-select: none;
-  white-space: nowrap;
   color: black;
   cursor: pointer;
-  transition: color 0.169s ease; /* Smooth transition for color change */
+  transition: color 0.3s ease; /* Smooth transition for color change */
 }
 
 .selected {

@@ -25,35 +25,27 @@ btnclick.forEach((button) => {
     });
   }
 });
-const yearInput = document.getElementById("year");
-let selectedYear = parseInt(yearInput.value, 10); // Initial selected year
+const yearDiv = document.getElementById("year");
 
-// Update the displayed year and log it
-const updateYear = (newYear) => {
-  if (newYear >= 1990 && newYear <= 2022) {
-    yearInput.value = newYear; // Update the input value
-    selectedYear = newYear;
-    console.log(newYear); // Log the selected year
-  }
-};
+// Set an initial selected year as a custom property
+yearDiv.setAttribute("data-selected-year", "1990");
 
-// Handle keyboard interactions for horizontal scrolling
-yearInput.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowRight") {
-    updateYear(selectedYear + 1); // Increment year
-    e.preventDefault();
-  } else if (e.key === "ArrowLeft") {
-    updateYear(selectedYear - 1); // Decrement year
-    e.preventDefault();
-  }
-});
+// Populate years inside the "year" div
+for (let year = 1990; year <= 2022; year++) {
+  const yearElement = document.createElement("div");
+  yearElement.innerText = year;
+  yearElement.className = "year";
+  yearElement.dataset.year = year;
 
-// Handle direct user input (only allow valid years)
-yearInput.addEventListener("input", (e) => {
-  const newValue = parseInt(e.target.value, 10);
-  if (newValue >= 1990 && newValue <= 2022) {
-    updateYear(newValue);
-  } else {
-    e.target.value = selectedYear; // Reset to the last valid value
-  }
-});
+  // Add click handler to set the selected year and highlight
+  yearElement.onclick = () => {
+    yearDiv.setAttribute("data-selected-year", year); // Update custom property
+    document
+      .querySelectorAll(".year")
+      .forEach((el) => el.classList.remove("selected")); // Remove highlight
+    yearElement.classList.add("selected"); // Add highlight to clicked year
+    console.log(yearDiv.getAttribute("data-selected-year")); // Log the selected year
+  };
+
+  yearDiv.appendChild(yearElement);
+}
