@@ -18,6 +18,9 @@ body {
   top: -15px;
   overflow-x: scroll;
 }
+#year-selector::-webkit-scrollbar {
+  display: none;
+}
 /*
 #arrow {
   transform: rotate(270deg);
@@ -27,9 +30,6 @@ body {
   pointer-events: none;
 }
 */
-#year-selector::-webkit-scrollbar {
-  display: none;
-}
 #years {
   display: flex;
   gap: 10px; /* Space between years */
@@ -73,8 +73,6 @@ body {
   font-weight: 600;
   font-size: 14px;
   padding: 25px;
-  position: relative;
-  left: -14px;
   position: relative;
   left: -14px;
 }
@@ -128,21 +126,20 @@ body {
   border-color: black;
   width: 100%;
   height: auto;
-  height: auto;
   position: relative;
   top: 5px;
   box-shadow: 0px 0px 7px black;
 }
 /*Forlaget*/
 #forlaget {
-  background-color: black; /*whitesmoke; vi bruger sort til at design lortet. det skal skiftes til whitesmoke indtil aflevering*/
-  width: 10%; /*Både w og h skal være 100% for at fungere ordenligt.*/
-  height: 10%;
+  background-color: whitesmoke; /*whitesmoke; vi bruger sort til at design lortet. det skal skiftes til whitesmoke indtil aflevering*/
+  width: 100%; /*Både w og h skal være 100% for at fungere ordenligt.*/
+  height: 100%;
   position: absolute;
   top: -1.1px;
   z-index: 10;
-  color: white; /*Tekstens farve*/
-  transition: height 0.5s ease, opacity 0.5s ease;
+  color: black; /*Tekstens farve*/
+  transition: opacity 0.5s ease-in-out;
   overflow: hidden;
 }
 
@@ -153,3 +150,27 @@ body {
 }
 /*Forlaget*/
 /*Containertilkortetslut*/
+/*Graf*/
+#hjelpetegn {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 19%;
+  top: 90px;
+}
+#grafenbox {
+  border: black solid;
+  border-radius: 2px;
+  height: 450px;
+  width: 70%;
+  box-shadow: 0px 0px 7px black;
+  position: relative;
+  left: 23%;
+}
+#sogknap {
+  position: relative;
+  left: 10px;
+  top: -2px;
+}
+
+/*Grafslut*/
