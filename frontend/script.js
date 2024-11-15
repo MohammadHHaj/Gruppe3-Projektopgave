@@ -86,6 +86,8 @@ function calculateColorMobil(usage) {
 }
 
 
+
+
 const countryIdMap = {
   Afghanistan: "AF",
   Albania: "AL",
