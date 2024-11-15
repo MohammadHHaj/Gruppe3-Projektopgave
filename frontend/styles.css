@@ -3,150 +3,50 @@ body {
 }
 /*lad body element være i toppen*/
 /*Tidsvælgerstart*/
-/* Submenu Container */
-.submenu {
-  max-height: 200px;
-  overflow-y: auto;
-  scrollbar-color: #888 #0000;
-  scrollbar-width: thin;
-}
-/* Thumb er den del af scrollbaren som du bruger til at rykke op og ned.*/
-.submenu::-webkit-scrollbar-thumb {
-  border-radius: 100vw;
-}
-.menu {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #000000;
-  width: fit-content;
-  display: flex;
-  list-style: none;
-  margin-left: 136px;
-}
-.menu a {
-  text-decoration: none;
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
-
-.menu .link {
+#year-selector {
+  border-radius: 5px;
+  border: black solid 2px;
+  height: 30px;
+  width: 145px;
+  box-shadow: 0px 0px 3px black;
+  margin-top: 32px;
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 12px 36px;
-  border-radius: 16px;
   overflow: hidden;
-  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  left: 48%;
+  top: -15px;
+  overflow-x: scroll;
 }
-
-.menu .link::after {
-  content: "";
+/*
+#arrow {
+  transform: rotate(270deg);
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #0a3cff;
-  z-index: -1;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  left: 50%;
+  top: -10px;
+  pointer-events: none;
 }
-
-.menu .link svg {
-  width: 14px;
-  height: 14px;
-  fill: #000000;
-  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
-}
-.menu .item {
-  position: relative;
-}
-.menu .item .submenu {
+*/
+#year-selector::-webkit-scrollbar {
   display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  overflow-y: auto;
-  z-index: 1;
-  border: 1px solid #cccccc;
-  border-radius: 5px;
-  overflow-x: hidden;
 }
-.menu .item:hover .submenu {
+#years {
   display: flex;
-  flex-direction: column;
+  gap: 10px; /* Space between years */
 }
 
-.menu .item:hover .submenu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  pointer-events: auto;
-  border-top: transparent;
-  border-color: #0a3cff;
+.year {
+  padding: 0 5px;
+  user-select: none;
+  white-space: nowrap;
+  color: black;
+  cursor: pointer;
+  transition: color 0.169s ease; /* Smooth transition for color change */
 }
 
-.menu .item:hover .link {
-  color: #ffffff;
-  border-radius: 16px 16px 0 0;
+.selected {
+  color: grey;
 }
-
-.menu .item:hover .link::after {
-  transform: scaleX(1);
-  transform-origin: right;
-}
-
-.menu .item:hover .link svg {
-  fill: #ffffff;
-  transform: rotate(-180deg);
-}
-
-.submenu .submenu-item {
-  width: 100%;
-  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.submenu .submenu-link {
-  display: block;
-  padding: 12px 24px;
-  width: 100%;
-  position: relative;
-  text-align: center;
-  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
-}
-.submenu .submenu-item:last-child .submenu-link {
-  border-bottom: none;
-}
-/* Det under er til det blå der kommer som hover*/
-.submenu .submenu-link::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: scaleX(0);
-  width: 100%;
-  height: 100%;
-  background-color: #0a3cff;
-  z-index: -1;
-  transform-origin: left;
-  transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.submenu .submenu-link:hover:before {
-  transform: scaleX(1);
-  transform-origin: right; /*Den retning det blå skal komme fra når der hovers over den*/
-}
-
-.submenu .submenu-link:hover {
-  color: #ffffff;
-}
-
 /*Tidsvælgerslut*/
 #mellemlag {
   display: flex;
@@ -173,43 +73,48 @@ body {
   font-weight: 600;
   font-size: 14px;
   padding: 25px;
+  position: relative;
+  left: -14px;
+  position: relative;
+  left: -14px;
 }
 
 .venstrepics {
   width: 30px;
   height: 30px;
 }
-
 .selection {
-  display: none;
   position: absolute;
   width: 70px;
   height: 90px;
   inset: 6px;
   border-radius: 10px;
-  transition: 0.4s ease-out;
+  transition: opacity 0.4s ease-out, background-color 0.4s ease-out,
+    transform 0.4s ease-out;
+  background-color: transparent; /* Start transparent */
+  opacity: 0; /* Start invisible */
 }
-/* teksten der ændrer farve når man trykker på den*/
-.radio-input label:has(input:checked) {
-  color: #fff;
+.midten {
+  align-items: center; /*Center både tekst og billede*/
 }
-
+/* Show and apply the transition when checked */
 .radio-input label:has(input:checked) ~ .selection {
-  display: inline-block;
+  opacity: 1;
 }
 
+/* Baggrundsfarverne til venstreknapperne*/
 .radio-input label:nth-child(1):has(input:checked) ~ .selection {
-  transform: translateY(0px); /*Str og farve på den første*/
-  background-color: #0a6700;
-}
-
-.radio-input label:nth-child(2):has(input:checked) ~ .selection {
-  transform: translateY(100px); /*str og farve på den anden*/
+  transform: translateY(0px);
   background-color: #0065a8;
 }
 
+.radio-input label:nth-child(2):has(input:checked) ~ .selection {
+  transform: translateY(100px);
+  background-color: #0a6700;
+}
+
 .radio-input label:nth-child(3):has(input:checked) ~ .selection {
-  transform: translateY(200px); /*str og farve på den trejde*/
+  transform: translateY(200px);
   background-color: #ff9801;
 }
 /*Sidemenuslut*/
@@ -222,8 +127,29 @@ body {
   border-style: solid;
   border-color: black;
   width: 100%;
-  height: 550px;
+  height: auto;
+  height: auto;
   position: relative;
   top: 5px;
+  box-shadow: 0px 0px 7px black;
 }
+/*Forlaget*/
+#forlaget {
+  background-color: black; /*whitesmoke; vi bruger sort til at design lortet. det skal skiftes til whitesmoke indtil aflevering*/
+  width: 10%; /*Både w og h skal være 100% for at fungere ordenligt.*/
+  height: 10%;
+  position: absolute;
+  top: -1.1px;
+  z-index: 10;
+  color: white; /*Tekstens farve*/
+  transition: height 0.5s ease, opacity 0.5s ease;
+  overflow: hidden;
+}
+
+.hidden {
+  /*Class' bliver lavet i js.*/
+  height: 0;
+  opacity: 0;
+}
+/*Forlaget*/
 /*Containertilkortetslut*/
