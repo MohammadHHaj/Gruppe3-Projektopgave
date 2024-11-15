@@ -2,24 +2,26 @@
 
 // Fetch data baseret på valget af radio knappen
 function fetchDataWifi() {
-  const year = d3.select("#year").property("value");
-  d3.json(`/api/internet_usage?type=wifi&year=${year}`).then((data) => {
-    updateMap(data, year);
+  const year = d3.select("#year").attr("data-selected-year");
+  d3.json(`/api/internet_usage?type=wifi&year=${year}`).then((Wifidata) => {
+    updateMap(Wifidata, year);
   });
 }
 
 function fetchDataMobil() {
-  const year = d3.select("#year").property("value");
-  d3.json(`/api/internet_usage?type=mobil&year=${year}`).then((data) => {
-    updateMap(data, year);
+  const year = d3.select("#year").attr("data-selected-year");
+  d3.json(`/api/internet_usage?type=mobil&year=${year}`).then((Mobildata) => {
+    updateMap(Mobildata, year);
   });
 }
 
 function fetchDataComputer() {
-  const year = d3.select("#year").property("value");
-  d3.json(`/api/internet_usage?type=computer&year=${year}`).then((data) => {
-    updateMap(data, year);
-  });
+  const year = d3.select("#year").attr("data-selected-year");
+  d3.json(`/api/internet_usage?type=computer&year=${year}`).then(
+    (Computerdata) => {
+      updateMap(Computerdata, year);
+    }
+  );
 }
 
 function updateMap(data, year) {
