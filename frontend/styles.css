@@ -3,41 +3,34 @@ body {
 }
 /*lad body element være i toppen*/
 /*Tidsvælgerstart*/
-#tidsvælger {
+#year-selector {
   border-radius: 5px;
-  border: black solid;
-  border-width: 2px;
+  border: black solid 2px;
   height: 30px;
-  width: 300px;
+  width: 145px;
   box-shadow: 0px 0px 3px black;
   margin-top: 32px;
   position: relative;
   display: flex;
   align-items: center;
   overflow: hidden;
-}
-
-#left-arrow,
-#right-arrow {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-#year-container {
-  display: flex;
+  left: 48%;
+  top: -15px;
   overflow-x: scroll;
-  scrollbar-width: none; /* For Firefox */
-  -ms-overflow-style: none; /* For IE and Edge */
-  flex-grow: 1;
 }
-
-#year-container::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari, and Opera */
+/*
+#arrow {
+  transform: rotate(270deg);
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  pointer-events: none;
 }
-
-#year {
+*/
+#year-selector::-webkit-scrollbar {
+  display: none;
+}
+#years {
   display: flex;
   gap: 10px; /* Space between years */
 }
@@ -46,6 +39,13 @@ body {
   padding: 0 5px;
   user-select: none;
   white-space: nowrap;
+  color: black;
+  cursor: pointer;
+  transition: color 0.169s ease; /* Smooth transition for color change */
+}
+
+.selected {
+  color: grey;
 }
 /*Tidsvælgerslut*/
 #mellemlag {

@@ -69,7 +69,6 @@ function calculateColor(usage) {
   else if (usage <= 80) return "#357fef";
   return "#f23030";
 }
-
 // Mapping af lande til ISO-koder, så de kan findes på kortet
 const countryIdMap = {
   Afghanistan: "AF",
