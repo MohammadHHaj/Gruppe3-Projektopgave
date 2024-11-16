@@ -2,6 +2,7 @@ body {
   background-color: whitesmoke;
   overflow-x: hidden;
 }
+
 /*lad body element være i toppen*/
 /*Tidsvælgerstart*/
 #year-selector {
@@ -169,3 +170,43 @@ body {
 }
 
 /*Grafslut*/
+
+/* Farve info & map-container*/
+
+#map-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#map {
+  flex-grow: 1;
+  position: relative;
+}
+
+#farve-info {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0);
+  border: none;
+  position: absolute;
+  top: 328px;
+  left: 10px;
+}
+
+.farve-info div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 5px 0;
+}
+
+.farve-info div::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  margin-right: 6px;
+  display: block;
+  border-radius: 3px;
+}

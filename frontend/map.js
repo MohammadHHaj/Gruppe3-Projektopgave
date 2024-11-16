@@ -10,7 +10,7 @@ var simplemaps_worldmap_mapdata = {
     popups: "detect",
 
     //State defaults
-    state_description: "#data#% har internet",
+    state_description: "Ingen data!",
     state_color: "#88A4BC",
     state_hover_color: "off",
     border_size: "1.5",

@@ -4,14 +4,14 @@
 function fetchDataWifi() {
   const year = d3.select("#year").attr("data-selected-year");
   d3.json(`/api/internet_usage?type=wifi&year=${year}`).then((Wifidata) => {
-    updateMap(Wifidata, year, "internet_usage");  // Send dataType til updateMap
+    updateMap(Wifidata, year, "internet_usage"); // Send dataType til updateMap
   });
 }
 
 function fetchDataMobil() {
   const year = d3.select("#year").attr("data-selected-year");
   d3.json(`/api/telephones_100?type=mobil&year=${year}`).then((Mobildata) => {
-    updateMap(Mobildata, year, "telephones_per_100");  // Send dataType til updateMap
+    updateMap(Mobildata, year, "telephones_per_100"); // Send dataType til updateMap
   });
 }
 
@@ -30,28 +30,35 @@ function updateMap(data, year, dataType) {
     return;
   }
 
+  // Opdater kortfarver og beskrivelser
   data.forEach((countryData) => {
     const countryId = countryIdMap[countryData.country];
     if (countryId && simplemaps_worldmap_mapdata.state_specific[countryId]) {
-      // Opdater farven baseret på den relevante værdi
-     
-      // Skift beskrivelsen baseret på dataType
       if (dataType === "internet_usage") {
         simplemaps_worldmap_mapdata.state_specific[countryId].color =
-        calculateColor(countryData[dataType]);
-        simplemaps_worldmap_mapdata.state_specific[countryId].description = 
-          `${countryData.country} - år ${year} - Internetforbrug: ${countryData.internet_usage}%`;
+          calculateColorWifi(countryData[dataType]);
+        simplemaps_worldmap_mapdata.state_specific[
+          countryId
+        ].description = `${countryData.country} - år ${year} - Internetforbrug: ${countryData.internet_usage}%`;
       } else if (dataType === "telephones_per_100") {
         simplemaps_worldmap_mapdata.state_specific[countryId].color =
-        calculateColorMobil(countryData[dataType]);
-        simplemaps_worldmap_mapdata.state_specific[countryId].description = 
-          `${countryData.country} - år ${year} - Telefoner pr. 100 indbygger: ${countryData.telephones_per_100}`;
-      }
+          calculateColorMobil(countryData[dataType]);
+        simplemaps_worldmap_mapdata.state_specific[
+          countryId
+        ].description = `${countryData.country} - år ${year} - Telefoner pr. 100 indbyggere: ${countryData.telephones_per_100}`;
+      } /*else if (dataType === "Computer") {
+        simplemaps_worldmap_mapdata.state_specific[countryId].color =
+          calculateColorComputer(countryData[dataType]);
+        simplemaps_worldmap_mapdata.state_specific[*/
     } else {
       console.warn(`Country element for "${countryData.country}" not found`);
     }
   });
 
+  // Opdater farvelegenden
+  updateLegend(dataType);
+
+  // Opdater kortet
   simplemaps_worldmap.refresh();
 }
 
@@ -71,7 +78,7 @@ document.getElementById("year-selector").addEventListener("click", function () {
   }
 });
 
-function calculateColor(usage) {
+function calculateColorWifi(usage) {
   if (usage <= 0) return "darkgray";
   else if (usage <= 20) return "#D0E8F2";
   else if (usage <= 40) return "#90C3E0";
@@ -97,6 +104,45 @@ function calculateColorMobil(usage) {
 //   else if (usage <= 80) return "#B22222"; // mørkere rød
 //   return "#7D0B0B"; // mørk rød
 // }
+
+function updateLegend(dataType) {
+  const legend = d3.select("#farve-info");
+  legend.html(""); // Ryd eksisterende indhold
+
+  // Definer farver og labels baseret på dataType
+  let colorScale = [];
+  if (dataType === "internet_usage") {
+    colorScale = [
+      { label: "0%", color: "darkgray" },
+      { label: "1-20%", color: "#D0E8F2" },
+      { label: "21-40%", color: "#90C3E0" },
+      { label: "41-60%", color: "#5A9FCE" },
+      { label: "61-80%", color: "#297CBF" },
+      { label: "81-100%", color: "#0B4D8C" },
+    ];
+  } else if (dataType === "telephones_per_100") {
+    colorScale = [
+      { label: "0", color: "darkgray" },
+      { label: "0-20", color: "#D4EED1" },
+      { label: "21-40", color: "#A3D18C" },
+      { label: "41-60", color: "#6FBF4B" },
+      { label: "61-80", color: "#3E9D25" },
+      { label: "81-100", color: "#1D8A13" },
+    ];
+  }
+
+  // Opret legendens elementer
+  colorScale.forEach((info) => {
+    legend
+      .append("div")
+      .style("display", "flex")
+      .style("align-items", "right")
+      .style("margin", "5px 0")
+      .html(
+        `<span style="display: inline-block; width: 20px; height: 20px; background-color: ${info.color}; margin-right: 8px;"></span>${info.label}`
+      );
+  });
+}
 
 const countryIdMap = {
   Afghanistan: "AF",
