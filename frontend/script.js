@@ -55,8 +55,8 @@ function updateMap(data, year, dataType) {
     }
   });
 
-  // Opdater farvelegenden
-  updateLegend(dataType);
+  // Opdater farveinfo
+  updateFarveInfo(dataType);
 
   // Opdater kortet
   simplemaps_worldmap.refresh();
@@ -105,9 +105,9 @@ function calculateColorMobil(usage) {
 //   return "#7D0B0B"; // mørk rød
 // }
 
-function updateLegend(dataType) {
-  const legend = d3.select("#farve-info");
-  legend.html(""); // Ryd eksisterende indhold
+function updateFarveInfo(dataType) {
+  const farveInfo = d3.select("#farve-info");
+  farveInfo.html(""); // Ryd eksisterende indhold
 
   // Definer farver og labels baseret på dataType
   let colorScale = [];
@@ -131,9 +131,9 @@ function updateLegend(dataType) {
     ];
   }
 
-  // Opret legendens elementer
+  // Opret farce infoens elementer
   colorScale.forEach((info) => {
-    legend
+    farveInfo
       .append("div")
       .style("display", "flex")
       .style("align-items", "right")
