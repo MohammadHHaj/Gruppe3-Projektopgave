@@ -14,6 +14,7 @@
   <body>
     <!--Hej-->
     <!--tidsvælger-->
+    <div id="arrow">&#x2B9F;</div>
     <div id="year-selector">
       <div id="year"></div>
       <!-- Acts as the container for the years -->
@@ -72,15 +73,19 @@
     </div>
     <div id="grafenbox">
       <div id="knappertilgrafen">
-        <button id="sogknap">Søg</button>
+        <div class="mat-input">
+          <label for="food">Vælg et land</label>
+          <input id="food" type="text" placeholder="Fx. Danmark" />
+        </div>
       </div>
     </div>
     <br />
     <br />
-    <script src="Kanin.js"></script>
+
     <script src="script.js"></script>
     <script src="map.js"></script>
     <script src="worldmap.js"></script>
+    <script src="Kanin.js"></script>
   </body>
 </html>
 <!--Hej-->
