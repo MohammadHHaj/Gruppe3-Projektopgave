@@ -10,7 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
   //Som selfølgelig ville have resulteret i at funktionen ikke ville fungere
   btnclick.forEach((button) => {
     if (button) {
-      console.log(`Fjerning af forlaget igennem knap fungerede.`);
+      console.log(
+        `Fjerning af forlaget igennem én af de tre knapper fungerede.`
+      );
       button.addEventListener("click", function () {
         laget.classList.add("hidden");
 
@@ -67,7 +69,7 @@ for (let year = 1990; year <= 2022; year++) {
     const x = yearElement.dataset.xvalue;
     //Laver en ny const til det samme men denne gang uden allerede indførte værdier.
     //Så at x altid vil være det sidste som brugeren har trykket på
-    console.log(x);
+    //console.log("Det aktiveret år er " + x + " px henne i scrollablediven"); evt ide
     //Så x er den der er trykket på
     scrollToPosition(x, 969);
     //Den skal få x til at scrollToPosition som er den position som er defineret som midten (se længere nede)
@@ -82,7 +84,13 @@ for (let year = 1990; year <= 2022; year++) {
     //Den skal første fjerne class selected for hver div der ikke blev trykket på når én bliver trykket på.
     yearElement.classList.add("selected");
     //tilføjer selected class til den div der er trykket på og dermed gør den grå
-    console.log(yearDiv.getAttribute("data-selected-year"));
+    console.log(
+      "Der blev trykket på år " +
+        yearDiv.getAttribute("data-selected-year") +
+        " og det er " +
+        x +
+        " pixels henne i scrollablediven."
+    );
     //Logger det valgte år så det er nemmere at fejlfinde hvis/når der opstår fejl.
   };
 
@@ -153,7 +161,13 @@ scrollableDiv.addEventListener("scroll", () => {
         closestValue = index;
       }
     });
-    console.log(closestValue);
+    console.log(
+      "Det år der var tættest på dit scroll var " +
+        closestValue +
+        " henne i scrollablediv. Derfor blev år " +
+        yearDiv.getAttribute("data-selected-year") +
+        " valgt."
+    );
     const closestYearElement = document.querySelector(
       `[data-xvalue="${closestValue}"]`
     );
@@ -182,14 +196,9 @@ scrollableDiv.addEventListener("scroll", () => {
       // Apply all effects from onclick
       closestYearElement.classList.add("selected");
     }
-
-    //indsæt onclick script.
-    // SCRIPTET FRA onClick KAN MERE ELLER MINDRE ANVENDES HER, DIG NED JUSTERINGER - HYG DIG ;)
   }, 200); //milisekunder
-
-  //console.dir(scrollX);
 });
-
+//Herunder er funktionen til at den selv kan finde den div der er tættest på.
 function scrollToPosition(targetPosition, duration) {
   const element = document.getElementById("year-selector");
   const startPosition = element.scrollLeft;
