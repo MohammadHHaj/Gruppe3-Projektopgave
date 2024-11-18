@@ -1,42 +1,45 @@
-import express from 'express';
-import pg from 'pg';
-import dotenv from 'dotenv';
+import express from "express";
+import pg from "pg";
+import dotenv from "dotenv";
 
 dotenv.config();
-console.log('Connecting to database', process.env.PG_DATABASE);
+console.log("Connecting to database", process.env.PG_DATABASE);
 const db = new pg.Pool({
-    host: process.env.PG_HOST,
-    port: parseInt(process.env.PG_PORT),
-    database: process.env.PG_DATABASE,
-    user: process.env.PG_USER,
-    password: process.env.PG_PASSWORD,
-    ssl: process.env.PG_REQUIRE_SSL ? {
+  host: process.env.PG_HOST,
+  port: parseInt(process.env.PG_PORT),
+  database: process.env.PG_DATABASE,
+  user: process.env.PG_USER,
+  password: process.env.PG_PASSWORD,
+  ssl: process.env.PG_REQUIRE_SSL
+    ? {
         rejectUnauthorized: false,
-    } : undefined,
+      }
+    : undefined,
 });
-const dbResult = await db.query('select now()');
-console.log('Database connection established on', dbResult.rows[0].now);
+const dbResult = await db.query("select now()");
+console.log("Database connection established on", dbResult.rows[0].now);
 
 const port = process.env.PORT || 3000;
 const server = express();
 
-server.use(express.static('frontend'));
+server.use(express.static("frontend"));
 server.use(onEachRequest);
 server.get("/api/internet_usage", onGetData);
 server.get("/api/telephones_100", onGetTelephones);
+server.get("/api/electricity_percentage", onGetElectricity);
 server.listen(port, onServerReady);
 
-
 async function onGetData(request, response) {
-    const year = request.query.year;  // Sørger for at få årstallet fra query-parameteren
-    console.log(`${year} årstal hentet`);
+  const year = request.query.year; // Sørger for at få årstallet fra query-parameteren
+  console.log(`${year} årstal hentet`);
 
-    if (!year) {
-        return response.status(400).send('Year parameter is required');
-    }
+  if (!year) {
+    return response.status(400).send("Year parameter is required");
+  }
 
-    try {
-        const dbResult = await db.query(`
+  try {
+    const dbResult = await db.query(
+      `
             SELECT country,
                    year,
                    COALESCE(internet_usage, 0.0) AS internet_usage
@@ -44,26 +47,28 @@ async function onGetData(request, response) {
             WHERE year = $1
             ORDER BY country ASC
             `,
-            [year]);  // Passer årstallet som parameter til SQL-forespørgslen
+      [year]
+    ); // Passer årstallet som parameter til SQL-forespørgslen
 
-        response.json(dbResult.rows);  // Sender resultatet tilbage som JSON
-    } catch (error) {
-        console.error('Database query failed:', error);
-        response.status(500).send('Internal server error');
-    }
+    response.json(dbResult.rows); // Sender resultatet tilbage som JSON
+  } catch (error) {
+    console.error("Database query failed:", error);
+    response.status(500).send("Internal server error");
+  }
 }
 
 //Ny function som henter alt data fra telephones og udvælger dataen.
 async function onGetTelephones(request, response) {
-    const year = request.query.year;  // Sørger for at få årstallet fra query-parameteren
-    console.log(`${year} årstal hentet`);
+  const year = request.query.year; // Sørger for at få årstallet fra query-parameteren
+  console.log(`${year} årstal hentet`);
 
-    if (!year) {
-        return response.status(400).send('Year parameter is required');
-    }
+  if (!year) {
+    return response.status(400).send("Year parameter is required");
+  }
 
-    try {
-        const dbResult = await db.query(`
+  try {
+    const dbResult = await db.query(
+      `
             SELECT country,
                 year,
                 telephones_per_100
@@ -71,21 +76,50 @@ async function onGetTelephones(request, response) {
             WHERE year = $1
             ORDER BY country ASC
             `,
-            [year]);  // Passer årstallet som parameter til SQL-forespørgslen
+      [year]
+    ); // Passer årstallet som parameter til SQL-forespørgslen
 
-        response.json(dbResult.rows);  // Sender resultatet tilbage som JSON
-    } catch (error) {
-        console.error('Database query failed:', error);
-        response.status(500).send('Internal server error');
-    }
+    response.json(dbResult.rows); // Sender resultatet tilbage som JSON
+  } catch (error) {
+    console.error("Database query failed:", error);
+    response.status(500).send("Internal server error");
+  }
 }
 
+//Ny function som henter alt data fra electricity og udvælger dataen.
+async function onGetElectricity(request, response) {
+  const year = request.query.year; // Sørger for at få årstallet fra query-parameteren
+  console.log(`${year} årstal hentet`);
+
+  if (!year) {
+    return response.status(400).send("Year parameter is required");
+  }
+
+  try {
+    const dbResult = await db.query(
+      `
+              SELECT country,
+                  year,
+                  electricity_access_percentage
+              FROM electricity
+              WHERE year = $1
+              ORDER BY country ASC
+              `,
+      [year]
+    ); // Passer årstallet som parameter til SQL-forespørgslen
+
+    response.json(dbResult.rows); // Sender resultatet tilbage som JSON
+  } catch (error) {
+    console.error("Database query failed:", error);
+    response.status(500).send("Internal server error");
+  }
+}
 
 function onEachRequest(request, response, next) {
-    console.log(new Date(), request.method, request.url);
-    next();
+  console.log(new Date(), request.method, request.url);
+  next();
 }
 
 function onServerReady() {
-    console.log('Webserver running on port', port);
+  console.log("Webserver running on port", port);
 }

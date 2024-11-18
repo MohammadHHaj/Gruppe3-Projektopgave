@@ -4,25 +4,25 @@
 function fetchDataWifi() {
   const year = d3.select("#year").attr("data-selected-year");
   d3.json(`/api/internet_usage?type=wifi&year=${year}`).then((Wifidata) => {
-    updateMap(Wifidata, year, "internet_usage"); // Send dataType til updateMap
+    updateMap(Wifidata, year, "internet_usage");
   });
 }
 
 function fetchDataMobil() {
   const year = d3.select("#year").attr("data-selected-year");
   d3.json(`/api/telephones_100?type=mobil&year=${year}`).then((Mobildata) => {
-    updateMap(Mobildata, year, "telephones_per_100"); // Send dataType til updateMap
+    updateMap(Mobildata, year, "telephones_per_100");
   });
 }
 
-// function fetchDataComputer() {
-//   const year = d3.select("#year").attr("data-selected-year");
-//   d3.json(`/api/internet_usage?type=computer&year=${year}`).then(
-//     (Computerdata) => {
-//       updateMap(Computerdata, year);
-//     }
-//   );
-// }
+function fetchDataElectricity() {
+  const year = d3.select("#year").attr("data-selected-year");
+  d3.json(`/api/electricity_percentage?type=electricity&year=${year}`).then(
+    (ElectricityData) => {
+      updateMap(ElectricityData, year, "electricity_access_percentage");
+    }
+  );
+}
 
 function updateMap(data, year, dataType) {
   if (data.length === 0) {
@@ -34,24 +34,28 @@ function updateMap(data, year, dataType) {
   data.forEach((countryData) => {
     const countryId = countryIdMap[countryData.country];
     if (countryId && simplemaps_worldmap_mapdata.state_specific[countryId]) {
+      // Tjek dataType og anvend den rette farveberegningsfunktion
       if (dataType === "internet_usage") {
         simplemaps_worldmap_mapdata.state_specific[countryId].color =
-          calculateColorWifi(countryData[dataType]);
+          calculateColorWifi(countryData.internet_usage);
         simplemaps_worldmap_mapdata.state_specific[
           countryId
         ].description = `${countryData.country} - år ${year} - Internetforbrug: ${countryData.internet_usage}%`;
       } else if (dataType === "telephones_per_100") {
         simplemaps_worldmap_mapdata.state_specific[countryId].color =
-          calculateColorMobil(countryData[dataType]);
+          calculateColorMobil(countryData.telephones_per_100);
         simplemaps_worldmap_mapdata.state_specific[
           countryId
         ].description = `${countryData.country} - år ${year} - Telefoner pr. 100 indbyggere: ${countryData.telephones_per_100}`;
-      } /*else if (dataType === "Computer") {
+      } else if (dataType === "electricity_access_percentage") {
         simplemaps_worldmap_mapdata.state_specific[countryId].color =
-          calculateColorComputer(countryData[dataType]);
-        simplemaps_worldmap_mapdata.state_specific[*/
-    } else {
-      console.warn(`Country element for "${countryData.country}" not found`);
+          calculateColorComputer(countryData.electricity_access_percentage);
+        simplemaps_worldmap_mapdata.state_specific[
+          countryId
+        ].description = `${countryData.country} - år ${year} - Elektricitet i procent: ${countryData.electricity_access_percentage}%`;
+      } else {
+        console.warn(`Country element for "${countryData.country}" not found`);
+      }
     }
   });
 
@@ -61,13 +65,15 @@ function updateMap(data, year, dataType) {
   // Opdater kortet
   simplemaps_worldmap.refresh();
 }
-//Alt herunder indtil næste kommanteret tag søger efter det år med selected class. og vælger det år. (tæt samarbejdemed chat)
+
+// Overvåg ændringer i det valgte år
 const observer = new MutationObserver(() => {
   const selected = document.querySelector("#year-selector .selected");
   if (selected) {
     if (document.getElementById("Wifi").checked) fetchDataWifi();
     else if (document.getElementById("Mobil").checked) fetchDataMobil();
-    else if (document.getElementById("Computer").checked) fetchDataComputer();
+    else if (document.getElementById("Computer").checked)
+      fetchDataElectricity();
   }
 });
 
@@ -77,22 +83,7 @@ observer.observe(document.getElementById("year-selector"), {
   attributeFilter: ["class"],
 });
 
-// document.getElementById("year-selector").addEventListener("click", function () {
-//   const wifiSelected = document.getElementById("Wifi").checked;
-//   const mobilSelected = document.getElementById("Mobil").checked;
-//   const computerSelected = document.getElementById("Computer").checked;
-
-//   if (wifiSelected) {
-//     fetchDataWifi();
-//   } else if (mobilSelected) {
-//     fetchDataMobil();
-//   } else if (computerSelected) {
-//     fetchDataComputer();
-//   } else {
-//     console.log("Vælg en kategori for at hente data.");
-//   }
-// });
-
+// Farveberegninger
 function calculateColorWifi(usage) {
   if (usage <= 0) return "darkgray";
   else if (usage <= 20) return "#D0E8F2";
@@ -104,27 +95,26 @@ function calculateColorWifi(usage) {
 
 function calculateColorMobil(usage) {
   if (usage <= 0) return "darkgray";
-  else if (usage <= 20) return "#D4EED1"; //Meget lys grøn
-  else if (usage <= 40) return "#A3D18C"; //lys grøn
-  else if (usage <= 60) return "#6FBF4B "; //mellem grøn
-  else if (usage <= 80) return "#3E9D25"; //mørkere grøn
-  return "#1D8A13"; //mørk grøn
+  else if (usage <= 20) return "#D4EED1";
+  else if (usage <= 40) return "#A3D18C";
+  else if (usage <= 60) return "#6FBF4B";
+  else if (usage <= 80) return "#3E9D25";
+  return "#1D8A13";
 }
 
-// function calculateColorMobil(usage) {
-//   if (usage <= 0) return "darkgray";
-//   else if (usage <= 20) return "#FAD4D4"; // meget lys rød
-//   else if (usage <= 40) return "#F28B8B"; // lys rød
-//   else if (usage <= 60) return "#E64949"; // mellem rød
-//   else if (usage <= 80) return "#B22222"; // mørkere rød
-//   return "#7D0B0B"; // mørk rød
-// }
+function calculateColorComputer(usage) {
+  if (usage <= 0) return "darkgray";
+  else if (usage <= 20) return "#FAD4D4";
+  else if (usage <= 40) return "#F28B8B";
+  else if (usage <= 60) return "#E64949";
+  else if (usage <= 80) return "#B22222";
+  return "#7D0B0B";
+}
 
 function updateFarveInfo(dataType) {
   const farveInfo = d3.select("#farve-info");
   farveInfo.html(""); // Ryd eksisterende indhold
 
-  // Definer farver og labels baseret på dataType
   let colorScale = [];
   if (dataType === "internet_usage") {
     colorScale = [
@@ -144,9 +134,18 @@ function updateFarveInfo(dataType) {
       { label: "61-80", color: "#3E9D25" },
       { label: "81+", color: "#1D8A13" },
     ];
+  } else if (dataType === "electricity_access_percentage") {
+    colorScale = [
+      { label: "0%", color: "darkgray" },
+      { label: "1-20%", color: "#FAD4D4" },
+      { label: "21-40%", color: "#F28B8B" },
+      { label: "41-60%", color: "#E64949" },
+      { label: "61-80%", color: "#B22222" },
+      { label: "81-100%", color: "#7D0B0B" },
+    ];
   }
 
-  // Opret farce infoens elementer
+  // Opret farveskalaens elementer
   colorScale.forEach((info) => {
     farveInfo
       .append("div")
