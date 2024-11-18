@@ -187,9 +187,8 @@ scrollableDiv.addEventListener("scroll", () => {
     //indsæt onclick script.
     // SCRIPTET FRA onClick KAN MERE ELLER MINDRE ANVENDES HER, DIG NED JUSTERINGER - HYG DIG ;)
   }, 200); //milisekunder
-  /*
-  let scroll2 = document.getElementById("year");*/
-  console.dir(scrollX);
+
+  //console.dir(scrollX);
 });
 
 function scrollToPosition(targetPosition, duration) {
