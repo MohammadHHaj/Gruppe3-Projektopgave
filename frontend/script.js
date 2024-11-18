@@ -61,22 +61,37 @@ function updateMap(data, year, dataType) {
   // Opdater kortet
   simplemaps_worldmap.refresh();
 }
-
-document.getElementById("year-selector").addEventListener("click", function () {
-  const wifiSelected = document.getElementById("Wifi").checked;
-  const mobilSelected = document.getElementById("Mobil").checked;
-  const computerSelected = document.getElementById("Computer").checked;
-
-  if (wifiSelected) {
-    fetchDataWifi();
-  } else if (mobilSelected) {
-    fetchDataMobil();
-  } else if (computerSelected) {
-    fetchDataComputer();
-  } else {
-    console.log("Vælg en kategori for at hente data.");
+//Alt herunder indtil næste kommanteret tag søger efter det år med selected class. og vælger det år. (tæt samarbejdemed chat)
+const observer = new MutationObserver(() => {
+  const selected = document.querySelector("#year-selector .selected");
+  if (selected) {
+    if (document.getElementById("Wifi").checked) fetchDataWifi();
+    else if (document.getElementById("Mobil").checked) fetchDataMobil();
+    else if (document.getElementById("Computer").checked) fetchDataComputer();
   }
 });
+
+observer.observe(document.getElementById("year-selector"), {
+  subtree: true,
+  attributes: true,
+  attributeFilter: ["class"],
+});
+
+// document.getElementById("year-selector").addEventListener("click", function () {
+//   const wifiSelected = document.getElementById("Wifi").checked;
+//   const mobilSelected = document.getElementById("Mobil").checked;
+//   const computerSelected = document.getElementById("Computer").checked;
+
+//   if (wifiSelected) {
+//     fetchDataWifi();
+//   } else if (mobilSelected) {
+//     fetchDataMobil();
+//   } else if (computerSelected) {
+//     fetchDataComputer();
+//   } else {
+//     console.log("Vælg en kategori for at hente data.");
+//   }
+// });
 
 function calculateColorWifi(usage) {
   if (usage <= 0) return "darkgray";
@@ -123,11 +138,11 @@ function updateFarveInfo(dataType) {
   } else if (dataType === "telephones_per_100") {
     colorScale = [
       { label: "0", color: "darkgray" },
-      { label: "0-20", color: "#D4EED1" },
+      { label: "1-20", color: "#D4EED1" },
       { label: "21-40", color: "#A3D18C" },
       { label: "41-60", color: "#6FBF4B" },
       { label: "61-80", color: "#3E9D25" },
-      { label: "81-100", color: "#1D8A13" },
+      { label: "81+", color: "#1D8A13" },
     ];
   }
 

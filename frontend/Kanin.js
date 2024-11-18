@@ -26,14 +26,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-const scrollableDiv = document.getElementById("year-selector");
 
+const scrollableDiv = document.getElementById("year-selector");
+//laver scrollableDiv til elementet der har en id year-selector
 const yearDiv = document.getElementById("year");
 //sætter elementet med id,et year til et objekt "yearDiv"
 yearDiv.setAttribute("data-selected-year", "1990");
 //Giver yearDiv en attr med "data-selected-year" som bliver brugt til en funktion på script.js
 //og attr "1990"
 let startx = 0;
+//laver en ny værdi som er start værdien (altså når du starter på hjemmesiden)
 for (let year = 1990; year <= 2022; year++) {
   //Deklarer et nyt objekt "year" som 1990 til 2022
   if (year == 1990) {
@@ -43,11 +45,16 @@ for (let year = 1990; year <= 2022; year++) {
     placeholder2.className = "year";
     yearDiv.appendChild(placeholder1);
     yearDiv.appendChild(placeholder2);
+    //Da 1990 skal kunne være i midten så skal 1990 have to diver til venstre for sig, for at skabe noget empty space
+    //Derfor if year er 1990 lav to div med class year. De skal stadig have class year
   }
   const yearElement = document.createElement("div");
   //Nyt objekt yearElement som bliver skabt under "create" og deklaret som en div
   yearElement.dataset.xvalue = startx;
+  //Dette ligger en attri i alle elementerne som hedder 0til(plads0) 47til(plads1) 94til(plads2) osv så den skal pluds med 47 hvergang (Se linjen under.)
   startx = startx + 47;
+  //Ligger startx som 47. det bliver brugt til bredten af hver div i px.
+  //Det bruges til at samligne med senere.
   yearElement.innerText = year;
   //Da vi stadig er i "for" statement så vil den her lave en ny div for hver year som er 1990 til 2022 (32 diver)
   yearElement.className = "year";
@@ -58,6 +65,8 @@ for (let year = 1990; year <= 2022; year++) {
     //Når diven med year i bliver trykket på så skal følgende ske
 
     const x = yearElement.dataset.xvalue;
+    //Laver en ny const til det samme men denne gang uden allerede indførte værdier.
+    //Så at x altid vil være det sidste som brugeren har trykket på
     console.log(x);
     scrollToPosition(x, 969);
 
@@ -126,6 +135,37 @@ scrollableDiv.addEventListener("scroll", () => {
       }
     });
     console.log(closestValue);
+    const closestYearElement = document.querySelector(
+      `[data-xvalue="${closestValue}"]`
+    );
+
+    if (closestYearElement) {
+      const year = closestYearElement.getAttribute("data-year");
+
+      // Smooth scroll to the closest year position
+      scrollToPosition(closestValue, 500);
+
+      // Update the selected year in the yearDiv
+      yearDiv.setAttribute("data-selected-year", year);
+
+      // Remove the 'selected' class from all year elements
+      document
+        .querySelectorAll(".year")
+        .forEach((el) => el.classList.remove("selected"));
+
+      // Add 'selected' class to the closest year element
+      closestYearElement.classList.add("selected");
+
+      // Ensure it smoothly transitions into view
+      scrollableDiv.scrollLeft = closestValue;
+
+      // Logically simulate the behavior of the onclick function
+      yearDiv.setAttribute("data-selected-year", year);
+
+      // Apply all effects from onclick
+      closestYearElement.classList.add("selected");
+    }
+
     //indsæt onclick script.
     // SCRIPTET FRA onClick KAN MERE ELLER MINDRE ANVENDES HER, DIG NED JUSTERINGER - HYG DIG ;)
   }, 200); //milisekunder
