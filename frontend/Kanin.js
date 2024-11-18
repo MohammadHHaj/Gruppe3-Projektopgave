@@ -105,9 +105,11 @@ for (let year = 1990; year <= 2022; year++) {
 
 // Timer til at vide, hvornår brugeren er "stoppet" med at scrolle
 let timer = null;
+let ignorescrolling = false;
 //laver en variabel der hedder timer som er timeren som starter på null
 scrollableDiv.addEventListener("scroll", () => {
   //skal lytte efter scroll i scrollablediv
+  if (ignorescrolling) return;
   if (timer !== null) {
     //hvis timer ikke er ligemed null
     //Dvs så længe timeren er igang skal den gøre følgende
@@ -120,7 +122,6 @@ scrollableDiv.addEventListener("scroll", () => {
     let scrollX = scrollableDiv.scrollLeft;
     //bruges til at gemme hver meget der er scrollet i diven som scrollX
     // Log ved hvilken px timeren er stoppet
-    console.log("Timer død ved: " + scrollX);
     //Console logger for at se om det er rigtigt, at den ved hvornår man stopper
 
     const childDivs = yearDiv.querySelectorAll("div");
@@ -159,10 +160,8 @@ scrollableDiv.addEventListener("scroll", () => {
 
     if (closestYearElement) {
       const year = closestYearElement.getAttribute("data-year");
-
       // Smooth scroll to the closest year position
       scrollToPosition(closestValue, 500);
-
       // Update the selected year in the yearDiv
       yearDiv.setAttribute("data-selected-year", year);
 
@@ -213,8 +212,12 @@ function scrollToPosition(targetPosition, duration) {
     // Continue animation if not complete
     if (progress < 1) {
       requestAnimationFrame(animateScroll);
+    } else {
+      ignorescrolling = false;
     }
   }
+
+  ignorescrolling = true;
 
   requestAnimationFrame(animateScroll);
 }
