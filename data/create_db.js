@@ -26,6 +26,7 @@ console.log("Recreating tables...");
 await db.query(`
 DROP TABLE IF EXISTS internet_acces;
 DROP TABLE IF EXISTS telephones;
+DROP TABLE IF EXISTS electricity;
 
 CREATE TABLE internet_acces(
 country varchar(30),
@@ -41,6 +42,13 @@ CREATE TABLE telephones(
 	PRIMARY KEY (country,year)
 );
 
+CREATE TABLE electricity(
+ country varChar(30) not null,
+  year integer not null,
+	electricity_access_percentage float not null,
+	PRIMARY KEY (country,year)
+);
+
 `);
 console.log("Tables recreated.");
 
@@ -50,7 +58,8 @@ await copyIntoTable(
   `
 	COPY internet_acces (country,year,internet_usage)
     FROM stdin
-    WITH CSV HEADER`,"data/internet.csv"
+    WITH CSV HEADER`,
+  "data/internet.csv"
 );
 
 await copyIntoTable(
@@ -58,10 +67,18 @@ await copyIntoTable(
   `
 	COPY telephones(country,year,telephones_per_100)
   FROM stdin
-  WITH CSV HEADER`,"data/telephones.csv"
-
+  WITH CSV HEADER`,
+  "data/telephones.csv"
 );
 
+await copyIntoTable(
+  db,
+  `
+	COPY electricity(country,year,electricity_access_percentage)
+  FROM stdin
+  WITH CSV HEADER`,
+  "data/electricity.csv"
+);
 
 await db.end();
 console.log("Data copied.");
