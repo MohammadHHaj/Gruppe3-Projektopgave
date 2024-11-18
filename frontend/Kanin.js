@@ -114,28 +114,36 @@ scrollableDiv.addEventListener("scroll", () => {
     clearTimeout(timer);
     //Nulstiller timeren
   }
+
   timer = setTimeout(function () {
     //laver en funktion til timeren
     let scrollX = scrollableDiv.scrollLeft;
     //bruges til at gemme hver meget der er scrollet i diven som scrollX
-    // Log hvor timeren er stoppet
+    // Log ved hvilken px timeren er stoppet
     console.log("Timer død ved: " + scrollX);
     //Console logger for at se om det er rigtigt, at den ved hvornår man stopper
 
-    // Hent alle positioner på diver, og gem i array "xValues".
     const childDivs = yearDiv.querySelectorAll("div");
+    //henter alle diver i yeardiv
     const xValues = [];
+    //laver en const med et array hvor der ikke er noget defineret i
     childDivs.forEach((div) => {
+      //for hver childDivs i yeardiv gør følgende
       const value = div.getAttribute("data-xvalue");
+      //Lav en konstant som er value (value er divens px tal)
       if (value !== null) {
+        //hvis værdien ikke er null skal den gøre følgende
         xValues.push(value);
+        //sætter alle divers px tal i et array under xvalues
       }
     });
+    // Henter alle positioner på diver, og gem i array "xValues".
 
-    console.log(xValues);
+    //console.log(xValues); //Bruges til at logge hele arrayet hvis der sker fejl
 
     //Check hver value i tidligere defineret array for at sammenligne og finde den, der er tættest på.
     let closestValue = null;
+    //
     let smallestdifference = Infinity;
     xValues.forEach((index) => {
       const forskel = Math.abs(index - scrollX);
@@ -179,9 +187,9 @@ scrollableDiv.addEventListener("scroll", () => {
     //indsæt onclick script.
     // SCRIPTET FRA onClick KAN MERE ELLER MINDRE ANVENDES HER, DIG NED JUSTERINGER - HYG DIG ;)
   }, 200); //milisekunder
-  /* 
-  let scroll2 = document.getElementById("year");
-  console.dir(scrollX);*/
+  /*
+  let scroll2 = document.getElementById("year");*/
+  console.dir(scrollX);
 });
 
 function scrollToPosition(targetPosition, duration) {
