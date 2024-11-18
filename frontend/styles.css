@@ -74,9 +74,9 @@ body {
   z-index: 1;
   font-weight: 600;
   font-size: 14px;
-  padding: 25px;
+  padding: 20px;
   position: relative;
-  left: -14px;
+  left: -13px;
 }
 
 .venstrepics {
@@ -115,7 +115,7 @@ body {
 
 .radio-input label:nth-child(3):has(input:checked) ~ .selection {
   transform: translateY(200px);
-  background-color: #ff9801;
+  background-color: rgb(231, 231, 76);
 }
 /*Sidemenuslut*/
 /*Containertilkortetstart*/

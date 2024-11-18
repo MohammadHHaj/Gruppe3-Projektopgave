@@ -62,16 +62,18 @@ for (let year = 1990; year <= 2022; year++) {
   yearElement.dataset.year = year;
   //Giver hver div denne attr data-year="årstallet"
   yearElement.onclick = () => {
-    //Når diven med year i bliver trykket på så skal følgende ske
+    //Når diven med et year i bliver trykket på så skal følgende ske
 
     const x = yearElement.dataset.xvalue;
     //Laver en ny const til det samme men denne gang uden allerede indførte værdier.
     //Så at x altid vil være det sidste som brugeren har trykket på
     console.log(x);
+    //Så x er den der er trykket på
     scrollToPosition(x, 969);
-
+    //Den skal få x til at scrollToPosition som er den position som er defineret som midten (se længere nede)
+    //969 er milisekunderne som den skal bruge på at scroll
     scrollableDiv.scrollLeft = x;
-
+    //ScrollLeft får den til at scroll i scrollablediv til det ønsket punkt (linje72)
     yearDiv.setAttribute("data-selected-year", year);
     //Den skal vælge det år der bliver trykket på,s data-year="årstallet"
     document
@@ -94,6 +96,8 @@ for (let year = 1990; year <= 2022; year++) {
     yearDiv.appendChild(placeholder3);
     placeholder4.style.width = "51px";
     yearDiv.appendChild(placeholder4);
+    //hvis året er ligemed 2022 så lav 2 tomme diver efter
+    //style width skal være på 51px på placeholder4 da css,en bare ikke passede med midten ellers.
   }
 }
 
@@ -101,31 +105,45 @@ for (let year = 1990; year <= 2022; year++) {
 
 // Timer til at vide, hvornår brugeren er "stoppet" med at scrolle
 let timer = null;
+//laver en variabel der hedder timer som er timeren som starter på null
 scrollableDiv.addEventListener("scroll", () => {
+  //skal lytte efter scroll i scrollablediv
   if (timer !== null) {
+    //hvis timer ikke er ligemed null
+    //Dvs så længe timeren er igang skal den gøre følgende
     clearTimeout(timer);
+    //Nulstiller timeren
   }
+
   timer = setTimeout(function () {
+    //laver en funktion til timeren
     let scrollX = scrollableDiv.scrollLeft;
-
-    // Log hvor timeren er stoppet
+    //bruges til at gemme hver meget der er scrollet i diven som scrollX
+    // Log ved hvilken px timeren er stoppet
     console.log("Timer død ved: " + scrollX);
-    //console.log(startx + " " + scrollX);
+    //Console logger for at se om det er rigtigt, at den ved hvornår man stopper
 
-    // Hent alle positioner på diver, og gem i array "xValues".
     const childDivs = yearDiv.querySelectorAll("div");
+    //henter alle diver i yeardiv
     const xValues = [];
+    //laver en const med et array hvor der ikke er noget defineret i
     childDivs.forEach((div) => {
+      //for hver childDivs i yeardiv gør følgende
       const value = div.getAttribute("data-xvalue");
+      //Lav en konstant som er value (value er divens px tal)
       if (value !== null) {
+        //hvis værdien ikke er null skal den gøre følgende
         xValues.push(value);
+        //sætter alle divers px tal i et array under xvalues
       }
     });
+    // Henter alle positioner på diver, og gem i array "xValues".
 
-    console.log(xValues);
+    //console.log(xValues); //Bruges til at logge hele arrayet hvis der sker fejl
 
     //Check hver value i tidligere defineret array for at sammenligne og finde den, der er tættest på.
     let closestValue = null;
+    //
     let smallestdifference = Infinity;
     xValues.forEach((index) => {
       const forskel = Math.abs(index - scrollX);
@@ -169,9 +187,8 @@ scrollableDiv.addEventListener("scroll", () => {
     //indsæt onclick script.
     // SCRIPTET FRA onClick KAN MERE ELLER MINDRE ANVENDES HER, DIG NED JUSTERINGER - HYG DIG ;)
   }, 200); //milisekunder
-  /* 
-  let scroll2 = document.getElementById("year");
-  console.dir(scrollX);*/
+
+  //console.dir(scrollX);
 });
 
 function scrollToPosition(targetPosition, duration) {
