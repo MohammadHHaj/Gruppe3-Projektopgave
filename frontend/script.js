@@ -95,20 +95,20 @@ function calculateColorWifi(usage) {
 
 function calculateColorMobil(usage) {
   if (usage <= 0) return "darkgray";
-  else if (usage <= 20) return "#D4EED1";
-  else if (usage <= 40) return "#A3D18C";
-  else if (usage <= 60) return "#6FBF4B";
-  else if (usage <= 80) return "#3E9D25";
-  return "#1D8A13";
+  else if (usage <= 20) return "#D4EED1"; //Meget lys grøn
+  else if (usage <= 40) return "#A3D18C"; //lys grøn
+  else if (usage <= 60) return "#6FBF4B "; //mellem grøn
+  else if (usage <= 80) return "#3E9D25"; //mørkere grøn
+  return "#1D8A13"; //mørk grøn
 }
 
 function calculateColorComputer(usage) {
   if (usage <= 0) return "darkgray";
-  else if (usage <= 20) return "#FAD4D4";
-  else if (usage <= 40) return "#F28B8B";
-  else if (usage <= 60) return "#E64949";
-  else if (usage <= 80) return "#B22222";
-  return "#7D0B0B";
+  else if (usage <= 20) return "#FFFF8F";
+  else if (usage <= 40) return "#FAFA33";
+  else if (usage <= 60) return "#FFEA00";
+  else if (usage <= 80) return "#FFBF00";
+  return "#FFAA33";
 }
 
 function updateFarveInfo(dataType) {
@@ -137,11 +137,11 @@ function updateFarveInfo(dataType) {
   } else if (dataType === "electricity_access_percentage") {
     colorScale = [
       { label: "0%", color: "darkgray" },
-      { label: "1-20%", color: "#FAD4D4" },
-      { label: "21-40%", color: "#F28B8B" },
-      { label: "41-60%", color: "#E64949" },
-      { label: "61-80%", color: "#B22222" },
-      { label: "81-100%", color: "#7D0B0B" },
+      { label: "1-20%", color: "#FFFF8F" },
+      { label: "21-40%", color: "#FAFA33" },
+      { label: "41-60%", color: "#FFEA00" },
+      { label: "61-80%", color: "#FFBF00" },
+      { label: "81-100%", color: "#FFAA33" },
     ];
   }
 
