@@ -115,11 +115,12 @@ scrollableDiv.addEventListener("scroll", () => {
     //Nulstiller timeren
   }
   timer = setTimeout(function () {
+    //laver en funktion til timeren
     let scrollX = scrollableDiv.scrollLeft;
-
+    //bruges til at gemme hver meget der er scrollet i diven som scrollX
     // Log hvor timeren er stoppet
     console.log("Timer død ved: " + scrollX);
-    //console.log(startx + " " + scrollX);
+    //Console logger for at se om det er rigtigt, at den ved hvornår man stopper
 
     // Hent alle positioner på diver, og gem i array "xValues".
     const childDivs = yearDiv.querySelectorAll("div");
