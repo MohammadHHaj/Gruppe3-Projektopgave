@@ -104,11 +104,11 @@ function calculateColorMobil(usage) {
 
 function calculateColorComputer(usage) {
   if (usage <= 0) return "darkgray";
-  else if (usage <= 20) return "#FFFF8F";
-  else if (usage <= 40) return "#FAFA33";
-  else if (usage <= 60) return "#FFEA00";
-  else if (usage <= 80) return "#FFBF00";
-  return "#FFAA33";
+  else if (usage <= 20) return "#FFF7CC";
+  else if (usage <= 40) return "#FFE680";
+  else if (usage <= 60) return "#FFC140";
+  else if (usage <= 80) return "#FF9A3C";
+  return "#FF7A00";
 }
 
 function updateFarveInfo(dataType) {
@@ -137,11 +137,11 @@ function updateFarveInfo(dataType) {
   } else if (dataType === "electricity_access_percentage") {
     colorScale = [
       { label: "0%", color: "darkgray" },
-      { label: "1-20%", color: "#FFFF8F" },
-      { label: "21-40%", color: "#FAFA33" },
-      { label: "41-60%", color: "#FFEA00" },
-      { label: "61-80%", color: "#FFBF00" },
-      { label: "81-100%", color: "#FFAA33" },
+      { label: "1-20%", color: "#FFF7CC" },
+      { label: "21-40%", color: "#FFE680" },
+      { label: "41-60%", color: "#FFC140" },
+      { label: "61-80%", color: "#FF9A3C" },
+      { label: "81-100%", color: "#FF7A00" },
     ];
   }
 
