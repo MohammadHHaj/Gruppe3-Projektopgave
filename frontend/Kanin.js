@@ -41,6 +41,7 @@ let startx = 0;
 for (let year = 1990; year <= 2022; year++) {
   //Deklarer et nyt objekt "year" som 1990 til 2022
   if (year == 1990) {
+    yearDiv.getAttribute("data-selected-year");
     const placeholder1 = document.createElement("div");
     placeholder1.className = "year";
     const placeholder2 = document.createElement("div");
@@ -106,6 +107,13 @@ for (let year = 1990; year <= 2022; year++) {
     yearDiv.appendChild(placeholder4);
     //hvis året er ligemed 2022 så lav 2 tomme diver efter
     //style width skal være på 51px på placeholder4 da css,en bare ikke passede med midten ellers.
+  }
+}
+if (yearDiv.getAttribute("data-selected-year")) {
+  const firstYearElement = yearDiv.querySelector('[data-year="1990"]');
+  if (firstYearElement) {
+    firstYearElement.classList.add("selected");
+    yearDiv.setAttribute("data-selected-year", "1990");
   }
 }
 
