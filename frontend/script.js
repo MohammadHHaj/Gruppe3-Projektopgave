@@ -1,24 +1,38 @@
 // frontend/script.js
 
-// Fetch data baseret på valget af radio knappen
+// Funktion til at hente data om internet baseret på det valgte år
 function fetchDataWifi() {
+  // Hent det valgte år fra DOM'en ved at få værdien af 'data-selected-year' attributten fra elementet med id 'year'
   const year = d3.select("#year").attr("data-selected-year");
+
+  // Send en HTTP GET-request til API'et for at hente data om internet for det valgte år
   d3.json(`/api/internet_usage?type=wifi&year=${year}`).then((Wifidata) => {
+    // Når dataene er hentet, opdater kortet med de nye data om internet
     updateMap(Wifidata, year, "internet_usage");
   });
 }
 
+// Funktion til at hente data om mobiltelefoner pr. 100 indbyggere baseret på det valgte år
 function fetchDataMobil() {
+  // Hent det valgte år fra DOM'en
   const year = d3.select("#year").attr("data-selected-year");
+
+  // Send en HTTP GET-request til API'et for at hente data om mobiltelefoner pr. 100 indbyggere for det valgte år
   d3.json(`/api/telephones_100?type=mobil&year=${year}`).then((Mobildata) => {
+    // Når dataene er hentet, opdater kortet med de nye data om mobiltelefoner pr. 100 indbygger
     updateMap(Mobildata, year, "telephones_per_100");
   });
 }
 
+// Funktion til at hente data om adgang til elektricitet baseret på det valgte år
 function fetchDataElectricity() {
+  // Hent det valgte år fra DOM'en
   const year = d3.select("#year").attr("data-selected-year");
+
+  // Send en HTTP GET-request til API'et for at hente data om elektricitet for det valgte år
   d3.json(`/api/electricity_percentage?type=electricity&year=${year}`).then(
     (ElectricityData) => {
+      // Når dataene er hentet, opdater kortet med de nye data om elektricitet
       updateMap(ElectricityData, year, "electricity_access_percentage");
     }
   );
@@ -30,68 +44,91 @@ function updateMap(data, year, dataType) {
     return;
   }
 
-  // Opdater kortfarver og beskrivelser
+  // Opdater kortfarver og beskrivelser for hver lands data
   data.forEach((countryData) => {
+    // Find det unikke ID for landet baseret på landets navn
     const countryId = countryIdMap[countryData.country];
+
+    // Tjek om landet findes i kortdataene (simplemaps_worldmap_mapdata)
     if (countryId && simplemaps_worldmap_mapdata.state_specific[countryId]) {
-      // Tjek dataType og anvend den rette farveberegningsfunktion
+      // Tjek dataType og anvend den rette farveberegningsfunktion baseret på typen af data
       if (dataType === "internet_usage") {
+        // Beregn farven for landets internetforbrug og opdater kortet
         simplemaps_worldmap_mapdata.state_specific[countryId].color =
           calculateColorWifi(countryData.internet_usage);
+        // Opdater beskrivelsen for landet
         simplemaps_worldmap_mapdata.state_specific[
           countryId
         ].description = `${countryData.country} - år ${year} - Internetforbrug: ${countryData.internet_usage}%`;
       } else if (dataType === "telephones_per_100") {
+        // Beregn farven for mobiltelefoner pr. 100 indbyggere og opdater kortet
         simplemaps_worldmap_mapdata.state_specific[countryId].color =
           calculateColorMobil(countryData.telephones_per_100);
+        // Opdater beskrivelsen for landet
         simplemaps_worldmap_mapdata.state_specific[
           countryId
         ].description = `${countryData.country} - år ${year} - Telefoner pr. 100 indbyggere: ${countryData.telephones_per_100}`;
       } else if (dataType === "electricity_access_percentage") {
+        // Beregn farven for elektricitet og opdater kortet
         simplemaps_worldmap_mapdata.state_specific[countryId].color =
           calculateColorComputer(countryData.electricity_access_percentage);
+        // Opdater beskrivelsen for landet
         simplemaps_worldmap_mapdata.state_specific[
           countryId
         ].description = `${countryData.country} - år ${year} - Elektricitet i procent: ${countryData.electricity_access_percentage}%`;
       } else {
+        // Hvis der ikke findes en matchende dataType, log en advarsel
         console.warn(`Country element for "${countryData.country}" not found`);
       }
     }
   });
 
-  // Opdater farveinfo
+  // Opdater farveinfo baseret på den aktuelle dataType
   updateFarveInfo(dataType);
 
-  // Opdater kortet
+  // Opdater kortet med de nye farver og beskrivelser
   simplemaps_worldmap.refresh();
 }
 
-// Overvåg ændringer i det valgte år
-// const observer = new MutationObserver(() => {
-//   const selected = document.querySelector("#year-selector .selected");
-//   if (selected) {
-//     if (document.getElementById("Wifi").checked) fetchDataWifi()
-//     else if (document.getElementById("Mobil").checked) fetchDataMobil();
-//     else if (document.getElementById("Computer").checked)
-//       fetchDataElectricity();
-//   }
-// });
+document
+  .querySelectorAll('input[name="value-radio"]')
+  .forEach(function (radio) {
+    radio.addEventListener("change", function () {
+      const valgtTekst = document.getElementById("valgt-tekst");
+      const valgtindhold = document.getElementById("valgt-indhold");
+      if (!valgtTekst) {
+        console.error("#valgt-tekst findes ikke i DOM'en");
+        return;
+      }
+
+      // Liste over mulige id'er
+      const muligheder = ["Wifi", "Mobil", "Computer"];
+
+      if (!muligheder.includes(radio.id)) {
+        valgtTekst.textContent = "Vælg en kategori";
+      } else if (radio.id === "Wifi") {
+        valgtTekst.textContent = "Du har valgt Wifi";
+        valgtindhold.textContent = "Wifi data er baseret på brug af internet";
+      } else if (radio.id === "Mobil") {
+        valgtTekst.textContent = "Du har valgt Mobil";
+        valgtindhold.textContent =
+          "Mobil data er baseret på abonommenter pr 100 indbygger";
+      } else if (radio.id === "Computer") {
+        valgtTekst.textContent = "Du har valgt Elektricitet";
+        valgtindhold.textContent = "Elektricitet er baseret på hej!";
+      }
+    });
+  });
 
 const observer = new MutationObserver(() => {
   const selected = document.querySelector("#year-selector .selected");
   if (selected) {
     if (document.getElementById("Wifi").checked) {
       fetchDataWifi();
-      const tekstWifi = document.getElementById("valgt-tekst");
-      tekstWifi.textContent = "Du har valgt wifi";
     } else if (document.getElementById("Mobil").checked) {
       fetchDataMobil();
-      const tekstWifi = document.getElementById("valgt-tekst");
-      tekstWifi.textContent = "Du har valgt Mobil";
     } else if (document.getElementById("Computer").checked) {
       fetchDataElectricity();
-      const tekstWifi = document.getElementById("valgt-tekst");
-      tekstWifi.textContent = "Du har valgt Elektricitet";
     }
   } else {
     console.log("Ingen valg fundet.");
@@ -184,6 +221,34 @@ function updateFarveInfo(dataType) {
       );
   });
 }
+
+// Funktion til at hente det aktuelt valgte år fra DOM'en
+// Hvis ingen værdi er valgt, returneres standardåret 1990
+function getSelectedYear() {
+  const selectedYear = d3.select("#year").attr("data-selected-year"); // Hent år fra attributten 'data-selected-year' på elementet med id "year"
+  return selectedYear || "1990"; // Hvis der ikke er valgt et årstal, brug 1990 som standardværdi
+}
+
+// Tilføj event listener for WiFi-valg
+// Når brugeren vælger WiFi, hentes data for det aktuelt valgte år
+document.getElementById("Wifi").addEventListener("change", () => {
+  const year = getSelectedYear(); // Hent det aktuelt valgte år
+  fetchDataWifi("wifi", year); // Kald funktionen fetchDataWifi med parametrene "wifi" og det valgte år
+});
+
+// Tilføj event listener for Mobil-valg
+// Når brugeren vælger Mobil, hentes data for det aktuelt valgte år
+document.getElementById("Mobil").addEventListener("change", () => {
+  const year = getSelectedYear(); // Hent det aktuelt valgte år
+  fetchDataMobil("mobil", year); // Kald funktionen fetchDataMobil med parametrene "mobil" og det valgte år
+});
+
+// Tilføj event listener for Computer-valg
+// Når brugeren vælger Computer, hentes data for det aktuelt valgte år
+document.getElementById("Computer").addEventListener("change", () => {
+  const year = getSelectedYear(); // Hent det aktuelt valgte år
+  fetchDataElectricity("electricity", year); // Kald funktionen fetchDataElectricity med parametrene "electricity" og det valgte år
+});
 
 const countryIdMap = {
   Afghanistan: "AF",

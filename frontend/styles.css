@@ -6,9 +6,9 @@ body {
 /*lad body element være i toppen*/
 /*Tidsvælgerstart*/
 #arrow {
-  position: absolute;
-  top: 10px;
-  left: 670px;
+  position: relative;
+  top: 29px;
+  left: 663px;
 }
 #year-selector {
   border-radius: 5px;
@@ -279,6 +279,15 @@ body {
   border-radius: 3px;
 }
 
+#valgt-tekst,
+#valgt-indhold {
+  background-color: transparent;
+}
+
 #valgt-tekst {
-  text-align: center;
+  margin-bottom: 5px; /* Reducerer mellemrummet mellem h2 og p */
+}
+
+#valgt-indhold {
+  margin-top: 0; /* Reducerer mellemrummet yderligere */
 }
