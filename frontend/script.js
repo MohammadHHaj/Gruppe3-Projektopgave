@@ -67,21 +67,48 @@ function updateMap(data, year, dataType) {
 }
 
 // Overvåg ændringer i det valgte år
+// const observer = new MutationObserver(() => {
+//   const selected = document.querySelector("#year-selector .selected");
+//   if (selected) {
+//     if (document.getElementById("Wifi").checked) fetchDataWifi()
+//     else if (document.getElementById("Mobil").checked) fetchDataMobil();
+//     else if (document.getElementById("Computer").checked)
+//       fetchDataElectricity();
+//   }
+// });
+
 const observer = new MutationObserver(() => {
   const selected = document.querySelector("#year-selector .selected");
   if (selected) {
-    if (document.getElementById("Wifi").checked) fetchDataWifi();
-    else if (document.getElementById("Mobil").checked) fetchDataMobil();
-    else if (document.getElementById("Computer").checked)
+    if (document.getElementById("Wifi").checked) {
+      fetchDataWifi();
+      const tekstWifi = document.getElementById("valgt-tekst");
+      tekstWifi.textContent = "Du har valgt wifi";
+    } else if (document.getElementById("Mobil").checked) {
+      fetchDataMobil();
+      const tekstWifi = document.getElementById("valgt-tekst");
+      tekstWifi.textContent = "Du har valgt Mobil";
+    } else if (document.getElementById("Computer").checked) {
       fetchDataElectricity();
+      const tekstWifi = document.getElementById("valgt-tekst");
+      tekstWifi.textContent = "Du har valgt Elektricitet";
+    }
+  } else {
+    console.log("Ingen valg fundet.");
   }
 });
 
-observer.observe(document.getElementById("year-selector"), {
-  subtree: true,
-  attributes: true,
-  attributeFilter: ["class"],
-});
+// Overvåg ændringer i #year-selector
+const yearSelector = document.getElementById("year-selector");
+if (yearSelector) {
+  observer.observe(yearSelector, {
+    subtree: true,
+    attributes: true,
+    attributeFilter: ["class"],
+  });
+} else {
+  console.error("#year-selector ikke fundet i DOM'en");
+}
 
 // Farveberegninger
 function calculateColorWifi(usage) {

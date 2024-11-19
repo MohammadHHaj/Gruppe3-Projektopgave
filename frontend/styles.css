@@ -207,8 +207,8 @@ body {
 
 .mat-input label {
   position: absolute;
-  top: 1.4em;
-  left: 1em;
+  top: 22.4px;
+  left: 16px;
   pointer-events: none;
   transition: 0.2s;
   color: #0009;
@@ -277,4 +277,8 @@ body {
   margin-right: 6px;
   display: block;
   border-radius: 3px;
+}
+
+#valgt-tekst {
+  text-align: center;
 }
