@@ -30,22 +30,22 @@ DROP TABLE IF EXISTS electricity;
 
 CREATE TABLE internet_acces(
 country varchar(30),
-year integer,
-internet_usage float default 0.0,
+year integer check(year >=1990 and year <= 2022),
+internet_usage float default 0.0 check(internet_usage >= 0 and internet_usage <= 100),
 primary key(country,year)
 );
 
 CREATE TABLE telephones(
-	country varChar(30) not null,
-	year integer not null,
-	telephones_per_100 float not null,
+	country varChar(30),
+	year integer check(year >=1990 and year <= 2022),
+	telephones_per_100 float not null check(telephones_per_100 >= 0),
 	PRIMARY KEY (country,year)
 );
 
 CREATE TABLE electricity(
- country varChar(30) not null,
-  year integer not null,
-	electricity_access_percentage float not null,
+ country varChar(30),
+  year integer check(year >=1990 and year <= 2022),
+	electricity_access_percentage float not null check(electricity_access_percentage >= 0),
 	PRIMARY KEY (country,year)
 );
 
