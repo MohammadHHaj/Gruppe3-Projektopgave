@@ -153,12 +153,14 @@ body {
   z-index: 5;
   transition: opacity 0.5s ease-in-out;
   position: absolute;
+  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
 }
 #kategorier {
   position: relative;
   top: 100px;
-  left: 1px;
+  left: 5px;
+  text-shadow: 2px 2px 4px rgba(1, 0, 0, 0.6);
 }
 #forlag-tekst {
   text-align: center;
