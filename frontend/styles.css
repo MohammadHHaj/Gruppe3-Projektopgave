@@ -2,7 +2,21 @@ body {
   background-color: whitesmoke;
   overflow-x: hidden;
 }
+/*Overskriftdiv*/
+#overskriftdiv {
+  text-align: center;
+}
 
+#brodtekst {
+  margin-left: 100px;
+  margin-right: 100px;
+  display: flex;
+}
+#verdensmaal {
+  height: 160px;
+  border-radius: 7px;
+}
+/*Overskriftdivslut*/
 /*lad body element være i toppen*/
 /*Tidsvælgerstart*/
 #arrow {
@@ -160,7 +174,7 @@ body {
   position: relative;
   top: 100px;
   left: 5px;
-  text-shadow: 2px 2px 4px rgba(1, 0, 0, 0.6);
+  text-shadow: 1px 2px 6px rgba(1, 0, 0, 0.6);
 }
 #forlag-tekst {
   text-align: center;
@@ -283,6 +297,7 @@ body {
   position: absolute;
   bottom: 16px;
   left: 20px;
+  z-index: 2;
 }
 .farve-info div {
   display: flex;
@@ -300,15 +315,12 @@ body {
   border-radius: 3px;
 } */
 
-#valgt-tekst,
 #valgt-indhold {
   background-color: transparent;
-}
-
-#valgt-tekst {
-  margin-bottom: 5px; /* Reducerer mellemrummet mellem h2 og p */
-}
-
-#valgt-indhold {
-  margin-top: 0; /* Reducerer mellemrummet yderligere */
+  position: absolute;
+  left: 20px;
+  bottom: -4px;
+  z-index: 2;
+  text-shadow: 1px 2px 2px rgba(1, 0, 0, 0.6);
+  font-size: 10px;
 }
