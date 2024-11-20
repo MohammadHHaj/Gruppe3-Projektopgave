@@ -135,16 +135,35 @@ body {
 /*Forlaget*/
 #forlaget {
   background-color: whitesmoke; /*whitesmoke; vi bruger sort til at design lortet. det skal skiftes til whitesmoke indtil aflevering*/
-  width: 100%; /*Både w og h skal være 100% for at fungere ordenligt.*/
-  height: 100%;
+  width: 50%;
+  height: 40%;
   position: absolute;
-  top: -1.1px;
+  top: 140px;
   z-index: 10;
-  color: black; /*Tekstens farve*/
+  color: black;
   transition: opacity 0.5s ease-in-out;
   overflow: hidden;
+  left: 23%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 7px black;
 }
-
+#blurryforlag {
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  backdrop-filter: blur(3px);
+}
+#kategorier {
+  position: relative;
+  top: 100px;
+  left: 1px;
+}
+#forlag-tekst {
+  text-align: center;
+  margin-top: 73px;
+}
 .hidden {
   /*Class' bliver lavet i js.*/
   height: 0;
@@ -260,8 +279,8 @@ body {
   background: rgba(255, 255, 255, 0);
   border: none;
   position: absolute;
-  top: 328px;
-  left: 10px;
+  bottom: 16px;
+  left: 20px;
 }
 .farve-info div {
   display: flex;
@@ -269,7 +288,7 @@ body {
   justify-content: flex-start;
   margin: 5px 0;
 }
-
+/* 
 .farve-info div::before {
   content: "";
   width: 15px;
@@ -277,7 +296,7 @@ body {
   margin-right: 6px;
   display: block;
   border-radius: 3px;
-}
+} */
 
 #valgt-tekst,
 #valgt-indhold {

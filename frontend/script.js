@@ -94,27 +94,16 @@ document
   .querySelectorAll('input[name="value-radio"]')
   .forEach(function (radio) {
     radio.addEventListener("change", function () {
-      const valgtTekst = document.getElementById("valgt-tekst");
       const valgtindhold = document.getElementById("valgt-indhold");
-      if (!valgtTekst) {
-        console.error("#valgt-tekst findes ikke i DOM'en");
-        return;
-      }
 
       // Liste over mulige id'er
-      const muligheder = ["Wifi", "Mobil", "Computer"];
 
-      if (!muligheder.includes(radio.id)) {
-        valgtTekst.textContent = "Vælg en kategori";
-      } else if (radio.id === "Wifi") {
-        valgtTekst.textContent = "Du har valgt Wifi";
+      if (radio.id === "Wifi") {
         valgtindhold.textContent = "Wifi data er baseret på brug af internet";
       } else if (radio.id === "Mobil") {
-        valgtTekst.textContent = "Du har valgt Mobil";
         valgtindhold.textContent =
           "Mobil data er baseret på abonommenter pr 100 indbygger";
       } else if (radio.id === "Computer") {
-        valgtTekst.textContent = "Du har valgt Elektricitet";
         valgtindhold.textContent = "Elektricitet er baseret på hej!";
       }
     });
