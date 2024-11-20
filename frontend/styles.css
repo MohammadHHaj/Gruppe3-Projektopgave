@@ -2,7 +2,8 @@ body {
   background-color: whitesmoke;
   overflow-x: hidden;
 }
-/*Overskriftdiv*/
+/*lad body element være i toppen*/
+/*Førsteside*/
 #overskriftdiv {
   text-align: center;
 }
@@ -16,9 +17,12 @@ body {
   height: 160px;
   border-radius: 7px;
 }
-/*Overskriftdivslut*/
-/*lad body element være i toppen*/
+/*Førstesideslut*/
 /*Tidsvælgerstart*/
+.overskrifter {
+  position: absolute;
+  left: 43%;
+}
 #arrow {
   position: relative;
   top: 29px;
@@ -131,12 +135,13 @@ body {
   transform: translateY(200px);
   background-color: rgb(231, 231, 76);
 }
+
 /*Sidemenuslut*/
 /*Containertilkortetstart*/
 #container {
   display: flex;
   flex-wrap: wrap;
-  border-radius: 5px;
+  border-radius: 3px;
   border-width: 2px;
   border-style: solid;
   border-color: black;
@@ -188,12 +193,14 @@ body {
 /*Forlaget*/
 /*Containertilkortetslut*/
 /*Graf*/
-#hjelpetegn {
+#grafkategorier {
   display: flex;
   flex-direction: column;
   position: relative;
   left: 19%;
   top: 90px;
+  justify-content: space-between;
+  height: 300px;
 }
 #grafenbox {
   border: black solid;
@@ -268,7 +275,7 @@ body {
 .mat-input input:focus::placeholder {
   opacity: 1;
 }
-#knappertilgrafen {
+#grafinputfelt {
   display: flex;
   justify-content: center;
 }
