@@ -35,6 +35,8 @@ internet_usage float default 0.0 check(internet_usage >= 0 and internet_usage <=
 primary key(country,year)
 );
 
+CREATE INDEX idx_internet ON internet_acces(year); 
+
 CREATE TABLE telephones(
 	country varChar(30),
 	year integer check(year >=1990 and year <= 2022),
@@ -42,12 +44,16 @@ CREATE TABLE telephones(
 	PRIMARY KEY (country,year)
 );
 
+CREATE INDEX idx_telephones ON telephones(year); 
+
 CREATE TABLE electricity(
  country varChar(30),
   year integer check(year >=1990 and year <= 2022),
 	electricity_access_percentage float not null check(electricity_access_percentage >= 0),
 	PRIMARY KEY (country,year)
 );
+
+CREATE INDEX idx_electricity ON electricity(year); 
 
 `);
 console.log("Tables recreated.");
