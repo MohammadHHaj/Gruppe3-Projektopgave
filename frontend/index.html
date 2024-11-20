@@ -16,9 +16,7 @@
     <br />
     <br />
     <div id="overskriftdiv">
-      <h1 id="selveoverskriften">
-        Hvad ved du egentlig om den digitale udvikling?
-      </h1>
+      <h1>Hvad ved du egentlig om den digitale udvikling?</h1>
       <div id="brodtekst">
         <p>
           Her beskriver vi 1. Hvad det 9. verdens mål er? 2. Hvem vi er? 3. Hvad
@@ -27,7 +25,7 @@
         </p>
         <img
           id="verdensmaal"
-          src="/billeder/pngverdensmål_transparent.png"
+          src="billeder/pngverdensmål_transparent.png"
           alt="billede af verdensmål nummer 9"
         />
       </div>
@@ -58,8 +56,8 @@
       <br />
       <br />
       <br />
-      <hr />
     </div>
+    <h1 class="overskrifter">Worldmap</h1>
     <h3 id="kategorier">Kategorier</h3>
     <!--tidsvælger-->
     <div id="arrow">&#x2B9F;</div>
@@ -121,37 +119,58 @@
       </div>
     </div>
     <!--Container div slut.-->
+    <!--Grafsidenstart-->
     <div id="grafoverskrift">
-      <h2>velkommen til grafen</h2>
+      <h2 class="overskrifter">Velkommen til grafen</h2>
     </div>
-    <div id="hjelpetegn">
-      <img
-        src="billeder/wifi.png"
-        class="venstrepics"
-        alt="Altanativ-tekst til hvis billedet ikke loader eller blinde mennesker"
-      />
-      <img
-        src="billeder/mobil.png"
-        class="venstrepics"
-        alt="Altanativ-tekst til hvis billedet ikke loader eller blinde mennesker"
-      />
-      <img
-        src="billeder/pæreulys.png"
-        class="venstrepics"
-        alt="Altanativ-tekst til hvis billedet ikke loader eller blinde mennesker"
-      />
+    <div id="grafkategorier">
+      <label class="midten">
+        <input name="value-radio" id="GrafInternet" type="radio" />
+        <img
+          class="venstrepics"
+          src="billeder/wifi.png"
+          alt="Alternativtekst"
+          onmouseover="this.src='billeder/wifihvid2.gif';"
+          onmouseout="this.src='billeder/wifi.png';"
+        />
+        <span>Internet</span>
+      </label>
+      <!--NY-->
+      <label class="midten">
+        <input name="value-radio" id="GrafMobil" type="radio" />
+        <img
+          class="venstrepics"
+          src="billeder/mobil.png"
+          alt="Alternativtekst"
+          onmouseover="this.src='billeder/mobil.gif';"
+          onmouseout="this.src='billeder/mobil.png';"
+        />
+        <span>Mobil</span>
+      </label>
+      <!--NY-->
+      <label class="midten">
+        <input name="value-radio" id="GrafComputer" class="" type="radio" />
+        <img
+          class="venstrepics"
+          src="billeder/pæreulys.png"
+          alt="Alternativtekst"
+          onmouseover="this.src='billeder/pære.png';"
+          onmouseout="this.src='billeder/pæreulys.png';"
+        />
+        <span>Elektricitet</span>
+      </label>
     </div>
     <div id="grafenbox">
-      <div id="knappertilgrafen">
+      <div id="grafinputfelt">
         <div class="mat-input">
           <label for="food">Vælg et land</label>
           <input id="food" type="text" placeholder="Fx. Danmark" />
         </div>
       </div>
     </div>
-    <br />
-    <br />
-
+    <!--Grafsidenslut-->
+    <!--Omosstart-->
+    <!--Omosslut-->
     <script src="script.js"></script>
     <script src="map.js"></script>
     <script src="worldmap.js"></script>
