@@ -331,3 +331,16 @@ body {
   text-shadow: 1px 2px 2px rgba(1, 0, 0, 0.6);
   font-size: 10px;
 }
+
+#topBar{
+  position: fixed;
+  background-color: whitesmoke;
+  width: 50%;
+  height: 50px;
+  border: 2px solid black;
+  border-top: none;
+  left: 25%;
+  top: 0px;
+  z-index: 15;
+}
+
