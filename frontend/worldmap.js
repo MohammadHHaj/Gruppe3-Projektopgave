@@ -10775,33 +10775,19 @@ var simplemaps_worldmap_mapinfo = {
                   void 0 === a.navigate_title ? "Navigate" : a.navigate_title,
                 o = void 0 === a.keyboard_omit ? "" : a.keyboard_omit;
               if (!(o.indexOf("navigat") > -1)) {
-                var r = document.createElement("select");
-                r.options.add(new Option(t, "-1")),
-                  r.options.add(new Option("Back", "back")),
-                  v &&
-                    (r.options.add(new Option("Zoom in", "in")),
-                    r.options.add(new Option("Zoom out", "out")),
-                    r.options.add(new Option("Left", "left")),
-                    r.options.add(new Option("Right", "right")),
-                    r.options.add(new Option("Up", "up")),
-                    r.options.add(new Option("Down", "down"))),
-                  r.style.setProperty("margin-right", ".5em"),
-                  r.style.setProperty("margin-top", ".5em"),
-                  r.style.setProperty("float", "left"),
-                  ev.appendChild(r),
-                  (r.onchange = function (e) {
-                    if ("-1" == this.value) return !1;
-                    "back" == this.value && t1(),
-                      "out" == this.value && eY(),
-                      "in" == this.value && eX(),
-                      "left" == this.value && eQ("-.25", "x"),
-                      "right" == this.value && eQ(".25", "x"),
-                      "up" == this.value && eQ("-.25", "y"),
-                      "down" == this.value && eQ(".25", "y"),
-                      setTimeout(function () {
-                        r.value = "-1";
-                      }, 1e3);
-                  });
+                r.onchange = function (e) {
+                  if ("-1" == this.value) return !1;
+                  "back" == this.value && t1(),
+                    "out" == this.value && eY(),
+                    "in" == this.value && eX(),
+                    "left" == this.value && eQ("-.25", "x"),
+                    "right" == this.value && eQ(".25", "x"),
+                    "up" == this.value && eQ("-.25", "y"),
+                    "down" == this.value && eQ(".25", "y"),
+                    setTimeout(function () {
+                      r.value = "-1";
+                    }, 1e3);
+                };
               }
               var n = void 0 === a.states_title ? "States" : a.states_title,
                 l = void 0 === a.regions_title ? "Regions" : a.regions_title,
@@ -10821,39 +10807,6 @@ var simplemaps_worldmap_mapinfo = {
                   u = o.indexOf(p) > -1,
                   d = Object.size(m.array);
                 if (!(d < 1) && (!(d < 2) || "region" != p) && !u) {
-                  var f = document.createElement("select");
-                  f.options.add(new Option(m.title, "-1")),
-                    f.style.setProperty("margin-right", ".5em"),
-                    f.style.setProperty("margin-top", ".5em"),
-                    f.style.setProperty("float", "left");
-                  var h = [];
-                  for (var y in m.array) h.push(m.array[y]);
-                  for (
-                    var $ = h.sort(function (e, t) {
-                        return e.sm.name > t.sm.name ? 1 : -1;
-                      }),
-                      y = 0;
-                    y < $.length;
-                    y++
-                  ) {
-                    var _ = $[y];
-                    "out" != _.sm.type &&
-                      !_.sm.inactive &&
-                      !_.sm.hide &&
-                      f.options.add(new Option(_.sm.name, _.sm.id));
-                  }
-                  (f.onchange = s.callback_closure(
-                    { entry: m, dropdown: f },
-                    function (e) {
-                      var t = e.dropdown,
-                        o = e.entry;
-                      if ("-1" == t.value) return !1;
-                      var r,
-                        n = o.array[t.value];
-                      tO(n.sm.type, n.sm.id);
-                    }
-                  )),
-                    ev.appendChild(f);
                 }
               }
             })(),
