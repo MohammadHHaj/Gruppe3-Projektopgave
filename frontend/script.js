@@ -89,52 +89,6 @@ function updateMap(data, year, dataType) {
   // Opdater kortet med de nye farver og beskrivelser
   simplemaps_worldmap.refresh();
 }
-// Håndter første sæt radioknapper
-document.querySelectorAll('input[name="main-radio"]').forEach((radio) => {
-  radio.addEventListener("change", function () {
-    const mellemlag = document.getElementById("mellemlag");
-    const valgtindhold = document.getElementById("valgt-indhold");
-
-    // Vis det andet sæt knapper
-    mellemlag.style.display = "block";
-
-    // Fremhæv valgt kategori
-    if (radio.id === "forlaginternet") {
-      valgtindhold.textContent = "Du har valgt: Internet.";
-    } else if (radio.id === "forlagmobil") {
-      valgtindhold.textContent = "Du har valgt: Mobil.";
-    } else if (radio.id === "forlagelektricitet") {
-      valgtindhold.textContent = "Du har valgt: Elektricitet.";
-    }
-  });
-});
-
-// Håndter andet sæt radioknapper
-document.querySelectorAll('input[name="value-radio"]').forEach((radio) => {
-  radio.addEventListener("change", function () {
-    if (radio.id === "Wifi") {
-      fetchDataWifi();
-    } else if (radio.id === "Mobil") {
-      fetchDataMobil();
-    } else if (radio.id === "Computer") {
-      fetchDataElectricity();
-    }
-  });
-});
-
-// Dummy fetchData funktioner (til debugging)
-function fetchDataWifi() {
-  console.log("Henter Wifi data...");
-}
-
-function fetchDataMobil() {
-  console.log("Henter Mobil data...");
-}
-
-function fetchDataElectricity() {
-  console.log("Henter Elektricitet data...");
-}
-
 document
   .querySelectorAll('input[name="value-radio"]')
   .forEach(function (radio) {
