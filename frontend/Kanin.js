@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
       button.addEventListener("click", function () {
         laget.classList.add("hidden");
         laget1.classList.add("hidden");
-        laget2.classList.add("hidden");
+        laget2.classList.add("mohammedsfar");
         // Dette under sørger for at diven er helt væk efter transitionen.
         laget.addEventListener("transitionend", function forsvind() {
           //Starter animationen når laget bliver "aktiveret"

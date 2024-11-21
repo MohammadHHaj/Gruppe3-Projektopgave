@@ -71,6 +71,9 @@ body {
 #mellemlag {
   display: flex;
 }
+#worldmapicon {
+  top: 835px;
+}
 /*Sidemenustart*/
 .radio-input input {
   display: none;
@@ -159,7 +162,7 @@ body {
   position: absolute;
   z-index: 2;
   top: 924px;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease-in-out;
   overflow: hidden;
 }
 .forlaginput {
@@ -212,11 +215,14 @@ body {
   text-align: center;
   margin-top: 52px;
 }
-.hidden {
-  /*Class' bliver lavet i js.*/
+.mohammedsfar {
   height: 0;
   opacity: 0;
   display: none;
+}
+.hidden {
+  height: 0;
+  opacity: 0;
 }
 /*Forlaget*/
 /*Containertilkortetslut*/
