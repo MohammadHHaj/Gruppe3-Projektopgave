@@ -335,12 +335,58 @@ body {
 #topBar{
   position: fixed;
   background-color: whitesmoke;
-  width: 50%;
+  width: 100%;
   height: 50px;
-  border: 2px solid black;
   border-top: none;
-  left: 25%;
+  left: 0%;
   top: 0px;
   z-index: 15;
+}
+
+#topBarBillede{
+  position: absolute;
+  width: 20%;
+  left: 0px;
+  top: -30px;
+  height: 105px;
+}
+
+#topBarKnapper{
+  position: absolute;
+  width: 75%;
+  top: 0%;
+  left: 25%;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 0.55rem;
+  font-size: 16px;
+}
+
+#topBarKnapper .radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+#topBarKnapper .radio input {
+  display: none;
+}
+
+#topBarKnapper .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: .5rem 0;
+  color: rgba(51, 65, 85, 1);
+  transition: all .45s ease-in-out;
+}
+
+#topBarKnapper .radio input:checked + .name {
+  background-color: #fff;
+  font-weight: 600;
 }
 
