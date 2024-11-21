@@ -16,13 +16,13 @@ body {
   width: 100%;
   height: 650px;
   border-top: 1px solid lightgray;
-
 }
 
 #sektion3 {
   position: relative;
   width: 100%;
   height: 650px;
+  top: 90px;
 }
 
 #sektion4 {
@@ -52,7 +52,7 @@ body {
   text-align: justify;
 }
 
-#brodtekst p{
+#brodtekst p {
   margin-top: -5px;
 }
 
@@ -118,7 +118,7 @@ body {
   display: flex;
 }
 #worldmapicon {
-  top: 55px;
+  top: 72px;
   left: 390px;
 }
 /*Sidemenustart*/
@@ -271,15 +271,48 @@ body {
 }
 /*Forlaget*/
 /*Containertilkortetslut*/
-/*Graf*/
+/*Grafstart*/
+#checkedinternet {
+  background-color: #0065a8;
+  top: -15px;
+}
+#checkedmobil {
+  background-color: #0a6700;
+  top: 110px;
+}
+#checkedelektricitet {
+  background-color: rgb(231, 231, 76);
+  top: 240px;
+}
+.checkedstr {
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  transition: 0.69s ease;
+  border-radius: 5px;
+  right: 385px;
+  opacity: 0;
+}
+.grafinput {
+  display: none;
+}
+.grafbilleder {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  right: 390px;
+  cursor: pointer;
+  z-index: 2;
+}
 #grafkategorier {
   display: flex;
   flex-direction: column;
   position: relative;
-  left: 19%;
+  left: 48%;
   top: 90px;
   justify-content: space-between;
   height: 300px;
+  width: max-content;
 }
 #grafenbox {
   border: black solid;
