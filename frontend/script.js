@@ -96,8 +96,6 @@ document
     radio.addEventListener("change", function () {
       const valgtindhold = document.getElementById("valgt-indhold");
 
-      // Liste over mulige id'er
-
       if (radio.id === "Wifi") {
         valgtindhold.textContent = "Wifi data er baseret på brug af internet";
       } else if (radio.id === "Mobil") {
