@@ -440,7 +440,7 @@ body {
   border: none;
   padding: 0.5rem 0;
   color: rgba(51, 65, 85, 1);
-  transition: all 0.45s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 
 #topBarKnapper .radio input:checked + .name {
