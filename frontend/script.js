@@ -90,6 +90,26 @@ function updateMap(data, year, dataType) {
   simplemaps_worldmap.refresh();
 }
 document
+  .querySelectorAll('input[name="value-radio2"]')
+  .forEach(function (radio2) {
+    radio2.addEventListener("click", function () {
+      let valgtkategori = radio2.id; // Få ID'et af den klikkede knap
+
+      // Tjek hvilken kategori er valgt og sæt den relevante radio-knap
+      if (valgtkategori === "forlaginternet") {
+        document.getElementById("Wifi").checked = true;
+        fetchDataWifi(); // Fetch data for Wifi
+      } else if (valgtkategori === "forlagmobil") {
+        document.getElementById("Mobil").checked = true;
+        fetchDataMobil(); // Fetch data for Mobil
+      } else if (valgtkategori === "forlagelektricitet") {
+        document.getElementById("Computer").checked = true;
+        fetchDataElectricity(); // Fetch data for Elektricitet
+      }
+    });
+  });
+
+document
   .querySelectorAll('input[name="value-radio"]')
   .forEach(function (radio) {
     radio.addEventListener("change", function () {

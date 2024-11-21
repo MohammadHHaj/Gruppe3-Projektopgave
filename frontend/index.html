@@ -20,6 +20,7 @@
       <div>
         <img id="topBarBillede" src="billeder/verdesnmaal.png" />
       </div>
+
       <div id="topBarKnapper">
         <label class="radio">
           <input type="radio" name="radio" checked="" />
@@ -35,6 +36,7 @@
           <input type="radio" name="radio" />
           <span class="name">Graf</span>
         </label>
+
         <label class="radio">
           <input type="radio" name="radio" />
           <span class="name">Om os</span>
@@ -43,64 +45,154 @@
     </div>
     <!--Top bar slut-->
 
-    <div id="overskriftdiv">
-      <h1>Hvad ved du egentlig om den digitale udvikling?</h1>
-      <div id="brodtekst">
-        <p>
-          Her beskriver vi 1. Hvad det 9. verdens mål er? 2. Hvem vi er? 3. Hvad
-          man kan se / for ud af at være på denne side? 4. Hvad vores hjemmeside
-          kan? 5. en guide til hjemmesiden?
-        </p>
-        <img
-          id="verdensmaal"
-          src="billeder/pngverdensmål_transparent.png"
-          alt="billede af verdensmål nummer 9"
-        />
+    <!--Første side. Oversigt-->
+    <div id="sektion1">
+      <div id="overskriftdiv">
+        <h1>Hvad ved du egentlig om den digitale udvikling?</h1>
+        <div id="brodtekst">
+          <p>
+            Her beskriver vi 1. Hvad det 9. verdens mål er? 2. Hvem vi er? 3.
+            Hvad man kan se / for ud af at være på denne side? 4. Hvad vores
+            hjemmeside kan? 5. en guide til hjemmesiden?
+          </p>
+          <img
+            id="verdensmaal"
+            src="billeder/pngverdensmål_transparent.png"
+            alt="billede af verdensmål nummer 9"
+          />
+        </div>
       </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
     </div>
-    <h1 class="overskrifter" id="worldmapicon">Worldmap</h1>
-    <h3 id="kategorier">Kategorier</h3>
-    <!--tidsvælger-->
-    <div id="arrow">&#x2B9F;</div>
-    <div id="year-selector">
-      <div id="year"></div>
-      <!-- Acts as the container for the years -->
-    </div>
+    <!--Første side slut-->
 
-    <!--Tidsvælgerslut-->
-    <div id="mellemlag">
-      <!--Knapperne i siden-->
-      <div id="kategoriforlag"></div>
-      <div class="radio-input">
+    <!--Anden side starter. World map-->
+    <div id="sektion2">
+      <h1 class="overskrifter" id="worldmapicon">Worldmap</h1>
+      <h3 id="kategorier">Kategorier</h3>
+      <!--tidsvælger-->
+      <div id="arrow">&#x2B9F;</div>
+      <div id="year-selector">
+        <div id="year"></div>
+        <!-- Acts as the container for the years -->
+      </div>
+
+      <!--Tidsvælgerslut-->
+      <div id="mellemlag">
+        <!--Knapperne i siden-->
+        <div id="kategoriforlag"></div>
+        <div class="radio-input">
+          <label class="midten">
+            <input name="value-radio" id="Wifi" type="radio" />
+            <img
+              class="venstrepics"
+              src="billeder/wifi.png"
+              alt="Alternativtekst"
+              onmouseover="this.src='billeder/wifihvid2.gif';"
+              onmouseout="this.src='billeder/wifi.png';"
+            />
+            <span>Internet</span>
+          </label>
+          <!--NY-->
+          <label class="midten">
+            <input name="value-radio" id="Mobil" type="radio" />
+            <img
+              class="venstrepics"
+              src="billeder/mobil.png"
+              alt="Alternativtekst"
+              onmouseover="this.src='billeder/mobil.gif';"
+              onmouseout="this.src='billeder/mobil.png';"
+            />
+            <span>Mobil</span>
+          </label>
+          <!--NY-->
+          <label class="midten">
+            <input name="value-radio" id="Computer" class="" type="radio" />
+            <img
+              class="venstrepics"
+              src="billeder/pæreulys.png"
+              alt="Alternativtekst"
+              onmouseover="this.src='billeder/pære.png';"
+              onmouseout="this.src='billeder/pæreulys.png';"
+            />
+            <span>Elektricitet</span>
+          </label>
+          <span class="selection"></span>
+        </div>
+        <!--Container diven er diven der indeholder kortet-->
+        <div id="container">
+          <div id="farve-info" class="farve-info"></div>
+          <p id="valgt-indhold"></p>
+          <div id="forlaget">
+            <h1 id="forlag-tekst">Vælg en kategori</h1>
+            <div id="forlag-kategorier">
+              <label class="pointer">
+                <input
+                  name="value-radio2"
+                  id="forlaginternet"
+                  class="forlaginput"
+                  type="radio2"
+                />
+                <img
+                  class="venstrepics"
+                  src="billeder/wifi.png"
+                  alt="Alternativtekst"
+                  onmouseover="this.src='billeder/wifihvid2.gif';"
+                  onmouseout="this.src='billeder/wifi.png';"
+                />
+              </label>
+              <label class="pointer">
+                <input
+                  name="value-radio2"
+                  id="forlagmobil"
+                  class="forlaginput"
+                  type="radio2"
+                />
+                <img
+                  class="venstrepics"
+                  src="billeder/mobil.png"
+                  alt="Alternativtekst"
+                  onmouseover="this.src='billeder/mobil.gif';"
+                  onmouseout="this.src='billeder/mobil.png';"
+                />
+              </label>
+              <label class="pointer">
+                <input
+                  name="value-radio2"
+                  id="forlagelektricitet"
+                  class="forlaginput"
+                  type="radio2"
+                />
+                <img
+                  class="venstrepics"
+                  src="billeder/pæreulys.png"
+                  alt="Alternativtekst"
+                  onmouseover="this.src='billeder/pære.png';"
+                  onmouseout="this.src='billeder/pæreulys.png';"
+                />
+              </label>
+            </div>
+            <div id="forlag-kategoriertekst">
+              <span>Internet</span>
+              <span>Mobil</span>
+              <span>Elektricitet</span>
+            </div>
+          </div>
+          <div id="blurryforlag"></div>
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+    <!--Anden side slutter her-->
+    <!--Container div slut.-->
+
+    <!--Sektion 3.Graf siden start-->
+    <div id="sektion3">
+      <div id="grafoverskrift">
+        <h2 class="overskrifter">Velkommen til grafen</h2>
+      </div>
+      <div id="grafkategorier">
         <label class="midten">
-          <input name="value-radio" id="Wifi" type="radio" />
+          <input name="value-radio" id="GrafInternet" type="radio" />
           <img
             class="venstrepics"
             src="billeder/wifi.png"
@@ -112,7 +204,7 @@
         </label>
         <!--NY-->
         <label class="midten">
-          <input name="value-radio" id="Mobil" type="radio" />
+          <input name="value-radio" id="GrafMobil" type="radio" />
           <img
             class="venstrepics"
             src="billeder/mobil.png"
@@ -124,7 +216,7 @@
         </label>
         <!--NY-->
         <label class="midten">
-          <input name="value-radio" id="Computer" class="" type="radio" />
+          <input name="value-radio" id="GrafComputer" class="" type="radio" />
           <img
             class="venstrepics"
             src="billeder/pæreulys.png"
@@ -134,128 +226,25 @@
           />
           <span>Elektricitet</span>
         </label>
-        <span class="selection"></span>
       </div>
-      <!--Container diven er diven der indeholder kortet-->
-      <div id="container">
-        <div id="farve-info" class="farve-info"></div>
-        <p id="valgt-indhold"></p>
-        <div id="forlaget">
-          <h1 id="forlag-tekst">Vælg en kategori</h1>
-          <div id="forlag-kategorier">
-            <label class="pointer">
-              <input
-                name="value-radio"
-                id="forlaginternet"
-                class="forlaginput"
-                type="radio"
-              />
-              <img
-                class="venstrepics"
-                src="billeder/wifi.png"
-                alt="Alternativtekst"
-                onmouseover="this.src='billeder/wifihvid2.gif';"
-                onmouseout="this.src='billeder/wifi.png';"
-              />
-            </label>
-            <label class="pointer">
-              <input
-                name="value-radio"
-                id="forlagmobil"
-                class="forlaginput"
-                type="radio"
-              />
-              <img
-                class="venstrepics"
-                src="billeder/mobil.png"
-                alt="Alternativtekst"
-                onmouseover="this.src='billeder/mobil.gif';"
-                onmouseout="this.src='billeder/mobil.png';"
-              />
-            </label>
-            <label class="pointer">
-              <input
-                name="value-radio"
-                id="forlagelektricitet"
-                class="forlaginput"
-                type="radio"
-              />
-              <img
-                class="venstrepics"
-                src="billeder/pæreulys.png"
-                alt="Alternativtekst"
-                onmouseover="this.src='billeder/pære.png';"
-                onmouseout="this.src='billeder/pæreulys.png';"
-              />
-            </label>
+      <div id="grafenbox">
+        <div id="grafinputfelt">
+          <div class="mat-input">
+            <label for="food">Vælg et land</label>
+            <input id="food" type="text" placeholder="Fx. Danmark" />
           </div>
-          <div id="forlag-kategoriertekst">
-            <span>Internet</span>
-            <span>Mobil</span>
-            <span>Elektricitet</span>
-          </div>
-        </div>
-        <div id="blurryforlag"></div>
-        <div id="map"></div>
-      </div>
-    </div>
-    <!--Container div slut.-->
-    <!--Grafsidenstart-->
-    <div id="grafoverskrift">
-      <h2 class="overskrifter">Velkommen til grafen</h2>
-    </div>
-    <div id="grafkategorier">
-      <label class="midten">
-        <input name="value-radio" id="GrafInternet" type="radio" />
-        <img
-          class="venstrepics"
-          src="billeder/wifi.png"
-          alt="Alternativtekst"
-          onmouseover="this.src='billeder/wifihvid2.gif';"
-          onmouseout="this.src='billeder/wifi.png';"
-        />
-        <span>Internet</span>
-      </label>
-      <!--NY-->
-      <label class="midten">
-        <input name="value-radio" id="GrafMobil" type="radio" />
-        <img
-          class="venstrepics"
-          src="billeder/mobil.png"
-          alt="Alternativtekst"
-          onmouseover="this.src='billeder/mobil.gif';"
-          onmouseout="this.src='billeder/mobil.png';"
-        />
-        <span>Mobil</span>
-      </label>
-      <!--NY-->
-      <label class="midten">
-        <input name="value-radio" id="GrafComputer" class="" type="radio" />
-        <img
-          class="venstrepics"
-          src="billeder/pæreulys.png"
-          alt="Alternativtekst"
-          onmouseover="this.src='billeder/pære.png';"
-          onmouseout="this.src='billeder/pæreulys.png';"
-        />
-        <span>Elektricitet</span>
-      </label>
-    </div>
-    <div id="grafenbox">
-      <div id="grafinputfelt">
-        <div class="mat-input">
-          <label for="food">Vælg et land</label>
-          <input id="food" type="text" placeholder="Fx. Danmark" />
         </div>
       </div>
     </div>
     <!--Grafsidenslut-->
     <!--OmOsStart-->
     <!--OmOsSlut-->
+    <!--Omosstart-->
+    <div id="sektion4"></div>
+    <!--Omosslut-->
     <script src="script.js"></script>
     <script src="map.js"></script>
     <script src="worldmap.js"></script>
     <script src="Kanin.js"></script>
   </body>
 </html>
-<!--Hej-->
