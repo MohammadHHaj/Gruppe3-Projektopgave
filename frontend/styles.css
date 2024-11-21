@@ -71,6 +71,9 @@ body {
 #mellemlag {
   display: flex;
 }
+#worldmapicon {
+  top: 835px;
+}
 /*Sidemenustart*/
 .radio-input input {
   display: none;
@@ -89,12 +92,12 @@ body {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  z-index: 1;
   font-weight: 600;
   font-size: 14px;
   padding: 20px;
   position: relative;
   left: -13px;
+  z-index: 1;
 }
 
 .venstrepics {
@@ -152,6 +155,33 @@ body {
   box-shadow: 0px 0px 7px black;
 }
 /*Forlaget*/
+#kategoriforlag {
+  background-color: whitesmoke;
+  width: 98px;
+  height: 47%;
+  position: absolute;
+  z-index: 2;
+  top: 924px;
+  transition: opacity 0.5s ease-in-out;
+  overflow: hidden;
+}
+.forlaginput {
+  display: none;
+}
+#forlag-kategorier {
+  display: flex;
+  position: relative;
+  top: -20px;
+  left: 5px;
+  justify-content: space-evenly;
+}
+#forlag-kategoriertekst {
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  top: -18px;
+  left: 13px;
+}
 #forlaget {
   background-color: whitesmoke; /*whitesmoke; vi bruger sort til at design lortet. det skal skiftes til whitesmoke indtil aflevering*/
   width: 50%;
@@ -183,10 +213,14 @@ body {
 }
 #forlag-tekst {
   text-align: center;
-  margin-top: 73px;
+  margin-top: 52px;
+}
+.mohammedsfar {
+  height: 0;
+  opacity: 0;
+  display: none;
 }
 .hidden {
-  /*Class' bliver lavet i js.*/
   height: 0;
   opacity: 0;
 }
@@ -332,7 +366,7 @@ body {
   font-size: 10px;
 }
 
-#topBar{
+#topBar {
   position: fixed;
   background-color: whitesmoke;
   width: 100%;
@@ -341,9 +375,10 @@ body {
   left: 0%;
   top: 0px;
   z-index: 15;
+  border-radius: 0px 0px 8px 8px;
 }
 
-#topBarBillede{
+#topBarBillede {
   position: absolute;
   width: 20%;
   left: 0px;
@@ -351,7 +386,7 @@ body {
   height: 105px;
 }
 
-#topBarKnapper{
+#topBarKnapper {
   position: absolute;
   width: 75%;
   top: 0%;
@@ -380,13 +415,12 @@ body {
   justify-content: center;
   border-radius: 0.5rem;
   border: none;
-  padding: .5rem 0;
+  padding: 0.5rem 0;
   color: rgba(51, 65, 85, 1);
-  transition: all .45s ease-in-out;
+  transition: all 0.45s ease-in-out;
 }
 
 #topBarKnapper .radio input:checked + .name {
   background-color: #fff;
   font-weight: 600;
 }
-

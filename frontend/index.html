@@ -18,31 +18,31 @@
     <!--Top baren-->
     <div id="topBar">
       <div>
-        <img id="topBarBillede" src="billeder/verdesnmaal.png">
+        <img id="topBarBillede" src="billeder/verdesnmaal.png" />
       </div>
       <div id="topBarKnapper">
         <label class="radio">
-          <input type="radio" name="radio" checked="">
+          <input type="radio" name="radio" checked="" />
           <span class="name">Oversigt</span>
         </label>
-        
+
         <label class="radio">
-          <input type="radio" name="radio">
+          <input type="radio" name="radio" />
           <span class="name">Kortet</span>
         </label>
-            
+
         <label class="radio">
-          <input type="radio" name="radio">
+          <input type="radio" name="radio" />
           <span class="name">Graf</span>
         </label>
         <label class="radio">
-          <input type="radio" name="radio">
+          <input type="radio" name="radio" />
           <span class="name">Om os</span>
         </label>
       </div>
     </div>
     <!--Top bar slut-->
-    
+
     <div id="overskriftdiv">
       <h1>Hvad ved du egentlig om den digitale udvikling?</h1>
       <div id="brodtekst">
@@ -85,7 +85,7 @@
       <br />
       <br />
     </div>
-    <h1 class="overskrifter">Worldmap</h1>
+    <h1 class="overskrifter" id="worldmapicon">Worldmap</h1>
     <h3 id="kategorier">Kategorier</h3>
     <!--tidsvælger-->
     <div id="arrow">&#x2B9F;</div>
@@ -97,6 +97,7 @@
     <!--Tidsvælgerslut-->
     <div id="mellemlag">
       <!--Knapperne i siden-->
+      <div id="kategoriforlag"></div>
       <div class="radio-input">
         <label class="midten">
           <input name="value-radio" id="Wifi" type="radio" />
@@ -141,6 +142,58 @@
         <p id="valgt-indhold"></p>
         <div id="forlaget">
           <h1 id="forlag-tekst">Vælg en kategori</h1>
+          <div id="forlag-kategorier">
+            <label>
+              <input
+                name="value-radio"
+                id="forlaginternet"
+                class="forlaginput"
+                type="radio"
+              />
+              <img
+                class="venstrepics"
+                src="billeder/wifi.png"
+                alt="Alternativtekst"
+                onmouseover="this.src='billeder/wifihvid2.gif';"
+                onmouseout="this.src='billeder/wifi.png';"
+              />
+            </label>
+            <label>
+              <input
+                name="value-radio"
+                id="forlagmobil"
+                class="forlaginput"
+                type="radio"
+              />
+              <img
+                class="venstrepics"
+                src="billeder/mobil.png"
+                alt="Alternativtekst"
+                onmouseover="this.src='billeder/mobil.gif';"
+                onmouseout="this.src='billeder/mobil.png';"
+              />
+            </label>
+            <label>
+              <input
+                name="value-radio"
+                id="forlagelektricitet"
+                class="forlaginput"
+                type="radio"
+              />
+              <img
+                class="venstrepics"
+                src="billeder/pæreulys.png"
+                alt="Alternativtekst"
+                onmouseover="this.src='billeder/pære.png';"
+                onmouseout="this.src='billeder/pæreulys.png';"
+              />
+            </label>
+          </div>
+          <div id="forlag-kategoriertekst">
+            <span>Internet</span>
+            <span>Mobil</span>
+            <span>Elektricitet</span>
+          </div>
         </div>
         <div id="blurryforlag"></div>
         <div id="map"></div>
