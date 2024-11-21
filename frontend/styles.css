@@ -4,25 +4,25 @@ body {
 }
 /*lad body element være i toppen*/
 /*Førsteside*/
-#sektion1{
+#sektion1 {
   position: relative;
   width: 100%;
   height: 500px;
 }
 
-#sektion2{
+#sektion2 {
   position: relative;
   width: 100%;
   height: 650px;
 }
 
-#sektion3{
+#sektion3 {
   position: relative;
   width: 100%;
   height: 650px;
 }
 
-#sektion4{
+#sektion4 {
   position: relative;
   width: 100%;
   height: 650px;
@@ -96,7 +96,7 @@ body {
   display: flex;
 }
 #worldmapicon {
-  top: 875px;
+  top: 55px;
   left: 30%;
 }
 /*Sidemenustart*/
@@ -183,10 +183,10 @@ body {
 #kategoriforlag {
   background-color: whitesmoke;
   width: 98px;
-  height: 47%;
+  height: 80%;
   position: absolute;
   z-index: 5;
-  top: 924px;
+  top: 102px;
   transition: height 0.5s ease-in-out;
   overflow: hidden;
 }
