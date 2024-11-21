@@ -89,12 +89,12 @@ body {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  z-index: 1;
   font-weight: 600;
   font-size: 14px;
   padding: 20px;
   position: relative;
   left: -13px;
+  z-index: 1;
 }
 
 .venstrepics {
@@ -152,6 +152,33 @@ body {
   box-shadow: 0px 0px 7px black;
 }
 /*Forlaget*/
+#kategoriforlag {
+  background-color: whitesmoke;
+  width: 98px;
+  height: 47%;
+  position: absolute;
+  z-index: 2;
+  top: 924px;
+  transition: opacity 0.5s ease;
+  overflow: hidden;
+}
+.forlaginput {
+  display: none;
+}
+#forlag-kategorier {
+  display: flex;
+  position: relative;
+  top: -20px;
+  left: 5px;
+  justify-content: space-evenly;
+}
+#forlag-kategoriertekst {
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  top: -18px;
+  left: 13px;
+}
 #forlaget {
   background-color: whitesmoke; /*whitesmoke; vi bruger sort til at design lortet. det skal skiftes til whitesmoke indtil aflevering*/
   width: 50%;
@@ -183,12 +210,13 @@ body {
 }
 #forlag-tekst {
   text-align: center;
-  margin-top: 73px;
+  margin-top: 52px;
 }
 .hidden {
   /*Class' bliver lavet i js.*/
   height: 0;
   opacity: 0;
+  display: none;
 }
 /*Forlaget*/
 /*Containertilkortetslut*/
@@ -332,9 +360,9 @@ body {
   font-size: 10px;
 }
 
-#topBar{
+#topBar {
   position: fixed;
-  background-color: whitesmoke;
+  backdrop-filter: blur(10px);
   width: 50%;
   height: 50px;
   border: 2px solid black;
@@ -342,5 +370,5 @@ body {
   left: 25%;
   top: 0px;
   z-index: 15;
+  border-radius: 0px 0px 8px 8px;
 }
-
