@@ -308,21 +308,21 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  left: 48%;
   top: 90px;
   justify-content: space-between;
   height: 300px;
   width: max-content;
+  left: 625px;
 }
 #grafenbox {
   border: black solid;
   border-radius: 2px;
-  height: 350px;
-  width: 70%;
+  height: 410px;
+  width: 650px;
   box-shadow: 0px 0px 7px black;
   position: absolute;
   top: 75px;
-  left: 25%;
+  left: 330px;
 }
 #sogknap {
   position: relative;
