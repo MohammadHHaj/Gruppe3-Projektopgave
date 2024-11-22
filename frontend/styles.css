@@ -72,13 +72,13 @@ body {
 #arrow {
   position: relative;
   top: 29px;
-  left: 663px;
+  left: 660px;
 }
 #year-selector {
   border-radius: 5px;
   border: black solid 2px;
   height: 30px;
-  width: 250px;
+  width: 230px;
   box-shadow: 0px 0px 3px black;
   margin-top: 32px;
   position: relative;
