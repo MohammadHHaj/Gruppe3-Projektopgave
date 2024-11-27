@@ -22,22 +22,22 @@
       </div>
 
       <div id="topBarKnapper">
-        <label class="radio">
-          <input type="radio" name="radio" checked="" />
+        <label class="radio" id="OversigtKnap">
+          <input type="radio" name="radio" />
           <span class="name">Oversigt</span>
         </label>
 
-        <label class="radio">
+        <label class="radio" id="WorldMapKnap">
           <input type="radio" name="radio" />
           <span class="name">Kortet</span>
         </label>
 
-        <label class="radio">
+        <label class="radio" id="GrafKnap">
           <input type="radio" name="radio" />
           <span class="name">Graf</span>
         </label>
 
-        <label class="radio">
+        <label class="radio" id="OmOsKnap">
           <input type="radio" name="radio" />
           <span class="name">Om os</span>
         </label>
@@ -51,21 +51,26 @@
         <h1>Hvad ved du egentlig om den digitale udvikling?</h1>
         <div id="brodtekst">
           <p>
-            I dag tager vi mobiltelefoner, internettet og elektricitet for givet, men sådan har det ikke altid været.
-            Samtidig er der stadig stor forskel på, hvor tilgængelige teknologierne er, afhængigt af hvor i verden man bor. 
-            <br>
-            <br>
-            På denne hjemmeside kan du få indblik i, hvor mange mennesker i hvert land der har adgang til telefoni, internet og elektricitet. 
-            Gå på opdagelse i vores World Map, hvor du kan sammenligne landenes udviklingsniveau fra 1990 til 2022, eller brug vores graf til at se udviklingen i et enkelt land i samme periode.
+            I dag tager vi mobiltelefoner, internettet og elektricitet for
+            givet, men sådan har det ikke altid været. Samtidig er der stadig
+            stor forskel på, hvor tilgængelige teknologierne er, afhængigt af
+            hvor i verden man bor.
+            <br />
+            <br />
+            På denne hjemmeside kan du få indblik i, hvor mange mennesker i
+            hvert land der har adgang til telefoni, internet og elektricitet. Gå
+            på opdagelse i vores World Map, hvor du kan sammenligne landenes
+            udviklingsniveau fra 1990 til 2022, eller brug vores graf til at se
+            udviklingen i et enkelt land i samme periode.
           </p>
         </div>
       </div>
       <div>
         <img
-            id="verdensmaal"
-            src="billeder/verdensmaal-roterende.gif"
-            alt="billede af verdensmål nummer 9"
-          />
+          id="verdensmaal"
+          src="billeder/verdensmaal-roterende.gif"
+          alt="billede af verdensmål nummer 9"
+        />
       </div>
     </div>
     <!--Første side slut-->
@@ -192,12 +197,18 @@
 
     <!--Sektion 3.Graf siden start-->
     <div id="sektion3">
-      <div id="grafoverskrift">
-        <h2 class="overskrifter">Velkommen til grafen</h2>
+      <div>
+        <h2 id="grafoverskrift" class="overskrifter">Velkommen til grafen</h2>
       </div>
       <div id="grafkategorier">
-        <label class="midten">
-          <input name="value-radio" id="GrafInternet" type="radio" />
+        <!--Labelsstart-->
+        <label class="midten grafbilleder">
+          <input
+            name="value-radio"
+            id="GrafInternet"
+            class="grafinput"
+            type="checkbox"
+          />
           <img
             class="venstrepics"
             src="billeder/wifi.png"
@@ -207,9 +218,15 @@
           />
           <span>Internet</span>
         </label>
+        <div id="checkedinternet" class="checkedstr"></div>
         <!--NY-->
-        <label class="midten">
-          <input name="value-radio" id="GrafMobil" type="radio" />
+        <label class="midten grafbilleder">
+          <input
+            name="value-radio"
+            id="GrafMobil"
+            class="grafinput"
+            type="checkbox"
+          />
           <img
             class="venstrepics"
             src="billeder/mobil.png"
@@ -219,9 +236,15 @@
           />
           <span>Mobil</span>
         </label>
+        <div id="checkedmobil" class="checkedstr"></div>
         <!--NY-->
-        <label class="midten">
-          <input name="value-radio" id="GrafComputer" class="" type="radio" />
+        <label class="midten grafbilleder">
+          <input
+            name="value-radio"
+            id="GrafElektricitet"
+            class="grafinput"
+            type="checkbox"
+          />
           <img
             class="venstrepics"
             src="billeder/pæreulys.png"
@@ -231,6 +254,8 @@
           />
           <span>Elektricitet</span>
         </label>
+        <div id="checkedelektricitet" class="checkedstr"></div>
+        <!--Labelsslut-->
       </div>
       <div id="grafenbox">
         <div id="grafinputfelt">
@@ -247,6 +272,7 @@
     <!--Omosstart-->
     <div id="sektion4"></div>
     <!--Omosslut-->
+    <script src="graf.js"></script>
     <script src="script.js"></script>
     <script src="map.js"></script>
     <script src="worldmap.js"></script>

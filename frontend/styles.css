@@ -16,13 +16,13 @@ body {
   width: 100%;
   height: 650px;
   border-top: 1px solid lightgray;
-
 }
 
 #sektion3 {
   position: relative;
   width: 100%;
   height: 650px;
+  top: 90px;
 }
 
 #sektion4 {
@@ -52,7 +52,7 @@ body {
   text-align: justify;
 }
 
-#brodtekst p{
+#brodtekst p {
   margin-top: -5px;
 }
 
@@ -72,13 +72,13 @@ body {
 #arrow {
   position: relative;
   top: 29px;
-  left: 663px;
+  left: 660px;
 }
 #year-selector {
   border-radius: 5px;
   border: black solid 2px;
   height: 30px;
-  width: 250px;
+  width: 230px;
   box-shadow: 0px 0px 3px black;
   margin-top: 32px;
   position: relative;
@@ -118,7 +118,7 @@ body {
   display: flex;
 }
 #worldmapicon {
-  top: 55px;
+  top: 72px;
   left: 390px;
 }
 /*Sidemenustart*/
@@ -271,25 +271,61 @@ body {
 }
 /*Forlaget*/
 /*Containertilkortetslut*/
-/*Graf*/
+/*Grafstart*/
+#grafoverskrift {
+  top: 39px;
+}
+#checkedinternet {
+  background-color: #0065a8;
+  top: -15px;
+}
+#checkedmobil {
+  background-color: #0a6700;
+  top: 110px;
+}
+#checkedelektricitet {
+  background-color: rgb(231, 231, 76);
+  top: 240px;
+}
+.checkedstr {
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  transition: 0.69s ease;
+  border-radius: 5px;
+  right: 385px;
+  opacity: 0;
+}
+.grafinput {
+  display: none;
+}
+.grafbilleder {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  right: 390px;
+  cursor: pointer;
+  z-index: 2;
+}
 #grafkategorier {
   display: flex;
   flex-direction: column;
   position: relative;
-  left: 19%;
-  top: 90px;
+  top: 115px;
   justify-content: space-between;
   height: 300px;
+  width: max-content;
+  left: 625px;
 }
 #grafenbox {
   border: black solid;
   border-radius: 2px;
-  height: 350px;
-  width: 70%;
+  height: 410px;
+  width: 650px;
   box-shadow: 0px 0px 7px black;
   position: absolute;
-  top: 75px;
-  left: 25%;
+  top: 100px;
+  left: 330px;
 }
 #sogknap {
   position: relative;
