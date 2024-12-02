@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
         fakta.classList.remove("hidden");
         laget.classList.add("hidden");
         laget1.classList.add("hidden");
+        setTimeout(() => (laget.style.display = "none"), 300);
+        setTimeout(() => (laget1.style.display = "none"), 300);
 
         // Slide down the kategoriforlag div
         if (laget2) {
