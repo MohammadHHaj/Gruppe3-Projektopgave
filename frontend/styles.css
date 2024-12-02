@@ -117,10 +117,6 @@ body {
 #mellemlag {
   display: flex;
 }
-#worldmapicon {
-  top: 72px;
-  left: 390px;
-}
 /*Sidemenustart*/
 .radio-input input {
   display: none;
@@ -218,10 +214,10 @@ body {
   box-shadow: 0px 0px 7px black;
   border: solid black;
   position: absolute;
-  top: 300px;
+  top: 120px;
   left: 20px;
-  height: 150px;
-  width: 200px;
+  height: 140px;
+  width: 150px;
   z-index: 2;
   border-radius: 3px;
   transition: opacity 0.5s ease-in-out;
