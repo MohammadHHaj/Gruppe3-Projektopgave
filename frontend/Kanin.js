@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const fakta = document.getElementById("faktabox");
   const laget = document.getElementById("forlaget");
   const laget1 = document.getElementById("blurryforlag");
   const laget2 = document.getElementById("kategoriforlag");
@@ -11,8 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
   btnclick.forEach((button) => {
     if (button) {
       button.addEventListener("click", function () {
+        fakta.classList.remove("hidden");
         laget.classList.add("hidden");
         laget1.classList.add("hidden");
+        setTimeout(() => (laget.style.display = "none"), 300);
+        setTimeout(() => (laget1.style.display = "none"), 300);
 
         // Slide down the kategoriforlag div
         if (laget2) {
