@@ -89,6 +89,124 @@ function updateMap(data, year, dataType) {
   // Opdater kortet med de nye farver og beskrivelser
   simplemaps_worldmap.refresh();
 }
+const factsWifi = [
+  "Fakta 1: Katte kanananananansover 16 timer om dagen.",
+  "Fakta 2: Bier kakakakakakakkan genkende menneskeansigter.",
+  "Fakta 3: Vand kakakakakakakudgør 71% af Jordens overflade.",
+  "Fakta 2: kaaaaaannnnananana kan genkende menneskeansigter.",
+  "Fakta 3: kanannaa lalakakudgør 71% af Jordens overflade.",
+];
+const factsMobil = [
+  "Fakta 1: Karrrrrtte sover 16 timermobil om dagen.",
+  "Fakta 2: Birrrrrer kan genkenmoiblde menneskeansigter.",
+  "Fakta 3: Varrrrrrnd udgørmobil 71% af Jordens overflade.",
+  "Fakta 2: Brrrrrrrrier kan genkenmoiblde menneskeansigter.",
+  "Fakta 3: Vanrrrrrd udgørmobil 71% af Jordens overflade.",
+];
+const factsElektricitet = [
+  "Fakta 1: Katte sover 16 timeE333333Lr om dagen.",
+  "Fakta 2: Bier kan genkendeEL 33333menneskeansigter.",
+  "Fakta 3: Vand udgør 71% ELaf 333333Jordens overflade.",
+  "Fakta 2: Bier kan genkendeEL 3333enneskeansigter.",
+  "Fakta 3: Vand udgør 71% ELaf 333333Jordens overflade.",
+];
+
+let currentFact = 0;
+let interval;
+let selectedFacts = null; // Start neutral uden valgte fakta
+
+// Funktion til at opdatere faktaboksen
+function updateFact(index) {
+  const factBox = document.getElementById("faktabox");
+  const dots = document.querySelectorAll(".dot");
+
+  if (factBox && selectedFacts) {
+    factBox.textContent = selectedFacts[index];
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  } else if (factBox) {
+    factBox.textContent = "Vælg en kategori for at se fakta!";
+  }
+}
+
+// Funktion til at vælge en fakta manuelt
+function selectFact(index) {
+  if (selectedFacts) {
+    currentFact = index;
+    updateFact(index);
+    resetInterval(); // Genstarter den automatiske ændring
+    updateActiveDot(index); // Opdaterer aktiv dot med det samme
+  }
+}
+
+// Automatisk ændring af fakta
+function autoChangeFact() {
+  if (selectedFacts) {
+    currentFact = (currentFact + 1) % selectedFacts.length; // Skifter til næste fakta
+    updateFact(currentFact);
+    updateActiveDot(currentFact); // Opdaterer aktiv dot farve
+  }
+}
+
+// Nulstiller intervallet, når der klikkes på en prik
+function handleCategorySelection(category) {
+  const dots = document.querySelectorAll(".dot");
+
+  // Først, fjern den aktive farve fra alle dots
+  dots.forEach((dot) => (dot.style.backgroundColor = "#cccccc"));
+
+  // Sæt den korrekte kategori og farve på den aktive dot
+  if (category === "forlaginternet" || category === "Wifi") {
+    selectedFacts = factsWifi;
+  } else if (category === "forlagmobil" || category === "Mobil") {
+    selectedFacts = factsMobil;
+  } else if (category === "forlagelektricitet" || category === "Computer") {
+    selectedFacts = factsElektricitet;
+  } else {
+    selectedFacts = null; // Neutral
+  }
+
+  // Opdater faktaboksen og dot farven afhængigt af den valgte fakta
+  currentFact = 0;
+  updateFact(currentFact);
+  resetInterval();
+
+  // Når fakta er opdateret, vis den korrekte dot farve for det aktuelle faktum
+  updateActiveDot(currentFact);
+}
+
+function updateActiveDot(index) {
+  const dots = document.querySelectorAll(".dot");
+  dots.forEach((dot, i) => {
+    // Sæt den aktive dot til en specifik farve, hvis den er den aktuelle
+    dot.style.backgroundColor = i === index ? "#0B4D8C" : "#cccccc"; // Skift farven på den aktive dot
+  });
+}
+
+function resetInterval() {
+  clearInterval(interval);
+  interval = setInterval(autoChangeFact, 20000); // Ændrer hver 20. sekund
+}
+
+// Startfunktion
+function startFactBox() {
+  updateFact(currentFact); // Viser neutral tekst ved start
+  interval = setInterval(autoChangeFact, 20000); // Starter det automatiske interval
+}
+
+// Håndter klik på radioknapper (radio og radio2)
+document
+  .querySelectorAll('input[name="value-radio2"], input[name="value-radio"]')
+  .forEach(function (radio) {
+    radio.addEventListener("click", function () {
+      handleCategorySelection(radio.id);
+    });
+  });
+
+// Starter alt, når siden indlæses
+window.onload = startFactBox;
+
 document
   .querySelectorAll('input[name="value-radio2"]')
   .forEach(function (radio2) {
