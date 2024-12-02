@@ -209,8 +209,22 @@ body {
   position: absolute;
   z-index: 5;
   top: 102px;
-  transition: height 0.5s ease-in-out;
+  transition: height 0.3s ease, opacity 0.3s ease;
   overflow: hidden;
+}
+#faktabox {
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 7px black;
+  border: solid black;
+  position: absolute;
+  top: 300px;
+  left: 20px;
+  height: 150px;
+  width: 200px;
+  z-index: 2;
+  border-radius: 3px;
+  transition: opacity 0.5s ease-in-out;
 }
 .forlaginput {
   display: none;
@@ -265,9 +279,8 @@ body {
   margin-top: 52px;
 }
 .hidden {
-  height: 0;
   opacity: 0;
-  display: none;
+  transition: opacity 0.3s ease;
 }
 /*Forlaget*/
 /*Containertilkortetslut*/
@@ -336,7 +349,6 @@ body {
 .mat-input {
   position: relative;
   font-size: inherit;
-
 }
 
 .mat-input input {
