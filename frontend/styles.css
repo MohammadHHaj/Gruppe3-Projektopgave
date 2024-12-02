@@ -209,8 +209,7 @@ body {
   overflow: hidden;
 }
 #faktabox {
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(10px);
+  background-color: whitesmoke;
   box-shadow: 0px 0px 7px black;
   border: solid black;
   position: absolute;
@@ -221,6 +220,23 @@ body {
   z-index: 2;
   border-radius: 3px;
   transition: opacity 0.5s ease-in-out;
+}
+
+#buttons {
+  position: absolute;
+  left: 25px;
+  top: 272px;
+}
+
+.dot {
+  height: 9px;
+  width: 9px;
+  margin: 1px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
 }
 .forlaginput {
   display: none;

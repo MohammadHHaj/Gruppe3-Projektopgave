@@ -89,6 +89,110 @@ function updateMap(data, year, dataType) {
   // Opdater kortet med de nye farver og beskrivelser
   simplemaps_worldmap.refresh();
 }
+const factsWifi = [
+  "Fakta 1: Katte kanananananansover 16 timer om dagen.",
+  "Fakta 2: Bier kakakakakakakkan genkende menneskeansigter.",
+  "Fakta 3: Vand kakakakakakakudgør 71% af Jordens overflade.",
+  "Fakta 2: kaaaaaannnnananana kan genkende menneskeansigter.",
+  "Fakta 3: kanannaa lalakakudgør 71% af Jordens overflade.",
+];
+const factsMobil = [
+  "Fakta 1: Karrrrrtte sover 16 timermobil om dagen.",
+  "Fakta 2: Birrrrrer kan genkenmoiblde menneskeansigter.",
+  "Fakta 3: Varrrrrrnd udgørmobil 71% af Jordens overflade.",
+  "Fakta 2: Brrrrrrrrier kan genkenmoiblde menneskeansigter.",
+  "Fakta 3: Vanrrrrrd udgørmobil 71% af Jordens overflade.",
+];
+const factsElektricitet = [
+  "Fakta 1: Katte sover 16 timeE333333Lr om dagen.",
+  "Fakta 2: Bier kan genkendeEL 33333menneskeansigter.",
+  "Fakta 3: Vand udgør 71% ELaf 333333Jordens overflade.",
+  "Fakta 2: Bier kan genkendeEL 3333enneskeansigter.",
+  "Fakta 3: Vand udgør 71% ELaf 333333Jordens overflade.",
+];
+
+let currentFact = 0;
+let interval;
+let selectedFacts = null; // Start neutral uden valgte fakta
+let currentColor = "#cccccc"; // Standardfarve for inaktive dots
+
+// Funktion til at opdatere faktaboksen
+function updateFact(index) {
+  const factBox = document.getElementById("faktabox");
+  const dots = document.querySelectorAll(".dot");
+
+  if (factBox && selectedFacts) {
+    factBox.textContent = selectedFacts[index];
+    dots.forEach((dot, i) => {
+      dot.style.backgroundColor = i === index ? currentColor : "#cccccc";
+    });
+  } else if (factBox) {
+    factBox.textContent = "Vælg en kategori for at se fakta!";
+    dots.forEach((dot) => (dot.style.backgroundColor = "#cccccc"));
+  }
+}
+
+// Funktion til at vælge en fakta manuelt
+function selectFact(index) {
+  if (selectedFacts) {
+    currentFact = index;
+    updateFact(index);
+    resetInterval(); // Genstarter den automatiske ændring
+  }
+}
+
+// Automatisk ændring af fakta
+function autoChangeFact() {
+  if (selectedFacts) {
+    currentFact = (currentFact + 1) % selectedFacts.length; // Skifter til næste fakta
+    updateFact(currentFact);
+  }
+}
+
+// Håndter kategoriudvælgelse
+function handleCategorySelection(category) {
+  if (category === "forlaginternet" || category === "Wifi") {
+    selectedFacts = factsWifi;
+    currentColor = "blue"; // Sæt dots til blå for Wifi
+  } else if (category === "forlagmobil" || category === "Mobil") {
+    selectedFacts = factsMobil;
+    currentColor = "green"; // Sæt dots til grøn for Mobil
+  } else if (category === "forlagelektricitet" || category === "Computer") {
+    selectedFacts = factsElektricitet;
+    currentColor = "yellow"; // Sæt dots til gul for Computer
+  } else {
+    selectedFacts = null;
+    currentColor = "#cccccc"; // Standardfarve hvis ingen kategori er valgt
+  }
+
+  currentFact = 0;
+  updateFact(currentFact);
+  resetInterval();
+}
+
+// Nulstiller intervallet
+function resetInterval() {
+  clearInterval(interval);
+  interval = setInterval(autoChangeFact, 200); // Ændrer hver 20. sekund
+}
+
+// Startfunktion
+function startFactBox() {
+  updateFact(currentFact); // Viser neutral tekst ved start
+  interval = setInterval(autoChangeFact, 200); // Starter det automatiske interval
+}
+
+// Håndter klik på radioknapper
+document
+  .querySelectorAll('input[name="value-radio2"], input[name="value-radio"]')
+  .forEach(function (radio) {
+    radio.addEventListener("click", function () {
+      handleCategorySelection(radio.id);
+    });
+  });
+
+// Starter alt, når siden indlæses
+window.onload = startFactBox;
 
 document
   .querySelectorAll('input[name="value-radio2"]')

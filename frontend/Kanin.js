@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const fakta = document.getElementById("faktabox");
+  const cirkler = document.getElementById("buttons");
   const laget = document.getElementById("forlaget");
   const laget1 = document.getElementById("blurryforlag");
   const laget2 = document.getElementById("kategoriforlag");
@@ -13,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (button) {
       button.addEventListener("click", function () {
         fakta.classList.remove("hidden");
+        cirkler.classList.remove("hidden");
         laget.classList.add("hidden");
         laget1.classList.add("hidden");
         setTimeout(() => (laget.style.display = "none"), 300);
