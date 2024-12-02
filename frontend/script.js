@@ -90,25 +90,25 @@ function updateMap(data, year, dataType) {
   simplemaps_worldmap.refresh();
 }
 const factsWifi = [
-  "Fakta 1: Katte kanananananansover 16 timer om dagen.",
-  "Fakta 2: Bier kakakakakakakkan genkende menneskeansigter.",
-  "Fakta 3: Vand kakakakakakakudgør 71% af Jordens overflade.",
-  "Fakta 2: kaaaaaannnnananana kan genkende menneskeansigter.",
-  "Fakta 3: kanannaa lalakakudgør 71% af Jordens overflade.",
+  "Wi-Fi blev først introduceret i 1997 af IEEE (Institute of Electrical and Electronics Engineers) under navnet 802.11. ",
+  "Wi-Fi-teknologien blev først virkelig udbredt i 1999, da Wi-Fi Alliance blev dannet, og det gjorde trådløst internet til noget, alle kunne bruge.",
+  "Afrika fik en stigning af internet fra midten af 2000'erne. Da havkabelprojekter som Seacom og Eassy forbedrede adgangensmulighederne samt gjorde det billigere",
+  "I Asien voksede internetadgangen hurtigt fra 1990'erne, især efter Kina og Indien begyndte at investere massivt i internetinfrastruktur og teknologi. Kina blev verdens største internetbrugermarked i 2008.",
+  "I Latinamerika begyndte internetadgangen at eksplodere i begyndelsen af 2000'erne, da mobil- og bredbåndsinternet blev mere tilgængeligt. Brasilien, som den største økonomi i regionen, nåede 50 millioner internetbrugere i 2005.",
 ];
 const factsMobil = [
-  "Fakta 1: Karrrrrtte sover 16 timermobil om dagen.",
-  "Fakta 2: Birrrrrer kan genkenmoiblde menneskeansigter.",
-  "Fakta 3: Varrrrrrnd udgørmobil 71% af Jordens overflade.",
-  "Fakta 2: Brrrrrrrrier kan genkenmoiblde menneskeansigter.",
-  "Fakta 3: Vanrrrrrd udgørmobil 71% af Jordens overflade.",
+  "I 1992 blev den første SMS (Short Message Service) sendt fra en mobiltelefon i Storbritannien.",
+  "Fra 2015 og frem begyndte budgetvenlige smartphones som Xiaomi og Huawei at dominere markedet, hvilket gjorde smartphones mere tilgængelige for verden over.",
+  "I 2003 introducerede Nokia den prisvenlige 1100, som blev verdens bedst sælgende mobiltelefon og gjorde mobiltelefoner tilgængelige for millioner af mennesker globalt.",
+  "I De Forenede Arabiske Emirater havde de i 2022 det højeste antal mobilabonnementer pr. indbygger: 212 abonnementer pr. 100 indbyggere.",
+  "I 1994 lancerede Nokia 2110 den første mobiltelefon med internetfunktioner, hvilket skabte større efterspørgsel efter telefoner",
 ];
 const factsElektricitet = [
-  "Fakta 1: Katte sover 16 timeE333333Lr om dagen.",
-  "Fakta 2: Bier kan genkendeEL 33333menneskeansigter.",
-  "Fakta 3: Vand udgør 71% ELaf 333333Jordens overflade.",
-  "Fakta 2: Bier kan genkendeEL 3333enneskeansigter.",
-  "Fakta 3: Vand udgør 71% ELaf 333333Jordens overflade.",
+  "I 1990'erne blev Internettet en central del af den moderne verden, hvilket øgede efterspørgslen på elektrisk energi til servere og datacenterinfrastruktur.",
+  " I 2007 begyndte solenergi at blive en økonomisk konkurrencedygtig energikilde, med priserne på solcellepaneler der faldt betydeligt.",
+  " I 2010 begyndte mange lande at implementere smart grid-teknologi, som gjorde det muligt at styre og optimere elektricitetens distribution mere effektivt.",
+  "I 2015 blev det anslået, at 90% af verdens befolkning havde adgang til elektricitet, en markant stigning fra tidligere årtier.",
+  " I 2010'erne øgede solenergiadgang markant elektriciteten i afsidesliggende områder af Afrika, hvor traditionelle elnet var utilgængelige.",
 ];
 
 let currentFact = 0;
@@ -173,13 +173,13 @@ function handleCategorySelection(category) {
 // Nulstiller intervallet
 function resetInterval() {
   clearInterval(interval);
-  interval = setInterval(autoChangeFact, 200); // Ændrer hver 20. sekund
+  interval = setInterval(autoChangeFact, 20000); // Ændrer hver 20. sekund
 }
 
 // Startfunktion
 function startFactBox() {
   updateFact(currentFact); // Viser neutral tekst ved start
-  interval = setInterval(autoChangeFact, 200); // Starter det automatiske interval
+  interval = setInterval(autoChangeFact, 20000); // Starter det automatiske interval
 }
 
 // Håndter klik på radioknapper

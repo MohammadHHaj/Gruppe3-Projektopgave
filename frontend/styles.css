@@ -220,11 +220,13 @@ body {
   z-index: 2;
   border-radius: 3px;
   transition: opacity 0.5s ease-in-out;
+  font-size: 14px;
+  text-align: center;
 }
 
 #buttons {
   position: absolute;
-  left: 25px;
+  left: 60px;
   top: 272px;
 }
 
