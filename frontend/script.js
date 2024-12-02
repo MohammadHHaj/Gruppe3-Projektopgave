@@ -114,6 +114,7 @@ const factsElektricitet = [
 let currentFact = 0;
 let interval;
 let selectedFacts = null; // Start neutral uden valgte fakta
+let currentColor = "#cccccc"; // Standardfarve for inaktive dots
 
 // Funktion til at opdatere faktaboksen
 function updateFact(index) {
@@ -123,10 +124,11 @@ function updateFact(index) {
   if (factBox && selectedFacts) {
     factBox.textContent = selectedFacts[index];
     dots.forEach((dot, i) => {
-      dot.classList.toggle("active", i === index);
+      dot.style.backgroundColor = i === index ? currentColor : "#cccccc";
     });
   } else if (factBox) {
     factBox.textContent = "Vælg en kategori for at se fakta!";
+    dots.forEach((dot) => (dot.style.backgroundColor = "#cccccc"));
   }
 }
 
@@ -136,7 +138,6 @@ function selectFact(index) {
     currentFact = index;
     updateFact(index);
     resetInterval(); // Genstarter den automatiske ændring
-    updateActiveDot(index); // Opdaterer aktiv dot med det samme
   }
 }
 
@@ -145,57 +146,43 @@ function autoChangeFact() {
   if (selectedFacts) {
     currentFact = (currentFact + 1) % selectedFacts.length; // Skifter til næste fakta
     updateFact(currentFact);
-    updateActiveDot(currentFact); // Opdaterer aktiv dot farve
   }
 }
 
-// Nulstiller intervallet, når der klikkes på en prik
+// Håndter kategoriudvælgelse
 function handleCategorySelection(category) {
-  const dots = document.querySelectorAll(".dot");
-
-  // Først, fjern den aktive farve fra alle dots
-  dots.forEach((dot) => (dot.style.backgroundColor = "#cccccc"));
-
-  // Sæt den korrekte kategori og farve på den aktive dot
   if (category === "forlaginternet" || category === "Wifi") {
     selectedFacts = factsWifi;
+    currentColor = "blue"; // Sæt dots til blå for Wifi
   } else if (category === "forlagmobil" || category === "Mobil") {
     selectedFacts = factsMobil;
+    currentColor = "green"; // Sæt dots til grøn for Mobil
   } else if (category === "forlagelektricitet" || category === "Computer") {
     selectedFacts = factsElektricitet;
+    currentColor = "yellow"; // Sæt dots til gul for Computer
   } else {
-    selectedFacts = null; // Neutral
+    selectedFacts = null;
+    currentColor = "#cccccc"; // Standardfarve hvis ingen kategori er valgt
   }
 
-  // Opdater faktaboksen og dot farven afhængigt af den valgte fakta
   currentFact = 0;
   updateFact(currentFact);
   resetInterval();
-
-  // Når fakta er opdateret, vis den korrekte dot farve for det aktuelle faktum
-  updateActiveDot(currentFact);
 }
 
-function updateActiveDot(index) {
-  const dots = document.querySelectorAll(".dot");
-  dots.forEach((dot, i) => {
-    // Sæt den aktive dot til en specifik farve, hvis den er den aktuelle
-    dot.style.backgroundColor = i === index ? "#0B4D8C" : "#cccccc"; // Skift farven på den aktive dot
-  });
-}
-
+// Nulstiller intervallet
 function resetInterval() {
   clearInterval(interval);
-  interval = setInterval(autoChangeFact, 20000); // Ændrer hver 20. sekund
+  interval = setInterval(autoChangeFact, 200); // Ændrer hver 20. sekund
 }
 
 // Startfunktion
 function startFactBox() {
   updateFact(currentFact); // Viser neutral tekst ved start
-  interval = setInterval(autoChangeFact, 20000); // Starter det automatiske interval
+  interval = setInterval(autoChangeFact, 200); // Starter det automatiske interval
 }
 
-// Håndter klik på radioknapper (radio og radio2)
+// Håndter klik på radioknapper
 document
   .querySelectorAll('input[name="value-radio2"], input[name="value-radio"]')
   .forEach(function (radio) {
