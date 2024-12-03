@@ -534,3 +534,37 @@ body {
   background-color: #fff;
   font-weight: 600;
 }
+
+.mat-input {
+  position: relative;
+  width: 300px;
+}
+
+#results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: whitesmoke;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 219px;
+}
+
+#results.hidden {
+  display: none;
+}
+
+#results div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+#results div:hover {
+  background-color: #f0f0f0;
+}
