@@ -90,25 +90,25 @@ function updateMap(data, year, dataType) {
   simplemaps_worldmap.refresh();
 }
 const factsWifi = [
-  "Wi-Fi blev først introduceret i 1997 af IEEE (Institute of Electrical and Electronics Engineers) under navnet 802.11. ",
-  "Wi-Fi-teknologien blev først virkelig udbredt i 1999, da Wi-Fi Alliance blev dannet, og det gjorde trådløst internet til noget, alle kunne bruge.",
-  "Afrika fik en stigning af internet fra midten af 2000'erne. Da havkabelprojekter som Seacom og Eassy forbedrede adgangensmulighederne samt gjorde det billigere",
-  "I Asien voksede internetadgangen hurtigt fra 1990'erne, især efter Kina og Indien begyndte at investere massivt i internetinfrastruktur og teknologi. Kina blev verdens største internetbrugermarked i 2008.",
-  "I Latinamerika begyndte internetadgangen at eksplodere i begyndelsen af 2000'erne, da mobil- og bredbåndsinternet blev mere tilgængeligt. Brasilien, som den største økonomi i regionen, nåede 50 millioner internetbrugere i 2005.",
+  "I 1990 var det under 0,01% af danskerne, der havde adgang til internettet. I 2000 var det tal steget til 39,2% og i 2010 var det nået op på 89%.",
+  "USA og Norge var førende lande inden for udviklingen i adgang til wifi. I 1990 var det hele 0,7% af befolkningen, der havde adgang til internettet i de to lande. ",
+  "Sydafrika var det første afrikanske land til at få wifi i 1991. Sydsudan var det sidste på kontinentet, da de fik internet i 2012.",
+  "I 2022 er der 56 lande i verden, hvor under 50% af befolkningen har adgang til internet",
+  "",
 ];
 const factsMobil = [
-  "I 1992 blev den første SMS (Short Message Service) sendt fra en mobiltelefon i Storbritannien.",
-  "Fra 2015 og frem begyndte budgetvenlige smartphones som Xiaomi og Huawei at dominere markedet, hvilket gjorde smartphones mere tilgængelige for verden over.",
-  "I 2003 introducerede Nokia den prisvenlige 1100, som blev verdens bedst sælgende mobiltelefon og gjorde mobiltelefoner tilgængelige for millioner af mennesker globalt.",
-  "I De Forenede Arabiske Emirater havde de i 2022 det højeste antal mobilabonnementer pr. indbygger: 212 abonnementer pr. 100 indbyggere.",
-  "I 1994 lancerede Nokia 2110 den første mobiltelefon med internetfunktioner, hvilket skabte større efterspørgsel efter telefoner",
+  "I De Forenede Arabiske Emirater havde de i 2022 det højeste antal mobilabonnementer pr indbygger: 212 abonnenter pr. 100 indbyggere. I 2016 havde de 221 abonnementer. ",
+  "2005 var året, hvor der var lige så mange indbyggere som mobilabonnementer i Danmark.",
+  "Israel blev i 2003 det første land i verden til at have mere end 100 telefoner pr. 100 indbyggere. Året efter blev de i 2004 fulgt af Italien og Portugal.",
+  "I 2022 var der 132 lande, som havde mere end 100 telefoner pr. 100 indbygger",
+  "I 2022 havde Danmark 127 abonnementer pr. 100 indbygger",
 ];
 const factsElektricitet = [
-  "I 1990'erne blev Internettet en central del af den moderne verden, hvilket øgede efterspørgslen på elektrisk energi til servere og datacenterinfrastruktur.",
-  " I 2007 begyndte solenergi at blive en økonomisk konkurrencedygtig energikilde, med priserne på solcellepaneler der faldt betydeligt.",
-  " I 2010 begyndte mange lande at implementere smart grid-teknologi, som gjorde det muligt at styre og optimere elektricitetens distribution mere effektivt.",
-  "I 2015 blev det anslået, at 90% af verdens befolkning havde adgang til elektricitet, en markant stigning fra tidligere årtier.",
-  " I 2010'erne øgede solenergiadgang markant elektriciteten i afsidesliggende områder af Afrika, hvor traditionelle elnet var utilgængelige.",
+  "I South Sudan var det kun 8,4% af indbyggerne, der i 2022 havde adgang til elektricitet.",
+  "Antallet af lande, hvor hele befolkningen har adgang til elektricitet, steg med 78% fra 1990 til 2022. ",
+  "I 68% af alle verdens lande har mere end 95% af indbyggerne adgang til strøm i år 2022.",
+  "Siden 2007 har alle verdens lande haft elektricitet, med undtagelse af Nordkorea, som af gode grunde er svært at få pålidelige tal fra.",
+  "Umut er en dum gurker",
 ];
 
 let currentFact = 0;
