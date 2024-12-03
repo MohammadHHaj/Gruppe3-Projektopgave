@@ -176,22 +176,47 @@ function updateGraph() {
     .attr("transform", `translate(${margin.left},0)`)
     .call(d3.axisLeft(yScale));
 
-  // Tilføj linjer baseret på aktiverede knapper
   if (dataLoaded.internet && graphData.internet) {
-    createGraphLine(svg, graphData.internet, "internet", "steelblue", line);
+    createGraphLine(
+      svg,
+      graphData.internet,
+      "internet",
+      "steelblue",
+      line,
+      xScale,
+      yScale,
+      margin
+    );
   }
 
   if (dataLoaded.mobile && graphData.mobile) {
-    createGraphLine(svg, graphData.mobile, "mobile", "green", line);
+    createGraphLine(
+      svg,
+      graphData.mobile,
+      "mobile",
+      "green",
+      line,
+      xScale,
+      yScale,
+      margin
+    );
   }
 
   if (dataLoaded.electricity && graphData.electricity) {
-    createGraphLine(svg, graphData.electricity, "electricity", "orange", line);
+    createGraphLine(
+      svg,
+      graphData.electricity,
+      "electricity",
+      "orange",
+      line,
+      xScale,
+      yScale,
+      margin
+    );
   }
 }
 
-// Funktion til at oprette linje i grafen
-function createGraphLine(svg, data, type, color, line) {
+function createGraphLine(svg, data, type, color, line, xScale, yScale, margin) {
   const formattedData = data.map((d) => ({
     year: +d.year,
     value:
@@ -206,6 +231,7 @@ function createGraphLine(svg, data, type, color, line) {
       ],
   }));
 
+  // Tegn hovedlinjen
   svg
     .append("path")
     .datum(formattedData)
@@ -214,20 +240,45 @@ function createGraphLine(svg, data, type, color, line) {
     .attr("stroke-width", 2)
     .attr("d", line);
 
+  // Find topværdien
+  const topPoint = formattedData.reduce((max, d) =>
+    d.value > max.value ? d : max
+  );
+
+  // Tilføj en stiplet linje fra topværdien til y-aksen
+  svg
+    .append("line")
+    .attr("x1", xScale(topPoint.year))
+    .attr("x2", margin.left)
+    .attr("y1", yScale(topPoint.value))
+    .attr("y2", yScale(topPoint.value))
+    .attr("stroke", color)
+    .attr("stroke-dasharray", "4 2")
+    .attr("stroke-width", 1);
+
+  // Find tekstlabelens position og sørg for, at de ikke overlapper
+  let offset = 0;
+  svg.selectAll("text").each(function () {
+    const currentText = d3.select(this);
+    const currentY = parseFloat(currentText.attr("y"));
+    const currentDy = parseFloat(currentText.attr("dy")) || 0;
+    const distance = Math.abs(currentY - (yScale(topPoint.value) + currentDy));
+
+    if (distance < 10) {
+      offset += 15; // Justér afstanden mellem overlappende labels
+    }
+  });
+
+  // Tilføj en tekstlabel lige efter y-aksen og tættere på den stiplede linje
   svg
     .append("text")
-    .attr("x", 800)
-    .attr("y", 20)
+    .attr("x", margin.left + 10)
+    .attr("y", yScale(topPoint.value) + offset)
+    .attr("dy", "-0.3em")
     .style("fill", color)
     .style("font-size", "12px")
     .style("text-anchor", "start")
-    .text(
-      type === "internet"
-        ? "Internet Usage (%)"
-        : type === "mobile"
-        ? "Telephones per 100"
-        : "Electricity Access (%)"
-    );
+    .text(`${topPoint.value}`);
 }
 
 // Start med "Denmark" som standard i søgefeltet og hent data
