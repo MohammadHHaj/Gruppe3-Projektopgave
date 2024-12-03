@@ -1,6 +1,8 @@
 const inputFelt = d3.select("#food");
 const resultsDiv = d3.select("#results");
+const chartDiv = d3.select("#chart");
 
+// Inputfelt funktion
 inputFelt.on("focus", () => {
   resultsDiv.classed("hidden", false);
 });
@@ -18,9 +20,10 @@ inputFelt.on("input", async function () {
       resultsDiv
         .append("div")
         .text(item.country)
-        .on("click", () => {
+        .on("click", async () => {
           inputFelt.property("value", item.country);
           resultsDiv.classed("hidden", true);
+          await loadCountryData(item.country); // Hent og vis data for landet
         });
     });
   } catch (error) {
@@ -38,116 +41,177 @@ d3.select("body").on("click", (event) => {
   }
 });
 
-const GrafInternet = document.getElementById("GrafInternet");
-const GrafMobil = document.getElementById("GrafMobil");
-const GrafElektricitet = document.getElementById("GrafElektricitet");
-//Knapperne
-const GrafElektricitetLag = document.getElementById("checkedelektricitet");
-const GrafInternetLag = document.getElementById("checkedinternet");
-const GrafMobilLag = document.getElementById("checkedmobil");
-//Colored squares :)
+// Funktion til at hente og vise data som linjediagram for internet, telefoner og elektricitet
+async function loadCountryData(country) {
+  try {
+    const [internetResponse, telephonesResponse, electricityResponse] =
+      await Promise.all([
+        fetch(`/api/internet_data?country=${country}`),
+        fetch(`/api/telephones_data?country=${country}`),
+        fetch(`/api/electricity_data?country=${country}`),
+      ]);
 
-function toggleOpacity(layer, knappen) {
-  if (layer.style.opacity === "1") {
-    layer.style.opacity = "0";
-  } else {
-    layer.style.opacity = "1";
+    const internetData = await internetResponse.json();
+    const telephonesData = await telephonesResponse.json();
+    const electricityData = await electricityResponse.json();
+
+    // Fjern eksisterende diagram
+    chartDiv.html("");
+
+    // Konverter data til passende format
+    const formattedInternetData = internetData.map((d) => ({
+      year: +d.year,
+      internet_usage: +d.internet_usage,
+    }));
+
+    const formattedTelephonesData = telephonesData.map((d) => ({
+      year: +d.year,
+      telephones_per_100: +d.telephones_per_100,
+    }));
+
+    const formattedElectricityData = electricityData.map((d) => ({
+      year: +d.year,
+      electricity_access_percentage: +d.electricity_access_percentage,
+    }));
+
+    // Definer dimensions og margins
+    const width = 800;
+    const height = 500;
+    const margin = { top: 20, right: 30, bottom: 50, left: 50 };
+
+    const svg = chartDiv
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height);
+
+    const xScale = d3
+      .scaleLinear()
+      .domain(d3.extent(formattedInternetData, (d) => d.year))
+      .range([margin.left, width - margin.right]);
+
+    const yScaleInternet = d3
+      .scaleLinear()
+      .domain([0, d3.max(formattedInternetData, (d) => d.internet_usage)])
+      .nice()
+      .range([height - margin.bottom, margin.top]);
+
+    const yScaleTelephones = d3
+      .scaleLinear()
+      .domain([0, d3.max(formattedTelephonesData, (d) => d.telephones_per_100)])
+      .nice()
+      .range([height - margin.bottom, margin.top]);
+
+    const yScaleElectricity = d3
+      .scaleLinear()
+      .domain([
+        0,
+        d3.max(
+          formattedElectricityData,
+          (d) => d.electricity_access_percentage
+        ),
+      ])
+      .nice()
+      .range([height - margin.bottom, margin.top]);
+
+    const lineInternet = d3
+      .line()
+      .x((d) => xScale(d.year))
+      .y((d) => yScaleInternet(d.internet_usage));
+
+    const lineTelephones = d3
+      .line()
+      .x((d) => xScale(d.year))
+      .y((d) => yScaleTelephones(d.telephones_per_100));
+
+    const lineElectricity = d3
+      .line()
+      .x((d) => xScale(d.year))
+      .y((d) => yScaleElectricity(d.electricity_access_percentage));
+
+    // Tilføj akser
+    svg
+      .append("g")
+      .attr("transform", `translate(0,${height - margin.bottom})`)
+      .call(d3.axisBottom(xScale).tickFormat(d3.format("d")));
+
+    svg
+      .append("g")
+      .attr("transform", `translate(${margin.left},0)`)
+      .call(d3.axisLeft(yScaleInternet));
+
+    // Tilføj linjer
+    svg
+      .append("path")
+      .datum(formattedInternetData)
+      .attr("fill", "none")
+      .attr("stroke", "steelblue")
+      .attr("stroke-width", 2)
+      .attr("d", lineInternet);
+
+    svg
+      .append("path")
+      .datum(formattedTelephonesData)
+      .attr("fill", "none")
+      .attr("stroke", "green")
+      .attr("stroke-width", 2)
+      .attr("d", lineTelephones);
+
+    svg
+      .append("path")
+      .datum(formattedElectricityData)
+      .attr("fill", "none")
+      .attr("stroke", "orange")
+      .attr("stroke-width", 2)
+      .attr("d", lineElectricity);
+
+    // Labels for each line
+    svg
+      .append("text")
+      .attr("x", width - margin.right - 10)
+      .attr(
+        "y",
+        yScaleInternet(
+          formattedInternetData[formattedInternetData.length - 1].internet_usage
+        )
+      )
+      .attr("dy", ".35em")
+      .style("fill", "steelblue")
+      .style("font-size", "12px")
+      .style("text-anchor", "start")
+      .text("Internet Usage (%)");
+
+    svg
+      .append("text")
+      .attr("x", width - margin.right - 10)
+      .attr(
+        "y",
+        yScaleTelephones(
+          formattedTelephonesData[formattedTelephonesData.length - 1]
+            .telephones_per_100
+        )
+      )
+      .attr("dy", ".35em")
+      .style("fill", "green")
+      .style("font-size", "12px")
+      .style("text-anchor", "start")
+      .text("Telephones per 100");
+
+    svg
+      .append("text")
+      .attr("x", width - margin.right - 10)
+      .attr(
+        "y",
+        yScaleElectricity(
+          formattedElectricityData[formattedElectricityData.length - 1]
+            .electricity_access_percentage
+        )
+      )
+      .attr("dy", ".35em")
+      .style("fill", "orange")
+      .style("font-size", "12px")
+      .style("text-anchor", "start")
+      .text("Electricity Access (%)");
+  } catch (error) {
+    console.error("Kunne ikke hente data:", error);
   }
-  console.log(`${knappen} Blev trykket på`);
 }
-
-GrafInternet.addEventListener("click", () =>
-  toggleOpacity(GrafInternetLag, "GrafInternet")
-);
-GrafMobil.addEventListener("click", () =>
-  toggleOpacity(GrafMobilLag, "GrafMobil")
-);
-GrafElektricitet.addEventListener("click", () =>
-  toggleOpacity(GrafElektricitetLag, "GrafElektricitet")
-);
-
-//Grafen starter her
-
-// set the dimensions and margins of the graph
-const margin = { top: 30, right: 10, bottom: 30, left: 75 },
-  width = 600 - margin.left - margin.right,
-  height = 350 - margin.top - margin.bottom;
-
-// append the svg object to the body of the page
-const svg = d3
-  .select("#my_dataviz")
-  .append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-  .attr("transform", `translate(${margin.left},${margin.top})`);
-
-//Read the data
-d3.csv(
-  "https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/5_OneCatSevNumOrdered.csv"
-).then(function (data) {
-  // group the data: I want to draw one line per group
-  const sumstat = d3.group(data, (d) => d.name); // nest function allows to group the calculation per level of a factor
-
-  // Add X axis --> it is a date format
-  const x = d3
-    .scaleLinear()
-    .domain(
-      d3.extent(data, function (d) {
-        return d.year;
-      })
-    )
-    .range([0, width]);
-  svg
-    .append("g")
-    .attr("transform", `translate(0, ${height})`)
-    .call(d3.axisBottom(x).ticks(5));
-
-  // Add Y axis
-  const y = d3
-    .scaleLinear()
-    .domain([
-      0,
-      d3.max(data, function (d) {
-        return +d.n;
-      }),
-    ])
-    .range([height, 0]);
-  svg.append("g").call(d3.axisLeft(y));
-
-  // color palette
-  const color = d3
-    .scaleOrdinal()
-    .range([
-      "#e41a1c",
-      "#377eb8",
-      "#4daf4a",
-      "#984ea3",
-      "#ff7f00",
-      "#ffff33",
-      "#a65628",
-      "#f781bf",
-      "#999999",
-    ]);
-
-  // Draw the line
-  svg
-    .selectAll(".line")
-    .data(sumstat)
-    .join("path")
-    .attr("fill", "none")
-    .attr("stroke", function (d) {
-      return color(d[0]);
-    })
-    .attr("stroke-width", 1.5)
-    .attr("d", function (d) {
-      return d3
-        .line()
-        .x(function (d) {
-          return x(d.year);
-        })
-        .y(function (d) {
-          return y(+d.n);
-        })(d[1]);
-    });
-});

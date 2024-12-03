@@ -568,3 +568,8 @@ body {
 #results div:hover {
   background-color: #f0f0f0;
 }
+
+#chart {
+  width: 100%;
+  height: 500px;
+}
