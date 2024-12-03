@@ -231,6 +231,31 @@ document
     });
   });
 
+document
+  .querySelectorAll('input[name="value-radio2"]')
+  .forEach(function (radio) {
+    radio.addEventListener("click", function () {
+      // Skift indhold baseret på radio2 knappen
+      const valgtindhold = document.getElementById("valgt-indhold");
+
+      if (radio.id === "forlaginternet") {
+        valgtindhold.textContent = "Wifi data er baseret på brug af internet";
+      } else if (radio.id === "forlagmobil") {
+        valgtindhold.textContent =
+          "Mobil data er baseret på abonommenter pr 100 indbygger";
+      } else if (radio.id === "forlagelektricitet") {
+        valgtindhold.textContent = "Elektricitet er baseret på hej!";
+      }
+
+      // Sørg for, at radio2-knapperne kun kan vælges én gang
+      document
+        .querySelectorAll('input[name="value-radio2"]')
+        .forEach(function (r) {
+          r.disabled = true;
+        });
+    });
+  });
+
 const observer = new MutationObserver(() => {
   const selected = document.querySelector("#year-selector .selected");
   if (selected) {
