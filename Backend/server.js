@@ -27,6 +27,7 @@ server.use(onEachRequest);
 server.get("/api/internet_usage", onGetData);
 server.get("/api/telephones_100", onGetTelephones);
 server.get("/api/electricity_percentage", onGetElectricity);
+server.get("/api/onGetCountry", onGetCountry);
 server.listen(port, onServerReady);
 
 async function onGetData(request, response) {
@@ -109,6 +110,28 @@ async function onGetElectricity(request, response) {
     ); // Passer årstallet som parameter til SQL-forespørgslen
 
     response.json(dbResult.rows); // Sender resultatet tilbage som JSON
+  } catch (error) {
+    console.error("Database query failed:", error);
+    response.status(500).send("Internal server error");
+  }
+}
+
+async function onGetCountry(request, response) {
+  const countryQuery = request.query.country || "";
+  console.log(`Søger efter lande der matcher: ${countryQuery}`);
+
+  try {
+    const dbResult = await db.query(
+      `
+      SELECT DISTINCT country 
+      FROM internet_acces
+      WHERE LOWER(country) LIKE LOWER($1)
+      ORDER BY country ASC
+      `,
+      [`%${countryQuery}%`]
+    );
+
+    response.json(dbResult.rows);
   } catch (error) {
     console.error("Database query failed:", error);
     response.status(500).send("Internal server error");
