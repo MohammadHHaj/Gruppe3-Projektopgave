@@ -214,6 +214,10 @@ document
     });
   });
 
+const wifitext = "Wifi data er baseret på brug af internet";
+const mobiltext = "Mobil data er baseret på abonommenter pr 100 indbygger";
+const electricitytext = "Elektricitet er baseret på hej!";
+
 document
   .querySelectorAll('input[name="value-radio"]')
   .forEach(function (radio) {
@@ -221,12 +225,11 @@ document
       const valgtindhold = document.getElementById("valgt-indhold");
 
       if (radio.id === "Wifi") {
-        valgtindhold.textContent = "Wifi data er baseret på brug af internet";
+        valgtindhold.textContent = wifitext;
       } else if (radio.id === "Mobil") {
-        valgtindhold.textContent =
-          "Mobil data er baseret på abonommenter pr 100 indbygger";
+        valgtindhold.textContent = mobiltext;
       } else if (radio.id === "Computer") {
-        valgtindhold.textContent = "Elektricitet er baseret på hej!";
+        valgtindhold.textContent = electricitytext;
       }
     });
   });
@@ -239,12 +242,11 @@ document
       const valgtindhold = document.getElementById("valgt-indhold");
 
       if (radio.id === "forlaginternet") {
-        valgtindhold.textContent = "Wifi data er baseret på brug af internet";
+        valgtindhold.textContent = wifitext;
       } else if (radio.id === "forlagmobil") {
-        valgtindhold.textContent =
-          "Mobil data er baseret på abonommenter pr 100 indbygger";
+        valgtindhold.textContent = mobiltext;
       } else if (radio.id === "forlagelektricitet") {
-        valgtindhold.textContent = "Elektricitet er baseret på hej!";
+        valgtindhold.textContent = electricitytext;
       }
 
       // Sørg for, at radio2-knapperne kun kan vælges én gang
