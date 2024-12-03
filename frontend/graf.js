@@ -1,6 +1,58 @@
+// Vælg elementer med D3
 const inputFelt = d3.select("#food");
 const resultsDiv = d3.select("#results");
+const chartDiv = d3.select("#chart");
 
+// Knapperne for at vælge graferne
+const GrafInternet = d3.select("#GrafInternet");
+const GrafMobil = d3.select("#GrafMobil");
+const GrafElektricitet = d3.select("#GrafElektricitet");
+
+// Lagene for graferne
+const GrafElektricitetLag = d3.select("#checkedelektricitet");
+const GrafInternetLag = d3.select("#checkedinternet");
+const GrafMobilLag = d3.select("#checkedmobil");
+
+let dataLoaded = {
+  internet: false,
+  mobile: false,
+  electricity: false,
+};
+
+let graphData = {
+  internet: null,
+  mobile: null,
+  electricity: null,
+};
+
+// Funktion til at håndtere visningen af de valgte lag
+function toggleOpacity(layer, knappen) {
+  const opacity = layer.style("opacity");
+  if (opacity === "1") {
+    layer.style("opacity", "0");
+    dataLoaded[knappen] = false; // Deaktiver data for den valgte knap
+  } else {
+    layer.style("opacity", "1");
+    dataLoaded[knappen] = true; // Aktivér data for den valgte knap
+  }
+  console.log(`${knappen} blev trykket på`);
+  updateGraph(); // Opdater grafen hver gang en knap aktiveres/deaktiveres
+}
+
+// Hændelser for knapperne
+GrafInternet.on("click", () => {
+  toggleOpacity(GrafInternetLag, "internet");
+});
+
+GrafMobil.on("click", () => {
+  toggleOpacity(GrafMobilLag, "mobile");
+});
+
+GrafElektricitet.on("click", () => {
+  toggleOpacity(GrafElektricitetLag, "electricity");
+});
+
+// Inputfelt funktion
 inputFelt.on("focus", () => {
   resultsDiv.classed("hidden", false);
 });
@@ -18,9 +70,10 @@ inputFelt.on("input", async function () {
       resultsDiv
         .append("div")
         .text(item.country)
-        .on("click", () => {
+        .on("click", async () => {
           inputFelt.property("value", item.country);
           resultsDiv.classed("hidden", true);
+          await loadCountryData(item.country); // Hent og vis data for landet
         });
     });
   } catch (error) {
@@ -38,116 +91,148 @@ d3.select("body").on("click", (event) => {
   }
 });
 
-const GrafInternet = document.getElementById("GrafInternet");
-const GrafMobil = document.getElementById("GrafMobil");
-const GrafElektricitet = document.getElementById("GrafElektricitet");
-//Knapperne
-const GrafElektricitetLag = document.getElementById("checkedelektricitet");
-const GrafInternetLag = document.getElementById("checkedinternet");
-const GrafMobilLag = document.getElementById("checkedmobil");
-//Colored squares :)
+// Funktion til at hente og vise data som linjediagram for internet, telefoner og elektricitet
+async function loadCountryData(country) {
+  try {
+    // Hent data for alle tre kategorier
+    const apiCalls = [];
 
-function toggleOpacity(layer, knappen) {
-  if (layer.style.opacity === "1") {
-    layer.style.opacity = "0";
-  } else {
-    layer.style.opacity = "1";
+    apiCalls.push(
+      fetch(`/api/internet_data?country=${country}`).then((response) =>
+        response.json()
+      )
+    );
+    apiCalls.push(
+      fetch(`/api/telephones_data?country=${country}`).then((response) =>
+        response.json()
+      )
+    );
+    apiCalls.push(
+      fetch(`/api/electricity_data?country=${country}`).then((response) =>
+        response.json()
+      )
+    );
+
+    const results = await Promise.all(apiCalls);
+
+    // Gem data til senere brug
+    graphData.internet = results[0];
+    graphData.mobile = results[1];
+    graphData.electricity = results[2];
+
+    // Opdater grafen med de hentede data
+    updateGraph();
+  } catch (error) {
+    console.error("Kunne ikke hente data:", error);
   }
-  console.log(`${knappen} Blev trykket på`);
 }
 
-GrafInternet.addEventListener("click", () =>
-  toggleOpacity(GrafInternetLag, "GrafInternet")
-);
-GrafMobil.addEventListener("click", () =>
-  toggleOpacity(GrafMobilLag, "GrafMobil")
-);
-GrafElektricitet.addEventListener("click", () =>
-  toggleOpacity(GrafElektricitetLag, "GrafElektricitet")
-);
+// Funktion til at opdatere grafen
+function updateGraph() {
+  // Fjern eksisterende diagram
+  chartDiv.html("");
 
-//Grafen starter her
+  // Definer dimensions og margins
+  const width = 800;
+  const height = 500;
+  const margin = { top: 20, right: 30, bottom: 50, left: 50 };
 
-// set the dimensions and margins of the graph
-const margin = { top: 30, right: 10, bottom: 30, left: 75 },
-  width = 600 - margin.left - margin.right,
-  height = 350 - margin.top - margin.bottom;
+  const svg = chartDiv
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
 
-// append the svg object to the body of the page
-const svg = d3
-  .select("#my_dataviz")
-  .append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-  .attr("transform", `translate(${margin.left},${margin.top})`);
-
-//Read the data
-d3.csv(
-  "https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/5_OneCatSevNumOrdered.csv"
-).then(function (data) {
-  // group the data: I want to draw one line per group
-  const sumstat = d3.group(data, (d) => d.name); // nest function allows to group the calculation per level of a factor
-
-  // Add X axis --> it is a date format
-  const x = d3
+  const xScale = d3
     .scaleLinear()
-    .domain(
-      d3.extent(data, function (d) {
-        return d.year;
-      })
-    )
-    .range([0, width]);
-  svg
-    .append("g")
-    .attr("transform", `translate(0, ${height})`)
-    .call(d3.axisBottom(x).ticks(5));
+    .domain(d3.extent(graphData.internet, (d) => d.year))
+    .range([margin.left, width - margin.right]);
 
-  // Add Y axis
-  const y = d3
+  const yScale = d3
     .scaleLinear()
     .domain([
       0,
-      d3.max(data, function (d) {
-        return +d.n;
-      }),
+      Math.max(
+        d3.max(graphData.internet, (d) => d.internet_usage),
+        d3.max(graphData.mobile, (d) => d.telephones_per_100),
+        d3.max(graphData.electricity, (d) => d.electricity_access_percentage)
+      ),
     ])
-    .range([height, 0]);
-  svg.append("g").call(d3.axisLeft(y));
+    .nice()
+    .range([height - margin.bottom, margin.top]);
 
-  // color palette
-  const color = d3
-    .scaleOrdinal()
-    .range([
-      "#e41a1c",
-      "#377eb8",
-      "#4daf4a",
-      "#984ea3",
-      "#ff7f00",
-      "#ffff33",
-      "#a65628",
-      "#f781bf",
-      "#999999",
-    ]);
+  const line = d3
+    .line()
+    .x((d) => xScale(d.year))
+    .y((d) => yScale(d.value));
 
-  // Draw the line
+  // Tilføj akser
   svg
-    .selectAll(".line")
-    .data(sumstat)
-    .join("path")
+    .append("g")
+    .attr("transform", `translate(0,${height - margin.bottom})`)
+    .call(d3.axisBottom(xScale).tickFormat(d3.format("d")));
+
+  svg
+    .append("g")
+    .attr("transform", `translate(${margin.left},0)`)
+    .call(d3.axisLeft(yScale));
+
+  // Tilføj linjer baseret på aktiverede knapper
+  if (dataLoaded.internet && graphData.internet) {
+    createGraphLine(svg, graphData.internet, "internet", "steelblue", line);
+  }
+
+  if (dataLoaded.mobile && graphData.mobile) {
+    createGraphLine(svg, graphData.mobile, "mobile", "green", line);
+  }
+
+  if (dataLoaded.electricity && graphData.electricity) {
+    createGraphLine(svg, graphData.electricity, "electricity", "orange", line);
+  }
+}
+
+// Funktion til at oprette linje i grafen
+function createGraphLine(svg, data, type, color, line) {
+  const formattedData = data.map((d) => ({
+    year: +d.year,
+    value:
+      +d[
+        `${
+          type === "internet"
+            ? "internet_usage"
+            : type === "mobile"
+            ? "telephones_per_100"
+            : "electricity_access_percentage"
+        }`
+      ],
+  }));
+
+  svg
+    .append("path")
+    .datum(formattedData)
     .attr("fill", "none")
-    .attr("stroke", function (d) {
-      return color(d[0]);
-    })
-    .attr("stroke-width", 1.5)
-    .attr("d", function (d) {
-      return d3
-        .line()
-        .x(function (d) {
-          return x(d.year);
-        })
-        .y(function (d) {
-          return y(+d.n);
-        })(d[1]);
-    });
-});
+    .attr("stroke", color)
+    .attr("stroke-width", 2)
+    .attr("d", line);
+
+  svg
+    .append("text")
+    .attr("x", 800)
+    .attr("y", 20)
+    .style("fill", color)
+    .style("font-size", "12px")
+    .style("text-anchor", "start")
+    .text(
+      type === "internet"
+        ? "Internet Usage (%)"
+        : type === "mobile"
+        ? "Telephones per 100"
+        : "Electricity Access (%)"
+    );
+}
+
+// Start med "Denmark" som standard i søgefeltet og hent data
+inputFelt.property("value", "Denmark");
+loadCountryData("Denmark");
+
+// Aktivér kun internetknappen
+toggleOpacity(GrafInternetLag, "internet");

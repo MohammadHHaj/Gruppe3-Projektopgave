@@ -28,6 +28,9 @@ server.get("/api/internet_usage", onGetData);
 server.get("/api/telephones_100", onGetTelephones);
 server.get("/api/electricity_percentage", onGetElectricity);
 server.get("/api/onGetCountry", onGetCountry);
+server.get("/api/internet_data", onGetInternetData);
+server.get("/api/telephones_data", onGetTelephonesData);
+server.get("/api/electricity_data", onGetElectricityData);
 server.listen(port, onServerReady);
 
 async function onGetData(request, response) {
@@ -131,6 +134,49 @@ async function onGetCountry(request, response) {
       [`%${countryQuery}%`]
     );
 
+    response.json(dbResult.rows);
+  } catch (error) {
+    console.error("Database query failed:", error);
+    response.status(500).send("Internal server error");
+  }
+}
+// New API for fetching internet data for a specific country
+async function onGetInternetData(request, response) {
+  const country = request.query.country;
+  try {
+    const dbResult = await db.query(
+      `SELECT year, internet_usage FROM internet_acces WHERE country = $1 ORDER BY year ASC`,
+      [country]
+    );
+    response.json(dbResult.rows);
+  } catch (error) {
+    console.error("Database query failed:", error);
+    response.status(500).send("Internal server error");
+  }
+}
+// New API for fetching telephones data for a specific country
+async function onGetTelephonesData(request, response) {
+  const country = request.query.country;
+  try {
+    const dbResult = await db.query(
+      `SELECT year, telephones_per_100 FROM telephones WHERE country = $1 ORDER BY year ASC`,
+      [country]
+    );
+    response.json(dbResult.rows);
+  } catch (error) {
+    console.error("Database query failed:", error);
+    response.status(500).send("Internal server error");
+  }
+}
+
+// New API for fetching electricity data for a specific country
+async function onGetElectricityData(request, response) {
+  const country = request.query.country;
+  try {
+    const dbResult = await db.query(
+      `SELECT year, electricity_access_percentage FROM electricity WHERE country = $1 ORDER BY year ASC`,
+      [country]
+    );
     response.json(dbResult.rows);
   } catch (error) {
     console.error("Database query failed:", error);
