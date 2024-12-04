@@ -199,7 +199,7 @@ body {
 }
 /*Forlaget*/
 #kategoriforlag {
-  background-color: whitesmoke;
+  background-color: #fff;
   width: 98px;
   height: 80%;
   position: absolute;
@@ -371,7 +371,7 @@ body {
 .mat-input input {
   border-width: 0 0 1px;
   outline: none;
-  background-color: whitesmoke;
+  background-color: #fff;
   padding: 1.8em 0.75em 0.75em;
   border-color: #8c8c8c;
   border-style: solid;
@@ -470,12 +470,12 @@ body {
 
 #valgt-indhold {
   background-color: transparent;
-  position: absolute;
-  left: 20px;
-  bottom: -4px;
+  position: relative;
+  left: 111px;
   z-index: 2;
   text-shadow: 1px 2px 2px rgba(1, 0, 0, 0.6);
-  font-size: 10px;
+  font-size: 17px;
+  top: 150px;
 }
 
 #topBar {

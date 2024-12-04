@@ -214,7 +214,7 @@ document
     });
   });
 
-const wifitext = "Wifi data er baseret på brug af internet";
+const wifitext = "Internet data er baseret på brug af internet";
 const mobiltext = "Mobil data er baseret på abonommenter pr 100 indbygger";
 const electricitytext = "Elektricitet er baseret på hej!";
 
