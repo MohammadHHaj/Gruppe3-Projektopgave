@@ -56,7 +56,7 @@ body {
 }
 
 /* Media Query for mindre skærme (telefoner) */
-@media (max-width: 768px) {
+@media (max-width: 50vwpx) {
   #brodtekst {
     width: 80vw; /* Gør bredden mere passende for små skærme */
     left: 5%; /* Reducerer margin fra venstre */
@@ -72,10 +72,10 @@ body {
 
 #verdensmaal {
   position: absolute;
-  right: 5%; /* Placeret 5% fra højre kant */
-  top: 5%; /* Placeret 5% fra toppen */
-  height: 50vh; /* Dynamisk højde som en procentdel af skærmhøjden */
-  border-radius: 7px; /* Afrundede hjørner */
+  right: 5%;
+  top: 5%;
+  height: 50vh;
+  border-radius: 7px;
 }
 
 /* Media Query for mindre skærme (telefoner) */
