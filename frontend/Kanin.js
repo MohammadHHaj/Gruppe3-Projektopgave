@@ -245,8 +245,10 @@ function scrollToPosition(targetPosition, duration) {
 //scroll top-menu kode
 const OversigtKnap = document.getElementById("OversigtKnap");
 const Sektion1 = document.getElementById("sektion1");
+const sektionTop = Sektion1.getBoundingClientRect().top + window.scrollY; // Få positionen af sektionen
+const offset = 100; // Justér dette tal for at scrolle længere op
 OversigtKnap.addEventListener("click", () => {
-  Sektion1.scrollIntoView({ behavior: "smooth" });
+  window.scrollTo({ top: sektionTop - offset, behavior: "smooth" });
 });
 const WorldMapKnap = document.getElementById("WorldMapKnap");
 const Sektion2 = document.getElementById("sektion2");
