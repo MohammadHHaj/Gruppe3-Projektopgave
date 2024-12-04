@@ -525,7 +525,8 @@ body {
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  border-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
   border: none;
   padding: 0.5rem 0;
   color: rgba(51, 65, 85, 1);
