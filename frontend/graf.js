@@ -257,7 +257,7 @@ function createGraphLine(svg, data, type, color, line, xScale, yScale, margin) {
     .attr("stroke-width", 1);
 
   // Find tekstlabelens position og sørg for, at de ikke overlapper
-  let offset = 0;
+  let offset = -0;
   svg.selectAll("text").each(function () {
     const currentText = d3.select(this);
     const currentY = parseFloat(currentText.attr("y"));
@@ -265,7 +265,7 @@ function createGraphLine(svg, data, type, color, line, xScale, yScale, margin) {
     const distance = Math.abs(currentY - (yScale(topPoint.value) + currentDy));
 
     if (distance < 10) {
-      offset += 15; // Justér afstanden mellem overlappende labels
+      offset += 25; // Justér afstanden mellem overlappende labels
     }
   });
 
