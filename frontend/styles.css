@@ -368,6 +368,12 @@ body {
   font-size: inherit;
 }
 
+#kikkert {
+  position: absolute;
+  top: 34px;
+  left: 204px;
+}
+
 .mat-input input {
   border-width: 0 0 1px;
   outline: none;
