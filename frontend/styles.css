@@ -11,7 +11,15 @@ body {
   bottom: -50px;
   margin-bottom: -50px;
 }
-
+@media (max-width: vw) {
+  #sektion1 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    bottom: -50px;
+    margin-bottom: -50px;
+  }
+}
 #sektion2 {
   position: relative;
   /* top: 50px; */
