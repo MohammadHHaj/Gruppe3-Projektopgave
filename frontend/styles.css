@@ -474,8 +474,25 @@ body {
   left: 111px;
   z-index: 2;
   text-shadow: 1px 2px 2px rgba(1, 0, 0, 0.6);
-  font-size: 17px;
+  font-size: 15px;
   top: 150px;
+
+  letter-spacing: 0.1em;
+  display: inline-block;
+}
+
+#valgt-indhold span {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInMove 0.8s ease forwards; /* Ændret animationstid for at give en langsommere effekt */
+  animation-delay: var(--delay);
+}
+
+@keyframes fadeInMove {
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(0); /* Slutposition: i sin normale position */
+  }
 }
 
 #topBar {

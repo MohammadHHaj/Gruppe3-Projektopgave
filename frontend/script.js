@@ -214,22 +214,57 @@ document
     });
   });
 
-const wifitext = "Internet data er baseret på brug af internet";
-const mobiltext = "Mobil data er baseret på abonommenter pr 100 indbygger";
-const electricitytext = "Elektricitet er baseret på hej!";
+const wifitext = "Internet er baseret på brug af internet.";
+const mobiltext = "Mobil er baseret på abonommenter pr 100 indbygger.";
+const electricitytext =
+  "Elektricitet er baseret på adgang til elektricitet i procent.";
+
+function setTextWithAnimation(text) {
+  const valgtindhold = document.getElementById("valgt-indhold");
+
+  // Fjern eksisterende tekst (det gamle indhold)
+  valgtindhold.innerHTML = "";
+
+  // Del teksten op i ord og behandl hvert ord individuelt
+  const words = text.split(" "); // Split teksten op i ord
+  words.forEach((word, wordIndex) => {
+    const wordSpan = document.createElement("span");
+    wordSpan.style.display = "inline-block";
+
+    // Split hvert ord op i bogstaver
+    const letters = word.split("");
+    letters.forEach((letter, letterIndex) => {
+      const letterSpan = document.createElement("span");
+      letterSpan.textContent = letter;
+      letterSpan.style.setProperty(
+        "--delay",
+        `${wordIndex * 0.1 + letterIndex * 0.01}s`
+      );
+      wordSpan.appendChild(letterSpan);
+    });
+
+    // Tilføj ordet (span med bogstaver) til valgtindhold
+    valgtindhold.appendChild(wordSpan);
+
+    // Tilføj et mellemrum efter ordet, men ikke til sidst
+    if (wordIndex < words.length - 1) {
+      const spaceSpan = document.createElement("span");
+      spaceSpan.textContent = " ";
+      valgtindhold.appendChild(spaceSpan);
+    }
+  });
+}
 
 document
   .querySelectorAll('input[name="value-radio"]')
   .forEach(function (radio) {
     radio.addEventListener("change", function () {
-      const valgtindhold = document.getElementById("valgt-indhold");
-
       if (radio.id === "Wifi") {
-        valgtindhold.textContent = wifitext;
+        setTextWithAnimation(wifitext);
       } else if (radio.id === "Mobil") {
-        valgtindhold.textContent = mobiltext;
+        setTextWithAnimation(mobiltext);
       } else if (radio.id === "Computer") {
-        valgtindhold.textContent = electricitytext;
+        setTextWithAnimation(electricitytext);
       }
     });
   });
@@ -238,15 +273,12 @@ document
   .querySelectorAll('input[name="value-radio2"]')
   .forEach(function (radio) {
     radio.addEventListener("click", function () {
-      // Skift indhold baseret på radio2 knappen
-      const valgtindhold = document.getElementById("valgt-indhold");
-
       if (radio.id === "forlaginternet") {
-        valgtindhold.textContent = wifitext;
+        setTextWithAnimation(wifitext);
       } else if (radio.id === "forlagmobil") {
-        valgtindhold.textContent = mobiltext;
+        setTextWithAnimation(mobiltext);
       } else if (radio.id === "forlagelektricitet") {
-        valgtindhold.textContent = electricitytext;
+        setTextWithAnimation(electricitytext);
       }
 
       // Sørg for, at radio2-knapperne kun kan vælges én gang
