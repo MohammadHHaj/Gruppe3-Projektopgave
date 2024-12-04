@@ -94,7 +94,7 @@ const factsWifi = [
   "USA og Norge var førende lande inden for udviklingen i adgang til wifi. I 1990 var det hele 0,7% af befolkningen, der havde adgang til internettet i de to lande. ",
   "Sydafrika var det første afrikanske land til at få wifi i 1991. Sydsudan var det sidste på kontinentet, da de fik internet i 2012.",
   "I 2022 er der 56 lande i verden, hvor under 50% af befolkningen har adgang til internet",
-  "",
+  "I Bermuda, UAE, Bahrain, Qatar og Saudi Arabien har befolkningerne, som de eneste i verden, haft 100% adgang til internettet.",
 ];
 const factsMobil = [
   "I De Forenede Arabiske Emirater havde de i 2022 det højeste antal mobilabonnementer pr indbygger: 212 abonnenter pr. 100 indbyggere. I 2016 havde de 221 abonnementer. ",
