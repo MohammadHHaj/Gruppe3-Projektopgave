@@ -350,11 +350,9 @@ body {
 #grafenbox {
   height: 534px;
   width: 885px;
-  border-top:1px solid #000000;
+  border-top: 1px solid #000000;
   border-left: 1px solid #000000;
   position: absolute;
-  top: 100px;
-  left: 110px;
 }
 #sogknap {
   position: relative;
@@ -600,4 +598,8 @@ body {
 #chart {
   width: 100%;
   height: 500px;
+}
+.sektion {
+  width: 100vw;
+  height: 100vh;
 }

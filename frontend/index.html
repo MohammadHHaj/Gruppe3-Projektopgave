@@ -25,6 +25,7 @@
         <label class="radio" id="OversigtKnap">
           <input type="radio" name="radio" />
           <span class="name">Oversigt</span>
+          <a href="#forside"></a>
         </label>
 
         <label class="radio" id="WorldMapKnap">
@@ -46,7 +47,7 @@
     <!--Top bar slut-->
 
     <!--Første side. Oversigt-->
-    <div id="sektion1">
+    <div class="sektion" id="forside">
       <div id="overskriftdiv">
         <h1>Hvad ved du egentlig om den digitale udvikling?</h1>
         <div id="brodtekst">
@@ -76,8 +77,9 @@
     <!--Første side slut-->
 
     <!--Anden side starter. World map-->
-    <p id="valgt-indhold"></p>
-    <div id="sektion2">
+
+    <div class="sektion" id="worldmapside">
+      <p id="valgt-indhold"></p>
       <!--tidsvælger-->
       <div id="arrow">&#x2B9F;</div>
       <div id="year-selector">
@@ -197,11 +199,12 @@
         </div>
       </div>
     </div>
+
     <!--Anden side slutter her-->
     <!--Container div slut.-->
 
     <!--Sektion 3.Graf siden start-->
-    <div id="sektion3">
+    <div class="sektion" id="grafside">
       <div id="grafkategorier">
         <!--Labelsstart-->
         <label class="midten grafbilleder">
@@ -287,7 +290,7 @@
     <!--OmOsStart-->
     <!--OmOsSlut-->
     <!--Omosstart-->
-    <div id="sektion4"></div>
+    <div class="sektion" id="worldmapside"></div>
     <!--Omosslut-->
     <script src="graf.js"></script>
     <script src="script.js"></script>
