@@ -41,18 +41,29 @@ body {
 
 #brodtekst {
   background-color: #f2f2f2; /* Lysere og mere neutral farve */
-  position: absolute; /* Kan ændres til relative eller flex */
-  height: 325px;
-  width: 525px;
-  left: 100px;
-  top: 75px;
-  font-size: 21px;
-  padding: 25px; /* Tilføj padding for luft omkring teksten */
-  border-radius: 15px; /* Mere afrundede hjørner */
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Blødere og mere naturlig skygge */
-  color: #333; /* Mørkere tekstfarve for bedre læsbarhed */
-  line-height: 1.4; /* Forbedrer tekstens læsbarhed */
+  position: absolute;
+  height: 40vh; /* Højde som en procentdel af skærmhøjden */
+  width: 37vw; /* Bredde som en procentdel af skærmbredden */
+  left: 7%;
+  top: 9%; /* Placeret 10% fra toppen */
+  font-size: 1.35rem; /* Dynamisk fontstørrelse */
+  padding: 1.59rem; /* Padding i rem for responsivitet */
+  border-radius: 15px; /* Afrundede hjørner */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Blød skygge */
+  color: #333; /* Tekstfarve */
+  line-height: 1.4; /* Forbedret læsbarhed */
   text-align: justify;
+}
+
+/* Media Query for mindre skærme (telefoner) */
+@media (max-width: 768px) {
+  #brodtekst {
+    width: 80vw; /* Gør bredden mere passende for små skærme */
+    left: 5%; /* Reducerer margin fra venstre */
+    top: 5%; /* Reducerer margin fra toppen */
+    font-size: 1rem; /* Mindre tekst for mindre skærme */
+    padding: 1.5rem; /* Tilpasset padding */
+  }
 }
 
 #brodtekst p {
@@ -61,11 +72,21 @@ body {
 
 #verdensmaal {
   position: absolute;
-  right: 50px;
-  top: 50px;
-  height: 425px;
-  border-radius: 7px;
+  right: 5%; /* Placeret 5% fra højre kant */
+  top: 5%; /* Placeret 5% fra toppen */
+  height: 50vh; /* Dynamisk højde som en procentdel af skærmhøjden */
+  border-radius: 7px; /* Afrundede hjørner */
 }
+
+/* Media Query for mindre skærme (telefoner) */
+@media (max-width: 768px) {
+  #verdensmaal {
+    right: 2%; /* Mindre margin fra højre */
+    top: 2%; /* Mindre margin fra toppen */
+    height: 20vh; /* Reduceret højde for små skærme */
+  }
+}
+
 /*Førstesideslut*/
 /*Tidsvælgerstart*/
 .overskrifter {
