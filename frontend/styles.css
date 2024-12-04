@@ -11,7 +11,7 @@ body {
   bottom: -50px;
   margin-bottom: -50px;
 }
-@media (max-width: vw) {
+@media (max-width: 100vw) {
   #sektion1 {
     position: relative;
     width: 100vw;
