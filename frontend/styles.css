@@ -1,5 +1,5 @@
 body {
-  background-color: whitesmoke;
+  background-color: #fff;
   overflow-x: hidden;
 }
 /*lad body element være i toppen*/
@@ -533,6 +533,7 @@ body {
   color: #eb630e;
   background-color: #fff;
   font-weight: 600;
+  height: 25px;
 }
 
 .mat-input {
