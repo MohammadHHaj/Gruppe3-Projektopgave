@@ -6,6 +6,7 @@
     <title>Adgangsindsigt</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <meta
       name="description"
       content="Følg den absolut bedste studiegruppe, på rejsen mod succes! Tryk på linket for at se banebrydende indhold og forkæl dig selv med fortrolig data fremvidst i verdensklasse visualiseringer. Ja, i fleretal. Vi er bare bedre!"
@@ -64,7 +65,7 @@
     <!--Første side. Oversigt-->
     <div id="fullpage">
       <div id="sektion1" class="section">
-        <div id="overskriftdiv">
+        <div id="overskriftdiv" data-aos="fade-right" data-aos-duration="2500">
           <h1>Hvad ved du egentlig om den digitale udvikling?</h1>
           <div id="brodtekst">
             <p>
@@ -97,7 +98,7 @@
       <div id="sektion2" class="section">
         <!--tidsvælger-->
         <div id="arrow">&#x2B9F;</div>
-        <div id="year-selector">
+        <div id="year-selector" data-aos="fade-right" data-aos-duration="2500" data-aos-once="true">
           <div id="year"></div>
           <!-- Acts as the container for the years -->
         </div>
@@ -145,7 +146,7 @@
             <span class="selection"></span>
           </div>
           <!--Container diven er diven der indeholder kortet-->
-          <div id="container">
+          <div id="container" data-aos="flip-up" data-aos-duration="2500" data-aos-once="true">
             <p id="valgt-indhold"></p>
             <div id="farve-info" class="farve-info"></div>
             <div id="forlaget">
@@ -296,17 +297,18 @@
               <div id="results"></div>
             </div>
           </div>
-          <div id="chart"></div>
+          <div id="chart" data-aos="fade-right" data-aos-duration="1500"></div>
 
           <!--Selve grafen bliver sat ind her-->
         </div>
         <div id="GrafInfoBox">
-          <p class="GrafInfoBoxPTags" id="GrafInfoPTagEn">Wifi er noget sejt</p>
-          <p class="GrafInfoBoxPTags" id="GrafInfoPTagTo">
+          <p class="GrafInfoBoxPTags" id="GrafInfoPTagEn" data-aos="fade-left" data-aos-duration="1500">
+          Wifi er noget sejt</p>
+          <p class="GrafInfoBoxPTags" id="GrafInfoPTagTo" data-aos="fade-left" data-aos-duration="1500">
             Mobil er noget sejt
           </p>
-          <p class="GrafInfoBoxPTags" id="GrafInfoPTagTre">
-            Elektricitet er noget sejt
+          <p class="GrafInfoBoxPTags" id="GrafInfoPTagTre" data-aos="fade-left" data-aos-duration="1500">
+          Elektricitet er noget sejt
           </p>
         </div>
       </div>
@@ -317,6 +319,10 @@
       <div id="sektion4" class="section"></div>
       <!--Omosslut-->
     </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="graf.js"></script>
     <script src="script.js"></script>
     <script src="map.js"></script>
