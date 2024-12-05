@@ -32,13 +32,10 @@ function toggleOpacity(layer, knappen) {
     layer.style("opacity", "0");
     dataLoaded[knappen] = false;
   } else {
-    if (!graphData[knappen]) {
-      console.error(`No data available for ${knappen}`);
-      return; // Exit if the data is missing
-    }
     layer.style("opacity", "1");
     dataLoaded[knappen] = true;
   }
+  console.log(`${knapper} blev trykket på`);
   updateGraph(); // Update the graph only if the data exists
 }
 

@@ -244,11 +244,8 @@ function scrollToPosition(targetPosition, duration) {
 }
 
 new fullpage("#fullpage", {
-  autoScrolling: true,
-  fitToSection: true,
-  navigation: false,
+  navigation: true,
   anchors: ["section1", "section2", "section3", "section4"],
-  scrollOverflow: false, // Disable internal scrolling
   onLeave: (origin, destination) => {
     // Update the navbar to highlight the active section
     const radioButtons = document.querySelectorAll(
