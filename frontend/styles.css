@@ -6,7 +6,7 @@ body {
 .section {
   overflow: hidden; /* Prevent scrolling within sections */
   position: relative;
-  width: 100vw;
+  width: 98vw;
   height: 110vh;
 }
 
