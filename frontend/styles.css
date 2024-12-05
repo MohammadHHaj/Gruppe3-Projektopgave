@@ -1,19 +1,28 @@
-body {
+/* body {
   background-color: #fff;
   overflow-x: hidden;
+} */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+.section {
+  width: 100vw;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent scrolling within sections */
+}
+
 /*lad body element være i toppen*/
 /*Førsteside*/
 #sektion1 {
-  bottom: -50px;
   margin-bottom: -50px;
 }
-@media (max-width: 100vw) {
-  #sektion1 {
-    bottom: -50px;
-    margin-bottom: -50px;
-  }
-}
+
 #sektion2 {
   margin-top: -35px;
   right: 25px;
@@ -35,7 +44,7 @@ body {
 #overskriftdiv h1 {
   text-align: center;
   text-shadow: 1px 1px 2px black;
-  margin-top: -35px;
+  margin-top: -314px;
 }
 
 #brodtekst {
@@ -94,7 +103,7 @@ body {
 }
 #arrow {
   position: relative;
-  top: 64px;
+  top: -31px;
   left: 660px;
 }
 #year-selector {
@@ -110,7 +119,7 @@ body {
   overflow-x: scroll;
   overflow-y: hidden;
   left: 551px;
-  top: 22px;
+  top: -73px;
 }
 
 #year-selector::-webkit-scrollbar {
@@ -152,7 +161,7 @@ body {
   justify-content: space-between;
   color: #000000;
   height: 300px;
-  top: 28px;
+  top: -63px;
   left: 20px;
 }
 
@@ -219,7 +228,7 @@ body {
   width: 100vw;
   height: auto;
   position: relative;
-  top: 34px;
+  top: -56px;
   box-shadow: 0px 0px 7px black;
 }
 /*Forlaget*/
@@ -229,7 +238,7 @@ body {
   height: 80%;
   position: absolute;
   z-index: 5;
-  top: 102px;
+  top: 64px;
   transition: height 0.3s ease, opacity 0.3s ease;
   overflow: hidden;
 }
@@ -366,7 +375,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  top: 115px;
+  top: -133px;
   justify-content: space-between;
   height: 300px;
   width: max-content;
@@ -378,7 +387,7 @@ body {
   border-top: 1px solid #000000;
   border-left: 1px solid #000000;
   position: absolute;
-  top: 100px;
+  top: 34px;
   left: 110px;
   border-radius: 80px 0px 0px 0px;
 }
@@ -386,6 +395,23 @@ body {
   position: relative;
   left: 10px;
   top: -2px;
+}
+#GrafInfoBox {
+  position: absolute;
+  right: 120px;
+  width: 160px;
+}
+#GrafInfoPTagEn {
+  top: -315px;
+}
+#GrafInfoPTagTo {
+  top: -205px;
+}
+#GrafInfoPTagTre {
+  top: -66px;
+}
+.GrafInfoBoxPTags {
+  position: absolute;
 }
 /*Grafknapperstart*/
 .mat-input {
@@ -506,7 +532,7 @@ body {
   z-index: 2;
   text-shadow: 1px 2px 2px rgba(1, 0, 0, 0.6);
   font-size: 15px;
-  top: 94px;
+  top: 48px;
 
   letter-spacing: 0.1em;
   display: inline-block;
@@ -547,7 +573,7 @@ body {
 }
 
 #topBarKnapper {
-  position: absolute;
+  position: relative;
   width: 75%;
   top: 0%;
   left: 25%;

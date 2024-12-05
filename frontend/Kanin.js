@@ -242,26 +242,22 @@ function scrollToPosition(targetPosition, duration) {
 
   requestAnimationFrame(animateScroll);
 }
-//scroll top-menu kode
-const OversigtKnap = document.getElementById("OversigtKnap");
-const Sektion1 = document.getElementById("sektion1");
-const sektionTop = Sektion1.getBoundingClientRect().top + window.scrollY; // Få positionen af sektionen
-const offset = 100; // Justér dette tal for at scrolle længere op
-OversigtKnap.addEventListener("click", () => {
-  window.scrollTo({ top: sektionTop - offset, behavior: "smooth" });
-});
-const WorldMapKnap = document.getElementById("WorldMapKnap");
-const Sektion2 = document.getElementById("sektion2");
-WorldMapKnap.addEventListener("click", () => {
-  Sektion2.scrollIntoView({ behavior: "smooth" });
-});
-const GrafKnap = document.getElementById("GrafKnap");
-const Sektion3 = document.getElementById("sektion3");
-GrafKnap.addEventListener("click", () => {
-  Sektion3.scrollIntoView({ behavior: "smooth" });
-});
-const OmOsKnap = document.getElementById("OmOsKnap");
-const Sektion4 = document.getElementById("sektion4");
-OmOsKnap.addEventListener("click", () => {
-  Sektion4.scrollIntoView({ behavior: "smooth" });
+
+new fullpage("#fullpage", {
+  autoScrolling: true,
+  fitToSection: true,
+  navigation: false,
+  anchors: ["section1", "section2", "section3", "section4"],
+  scrollOverflow: false, // Disable internal scrolling
+  onLeave: (origin, destination) => {
+    // Update the navbar to highlight the active section
+    const radioButtons = document.querySelectorAll(
+      "#topBarKnapper input[name='radio']"
+    );
+    radioButtons.forEach((radio, index) => {
+      if (index === destination.index) {
+        radio.checked = true; // Highlight the corresponding navbar item
+      }
+    });
+  },
 });
