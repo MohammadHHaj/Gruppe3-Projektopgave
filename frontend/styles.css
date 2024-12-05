@@ -7,7 +7,7 @@ body {
   overflow: hidden; /* Prevent scrolling within sections */
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 110vh;
 }
 
 /*lad body element være i toppen*/
@@ -213,7 +213,7 @@ body {
   border-width: 2px;
   border-style: solid;
   border-color: black;
-  width: 110vw;
+  width: 100vw;
   position: relative;
   top: 34px;
   box-shadow: 0px 0px 7px black;
