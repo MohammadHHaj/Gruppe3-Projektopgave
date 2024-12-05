@@ -242,19 +242,3 @@ function scrollToPosition(targetPosition, duration) {
 
   requestAnimationFrame(animateScroll);
 }
-
-new fullpage("#fullpage", {
-  navigation: true,
-  anchors: ["section1", "section2", "section3", "section4"],
-  onLeave: (origin, destination) => {
-    // Update the navbar to highlight the active section
-    const radioButtons = document.querySelectorAll(
-      "#topBarKnapper input[name='radio']"
-    );
-    radioButtons.forEach((radio, index) => {
-      if (index === destination.index) {
-        radio.checked = true; // Highlight the corresponding navbar item
-      }
-    });
-  },
-});
