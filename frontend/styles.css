@@ -532,7 +532,7 @@ html {
   font-size: 1vw; /* Responsiv fontstørrelse */
   letter-spacing: 0.1em;
   /* display: inline-block; */
-  top: -4vh; /* For at placere den korrekt vertikalt */
+  top: -5.5vh; /* For at placere den korrekt vertikalt */
 }
 
 #valgt-indhold span {
