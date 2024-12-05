@@ -6,6 +6,11 @@
     <title>Adgangsindsigt</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.12/fullpage.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.12/fullpage.min.js"></script>
     <meta
       name="description"
       content="Følg den absolut bedste studiegruppe, på rejsen mod succes! Tryk på linket for at se banebrydende indhold og forkæl dig selv med fortrolig data fremvidst i verdensklasse visualiseringer. Ja, i fleretal. Vi er bare bedre!"
@@ -20,25 +25,41 @@
       <div>
         <img id="topBarBillede" src="billeder/verdesnmaal.png" />
       </div>
-
       <div id="topBarKnapper">
         <label class="radio" id="OversigtKnap">
-          <input type="radio" name="radio" />
+          <input
+            type="radio"
+            name="radio"
+            value="section1"
+            onclick="fullpage_api.moveTo('section1')"
+          />
           <span class="name">Oversigt</span>
         </label>
-
         <label class="radio" id="WorldMapKnap">
-          <input type="radio" name="radio" />
+          <input
+            type="radio"
+            name="radio"
+            value="section2"
+            onclick="fullpage_api.moveTo('section2')"
+          />
           <span class="name">Kortet</span>
         </label>
-
         <label class="radio" id="GrafKnap">
-          <input type="radio" name="radio" />
+          <input
+            type="radio"
+            name="radio"
+            value="section3"
+            onclick="fullpage_api.moveTo('section3')"
+          />
           <span class="name">Graf</span>
         </label>
-
-        <label class="radio" id="OmOsKnap">
-          <input type="radio" name="radio" />
+        <label class="radio" id="OmOsSide">
+          <input
+            type="radio"
+            name="radio"
+            value="section4"
+            onclick="fullpage_api.moveTo('section4')"
+          />
           <span class="name">Om os</span>
         </label>
       </div>
@@ -283,6 +304,15 @@
           <div id="chart"></div>
 
           <!--Selve grafen bliver sat ind her-->
+        </div>
+        <div id="GrafInfoBox">
+          <p class="GrafInfoBoxPTags" id="GrafInfoPTagEn">Wifi er noget sejt</p>
+          <p class="GrafInfoBoxPTags" id="GrafInfoPTagTo">
+            Mobil er noget sejt
+          </p>
+          <p class="GrafInfoBoxPTags" id="GrafInfoPTagTre">
+            Elektricitet er noget sejt
+          </p>
         </div>
       </div>
       <!--Grafsidenslut-->

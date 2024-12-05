@@ -30,13 +30,16 @@ function toggleOpacity(layer, knappen) {
   const opacity = layer.style("opacity");
   if (opacity === "1") {
     layer.style("opacity", "0");
-    dataLoaded[knappen] = false; // Deaktiver data for den valgte knap
+    dataLoaded[knappen] = false;
   } else {
+    if (!graphData[knappen]) {
+      console.error(`No data available for ${knappen}`);
+      return; // Exit if the data is missing
+    }
     layer.style("opacity", "1");
-    dataLoaded[knappen] = true; // Aktivér data for den valgte knap
+    dataLoaded[knappen] = true;
   }
-  console.log(`${knappen} blev trykket på`);
-  updateGraph(); // Opdater grafen hver gang en knap aktiveres/deaktiveres
+  updateGraph(); // Update the graph only if the data exists
 }
 
 // Hændelser for knapperne
