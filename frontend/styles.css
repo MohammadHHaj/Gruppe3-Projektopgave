@@ -375,7 +375,7 @@ html {
   display: flex;
   flex-direction: column;
   position: relative;
-  top: -133px;
+  top: -26vh;
   justify-content: space-between;
   height: 300px;
   width: max-content;
@@ -402,13 +402,13 @@ html {
   width: 160px;
 }
 #GrafInfoPTagEn {
-  top: -315px;
+  top: -46vh;
 }
 #GrafInfoPTagTo {
-  top: -205px;
+  top: -30vh;
 }
 #GrafInfoPTagTre {
-  top: -66px;
+  top: -14vh;
 }
 .GrafInfoBoxPTags {
   position: absolute;
