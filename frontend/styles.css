@@ -216,7 +216,7 @@ body {
   position: relative;
   top: 34px;
   box-shadow: 0px 0px 7px black;
-  height: auto;
+  height: 100%;
 }
 /*Forlaget*/
 #kategoriforlag {
