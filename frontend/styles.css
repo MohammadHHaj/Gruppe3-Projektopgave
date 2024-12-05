@@ -40,12 +40,12 @@ body {
 #brodtekst {
   background-color: #f2f2f2; /* Lysere og mere neutral farve */
   position: absolute;
-  height: 40vh; /* Højde som en procentdel af skærmhøjden */
-  width: 37vw; /* Bredde som en procentdel af skærmbredden */
-  left: 7%;
-  top: 9%; /* Placeret 10% fra toppen */
-  font-size: 1.35rem; /* Dynamisk fontstørrelse */
-  padding: 1.59rem; /* Padding i rem for responsivitet */
+  height: 325px; /* Højde som en procentdel af skærmhøjden */
+  width: 525px; /* Bredde som en procentdel af skærmbredden */
+  left: 100px;
+  top: 75px; /* Placeret 10% fra toppen */
+  font-size: 21px; /* Dynamisk fontstørrelse */
+  padding: 25px; /* Padding i rem for responsivitet */
   border-radius: 15px; /* Afrundede hjørner */
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Blød skygge */
   color: #333; /* Tekstfarve */
