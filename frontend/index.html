@@ -6,6 +6,7 @@
     <title>Adgangsindsigt</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <meta
       name="description"
       content="Følg den absolut bedste studiegruppe, på rejsen mod succes! Tryk på linket for at se banebrydende indhold og forkæl dig selv med fortrolig data fremvidst i verdensklasse visualiseringer. Ja, i fleretal. Vi er bare bedre!"
@@ -279,7 +280,7 @@
             <div id="results"></div>
           </div>
         </div>
-        <div id="chart"></div>
+        <div id="chart" data-aos="fade in"></div>
 
         <!--Selve grafen bliver sat ind her-->
       </div>
@@ -290,6 +291,10 @@
     <!--Omosstart-->
     <div id="sektion4" class="sektioner"></div>
     <!--Omosslut-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="graf.js"></script>
     <script src="script.js"></script>
     <script src="map.js"></script>
