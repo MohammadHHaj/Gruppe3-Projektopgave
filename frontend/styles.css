@@ -229,7 +229,7 @@ html {
   position: relative;
   top: -56px;
   box-shadow: 0px 0px 7px black;
-  height: 70vh;
+  height: auto;
 }
 /*Forlaget*/
 #kategoriforlag {
