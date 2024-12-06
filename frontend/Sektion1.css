@@ -78,43 +78,7 @@ body {
   text-decoration: none;
   color: black;
 }
-.Tryk {
-  position: absolute;
-}
-
-span:hover + .PopUp {
-  display: flex;
-  flex-direction: column;
-}
-
-.PopUp {
-  display: none;
-  position: absolute;
-  height: 145px;
-  background-color: whitesmoke;
-  width: max-content;
-  border-radius: 9px 28px 25px 3px;
-  top: 45px;
-  color: black;
-  font-size: 12px;
-  letter-spacing: 1px;
-}
-#PopMobil {
-  right: 156px;
-}
-#PopEl {
-  left: 420px;
-}
-#PopInternet {
-  right: 14px;
-}
-.PopUpPics {
-  position: relative;
-  height: 130px;
-  border-radius: 8px 25px 3px 3px;
-}
-
-#overskriftdiv h1 {
+#autoskrivning {
   text-align: center;
   text-shadow: 1px 1px 2px black;
 }
