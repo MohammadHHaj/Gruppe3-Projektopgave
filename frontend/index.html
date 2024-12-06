@@ -6,6 +6,7 @@
     <title>Adgangsindsigt</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <meta
       name="description"
       content="Følg den absolut bedste studiegruppe, på rejsen mod succes! Tryk på linket for at se banebrydende indhold og forkæl dig selv med fortrolig data fremvidst i verdensklasse visualiseringer. Ja, i fleretal. Vi er bare bedre!"
@@ -20,26 +21,42 @@
       <div>
         <img id="topBarBillede" src="billeder/verdesnmaal.png" />
       </div>
-
       <div id="topBarKnapper">
         <label class="radio" id="OversigtKnap">
-          <input type="radio" name="radio" />
+          <input
+            type="radio"
+            name="radio"
+            value="section1"
+            onclick="fullpage_api.moveTo('section1')"
+          />
           <span class="name">Oversigt</span>
           <a href="#forside"></a>
         </label>
-
         <label class="radio" id="WorldMapKnap">
-          <input type="radio" name="radio" />
+          <input
+            type="radio"
+            name="radio"
+            value="section2"
+            onclick="fullpage_api.moveTo('section2')"
+          />
           <span class="name">Kortet</span>
         </label>
-
         <label class="radio" id="GrafKnap">
-          <input type="radio" name="radio" />
+          <input
+            type="radio"
+            name="radio"
+            value="section3"
+            onclick="fullpage_api.moveTo('section3')"
+          />
           <span class="name">Graf</span>
         </label>
-
-        <label class="radio" id="OmOsKnap">
-          <input type="radio" name="radio" />
+        <label class="radio" id="OmOsSide">
+          <input
+            type="radio"
+            name="radio"
+            value="section4"
+            onclick="fullpage_api.moveTo('section4')"
+          />
           <span class="name">Om os</span>
         </label>
       </div>
@@ -47,53 +64,230 @@
     <!--Top bar slut-->
 
     <!--Første side. Oversigt-->
-    <div class="sektion" id="forside">
-      <div id="overskriftdiv">
-        <h1>Hvad ved du egentlig om den digitale udvikling?</h1>
-        <div id="brodtekst">
-          <p>
-            I dag tager vi mobiltelefoner, internettet og elektricitet for
-            givet, men sådan har det ikke altid været. Samtidig er der stadig
-            stor forskel på, hvor tilgængelige teknologierne er, afhængigt af
-            hvor i verden man bor.
-            <br />
-            <br />
-            På denne hjemmeside kan du få indblik i, hvor mange mennesker i
-            hvert land der har adgang til telefoni, internet og elektricitet. Gå
-            på opdagelse i vores World Map, hvor du kan sammenligne landenes
-            udviklingsniveau fra 1990 til 2022, eller brug vores graf til at se
-            udviklingen i et enkelt land i samme periode.
-          </p>
+    <div id="fullpage">
+      <div id="sektion1" class="section">
+        <div id="overskriftdiv" data-aos="fade-right" data-aos-duration="2500">
+          <h1>Hvad ved du egentlig om den digitale udvikling?</h1>
+          <div id="brodtekst">
+            <p>
+              I dag tager vi
+              <span
+                ><a
+                  class="bold"
+                  href="https://da.wikipedia.org/wiki/Mobiltelefon"
+                  target="_blank"
+                  >mobiltelefoner</a
+                ></span
+              ><span id="PopMobil" class="PopUp"
+                ><img
+                  class="PopUpPics"
+                  id="PopUpMobil"
+                  src="billeder/Skærmbillede 2024-12-05 190524.png"
+                  alt="WikiMobil"
+                />
+                Tryk på Mobil for at læse mere.</span
+              >,
+              <span
+                ><a
+                  class="bold"
+                  href="https://da.wikipedia.org/wiki/Internet"
+                  target="_blank"
+                  >internettet</a
+                ></span
+              >
+              <span id="PopInternet" class="PopUp"
+                ><img
+                  class="PopUpPics"
+                  id="PopUpInternet"
+                  src="billeder/Skærmbillede 2024-12-05 194654.png"
+                  alt="WikiInternet"
+                />
+                Tryk på Internet for at læse mere.</span
+              >
+              og
+              <span
+                ><a
+                  class="bold"
+                  href="https://da.wikipedia.org/wiki/Elektricitet"
+                  target="_blank"
+                  >elektricitet</a
+                ></span
+              >
+              <span id="PopEl" class="PopUp"
+                ><img
+                  class="PopUpPics"
+                  id="PopUpEl"
+                  src="billeder/Skærmbillede 2024-12-05 191755.png"
+                  alt="WikiElektricitet"
+                />
+                Tryk på Elektricitet for at læse mere.</span
+              >
+              for givet, men sådan har det ikke altid været. Samtidig er der
+              stadig stor forskel på, hvor tilgængelige teknologierne er,
+              afhængigt af hvor i verden man bor.
+              <br />
+              <br />
+              På denne hjemmeside kan du få indblik i, hvor mange mennesker i
+              hvert land der har adgang til telefoni, internet og elektricitet.
+              Gå på opdagelse i vores World Map, hvor du kan sammenligne
+              landenes udviklingsniveau fra 1990 til 2022, eller brug vores graf
+              til at se udviklingen i et enkelt land i samme periode.
+            </p>
+          </div>
+        </div>
+        <div>
+          <img
+            id="verdensmaal"
+            src="billeder/verdensmaal-roterende.gif"
+            alt="billede af verdensmål nummer 9"
+          />
         </div>
       </div>
-      <div>
-        <img
-          id="verdensmaal"
-          src="billeder/verdensmaal-roterende.gif"
-          alt="billede af verdensmål nummer 9"
-        />
+      <!--Første side slut-->
+
+      <!--Anden side starter. World map-->
+
+      <div id="sektion2" class="section">
+        <!--tidsvælger-->
+        <div id="arrow">&#x2B9F;</div>
+        <div
+          id="year-selector"
+          data-aos="fade-right"
+          data-aos-duration="2500"
+          data-aos-once="true"
+        >
+          <div id="year"></div>
+          <!-- Acts as the container for the years -->
+        </div>
+
+        <!--Tidsvælgerslut-->
+        <div id="mellemlag">
+          <!--Knapperne i siden-->
+          <div id="kategoriforlag"></div>
+          <div class="radio-input">
+            <label class="midten">
+              <input name="value-radio" id="Wifi" type="radio" />
+              <img
+                class="venstrepics"
+                src="billeder/wifi.png"
+                alt="Alternativtekst"
+                onmouseover="this.src='billeder/wifihvid2.gif';"
+                onmouseout="this.src='billeder/wifi.png';"
+              />
+              <span>Internet</span>
+            </label>
+            <!--NY-->
+            <label class="midten">
+              <input name="value-radio" id="Mobil" type="radio" />
+              <img
+                class="venstrepics"
+                src="billeder/mobil.png"
+                alt="Alternativtekst"
+                onmouseover="this.src='billeder/mobil.gif';"
+                onmouseout="this.src='billeder/mobil.png';"
+              />
+              <span>Mobil</span>
+            </label>
+            <!--NY-->
+            <label class="midten">
+              <input name="value-radio" id="Computer" class="" type="radio" />
+              <img
+                class="venstrepics"
+                src="billeder/pæreulys.png"
+                alt="Alternativtekst"
+                onmouseover="this.src='billeder/pære.png';"
+                onmouseout="this.src='billeder/pæreulys.png';"
+              />
+              <span>Elektricitet</span>
+            </label>
+            <span class="selection"></span>
+          </div>
+          <!--Container diven er diven der indeholder kortet-->
+          <div
+            id="container"
+            data-aos="flip-up"
+            data-aos-duration="2500"
+            data-aos-once="true"
+          >
+            <p id="valgt-indhold"></p>
+            <div id="farve-info" class="farve-info"></div>
+            <div id="forlaget">
+              <h1 id="forlag-tekst">Vælg en kategori</h1>
+              <div id="forlag-kategorier">
+                <label class="pointer">
+                  <input
+                    name="value-radio2"
+                    id="forlaginternet"
+                    class="forlaginput"
+                    type="radio2"
+                  />
+                  <img
+                    class="venstrepics"
+                    src="billeder/wifi.png"
+                    alt="Alternativtekst"
+                    onmouseover="this.src='billeder/wifihvid2.gif';"
+                    onmouseout="this.src='billeder/wifi.png';"
+                  />
+                  <span>Internet</span>
+                </label>
+                <label class="pointer">
+                  <input
+                    name="value-radio2"
+                    id="forlagmobil"
+                    class="forlaginput"
+                    type="radio2"
+                  />
+                  <img
+                    class="venstrepics"
+                    src="billeder/mobil.png"
+                    alt="Alternativtekst"
+                    onmouseover="this.src='billeder/mobil.gif';"
+                    onmouseout="this.src='billeder/mobil.png';"
+                  />
+                  <span>Mobil</span>
+                </label>
+                <label class="pointer">
+                  <input
+                    name="value-radio2"
+                    id="forlagelektricitet"
+                    class="forlaginput"
+                    type="radio2"
+                  />
+                  <img
+                    class="venstrepics"
+                    src="billeder/pæreulys.png"
+                    alt="Alternativtekst"
+                    onmouseover="this.src='billeder/pære.png';"
+                    onmouseout="this.src='billeder/pæreulys.png';"
+                  />
+                  <span>Elektricitet</span>
+                </label>
+              </div>
+              <div id="forlag-kategoriertekst"></div>
+            </div>
+            <div id="blurryforlag"></div>
+            <div id="map"></div>
+            <div id="faktabox" class="hidden faktaboxstr"></div>
+            <div id="buttons" class="hidden">
+              <span class="dot" onclick="selectFact(0)"></span>
+              <span class="dot" onclick="selectFact(1)"></span>
+              <span class="dot" onclick="selectFact(2)"></span>
+              <span class="dot" onclick="selectFact(3)"></span>
+              <span class="dot" onclick="selectFact(4)"></span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <!--Første side slut-->
 
-    <!--Anden side starter. World map-->
+      <!--Anden side slutter her-->
+      <!--Container div slut.-->
 
-    <div class="sektion" id="worldmapside">
-      <p id="valgt-indhold"></p>
-      <!--tidsvælger-->
-      <div id="arrow">&#x2B9F;</div>
-      <div id="year-selector">
-        <div id="year"></div>
-        <!-- Acts as the container for the years -->
-      </div>
-
-      <!--Tidsvælgerslut-->
-      <div id="mellemlag">
-        <!--Knapperne i siden-->
-        <div id="kategoriforlag"></div>
-        <div class="radio-input">
-          <label class="midten">
-            <input name="value-radio" id="Wifi" type="radio" />
+      <!--Sektion 3.Graf siden start-->
+      <div id="sektion3" class="section">
+        <div id="grafkategorier">
+          <!--Labelsstart-->
+          <label class="midten grafbilleder">
+            <input id="GrafInternet" class="grafinput" type="checkbox" />
             <img
               class="venstrepics"
               src="billeder/wifi.png"
@@ -103,9 +297,10 @@
             />
             <span>Internet</span>
           </label>
+          <div id="checkedinternet" class="checkedstr"></div>
           <!--NY-->
-          <label class="midten">
-            <input name="value-radio" id="Mobil" type="radio" />
+          <label class="midten grafbilleder">
+            <input id="GrafMobil" class="grafinput" type="checkbox" />
             <img
               class="venstrepics"
               src="billeder/mobil.png"
@@ -115,9 +310,10 @@
             />
             <span>Mobil</span>
           </label>
+          <div id="checkedmobil" class="checkedstr"></div>
           <!--NY-->
-          <label class="midten">
-            <input name="value-radio" id="Computer" class="" type="radio" />
+          <label class="midten grafbilleder">
+            <input id="GrafElektricitet" class="grafinput" type="checkbox" />
             <img
               class="venstrepics"
               src="billeder/pæreulys.png"
@@ -127,171 +323,84 @@
             />
             <span>Elektricitet</span>
           </label>
-          <span class="selection"></span>
+          <div id="checkedelektricitet" class="checkedstr"></div>
+          <!--Labelsslut-->
         </div>
-        <!--Container diven er diven der indeholder kortet-->
-        <div id="container">
-          <div id="farve-info" class="farve-info"></div>
-          <div id="forlaget">
-            <h1 id="forlag-tekst">Vælg en kategori</h1>
-            <div id="forlag-kategorier">
-              <label class="pointer">
-                <input
-                  name="value-radio2"
-                  id="forlaginternet"
-                  class="forlaginput"
-                  type="radio2"
+        <div id="grafenbox">
+          <div id="grafinputfelt">
+            <div class="mat-input">
+              <label for="food">Vælg et land</label>
+              <input id="food" type="text" placeholder="Fx. Danmark " />
+              <svg
+                id="kikkert"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="15"
+                height="15"
+                fill="black"
+              >
+                <circle
+                  cx="10"
+                  cy="10"
+                  r="7"
+                  stroke="black"
+                  stroke-width="2"
+                  fill="none"
                 />
-                <img
-                  class="venstrepics"
-                  src="billeder/wifi.png"
-                  alt="Alternativtekst"
-                  onmouseover="this.src='billeder/wifihvid2.gif';"
-                  onmouseout="this.src='billeder/wifi.png';"
+                <line
+                  x1="15"
+                  y1="15"
+                  x2="21"
+                  y2="21"
+                  stroke="black"
+                  stroke-width="2"
                 />
-                <span>Internet</span>
-              </label>
-              <label class="pointer">
-                <input
-                  name="value-radio2"
-                  id="forlagmobil"
-                  class="forlaginput"
-                  type="radio2"
-                />
-                <img
-                  class="venstrepics"
-                  src="billeder/mobil.png"
-                  alt="Alternativtekst"
-                  onmouseover="this.src='billeder/mobil.gif';"
-                  onmouseout="this.src='billeder/mobil.png';"
-                />
-                <span>Mobil</span>
-              </label>
-              <label class="pointer">
-                <input
-                  name="value-radio2"
-                  id="forlagelektricitet"
-                  class="forlaginput"
-                  type="radio2"
-                />
-                <img
-                  class="venstrepics"
-                  src="billeder/pæreulys.png"
-                  alt="Alternativtekst"
-                  onmouseover="this.src='billeder/pære.png';"
-                  onmouseout="this.src='billeder/pæreulys.png';"
-                />
-                <span>Elektricitet</span>
-              </label>
+              </svg>
+              <div id="results"></div>
             </div>
-            <div id="forlag-kategoriertekst"></div>
           </div>
-          <div id="blurryforlag"></div>
-          <div id="map"></div>
-          <div id="faktabox" class="hidden"></div>
-          <div id="buttons" class="hidden">
-            <span class="dot" onclick="selectFact(0)"></span>
-            <span class="dot" onclick="selectFact(1)"></span>
-            <span class="dot" onclick="selectFact(2)"></span>
-            <span class="dot" onclick="selectFact(3)"></span>
-            <span class="dot" onclick="selectFact(4)"></span>
-          </div>
+          <div id="chart" data-aos="fade-right" data-aos-duration="1500"></div>
+
+          <!--Selve grafen bliver sat ind her-->
+        </div>
+        <div id="GrafInfoBox">
+          <p
+            class="GrafInfoBoxPTags"
+            id="GrafInfoPTagEn"
+            data-aos="fade-left"
+            data-aos-duration="1500"
+          >
+            Wifi er noget sejt
+          </p>
+          <p
+            class="GrafInfoBoxPTags"
+            id="GrafInfoPTagTo"
+            data-aos="fade-left"
+            data-aos-duration="1500"
+          >
+            Mobil er noget sejt
+          </p>
+          <p
+            class="GrafInfoBoxPTags"
+            id="GrafInfoPTagTre"
+            data-aos="fade-left"
+            data-aos-duration="1500"
+          >
+            Elektricitet er noget sejt
+          </p>
         </div>
       </div>
+      <!--Grafsidenslut-->
+      <!--OmOsStart-->
+      <!--OmOsSlut-->
+      <!--Omosstart-->
+      <div id="sektion4" class="section"></div>
+      <!--Omosslut-->
     </div>
-
-    <!--Anden side slutter her-->
-    <!--Container div slut.-->
-
-    <!--Sektion 3.Graf siden start-->
-    <div class="sektion" id="grafside">
-      <div id="grafkategorier">
-        <!--Labelsstart-->
-        <label class="midten grafbilleder">
-          <input id="GrafInternet" class="grafinput" type="checkbox" />
-          <img
-            class="venstrepics"
-            src="billeder/wifi.png"
-            alt="Alternativtekst"
-            onmouseover="this.src='billeder/wifihvid2.gif';"
-            onmouseout="this.src='billeder/wifi.png';"
-          />
-          <span>Internet</span>
-        </label>
-        <div id="checkedinternet" class="checkedstr"></div>
-        <!--NY-->
-        <label class="midten grafbilleder">
-          <input id="GrafMobil" class="grafinput" type="checkbox" />
-          <img
-            class="venstrepics"
-            src="billeder/mobil.png"
-            alt="Alternativtekst"
-            onmouseover="this.src='billeder/mobil.gif';"
-            onmouseout="this.src='billeder/mobil.png';"
-          />
-          <span>Mobil</span>
-        </label>
-        <div id="checkedmobil" class="checkedstr"></div>
-        <!--NY-->
-        <label class="midten grafbilleder">
-          <input id="GrafElektricitet" class="grafinput" type="checkbox" />
-          <img
-            class="venstrepics"
-            src="billeder/pæreulys.png"
-            alt="Alternativtekst"
-            onmouseover="this.src='billeder/pære.png';"
-            onmouseout="this.src='billeder/pæreulys.png';"
-          />
-          <span>Elektricitet</span>
-        </label>
-        <div id="checkedelektricitet" class="checkedstr"></div>
-        <!--Labelsslut-->
-      </div>
-      <div id="grafenbox">
-        <div id="grafinputfelt">
-          <div class="mat-input">
-            <label for="food">Vælg et land</label>
-            <input id="food" type="text" placeholder="Fx. Danmark " />
-            <svg
-              id="kikkert"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="15"
-              height="15"
-              fill="black"
-            >
-              <circle
-                cx="10"
-                cy="10"
-                r="7"
-                stroke="black"
-                stroke-width="2"
-                fill="none"
-              />
-              <line
-                x1="15"
-                y1="15"
-                x2="21"
-                y2="21"
-                stroke="black"
-                stroke-width="2"
-              />
-            </svg>
-            <div id="results"></div>
-          </div>
-        </div>
-        <div id="chart"></div>
-        <div id="chartDiv"></div>
-
-        <!--Selve grafen bliver sat ind her-->
-      </div>
-    </div>
-    <!--Grafsidenslut-->
-    <!--OmOsStart-->
-    <!--OmOsSlut-->
-    <!--Omosstart-->
-    <div class="sektion" id="worldmapside"></div>
-    <!--Omosslut-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="graf.js"></script>
     <script src="script.js"></script>
     <script src="map.js"></script>
