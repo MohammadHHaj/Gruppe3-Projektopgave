@@ -1,0 +1,188 @@
+#sektion3 {
+  margin-top: 87px;
+}
+/*Grafstart*/
+#grafoverskrift {
+  top: 39px;
+}
+#checkedinternet {
+  background-color: #0065a8;
+  top: -15px;
+}
+#checkedmobil {
+  background-color: #0a6700;
+  top: 110px;
+}
+#checkedelektricitet {
+  background-color: rgb(231, 231, 76);
+  top: 240px;
+}
+.checkedstr {
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  transition: 0.69s ease;
+  border-radius: 5px;
+  right: 385px;
+  opacity: 0;
+}
+.grafinput {
+  display: none;
+}
+.grafbilleder {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  right: 390px;
+  cursor: pointer;
+  z-index: 2;
+}
+#grafkategorier {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 50px;
+  justify-content: space-between;
+  height: 300px;
+  width: max-content;
+  left: 400px;
+}
+#grafenbox {
+  height: 534px;
+  width: 885px;
+  border-top: 1px solid #000000;
+  border-left: 1px solid #000000;
+  position: absolute;
+  top: 34px;
+  left: 110px;
+  border-radius: 80px 0px 0px 0px;
+}
+#sogknap {
+  position: relative;
+  left: 10px;
+  top: -2px;
+}
+#GrafInfoBox {
+  position: absolute;
+  right: 120px;
+  width: 160px;
+}
+#GrafInfoPTagEn {
+  top: -290px;
+}
+#GrafInfoPTagTo {
+  top: -150px;
+}
+#GrafInfoPTagTre {
+  top: -15px;
+}
+.GrafInfoBoxPTags {
+  position: absolute;
+}
+/*Grafknapperstart*/
+.mat-input {
+  position: relative;
+  font-size: inherit;
+}
+
+#kikkert {
+  position: absolute;
+  top: 34px;
+  left: 204px;
+}
+
+.mat-input input {
+  border-width: 0 0 1px;
+  outline: none;
+  background-color: #fff;
+  padding: 1.8em 0.75em 0.75em;
+  border-color: #8c8c8c;
+  border-style: solid;
+  font-size: inherit;
+  transition: 0.1s;
+}
+
+.mat-input input:hover,
+.mat-input input:focus {
+  border-bottom-width: 2px;
+  padding-bottom: calc(0.75em - 1px);
+}
+
+.mat-input input:hover {
+  border-color: #121212;
+}
+
+.mat-input input:focus {
+  border-color: #2196f3;
+}
+
+.mat-input label {
+  position: absolute;
+  top: 22.4px;
+  left: 16px;
+  pointer-events: none;
+  transition: 0.2s;
+  color: #0009;
+}
+
+.mat-input:has(input:focus) label {
+  color: #2196f3;
+}
+
+.mat-input:has(input:focus) label,
+.mat-input:not(:has(input:placeholder-shown)) label {
+  top: 0.75em;
+  font-size: 0.8em;
+}
+
+.mat-input input::placeholder {
+  opacity: 0;
+  transition: 0.2s;
+  color: #aaa;
+}
+
+.mat-input input:focus::placeholder {
+  opacity: 1;
+}
+#grafinputfelt {
+  display: flex;
+  justify-content: center;
+}
+.mat-input {
+  position: relative;
+  width: 300px;
+  left: 43px;
+}
+#results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: whitesmoke;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 219px;
+}
+
+#results.hidden {
+  display: none;
+}
+
+#results div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+#results div:hover {
+  background-color: #f0f0f0;
+}
+
+#chart {
+  width: 100%;
+  height: 500px;
+}
