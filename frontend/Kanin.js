@@ -242,3 +242,37 @@ function scrollToPosition(targetPosition, duration) {
 
   requestAnimationFrame(animateScroll);
 }
+let typed = new Typed("#autoskrivning", {
+  strings: [
+    "Velkommen til vores side 🙂",
+    "Hvad ved du egentlig om...",
+    "Wifi, Internet, og Mobilers udvikling igennem tiden?",
+  ],
+  typeSpeed: 15,
+  startDelay: 700,
+  backDelay: 1000,
+  backSpeed: 20,
+});
+const texts = {
+  PopMobil:
+    "En mobiltelefon er en bærbar håndholdt telefon. Ud over den essentielle funktion, som almindelig telefon, har de fleste mulighed for at sende SMS-beskeder. Mere avancerede mobiltelefoner kan desuden sende MMS-beskeder, e-post, surfe på internettet, fotografere, optage video, modtage radio, afspille MP3-filer, virke som GPS og/eller som PDA.",
+  PopInternet:
+    "Et internet er betegnelsen for et netværk af computernetværk, som er koblet sammen. Ofte taler man om internettet, der så betegner et globalt netværk af datanet-værter (computere). Internettet er en af de vigtigste opfindelser fra det 20. århundrede. Ikke fordi det i sig selv er noget teknisk vidunder, men på grund af de store konsekvenser det allerede har for vores måde at leve vores liv på.",
+  PopEl:
+    "Ved elektricitet forstås en række fysiske fænomener forbundet ved en tilstedeværelse og en strøm af elektrisk ladede partikler. Elektricitet har en bred vifte af effekter, f.eks. lyn, statisk elektricitet, elektromagnetisk induktion og elektrisk strøm. Desuden muliggør elektricitet dannelse og opfangning af elektromagnetisk stråling såsom radiobølger.",
+};
+
+// Store the original content
+const brodtekstElement = document.getElementById("WoodBird");
+const originalContent = brodtekstElement.innerHTML;
+
+// Add event listeners for hover
+document.querySelectorAll(".bold").forEach((span) => {
+  span.addEventListener("mouseover", () => {
+    brodtekstElement.innerHTML = `<p>${texts[span.id]}</p>`;
+  });
+
+  span.addEventListener("mouseout", () => {
+    brodtekstElement.innerHTML = originalContent;
+  });
+});

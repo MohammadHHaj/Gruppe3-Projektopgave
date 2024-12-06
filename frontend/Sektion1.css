@@ -1,0 +1,132 @@
+body {
+  background-color: #fff;
+  overflow-x: hidden;
+}
+.section {
+  overflow: hidden; /* Prevent scrolling within sections */
+  position: relative;
+  width: 98vw;
+  height: 110vh;
+}
+#sektion1 {
+  margin-bottom: -50px;
+}
+
+#topBar {
+  position: fixed;
+  background-color: whitesmoke;
+  width: 100%;
+  height: 50px;
+  border-top: none;
+  left: 0%;
+  top: 0px;
+  z-index: 15;
+  border-radius: 0px 0px 8px 8px;
+}
+#topBarBillede {
+  position: absolute;
+  width: 20%;
+  left: 0px;
+  top: -30px;
+  height: 105px;
+}
+
+#topBarKnapper {
+  position: relative;
+  width: 75%;
+  top: 0%;
+  left: 25%;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 0.55rem;
+  font-size: 16px;
+}
+
+#topBarKnapper .radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+#topBarKnapper .radio input {
+  display: none;
+}
+
+#topBarKnapper .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem 0;
+  color: rgba(51, 65, 85, 1);
+  transition: all 0.25s ease-in-out;
+}
+
+#topBarKnapper .radio input:checked + .name {
+  color: #eb630e;
+  background-color: #fff;
+  font-weight: 600;
+  height: 25px;
+}
+.bold {
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+#autoskrivning {
+  text-align: center;
+  text-shadow: 1px 1px 2px black;
+}
+
+#brodtekst {
+  background-color: #f2f2f2; /* Lysere og mere neutral farve */
+  position: absolute;
+  height: 325px; /* Højde som en procentdel af skærmhøjden */
+  width: 525px; /* Bredde som en procentdel af skærmbredden */
+  left: 100px;
+  top: 75px; /* Placeret 10% fra toppen */
+  font-size: 21px; /* Dynamisk fontstørrelse */
+  padding: 25px; /* Padding i rem for responsivitet */
+  border-radius: 15px; /* Afrundede hjørner */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Blød skygge */
+  color: #333; /* Tekstfarve */
+  line-height: 1.4; /* Forbedret læsbarhed */
+  text-align: justify;
+}
+
+/* Media Query for mindre skærme (telefoner) */
+@media (max-width: 50vwpx) {
+  #brodtekst {
+    width: 80vw; /* Gør bredden mere passende for små skærme */
+    left: 5%; /* Reducerer margin fra venstre */
+    top: 5%; /* Reducerer margin fra toppen */
+    font-size: 1rem; /* Mindre tekst for mindre skærme */
+    padding: 1.5rem; /* Tilpasset padding */
+  }
+}
+
+#brodtekst p {
+  margin-top: -5px;
+}
+
+#verdensmaal {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  height: 50vh;
+  border-radius: 7px;
+}
+
+/* Media Query for mindre skærme (telefoner) */
+@media (max-width: 768px) {
+  #verdensmaal {
+    right: 2%; /* Mindre margin fra højre */
+    top: 2%; /* Mindre margin fra toppen */
+    height: 20vh; /* Reduceret højde for små skærme */
+  }
+}

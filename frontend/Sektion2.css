@@ -1,0 +1,287 @@
+#sektion2 {
+  margin-top: 50px;
+  right: 25px;
+  margin-bottom: -25px;
+}
+#arrow {
+  position: relative;
+  top: 64px;
+  left: 660px;
+}
+#year-selector {
+  border-radius: 5px;
+  border: black solid 2px;
+  height: 30px;
+  width: 230px;
+  box-shadow: 0px 0px 3px black;
+  margin-top: 32px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  left: 551px;
+  top: 22px;
+}
+
+#year-selector::-webkit-scrollbar {
+  display: none;
+}
+
+#year {
+  display: flex;
+  gap: 5px; /* Space between years */
+  white-space: nowrap;
+}
+
+.year {
+  padding: 0 5px;
+  user-select: none;
+  color: black;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Smooth transition for color change */
+  width: 32px;
+}
+
+.selected {
+  color: grey;
+}
+
+/*Tidsvælgerslut*/
+#mellemlag {
+  display: flex;
+}
+/*Sidemenustart*/
+.radio-input input {
+  display: none;
+}
+
+.radio-input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #000000;
+  height: 300px;
+  top: 28px;
+  left: 20px;
+}
+
+.radio-input label {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 20px;
+  position: relative;
+  left: -13px;
+  z-index: 1;
+}
+
+.venstrepics {
+  width: 30px;
+  height: 30px;
+}
+.selection {
+  position: absolute;
+  width: 70px;
+  height: 90px;
+  inset: 6px;
+  border-radius: 10px;
+  transition: opacity 0.4s ease-out, background-color 0.4s ease-out,
+    transform 0.4s ease-out;
+  background-color: transparent; /* Start transparent */
+  opacity: 0; /* Start invisible */
+}
+.midten {
+  align-items: center; /*Center både tekst og billede*/
+}
+/* Show and apply the transition when checked */
+.radio-input label:has(input:checked) ~ .selection {
+  opacity: 1;
+}
+
+/* Baggrundsfarverne til venstreknapperne*/
+.radio-input label:nth-child(1):has(input:checked) ~ .selection {
+  transform: translateY(0px);
+  background-color: #0065a8;
+}
+
+.radio-input label:nth-child(2):has(input:checked) ~ .selection {
+  transform: translateY(100px);
+  background-color: #0a6700;
+}
+
+.radio-input label:nth-child(3):has(input:checked) ~ .selection {
+  transform: translateY(200px);
+  background-color: rgb(231, 231, 76);
+}
+
+/*Sidemenuslut*/
+/*Containertilkortetstart*/
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 3px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+  width: 100vw;
+  position: relative;
+  top: 34px;
+  box-shadow: 0px 0px 7px black;
+  height: 100%;
+}
+/*Forlaget*/
+#kategoriforlag {
+  background-color: #fff;
+  width: 98px;
+  height: 80%;
+  position: absolute;
+  z-index: 5;
+  top: 102px;
+  transition: height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+#faktabox {
+  background-color: whitesmoke;
+  box-shadow: 0px 0px 7px black;
+  border: solid black;
+  position: absolute;
+  top: 120px;
+  left: 20px;
+  height: 140px;
+  width: 150px;
+  z-index: 2;
+  border-radius: 3px;
+  transition: opacity 0.5s ease-in-out;
+  font-size: 14px;
+  text-align: center;
+}
+
+#buttons {
+  position: absolute;
+  left: 60px;
+  top: 272px;
+}
+
+.dot {
+  height: 9px;
+  width: 9px;
+  margin: 1px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+.forlaginput {
+  display: none;
+}
+#forlag-kategorier {
+  display: flex;
+  position: relative;
+  top: -20px;
+  left: 5px;
+  justify-content: space-evenly;
+}
+#forlag-kategoriertekst {
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  top: -18px;
+  left: 13px;
+}
+#forlaget {
+  background-color: whitesmoke; /*whitesmoke; vi bruger sort til at design lortet. det skal skiftes til whitesmoke indtil aflevering*/
+  width: 50%;
+  height: 40%;
+  position: absolute;
+  top: 140px;
+  z-index: 10;
+  color: black;
+  transition: opacity 0.5s ease-in-out;
+  left: 23%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 7px black;
+}
+.pointer {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#blurryforlag {
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+#kategorier {
+  position: relative;
+  top: 100px;
+  left: 5px;
+  text-shadow: 1px 2px 6px rgba(1, 0, 0, 0.6);
+}
+#forlag-tekst {
+  text-align: center;
+  margin-top: 52px;
+}
+.hidden {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#map {
+  flex-grow: 1;
+  position: relative;
+}
+#map-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#farve-info {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0);
+  border: none;
+  position: absolute;
+  bottom: 16px;
+  left: 20px;
+  z-index: 2;
+}
+.farve-info div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 5px 0;
+}
+#valgt-indhold {
+  background-color: transparent;
+  position: absolute;
+  text-shadow: 1px 2px 2px rgba(1, 0, 0, 0.6);
+  font-size: 15px; /* Responsiv fontstørrelse */
+  letter-spacing: 0.1em;
+  /* display: inline-block; */
+  top: -35px; /* For at placere den korrekt vertikalt */
+}
+
+#valgt-indhold span {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInMove 0.8s ease forwards; /* Ændret animationstid for at give en langsommere effekt */
+  animation-delay: var(--delay);
+}
+
+@keyframes fadeInMove {
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(0); /* Slutposition: i sin normale position */
+  }
+}
