@@ -282,9 +282,9 @@ const navLinks = document.querySelectorAll("#topBarKnapper .radio .name");
 
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
-  const offset = 100; // Justering for topbarens højde
+  const offset = 100;
   const targetTop = section.offsetTop - offset;
-  const scrollDuration = 1000; // Tid i millisekunder for scrollen (1000 ms = 1 sekund)
+  const scrollDuration = 500;
   const startPosition = window.scrollY;
   const distance = targetTop - startPosition;
   const startTime = performance.now();
@@ -292,7 +292,7 @@ function scrollToSection(sectionId) {
   // Funktion til at animere scrollen
   function scrollAnimation(currentTime) {
     const elapsedTime = currentTime - startTime;
-    const progress = Math.min(elapsedTime / scrollDuration, 1); // Progressionen af scrollen (maks 1)
+    const progress = Math.min(elapsedTime / scrollDuration, 1);
     const scrollPosition = startPosition + distance * progress;
 
     window.scrollTo(0, scrollPosition);
@@ -347,6 +347,19 @@ function updateActiveLink() {
     }
   });
 }
+
+// Sørg for, at sektion1 er aktiv ved sideindlæsning
+window.addEventListener("load", () => {
+  const firstLink = navLinks[0]; // Få den første nav-link
+  firstLink.classList.add("active");
+  firstLink.style.color = "#eb630e";
+  firstLink.style.fontWeight = "600";
+  firstLink.style.backgroundColor = "#fff";
+  firstLink.style.boxShadow = "inset 0 3px 5px rgba(0, 0, 0, 0.1)";
+
+  // Opdater active-link under scroll
+  updateActiveLink();
+});
 
 // Opdater links under scroll
 window.addEventListener("scroll", updateActiveLink);
