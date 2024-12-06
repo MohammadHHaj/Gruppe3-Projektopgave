@@ -92,11 +92,14 @@
 
       <div id="sektion2" class="section">
         <!--tidsvælger-->
+        <div data-aos="fade-up" data-aos-duration="2500">
         <div id="arrow">↓</div>
         <div id="year-selector">
+          
           <div id="year"></div>
           <!-- Acts as the container for the years -->
         </div>
+      </div>
 
         <!--Tidsvælgerslut-->
         <div id="mellemlag">
@@ -141,7 +144,7 @@
             <span class="selection"></span>
           </div>
           <!--Container diven er diven der indeholder kortet-->
-          <div id="container">
+          <div id="container" data-aos="fade-up" data-aos-duration="2500">
             <p id="valgt-indhold"></p>
             <div id="farve-info" class="farve-info"></div>
             <div id="forlaget">
@@ -217,7 +220,7 @@
 
       <!--Sektion 3.Graf siden start-->
       <div id="sektion3" class="section">
-        <div id="grafkategorier">
+        <div id="grafkategorier" data-aos="fade-right" data-aos-duration="2500">
           <!--Labelsstart-->
           <label class="midten grafbilleder">
             <input id="GrafInternet" class="grafinput" type="checkbox" />
@@ -259,7 +262,7 @@
           <div id="checkedelektricitet" class="checkedstr"></div>
           <!--Labelsslut-->
         </div>
-        <div id="grafenbox">
+        <div id="grafenbox" data-aos="fade-up" data-aos-duration="2500" >
           <div id="grafinputfelt">
             <div class="mat-input">
               <label for="food">Vælg et land</label>
@@ -292,18 +295,21 @@
               <div id="results"></div>
             </div>
           </div>
-          <div id="chart" data-aos="fade-right" data-aos-duration="1500"></div>
+          <div id="chart" ></div>
 
           <!--Selve grafen bliver sat ind her-->
         </div>
         <div id="GrafInfoBox">
-          <div class="fade-box fade-box-internet">
+          <div class="fade-box fade-box-internet"
+          data-aos="fade-left" data-aos-duration="2500">
             internets vises i procent
           </div>
-          <div class="fade-box fade-box-mobil">
+          <div class="fade-box fade-box-mobil"
+          data-aos="fade-left" data-aos-duration="2500">
             Mobil vises i antal pr. 100 indbyggere
           </div>
-          <div class="fade-box fade-box-elektricitet">
+          <div class="fade-box fade-box-elektricitet"
+          data-aos="fade-left" data-aos-duration="2500">
             Elektricitet vises i procent
           </div>
         </div>
