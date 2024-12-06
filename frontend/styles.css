@@ -3,13 +3,54 @@ body {
   overflow-x: hidden;
 }
 
+.bold {
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+.Tryk {
+  position: absolute;
+}
+
+span:hover + .PopUp {
+  display: flex;
+  flex-direction: column;
+}
+
+.PopUp {
+  display: none;
+  position: absolute;
+  height: 145px;
+  background-color: whitesmoke;
+  width: max-content;
+  border-radius: 9px 28px 25px 3px;
+  top: 45px;
+  color: black;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+#PopMobil {
+  right: 156px;
+}
+#PopEl {
+  left: 420px;
+}
+#PopInternet {
+  right: 14px;
+}
+.PopUpPics {
+  position: relative;
+  height: 130px;
+  border-radius: 8px 25px 3px 3px;
+}
+
 .section {
   overflow: hidden; /* Prevent scrolling within sections */
   position: relative;
   width: 98vw;
   height: 110vh;
 }
-
 /*lad body element være i toppen*/
 /*Førsteside*/
 #sektion1 {
