@@ -41,7 +41,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  top: 50px;
+  top: 100px;
   justify-content: space-between;
   height: 300px;
   width: max-content;
@@ -66,21 +66,29 @@
   position: absolute;
   right: 120px;
   width: 160px;
-  top: 400px;
+  top: 100px;
   font-size: 20px;
 }
-#GrafInfoPTagEn {
-  top: -290px;
-  
+
+.fade-box {
+  width: 400px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 75px;
+  font-size: 15px;
 }
-#GrafInfoPTagTo {
-  top: -150px;
+
+.fade-box-internet {
+  background: linear-gradient(to right, #fff, #0065a8);
 }
-#GrafInfoPTagTre {
-  top: -15px;
+.fade-box-mobil {
+  background: linear-gradient(to right, #fff, #0a6700);
 }
-.GrafInfoBoxPTags {
-  position: absolute;
+.fade-box-elektricitet {
+  background: linear-gradient(to right, #fff, rgb(231, 231, 76));
 }
 /*Grafknapperstart*/
 .mat-input {

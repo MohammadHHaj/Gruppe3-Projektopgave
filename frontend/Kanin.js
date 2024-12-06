@@ -245,8 +245,7 @@ function scrollToPosition(targetPosition, duration) {
 let typed = new Typed("#autoskrivning", {
   strings: [
     "Velkommen til vores side 🙂",
-    "Hvad ved du egentlig om...",
-    "Wifi, Internet, og Mobilers udvikling igennem tiden?",
+    "Hvad ved du egentlig om Wifi, Internet, og Mobilers udvikling igennem tiden?",
   ],
   typeSpeed: 15,
   startDelay: 700,
@@ -277,6 +276,7 @@ document.querySelectorAll(".bold").forEach((span) => {
   });
 });
 
+//navbar
 const sections = document.querySelectorAll(".section");
 const navLinks = document.querySelectorAll("#topBarKnapper .radio .name");
 
