@@ -72,6 +72,15 @@ body {
   font-weight: 600;
   height: 25px;
 }
+#PopEl:hover {
+  font-size: 22px;
+}
+#PopMobil:hover {
+  font-size: 22px;
+}
+#PopInternet:hover {
+  font-size: 22px;
+}
 .bold {
   font-weight: bold;
   cursor: pointer;
