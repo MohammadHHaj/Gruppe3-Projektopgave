@@ -53,25 +53,36 @@ body {
   display: none;
 }
 
+/* Standard styling */
 #topBarKnapper .radio .name {
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-  border: none;
-  padding: 0.5rem 0;
-  color: rgba(51, 65, 85, 1);
-  transition: all 0.25s ease-in-out;
+  display: flex; /* Holder layout fleksibelt */
+  cursor: pointer; /* Pointer-effekt */
+  align-items: center; /* Centrerer teksten vertikalt */
+  justify-content: center; /* Centrerer teksten horisontalt */
+  border-top-left-radius: 0.5rem; /* Runde hjørner øverst til venstre */
+  border-top-right-radius: 0.5rem; /* Runde hjørner øverst til højre */
+  border: none; /* Ingen kant */
+  padding: 0.5rem 0; /* Juster polstring for balance */
+  color: rgba(51, 65, 85, 1); /* Standardfarve */
+  background-color: transparent; /* Ingen baggrund */
+  transition: all 0.25s ease-in-out; /* Blød overgang for farve/baggrund */
+  height: 25px; /* Fast højde */
+  line-height: 25px; /* Vertikal tekstjustering */
+  position: relative; /* Holder pointerens position */
 }
 
-#topBarKnapper .radio input:checked + .name {
-  color: #eb630e;
-  background-color: #fff;
-  font-weight: 600;
-  height: 25px;
+#topBarKnapper .radio input:checked + .name,
+.active {
+  color: #eb630e; /* Aktiv farve */
+  background-color: #fff; /* Hvid baggrund */
+  font-weight: 600; /* Fed tekst */
+  height: 25px; /* Samme højde */
+  line-height: 25px; /* Centrer tekst vertikalt */
+  transition: all 0.25s ease-in-out; /* Samme overgang */
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1); /* Skaber illusion af mindre baggrund i bunden */
+  background-clip: padding-box;
 }
+
 #PopEl:hover {
   font-size: 22px;
 }

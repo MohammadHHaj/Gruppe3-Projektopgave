@@ -245,8 +245,7 @@ function scrollToPosition(targetPosition, duration) {
 let typed = new Typed("#autoskrivning", {
   strings: [
     "Velkommen til vores side 🙂",
-    "Hvad ved du egentlig om...",
-    "Wifi, Internet, og Mobilers udvikling igennem tiden?",
+    "Hvad ved du egentlig om Wifi, Internet, og Mobilers udvikling igennem tiden?",
   ],
   typeSpeed: 15,
   startDelay: 700,
@@ -276,3 +275,91 @@ document.querySelectorAll(".bold").forEach((span) => {
     brodtekstElement.innerHTML = originalContent;
   });
 });
+
+//navbar
+const sections = document.querySelectorAll(".section");
+const navLinks = document.querySelectorAll("#topBarKnapper .radio .name");
+
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  const offset = 100;
+  const targetTop = section.offsetTop - offset;
+  const scrollDuration = 500;
+  const startPosition = window.scrollY;
+  const distance = targetTop - startPosition;
+  const startTime = performance.now();
+
+  // Funktion til at animere scrollen
+  function scrollAnimation(currentTime) {
+    const elapsedTime = currentTime - startTime;
+    const progress = Math.min(elapsedTime / scrollDuration, 1);
+    const scrollPosition = startPosition + distance * progress;
+
+    window.scrollTo(0, scrollPosition);
+
+    // Hvis scrollen ikke er færdig, fortsæt animationen
+    if (progress < 1) {
+      requestAnimationFrame(scrollAnimation);
+    }
+  }
+
+  // Start animationen
+  requestAnimationFrame(scrollAnimation);
+}
+
+function updateActiveLink() {
+  const offset = 100;
+  let currentSection = null;
+
+  // Gennemgå alle sektioner og find den synlige sektion
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - offset;
+    const sectionHeight = section.offsetHeight;
+
+    if (
+      window.scrollY >= sectionTop &&
+      window.scrollY < sectionTop + sectionHeight
+    ) {
+      currentSection = section.id;
+    }
+  });
+
+  // Gennemgå alle links og tilføj/fjern 'active' klassen baseret på synlig sektion
+  navLinks.forEach((link) => {
+    const isActive = link
+      .getAttribute("onclick", "scroll")
+      .includes(currentSection);
+
+    // Fjern 'active' klassen og stilene
+    if (!isActive) {
+      link.classList.remove("active");
+      link.style.color = "rgba(51, 65, 85, 1)"; // Standard farve
+      link.style.fontWeight = "normal"; // Standard vægt
+      link.style.backgroundColor = "transparent"; // Ingen baggrund
+      link.style.boxShadow = "none"; // Fjern box-shadow
+    } else {
+      // Tilføj 'active' klassen og stilene
+      link.classList.add("active");
+      link.style.color = "#eb630e"; // Aktiv farve
+      link.style.fontWeight = "600"; // Fed tekst
+      link.style.backgroundColor = "#fff"; // Hvid baggrund
+      link.style.boxShadow = "inset 0 3px 5px rgba(0, 0, 0, 0.1)"; // Indre skygge
+    }
+  });
+}
+
+// Sørg for, at sektion1 er aktiv ved sideindlæsning
+window.addEventListener("load", () => {
+  const firstLink = navLinks[0]; // Få den første nav-link
+  firstLink.classList.add("active");
+  firstLink.style.color = "#eb630e";
+  firstLink.style.fontWeight = "600";
+  firstLink.style.backgroundColor = "#fff";
+  firstLink.style.boxShadow = "inset 0 3px 5px rgba(0, 0, 0, 0.1)";
+
+  // Opdater active-link under scroll
+  updateActiveLink();
+});
+
+// Opdater links under scroll
+window.addEventListener("scroll", updateActiveLink);
