@@ -242,3 +242,14 @@ function scrollToPosition(targetPosition, duration) {
 
   requestAnimationFrame(animateScroll);
 }
+let typed = new Typed("#autoskrivning", {
+  strings: [
+    "Velkommen til vores side 🙂",
+    "Hvad ved du egentlig om...",
+    "Wifi, Internet, og Mobilers udvikling igennem tiden?",
+  ],
+  typeSpeed: 15,
+  startDelay: 700,
+  backDelay: 1000,
+  backSpeed: 20,
+});
