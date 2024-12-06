@@ -21,46 +21,29 @@
     <br />
     <br />
     <!--Top baren-->
+
     <div id="topBar">
       <div>
         <img id="topBarBillede" src="billeder/verdesnmaal.png" />
       </div>
       <div id="topBarKnapper">
         <label class="radio" id="OversigtKnap">
-          <input
-            type="radio"
-            name="radio"
-            value="section1"
-            onclick="fullpage_api.moveTo('section1')"
-          />
-          <span class="name">Oversigt</span>
+          <input type="radio" name="radio" value="section1" />
+          <span class="name" onclick="scrollToSection('sektion1')"
+            >Oversigt</span
+          >
         </label>
         <label class="radio" id="WorldMapKnap">
-          <input
-            type="radio"
-            name="radio"
-            value="section2"
-            onclick="fullpage_api.moveTo('section2')"
-          />
-          <span class="name">Kortet</span>
+          <input type="radio" name="radio" value="section2" />
+          <span class="name" onclick="scrollToSection('sektion2')">Kortet</span>
         </label>
         <label class="radio" id="GrafKnap">
-          <input
-            type="radio"
-            name="radio"
-            value="section3"
-            onclick="fullpage_api.moveTo('section3')"
-          />
-          <span class="name">Graf</span>
+          <input type="radio" name="radio" value="section3" />
+          <span class="name" onclick="scrollToSection('sektion3')">Graf</span>
         </label>
         <label class="radio" id="OmOsSide">
-          <input
-            type="radio"
-            name="radio"
-            value="section4"
-            onclick="fullpage_api.moveTo('section4')"
-          />
-          <span class="name">Om os</span>
+          <input type="radio" name="radio" value="section4" />
+          <span class="name" onclick="scrollToSection('sektion4')">Om os</span>
         </label>
       </div>
     </div>

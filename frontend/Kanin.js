@@ -276,3 +276,77 @@ document.querySelectorAll(".bold").forEach((span) => {
     brodtekstElement.innerHTML = originalContent;
   });
 });
+
+const sections = document.querySelectorAll(".section");
+const navLinks = document.querySelectorAll("#topBarKnapper .radio .name");
+
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  const offset = 100; // Justering for topbarens højde
+  const targetTop = section.offsetTop - offset;
+  const scrollDuration = 1000; // Tid i millisekunder for scrollen (1000 ms = 1 sekund)
+  const startPosition = window.scrollY;
+  const distance = targetTop - startPosition;
+  const startTime = performance.now();
+
+  // Funktion til at animere scrollen
+  function scrollAnimation(currentTime) {
+    const elapsedTime = currentTime - startTime;
+    const progress = Math.min(elapsedTime / scrollDuration, 1); // Progressionen af scrollen (maks 1)
+    const scrollPosition = startPosition + distance * progress;
+
+    window.scrollTo(0, scrollPosition);
+
+    // Hvis scrollen ikke er færdig, fortsæt animationen
+    if (progress < 1) {
+      requestAnimationFrame(scrollAnimation);
+    }
+  }
+
+  // Start animationen
+  requestAnimationFrame(scrollAnimation);
+}
+
+function updateActiveLink() {
+  const offset = 100;
+  let currentSection = null;
+
+  // Gennemgå alle sektioner og find den synlige sektion
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - offset;
+    const sectionHeight = section.offsetHeight;
+
+    if (
+      window.scrollY >= sectionTop &&
+      window.scrollY < sectionTop + sectionHeight
+    ) {
+      currentSection = section.id;
+    }
+  });
+
+  // Gennemgå alle links og tilføj/fjern 'active' klassen baseret på synlig sektion
+  navLinks.forEach((link) => {
+    const isActive = link
+      .getAttribute("onclick", "scroll")
+      .includes(currentSection);
+
+    // Fjern 'active' klassen og stilene
+    if (!isActive) {
+      link.classList.remove("active");
+      link.style.color = "rgba(51, 65, 85, 1)"; // Standard farve
+      link.style.fontWeight = "normal"; // Standard vægt
+      link.style.backgroundColor = "transparent"; // Ingen baggrund
+      link.style.boxShadow = "none"; // Fjern box-shadow
+    } else {
+      // Tilføj 'active' klassen og stilene
+      link.classList.add("active");
+      link.style.color = "#eb630e"; // Aktiv farve
+      link.style.fontWeight = "600"; // Fed tekst
+      link.style.backgroundColor = "#fff"; // Hvid baggrund
+      link.style.boxShadow = "inset 0 3px 5px rgba(0, 0, 0, 0.1)"; // Indre skygge
+    }
+  });
+}
+
+// Opdater links under scroll
+window.addEventListener("scroll", updateActiveLink);
