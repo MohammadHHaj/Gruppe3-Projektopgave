@@ -24,22 +24,20 @@ let graphData = {
   mobile: null,
   electricity: null,
 };
-
-// Funktion til at håndtere visningen af de valgte lag
 function toggleOpacity(layer, knappen) {
   const opacity = layer.style("opacity");
   if (opacity === "1") {
     layer.style("opacity", "0");
-    dataLoaded[knappen] = false; // Deaktiver data for den valgte knap
+    dataLoaded[knappen] = false; // Deactivate data for the selected button
   } else {
     layer.style("opacity", "1");
-    dataLoaded[knappen] = true; // Aktivér data for den valgte knap
+    dataLoaded[knappen] = true; // Activate data for the selected button
   }
-  console.log(`${knappen} blev trykket på`);
-  updateGraph(); // Opdater grafen hver gang en knap aktiveres/deaktiveres
+  console.log(`${knappen} was clicked`);
+  updateGraph(); // Update the graph every time a button is toggled
 }
 
-// Hændelser for knapperne
+// Button event handlers
 GrafInternet.on("click", () => {
   toggleOpacity(GrafInternetLag, "internet");
 });
@@ -52,7 +50,7 @@ GrafElektricitet.on("click", () => {
   toggleOpacity(GrafElektricitetLag, "electricity");
 });
 
-// Inputfelt funktion
+// Input field functionality
 inputFelt.on("focus", () => {
   resultsDiv.classed("hidden", false);
 });
@@ -73,11 +71,11 @@ inputFelt.on("input", async function () {
         .on("click", async () => {
           inputFelt.property("value", item.country);
           resultsDiv.classed("hidden", true);
-          await loadCountryData(item.country); // Hent og vis data for landet
+          await loadCountryData(item.country); // Fetch and display data for the selected country
         });
     });
   } catch (error) {
-    console.log("Der skete en fejl:", error);
+    console.log("An error occurred:", error);
   }
 });
 
@@ -87,14 +85,14 @@ d3.select("body").on("click", (event) => {
     !inputFelt.node().contains(clickedElement) &&
     !resultsDiv.node().contains(clickedElement)
   ) {
-    resultsDiv.classed("hidden", true);
+    resultsDiv.classed("hidden", true); // Hide results when clicking outside the input
   }
 });
 
-// Funktion til at hente og vise data som linjediagram for internet, telefoner og elektricitet
+// Function to fetch and display data as line charts for internet, mobile, and electricity
 async function loadCountryData(country) {
   try {
-    // Hent data for alle tre kategorier
+    // Fetch data for all three categories
     const apiCalls = [];
 
     apiCalls.push(
@@ -115,24 +113,30 @@ async function loadCountryData(country) {
 
     const results = await Promise.all(apiCalls);
 
-    // Gem data til senere brug
+    // Save data for later use
     graphData.internet = results[0];
     graphData.mobile = results[1];
     graphData.electricity = results[2];
 
-    // Opdater grafen med de hentede data
+    // Update the graph with the fetched data
     updateGraph();
   } catch (error) {
-    console.error("Kunne ikke hente data:", error);
+    console.error("Failed to fetch data:", error);
   }
 }
 
-// Funktion til at opdatere grafen
+// Function to update the graph
 function updateGraph() {
-  // Fjern eksisterende diagram
+  // Check if the data is properly loaded
+  if (!graphData.internet || !graphData.mobile || !graphData.electricity) {
+    console.log("Data is not properly loaded.");
+    return; // Stop updating if the data is not available
+  }
+
+  // Clear the existing chart
   chartDiv.html("");
 
-  // Definer dimensions og margins
+  // Define dimensions and margins
   const width = 800;
   const height = 500;
   const margin = { top: 20, right: 30, bottom: 50, left: 50 };
@@ -165,7 +169,7 @@ function updateGraph() {
     .x((d) => xScale(d.year))
     .y((d) => yScale(d.value));
 
-  // Tilføj akser
+  // Add axes
   svg
     .append("g")
     .attr("transform", `translate(0,${height - margin.bottom})`)
@@ -231,7 +235,7 @@ function createGraphLine(svg, data, type, color, line, xScale, yScale, margin) {
       ],
   }));
 
-  // Tegn hovedlinjen
+  // Draw the main line
   svg
     .append("path")
     .datum(formattedData)
@@ -240,12 +244,12 @@ function createGraphLine(svg, data, type, color, line, xScale, yScale, margin) {
     .attr("stroke-width", 2)
     .attr("d", line);
 
-  // Find topværdien
+  // Find the top value
   const topPoint = formattedData.reduce((max, d) =>
     d.value > max.value ? d : max
   );
 
-  // Tilføj en stiplet linje fra topværdien til y-aksen
+  // Add a dotted line from the top value to the y-axis
   svg
     .append("line")
     .attr("x1", xScale(topPoint.year))
@@ -256,7 +260,7 @@ function createGraphLine(svg, data, type, color, line, xScale, yScale, margin) {
     .attr("stroke-dasharray", "4 2")
     .attr("stroke-width", 1);
 
-  // Find tekstlabelens position og sørg for, at de ikke overlapper
+  // Find the position of the text label to avoid overlap
   let offset = -0;
   svg.selectAll("text").each(function () {
     const currentText = d3.select(this);
@@ -265,11 +269,11 @@ function createGraphLine(svg, data, type, color, line, xScale, yScale, margin) {
     const distance = Math.abs(currentY - (yScale(topPoint.value) + currentDy));
 
     if (distance < 10) {
-      offset += 25; // Justér afstanden mellem overlappende labels
+      offset += 25; // Adjust the distance between overlapping labels
     }
   });
 
-  // Tilføj en tekstlabel lige efter y-aksen og tættere på den stiplede linje
+  // Add a text label just after the y-axis and closer to the dotted line
   svg
     .append("text")
     .attr("x", margin.left + 10)
@@ -281,9 +285,9 @@ function createGraphLine(svg, data, type, color, line, xScale, yScale, margin) {
     .text(`${topPoint.value}`);
 }
 
-// Start med "Denmark" som standard i søgefeltet og hent data
+// Set default "Denmark" in the search field and load data
 inputFelt.property("value", "Denmark");
 loadCountryData("Denmark");
 
-// Aktivér kun internetknappen
+// Activate only the internet button
 toggleOpacity(GrafInternetLag, "internet");
