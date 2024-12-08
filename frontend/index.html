@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="Sektion2.css" />
     <link rel="stylesheet" href="Sektion3.css" />
     <link rel="stylesheet" href="Sektion4.css" />
+    <link rel="stylesheet" href="telefoner.css" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -93,13 +94,12 @@
       <div id="sektion2" class="section">
         <!--tidsvælger-->
         <div data-aos="fade-up" data-aos-duration="2500">
-        <div id="arrow">↓</div>
-        <div id="year-selector">
-          
-          <div id="year"></div>
-          <!-- Acts as the container for the years -->
+          <div id="arrow">↓</div>
+          <div id="year-selector">
+            <div id="year"></div>
+            <!-- Acts as the container for the years -->
+          </div>
         </div>
-      </div>
 
         <!--Tidsvælgerslut-->
         <div id="mellemlag">
@@ -262,7 +262,7 @@
           <div id="checkedelektricitet" class="checkedstr"></div>
           <!--Labelsslut-->
         </div>
-        <div id="grafenbox" data-aos="fade-up" data-aos-duration="2500" >
+        <div id="grafenbox" data-aos="fade-up" data-aos-duration="2500">
           <div id="grafinputfelt">
             <div class="mat-input">
               <label for="food">Vælg et land</label>
@@ -295,21 +295,30 @@
               <div id="results"></div>
             </div>
           </div>
-          <div id="chart" ></div>
+          <div id="chart"></div>
 
           <!--Selve grafen bliver sat ind her-->
         </div>
         <div id="GrafInfoBox">
-          <div class="fade-box fade-box-internet"
-          data-aos="fade-left" data-aos-duration="2500">
+          <div
+            class="fade-box fade-box-internet"
+            data-aos="fade-left"
+            data-aos-duration="2500"
+          >
             internets vises i procent
           </div>
-          <div class="fade-box fade-box-mobil"
-          data-aos="fade-left" data-aos-duration="2500">
+          <div
+            class="fade-box fade-box-mobil"
+            data-aos="fade-left"
+            data-aos-duration="2500"
+          >
             Mobil vises i antal pr. 100 indbyggere
           </div>
-          <div class="fade-box fade-box-elektricitet"
-          data-aos="fade-left" data-aos-duration="2500">
+          <div
+            class="fade-box fade-box-elektricitet"
+            data-aos="fade-left"
+            data-aos-duration="2500"
+          >
             Elektricitet vises i procent
           </div>
         </div>
