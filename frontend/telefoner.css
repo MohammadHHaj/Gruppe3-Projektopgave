@@ -98,7 +98,7 @@
 
   #year-selector {
     width: 100%;
-    left: 0;
+    right: 100px;
     top: 15px;
   }
 
