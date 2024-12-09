@@ -1,0 +1,34 @@
+#sektion4 {
+  background: linear-gradient(to bottom, #fff 5%, #eb630e);
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+#omOsOverskrift {
+  position: relative;
+  top: 150px;
+  width: 100%;
+  height: 200px;
+  align-content: center;
+  text-align: center;
+  font-size: 7.5rem;
+  font-weight: 400;
+}
+
+#omOsNavne {
+  position: relative;
+  align-content: center;
+  top: 150px;
+  width: 100%;
+  height: 150px;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 40px;
+}
