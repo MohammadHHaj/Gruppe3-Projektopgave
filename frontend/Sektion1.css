@@ -84,19 +84,23 @@ body {
 }
 
 #PopEl:hover {
-  font-size: 22px;
+  color: rgb(231, 231, 76);
 }
 #PopMobil:hover {
-  font-size: 22px;
+  color: #0a6700;
 }
 #PopInternet:hover {
+  color: #0065a8;
+}
+.bold:hover {
+  text-shadow: 1px 0px 1.5px black;
   font-size: 22px;
 }
 .bold {
   font-weight: bold;
-  cursor: pointer;
   text-decoration: none;
   color: black;
+  transition: 0.169s ease;
 }
 #autoskrivning {
   text-align: center;
