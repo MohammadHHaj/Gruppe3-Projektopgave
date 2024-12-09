@@ -32,17 +32,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+/*Year-wheel */
+/*Year-wheel */
+/*Year-wheel */
+/*Year-wheel */
 const scrollableDiv = document.getElementById("year-selector");
 // Finder det scrollbare element med id'et 'year-selector'.
 const yearDiv = document.getElementById("year");
 // Finder elementet med id'et 'year', som indeholder årstallene.
 yearDiv.setAttribute("data-selected-year", "1990");
-// Indstiller en standardværdi for det valgte år til 1990.
+// Sætter 1990 som standardværdi i year-wheelet. Dvs første gang du åbner siden så er det, det den er på.
 
 let startx = 0;
 // Initialiserer startpositionen for de årstal, der skal placeres.
 for (let year = 1990; year <= 2022; year++) {
-  // Loop, der opretter årstalselementer fra 1990 til 2022.
+  // for-Loop, der opretter årstalselementer fra 1990 til 2022.
   if (year == 1990) {
     // Hvis året er 1990, tilføj to pladsholdere foran for at centrere.
     yearDiv.getAttribute("data-selected-year");
@@ -53,6 +58,7 @@ for (let year = 1990; year <= 2022; year++) {
     yearDiv.appendChild(placeholder1);
     yearDiv.appendChild(placeholder2);
   }
+  //Laver to tomme diver for starten af arrayet. Dette gør at 1990 kan være i midten
   const yearElement = document.createElement("div");
   // Opretter en ny div til hvert år.
   yearElement.dataset.xvalue = startx;
@@ -67,11 +73,11 @@ for (let year = 1990; year <= 2022; year++) {
   // Tilføjer en data-attribut med årstallet.
 
   yearElement.onclick = () => {
-    // Definerer, hvad der sker, når et årstal bliver klikket på.
+    // Følgende skal ske når der bliver trykket på et yearelement som er en af de diver som årende står i.
     const x = yearElement.dataset.xvalue;
-    // Henter x-positionen for det klikkede element.
+    // Positionen for det klikkede element
     scrollToPosition(x, 200);
-    // Ruller til x-positionen på 969 ms.
+    // Ruller til x-positionen på 200 ms. Ms er hvor hurtigt den skal scrolle over til position x
     scrollableDiv.scrollLeft = x;
     // Flytter scroll-positionen direkte.
     yearDiv.setAttribute("data-selected-year", year);
@@ -81,7 +87,7 @@ for (let year = 1990; year <= 2022; year++) {
       .forEach((el) => el.classList.remove("selected"));
     // Fjerner klassen "selected" fra alle år.
     yearElement.classList.add("selected");
-    // Tilføjer klassen "selected" til det klikkede år.
+    // Tilføjer klassen "selected" til det klikkede år. Derfor den bliver grå
   };
 
   yearDiv.appendChild(yearElement);
@@ -97,6 +103,7 @@ for (let year = 1990; year <= 2022; year++) {
     // Justerer bredden på den sidste pladsholder for centreringsformål.
     yearDiv.appendChild(placeholder4);
   }
+  //Laver to tomme diver igen efter 2022. Så 2022 kan være under pilen.
 }
 
 if (yearDiv.getAttribute("data-selected-year")) {
@@ -123,10 +130,12 @@ const xValues = childDivs
   .filter((value) => !isNaN(value));
 // Opretter en liste over x-positioner, hvor værdier ikke er NaN.
 
+let isProgrammaticScroll = false; // Flag for programmatisk scrolling
+
 scrollableDiv.addEventListener("scroll", () => {
   // Lyt efter scroll-events på scrollableDiv.
-  if (ignorescrolling) return;
-  // Hvis ignorescrolling er aktivt, afbryd håndtering af scroll.
+  if (ignorescrolling || isProgrammaticScroll) return;
+  // Hvis ignorescrolling eller programmatisk scrolling er aktivt, afbryd håndtering.
 
   if (timer !== null) {
     clearTimeout(timer);
@@ -168,24 +177,23 @@ scrollableDiv.addEventListener("scroll", () => {
       closestYearElement.classList.add("selected");
       // Tilføj 'selected' til det nærmeste år.
 
-      scrollToPosition(closestValue, 500);
+      isProgrammaticScroll = true; // Angiv, at scrollen nu er programmatisk
+      scrollToPosition(closestValue, 200);
       // Scroll til den nærmeste x-position med en smooth animation.
       yearDiv.setAttribute("data-selected-year", year);
       // Opdater attributten 'data-selected-year' med det nye valgte år.
 
-      // Midlertidigt ignorér scroll-events
-      ignorescrolling = true;
-      // Aktiver ignorescrolling for at forhindre yderligere event-håndtering.
-      scrollableDiv.scrollLeft = closestValue;
       // Sæt scroll-positionen direkte til den nærmeste værdi.
+      scrollableDiv.scrollLeft = closestValue;
 
-      // Nulstil ignorescrolling efter en kort tid
       setTimeout(() => {
+        // Nulstil både ignorescrolling og programmatisk scrolling efter en kort tid
         ignorescrolling = false;
-        // Tillad scroll-events igen efter animationen er færdig.
-      }, 600); // Skal være lidt længere end varigheden af scrollToPosition.
+        isProgrammaticScroll = false;
+        // Tillad normale scroll-events igen.
+      }, 300); // Skal være lidt længere end varigheden af scrollToPosition.
 
-      console.log("Global log: Selected year after scroll is now:", year);
+      console.log("Året:", year, "Bliver vist nu.");
       // Log det valgte år til konsollen.
     }
   }, 200); // Ventetid i millisekunder før timeout-funktionen aktiveres.
@@ -228,17 +236,23 @@ function scrollToPosition(targetPosition, duration) {
   requestAnimationFrame(animateScroll);
   // Starter animationen.
 }
-
+/*Year-wheel */
+/*Year-wheel */
+/*Year-wheel */
+/*Year-wheel */
+/*Year-wheel */
 let typed = new Typed("#autoskrivning", {
   strings: [
-    "Velkommen til vores side 🙂",
+    "Velkommen til vores side",
     "Hvad ved du egentlig om Wifi, Internet, og Mobilers udvikling igennem tiden?",
   ],
   typeSpeed: 15,
   startDelay: 700,
   backDelay: 1000,
   backSpeed: 20,
+  showCursor: false,
 });
+//Ny func herunder
 const texts = {
   PopMobil:
     "Siden 1990’erne har der været fart på mobilens udvikling. Både vægten og prisen styrtdykkede, og i 1995 var der flere end én million mobiltelefonejere på verdensplan. Så altså stadig forsvindende få i forhold til i dag. I 2004 overhalede antallet af mobilabonnenter antallet af fastnetabonnenter, og i dag bruger 97 procent af danskerne en mobiltelefon eller smartphone.",
@@ -262,7 +276,7 @@ document.querySelectorAll(".bold").forEach((span) => {
     brodtekstElement.innerHTML = originalContent;
   });
 });
-
+//Ny func herunder
 //navbar
 const sections = document.querySelectorAll(".section");
 const navLinks = document.querySelectorAll("#topBarKnapper .radio .name");
@@ -293,7 +307,6 @@ function scrollToSection(sectionId) {
   // Start animationen
   requestAnimationFrame(scrollAnimation);
 }
-
 function updateActiveLink() {
   const offset = 100;
   let currentSection = null;
