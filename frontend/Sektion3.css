@@ -124,7 +124,7 @@
 }
 
 .mat-input input:focus {
-  border-color: #2196f3;
+  border-color: #eb630e;
 }
 
 .mat-input label {
@@ -137,7 +137,7 @@
 }
 
 .mat-input:has(input:focus) label {
-  color: #2196f3;
+  color: #eb630e;
 }
 
 .mat-input:has(input:focus) label,
