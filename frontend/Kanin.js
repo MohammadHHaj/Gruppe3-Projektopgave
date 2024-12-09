@@ -363,3 +363,12 @@ window.addEventListener("load", () => {
 
 // Opdater links under scroll
 window.addEventListener("scroll", updateActiveLink);
+// Wait for the page to fully load before removing the intro overlay
+window.addEventListener("load", () => {
+  const introOverlay = document.getElementById("introOverlay");
+
+  // Add the 'hidden' class to start the fade-out animation
+  setTimeout(() => {
+    introOverlay.classList.add("hidden");
+  }, 500); // Display the intro for 2 seconds
+});
