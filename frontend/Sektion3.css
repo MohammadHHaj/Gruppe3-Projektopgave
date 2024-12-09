@@ -76,19 +76,20 @@
   display: flex;
   align-items: center;
   padding-left: 10px;
-  font-family: Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   margin-bottom: 75px;
   font-size: 15px;
 }
 
 .fade-box-internet {
-  background: linear-gradient(to right, #fff, #0065a8);
+  background: linear-gradient(to right, #fff -5%, #0065a8);
 }
 .fade-box-mobil {
-  background: linear-gradient(to right, #fff, #0a6700);
+  background: linear-gradient(to right, #fff -5%, #0a6700);
 }
 .fade-box-elektricitet {
-  background: linear-gradient(to right, #fff, rgb(231, 231, 76));
+  background: linear-gradient(to right, #fff -5%, rgb(231, 231, 76));
 }
 /*Grafknapperstart*/
 .mat-input {
