@@ -297,6 +297,7 @@
 
   #container {
     height: 435px;
+    margin-top: 20px;
   }
 
   /* Targeting the svg element inside the specific nested structure */
@@ -308,12 +309,13 @@
 
   #arrow {
     left: 660px;
-    margin-top: 18px;
+    margin-top: 40px;
   }
 
   #year-selector {
     width: 230px;
     left: 550px;
+    top: 45px;
   }
 }
 
