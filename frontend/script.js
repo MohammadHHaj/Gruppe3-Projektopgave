@@ -108,7 +108,7 @@ const factsElektricitet = [
   "Antallet af lande, hvor hele befolkningen har adgang til elektricitet, steg med 78% fra 1990 til 2022. ",
   "I 68% af alle verdens lande har mere end 95% af indbyggerne adgang til strøm i år 2022.",
   "Siden 2007 har alle verdens lande haft elektricitet, med undtagelse af Nordkorea, som af gode grunde er svært at få pålidelige tal fra.",
-  "Umut er en dum gurker",
+  "Nord Korea åbnede først elektricitet i 2009, Med 26%! Dog i 2022 er de stadig kun på 54,7%",
 ];
 
 let currentFact = 0;

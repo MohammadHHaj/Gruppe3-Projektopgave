@@ -140,10 +140,32 @@ function updateGraph() {
   // Ryd eksisterende
   chartDiv.html("");
 
-  // Definerer dimensioner
-  const width = 800;
-  const height = 500;
-  const margin = { top: 20, right: 30, bottom: 50, left: 50 };
+  // Define dimensions and margins
+  let width = 800;
+  let height = 500;
+  let margin = { top: 20, right: 30, bottom: 50, left: 50 };
+
+  function updateDimensions() {
+    if (window.innerWidth < 900) {
+      width = 400;
+      height = 300;
+      margin = { top: 10, right: 15, bottom: 25, left: 25 };
+    } else if (window.innerWidth < 1300) {
+      width = 800;
+      height = 425;
+      margin = { top: 15, right: 20, bottom: 40, left: 40 };
+    } else {
+      width = 800;
+      height = 500;
+      margin = { top: 20, right: 30, bottom: 50, left: 50 };
+    }
+  }
+
+  // Lyt efter vinduesændringer
+  window.addEventListener("resize", updateDimensions);
+
+  // Initial opdatering
+  updateDimensions();
 
   const svg = chartDiv
     .append("svg")
