@@ -282,7 +282,7 @@ const navLinks = document.querySelectorAll("#topBarKnapper .radio .name");
 
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
-  const offset = -10;
+  const offset = 100;
   const targetTop = section.offsetTop - offset;
   const scrollDuration = 500;
   const startPosition = window.scrollY;
