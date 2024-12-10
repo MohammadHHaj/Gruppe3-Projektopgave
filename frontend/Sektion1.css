@@ -2,6 +2,9 @@ body {
   background-color: #fff;
   overflow-x: hidden;
 }
+.UmutsFar {
+  font-size: 14px;
+}
 /* Fullscreen overlay styles*/
 #introOverlay {
   position: fixed;
