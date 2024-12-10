@@ -196,108 +196,7 @@ body {
   }
 }
 
-/* Media Queries specifikt for 1920x1080 */
-@media screen and (width: 1920px) and (height: 1080px) {
-  #topBar {
-    height: 100px;
-  }
 
-  #topBarBillede {
-    width: 20%;
-    left: 0px;
-    top: -30px;
-    height: 105px;
-  }
-
-  #topBarKnapper {
-    width: 75%;
-    left: 25%;
-    height: 50px;
-  }
-
-  #brodtekst {
-    height: 325px;
-    width: 525px;
-    left: 100px;
-    top: 75px;
-    font-size: 21px;
-    padding: 25px;
-  }
-
-  #verdensmaal {
-    right: 5%;
-    top: 5%;
-    height: 50vh;
-  }
-}
-
-/* Generelle responsive justeringer */
-@media screen and (max-width: 1920px) {
-  #topBar {
-    height: 50px;
-  }
-
-  #topBarBillede {
-    width: 18%;
-    top: -25px;
-    height: 95px;
-  }
-
-  #topBarKnapper {
-    width: 72%;
-    left: 22%;
-    height: 45px;
-  }
-
-  #brodtekst {
-    height: 300px;
-    width: 480px;
-    left: 80px;
-    top: 65px;
-    font-size: 19px;
-    padding: 20px;
-  }
-
-  #verdensmaal {
-    right: 10%;
-    top: 5%;
-    height: 60vh;
-  }
-}
-
-@media screen and (max-width: 1600px) {
-  #topBar {
-    height: 50px;
-  }
-
-  #topBarBillede {
-    width: 16%;
-    top: -20px;
-    height: 85px;
-  }
-
-  #topBarKnapper {
-    width: 70%;
-    left: 20%;
-    height: 40px;
-    font-size: 14px;
-  }
-
-  #brodtekst {
-    height: 280px;
-    width: 420px;
-    left: 60px;
-    top: 55px;
-    font-size: 17px;
-    padding: 18px;
-  }
-
-  #verdensmaal {
-    right: 3%;
-    top: 3%;
-    height: 40vh;
-  }
-}
 
 @media screen and (max-width: 1280px) {
   .section {
@@ -419,15 +318,5 @@ body {
   }
 }
 
-@media screen and (max-width: 768px) {
-  #brodtekst {
-    width: 95%;
-    left: 2.5%;
-    font-size: 14px;
-  }
 
-  #verdensmaal {
-    height: 25vh;
-  }
-}
 
