@@ -284,7 +284,7 @@ function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
 
   // Tjek skærmbredden og sæt offset
-  const offset = window.innerWidth < 1300 ? -10 : 100;
+  const offset = window.innerWidth > 1300 ? -10 : 100;
 
   const targetTop = section.offsetTop - offset;
   const scrollDuration = 500;
