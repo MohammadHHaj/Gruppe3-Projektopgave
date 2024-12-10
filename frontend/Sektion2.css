@@ -4,9 +4,10 @@
   margin-bottom: -25px;
 }
 #arrow {
-  position: relative;
-  top: 70px;
-  left: 661px;
+  position: absolute;
+  margin-top: -22px;
+  z-index: 155;
+  left: 107px;
   font-size: 15px;
   transform: rotate(90deg);
   display: inline-block;
@@ -290,24 +291,24 @@
 }
 
 @media screen and (max-width: 1280px) {
-  .section, #container {
+  .section,
+  #container {
     width: 100%;
-    
   }
 
   #container {
-   height: 435px;
+    height: 435px;
   }
 
-/* Targeting the svg element inside the specific nested structure */
-#map #map_holder #map_inner > svg {
-  /* Your CSS properties here */
-  height: 435px; /* Example of overriding the height */
-  margin-left: 10%;
-}
+  /* Targeting the svg element inside the specific nested structure */
+  #map #map_holder #map_inner > svg {
+    /* Your CSS properties here */
+    height: 435px; /* Example of overriding the height */
+    margin-left: 10%;
+  }
 
   #arrow {
-    left: 53%;
+    left: 107px;
     top: 70px;
   }
 
@@ -323,6 +324,6 @@
   top: 100px;
 }
 
-#buttons{
-  top: 210px
+#buttons {
+  top: 210px;
 }
