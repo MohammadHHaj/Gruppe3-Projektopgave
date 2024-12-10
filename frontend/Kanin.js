@@ -280,6 +280,14 @@ document.querySelectorAll(".bold").forEach((span) => {
 const sections = document.querySelectorAll(".section");
 const navLinks = document.querySelectorAll("#topBarKnapper .radio .name");
 
+function getOffsetTop(element) {
+  let offsetTop = 0;
+  while (element) {
+    offsetTop += element.offsetTop;
+    element = element.offsetParent;
+  }
+  return offsetTop;
+}
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
 
