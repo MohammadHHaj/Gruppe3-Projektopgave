@@ -288,14 +288,13 @@ function getOffsetTop(element) {
   }
   return offsetTop;
 }
+
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
-
-  // Bestem offset: Hvis det er 'sektion1', skal offset være 100, ellers dynamisk
   const offset =
     sectionId === "sektion1" ? 100 : window.innerWidth < 1300 ? -10 : 100;
 
-  const targetTop = section.offsetTop - offset;
+  const targetTop = getOffsetTop(section) - offset;
   const scrollDuration = 500;
   const startPosition = window.scrollY;
   const distance = targetTop - startPosition;
@@ -321,9 +320,8 @@ function updateActiveLink() {
   const offset = 100;
   let currentSection = null;
 
-  // Gennemgå alle sektioner og find den synlige sektion
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - offset;
+    const sectionTop = getOffsetTop(section) - offset;
     const sectionHeight = section.offsetHeight;
 
     if (
@@ -334,51 +332,40 @@ function updateActiveLink() {
     }
   });
 
-  // Gennemgå alle links og tilføj/fjern 'active' klassen baseret på synlig sektion
   navLinks.forEach((link) => {
-    const isActive = link
-      .getAttribute("onclick", "scroll")
-      .includes(currentSection);
+    const isActive =
+      link.getAttribute("onclick", "scroll")?.includes(currentSection) || false;
 
-    // Fjern 'active' klassen og stilene
     if (!isActive) {
       link.classList.remove("active");
-      link.style.color = "rgba(51, 65, 85, 1)"; // Standard farve
-      link.style.fontWeight = "normal"; // Standard vægt
-      link.style.backgroundColor = "transparent"; // Ingen baggrund
-      link.style.boxShadow = "none"; // Fjern box-shadow
+      link.style.color = "rgba(51, 65, 85, 1)";
+      link.style.fontWeight = "normal";
+      link.style.backgroundColor = "transparent";
+      link.style.boxShadow = "none";
     } else {
-      // Tilføj 'active' klassen og stilene
       link.classList.add("active");
-      link.style.color = "#eb630e"; // Aktiv farve
-      link.style.fontWeight = "600"; // Fed tekst
-      link.style.backgroundColor = "#fff"; // Hvid baggrund
-      link.style.boxShadow = "inset 0 3px 5px rgba(0, 0, 0, 0.1)"; // Indre skygge
+      link.style.color = "#eb630e";
+      link.style.fontWeight = "600";
+      link.style.backgroundColor = "#fff";
+      link.style.boxShadow = "inset 0 3px 5px rgba(0, 0, 0, 0.1)";
     }
   });
 }
 
-// Sørg for, at sektion1 er aktiv ved sideindlæsning
 window.addEventListener("load", () => {
-  const firstLink = navLinks[0]; // Få den første nav-link
-  firstLink.classList.add("active");
-  firstLink.style.color = "#eb630e";
-  firstLink.style.fontWeight = "600";
-  firstLink.style.backgroundColor = "#fff";
-  firstLink.style.boxShadow = "inset 0 3px 5px rgba(0, 0, 0, 0.1)";
-
-  // Opdater active-link under scroll
+  history.replaceState(null, null, " ");
+  const firstSection = sections[0];
+  if (firstSection) {
+    scrollToSection(firstSection.id);
+  }
   updateActiveLink();
 });
 
-// Opdater links under scroll
 window.addEventListener("scroll", updateActiveLink);
-// Wait for the page to fully load before removing the intro overlay
+
 window.addEventListener("load", () => {
   const introOverlay = document.getElementById("introOverlay");
-
-  // Add the 'hidden' class to start the fade-out animation
   setTimeout(() => {
     introOverlay.classList.add("hidden");
-  }, 500); // Display the intro for 2 seconds
+  }, 500);
 });
