@@ -281,12 +281,16 @@ const sections = document.querySelectorAll(".section");
 const navLinks = document.querySelectorAll("#topBarKnapper .radio .name");
 
 function scrollToSection(sectionId) {
-  const section = document.getElementById(sectionId);
+  // Tving scroll til 'section1' uanset input
+  const section = document.getElementById("section1");
 
   // Tjek skærmbredden og sæt offset
-  const offset = window.innerWidth > 1300 ? -10 : 100;
+  const offset = window.innerWidth < 1300 ? -10 : 100;
 
-  const targetTop = section.offsetTop - offset;
+  // Overskriv offset, hvis det er 'section1'
+  const targetOffset = sectionId === "section1" ? 100 : offset;
+
+  const targetTop = section.offsetTop - targetOffset;
   const scrollDuration = 500;
   const startPosition = window.scrollY;
   const distance = targetTop - startPosition;
