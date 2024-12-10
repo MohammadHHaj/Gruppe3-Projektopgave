@@ -277,13 +277,12 @@ document.querySelectorAll(".bold").forEach((span) => {
   });
 });
 //Ny func herunder
-//navbar
 const sections = document.querySelectorAll(".section");
 const navLinks = document.querySelectorAll("#topBarKnapper .radio .name");
 
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
-  const offset = 100;
+  const offset = -10;
   const targetTop = section.offsetTop - offset;
   const scrollDuration = 500;
   const startPosition = window.scrollY;

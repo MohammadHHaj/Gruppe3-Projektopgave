@@ -3,7 +3,7 @@ body {
   overflow-x: hidden;
 }
 /* Fullscreen overlay styles */
-#introOverlay {
+/* #introOverlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -22,10 +22,10 @@ body {
 }
 
 /* Fade-out animation */
-#introOverlay.hidden {
+/* #introOverlay.hidden {
   opacity: 0;
   pointer-events: none;
-}
+} */ 
 
 .section {
   overflow: hidden; /* Prevent scrolling within sections */
@@ -35,7 +35,7 @@ body {
 }
 
 #sektion1 {
-  margin-bottom: -50px;
+  margin-bottom: -10%;
 }
 
 #topBar {
@@ -128,6 +128,7 @@ body {
   color: black;
   transition: 0.169s ease;
 }
+
 #autoskrivning {
   text-align: center;
   text-shadow: 1px 1px 2px black;
@@ -210,3 +211,239 @@ body {
     height: 20vh; /* Reduceret højde for små skærme */
   }
 }
+
+/* Media Queries specifikt for 1920x1080 */
+@media screen and (width: 1920px) and (height: 1080px) {
+  #topBar {
+    height: 100px;
+  }
+
+  #topBarBillede {
+    width: 20%;
+    left: 0px;
+    top: -30px;
+    height: 105px;
+  }
+
+  #topBarKnapper {
+    width: 75%;
+    left: 25%;
+    height: 50px;
+  }
+
+  #brodtekst {
+    height: 325px;
+    width: 525px;
+    left: 100px;
+    top: 75px;
+    font-size: 21px;
+    padding: 25px;
+  }
+
+  #verdensmaal {
+    right: 5%;
+    top: 5%;
+    height: 50vh;
+  }
+}
+
+/* Generelle responsive justeringer */
+@media screen and (max-width: 1920px) {
+  #topBar {
+    height: 50px;
+  }
+
+  #topBarBillede {
+    width: 18%;
+    top: -25px;
+    height: 95px;
+  }
+
+  #topBarKnapper {
+    width: 72%;
+    left: 22%;
+    height: 45px;
+  }
+
+  #brodtekst {
+    height: 300px;
+    width: 480px;
+    left: 80px;
+    top: 65px;
+    font-size: 19px;
+    padding: 20px;
+  }
+
+  #verdensmaal {
+    right: 10%;
+    top: 5%;
+    height: 60vh;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  #topBar {
+    height: 50px;
+  }
+
+  #topBarBillede {
+    width: 16%;
+    top: -20px;
+    height: 85px;
+  }
+
+  #topBarKnapper {
+    width: 70%;
+    left: 20%;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  #brodtekst {
+    height: 280px;
+    width: 420px;
+    left: 60px;
+    top: 55px;
+    font-size: 17px;
+    padding: 18px;
+  }
+
+  #verdensmaal {
+    right: 3%;
+    top: 3%;
+    height: 40vh;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .section {
+    width: 100vw;
+    height: 110vh;
+  }
+
+  #topBar {
+    height: 50px;
+  }
+
+  #topBarBillede {
+    width: 14%;
+    top: -15px;
+    height: 75px;
+  }
+
+  #topBarKnapper {
+    width: 75%;
+    top: 0%;
+    left: 25%;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  #autoskrivning {
+  margin-top: -0%;
+  }
+
+  #brodtekst {
+    position: relative;
+    background: linear-gradient(to bottom, rgba(248, 95, 0, 0.7) 5%, rgba(250, 205, 171, 0.8)50%, white 100%);
+    height: 325px;
+    width: 525px;
+    left: 100px;
+    top: 20px;
+    font-size: 21px;
+    padding: 25px;
+    color: #333;
+    line-height: 1.4;
+    text-align: justify;
+  }
+  #brodtekst::after {
+    border-radius: 0 0 50px 50px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+    content: '';
+    display: block;
+    height: 350px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  #verdensmaal {
+    right: 10%;
+    top: 5%;
+    border-radius: 7px;
+    height: 60vh;
+  }
+}
+
+/* Mobil og tablet layout */
+@media screen and (max-width: 1024px) {
+  #topBar {
+    position: relative;
+    height: 50px;
+  }
+
+  #topBarBillede {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    text-align: center;
+  }
+
+  #topBarKnapper {
+    width: 100%;
+    left: 0;
+    flex-direction: column;
+    height: auto;
+  }
+
+  #overskriftdiv{
+    top: -100px;
+  }
+  
+
+  #brodtekst {
+    background: linear-gradient(to bottom, rgba(248,95,0,0.7),rgba(250,205,171,08)50%,white 100%);
+    position: relative;
+    width: 90%;
+    left: 5%;
+    top: 20px;
+    height: auto;
+    font-size: 16px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    color: #333;
+    line-height: 1.4;
+    text-align: justify;
+  }
+
+
+  #verdensmaal {
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 80%;
+    height: 30vh;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #brodtekst {
+    width: 95%;
+    left: 2.5%;
+    font-size: 14px;
+  }
+
+  #verdensmaal {
+    height: 25vh;
+  }
+}
+

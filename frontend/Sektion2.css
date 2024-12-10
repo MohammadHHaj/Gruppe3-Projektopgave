@@ -287,3 +287,41 @@
     transform: translateY(0) translateX(0); /* Slutposition: i sin normale position */
   }
 }
+
+@media screen and (max-width: 1280px) {
+  .section, #container {
+    width: 100%;
+    
+  }
+
+  #container {
+   height: 435px;
+  }
+
+/* Targeting the svg element inside the specific nested structure */
+#map #map_holder #map_inner > svg {
+  /* Your CSS properties here */
+  height: 435px; /* Example of overriding the height */
+  margin-left: 10%;
+}
+
+  #arrow {
+    left: 53%;
+    top: 70px;
+  }
+
+  #year-selector {
+    width: 230px;
+    left: 550px;
+  }
+}
+
+#faktabox {
+  height: 100px;
+  font-size: 12px;
+  top: 100px;
+}
+
+#buttons{
+  top: 210px
+}
