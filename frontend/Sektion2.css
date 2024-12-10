@@ -6,7 +6,7 @@
 #arrow {
   position: absolute;
   margin-top: 19px;
-  left: 660px;
+  left: 740px;
   font-size: 15px;
   transform: rotate(90deg);
   display: inline-block;
@@ -23,7 +23,7 @@
   align-items: center;
   overflow-x: scroll;
   overflow-y: hidden;
-  left: 551px;
+  left: 631px;
   top: 22px;
 }
 
