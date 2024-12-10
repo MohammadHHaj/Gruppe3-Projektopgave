@@ -5,9 +5,9 @@
 }
 #arrow {
   position: absolute;
-  margin-top: -22px;
+  margin-top: 19px;
   z-index: 155;
-  left: 107px;
+  left: 660px;
   font-size: 15px;
   transform: rotate(90deg);
   display: inline-block;
@@ -308,7 +308,8 @@
   }
 
   #arrow {
-    left: 107px;
+    left: 660px;
+    margin-top: 18px;
   }
 
   #year-selector {
