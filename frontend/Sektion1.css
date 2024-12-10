@@ -135,7 +135,12 @@ body {
 
 #brodtekst {
   position: relative;
-  background: linear-gradient(to bottom, rgba(248, 95, 0, 0.7) 5%, rgba(250, 205, 171, 0.8)50%, white 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 95, 0, 0.7) 5%,
+    rgba(250, 205, 171, 0.8) 50%,
+    white 100%
+  );
   height: 325px;
   width: 525px;
   left: 100px;
@@ -149,7 +154,7 @@ body {
 #brodtekst::after {
   border-radius: 0 0 50px 50px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
-  content: '';
+  content: "";
   display: block;
   height: 350px;
   left: 0;
@@ -158,27 +163,6 @@ body {
   width: 100%;
   z-index: -1;
 }
-/*.shadowed {
-  background: white;
-  height: 400px;
-  margin: 100px;
-  padding: 20px;
-  position: relative;
-}
-
-.shadowed::after {
-  border-radius: 0 0 300px 300px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
-  content: '';
-  display: block;
-  height: 350px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: -1;
-}
-
 /* Media Query for mindre skærme (telefoner) */
 @media (max-width: 50vwpx) {
   #brodtekst {

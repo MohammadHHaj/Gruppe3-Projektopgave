@@ -6,9 +6,10 @@
 #arrow {
   position: relative;
   top: 70px;
-  left: 663px;
-  font-size: 20px;
-  transform: scaleY(0.5);
+  left: 661px;
+  font-size: 15px;
+  transform: rotate(90deg);
+  display: inline-block;
 }
 #year-selector {
   border-radius: 5px;
