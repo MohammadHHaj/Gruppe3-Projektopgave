@@ -119,34 +119,41 @@ if (yearDiv.getAttribute("data-selected-year")) {
 } //slutning af for-loopet
 
 let timer = null;
-// Initialiserer timer-variablen til at tracke scroll.
+// Laver et varibalt object der hedder timer med en værdi på null.
 let ignorescrolling = false;
 // En flag-variabel, der forhindrer gentagne scroll-hændelser.
 
-// Forbered 'childDivs' og 'xValues' én gang
 const childDivs = Array.from(yearDiv.querySelectorAll("div"));
-// Henter alle div-elementer i yearDiv som en array.
+//kalder alle diverne med år i for childDivs. I ét samlet array
 const xValues = childDivs
+  // Starter med at definere en konstant, der skal indeholde den filtrerede liste.
   .map((div) => parseInt(div.getAttribute("data-xvalue")))
+  // For hver "div" i "childDivs" udfører den map-funktionen:
+  // - Henter værdien af "data-xvalue"-attributten for det enkelte element.
+  // - Konverterer den hentede værdi fra en streng til et heltal ved hjælp af parseInt.
   .filter((value) => !isNaN(value));
-// Opretter en liste over x-positioner, hvor værdier ikke er NaN.
+// Filtrerer resultatet af map:
+// - Tjekker om værdien ikke er NaN (dvs. at det er et gyldigt tal).
+// - Kun værdier, der er tal, bevares i den endelige liste.
 
-let isProgrammaticScroll = false; // Flag for programmatisk scrolling
+let isProgrammaticScroll = false;
+// Flag for programmatisk scrolling
 
 scrollableDiv.addEventListener("scroll", () => {
   // Lyt efter scroll-events på scrollableDiv.
   if (ignorescrolling || isProgrammaticScroll) return;
   // Hvis ignorescrolling eller programmatisk scrolling er aktivt, afbryd håndtering.
+  //Dette er så den ikke forveksler scrolltoposition med et scroll, og dermed kører denne kommando to gange.
 
   if (timer !== null) {
     clearTimeout(timer);
-    // Nulstil timeren, hvis der allerede er en i gang.
+    // Hvis timer ikke er lige med null så skal den nulstil timeren
   }
 
   timer = setTimeout(function () {
-    // Start en ny timeout, der aktiveres, når brugeren stopper med at scrolle.
+    // functionen herunder starter når brugeren stopper med at scrolle
     let scrollX = scrollableDiv.scrollLeft;
-    // Hent den aktuelle scroll-position i scrollableDiv.
+    // Finder ud af hvor meget scroll der er scrollet i diven fra venstre side og kalder det tal for scrollX
 
     // Find den nærmeste xValue
     let closestValue = null;
