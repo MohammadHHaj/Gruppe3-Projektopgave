@@ -80,3 +80,21 @@
   font-size: 0.9em;
   color: #555;
 }
+
+@media screen and (max-width: 1280px) {
+
+  #omOsOverskrift {
+    position: relative;
+    top: 50px;
+  }
+
+  #omOsNavne {
+    position: relative;
+    top: 25px;
+  }
+
+  .menufil {
+    margin-top: 75px;
+  }
+
+}
