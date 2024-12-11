@@ -214,7 +214,7 @@ function updateGraph() {
     .attr("text-anchor", "middle")
     .style("font-size", "12px")
     .style("font-weight", "bold")
-    .text("Årstal");
+    .text("ÅRSTAL");
 
   // Y-akse label
   svg
@@ -225,7 +225,7 @@ function updateGraph() {
     .attr("text-anchor", "middle")
     .style("font-size", "12px")
     .style("font-weight", "bold")
-    .text("% / Enheder");
+    .text("% / ANTAL");
 
   if (dataLoaded.internet && graphData.internet) {
     createGraphLine(

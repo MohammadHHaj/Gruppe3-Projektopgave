@@ -317,14 +317,14 @@
     left: 550px;
     top: 45px;
   }
-}
 
-#faktabox {
-  height: 100px;
-  font-size: 12px;
-  top: 100px;
-}
+  #faktabox {
+    height: 100px;
+    font-size: 12px;
+    top: 100px;
+  }
 
-#buttons {
-  top: 210px;
+  #buttons {
+    top: 210px;
+  }
 }
