@@ -300,11 +300,8 @@
     margin-top: 20px;
   }
 
-  /* Targeting the svg element inside the specific nested structure */
   #map #map_holder #map_inner > svg {
-    /* Your CSS properties here */
-    height: 435px; /* Example of overriding the height */
-    margin-left: 10%;
+    height: 435px;
   }
 
   #arrow {
@@ -318,6 +315,9 @@
     top: 45px;
   }
 
+  .radio-input {
+    top: 49px;
+  }
   #faktabox {
     height: 100px;
     font-size: 12px;
