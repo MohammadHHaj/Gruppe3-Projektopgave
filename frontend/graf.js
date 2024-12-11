@@ -2,6 +2,7 @@
 const inputFelt = d3.select("#food");
 const resultsDiv = d3.select("#results");
 const chartDiv = d3.select("#chart");
+const kikkertKnap = d3.select("#kikkert");
 
 // Knapperne for at vælge graferne
 const GrafInternet = d3.select("#GrafInternet");
@@ -55,6 +56,10 @@ inputFelt.on("focus", () => {
   resultsDiv.classed("hidden", false);
 });
 
+kikkertKnap.on("click", () => {
+  resultsDiv.classed("hidden", false);
+});
+
 inputFelt.on("input", async function () {
   const query = this.value.trim();
 
@@ -75,9 +80,32 @@ inputFelt.on("input", async function () {
         .text(item.country)
         .on("click", async () => {
           inputFelt.property("value", item.country);
+          kikkertKnap.property("value", item.country);
           resultsDiv.classed("hidden", true);
           await loadCountryData(item.country);
         });
+    });
+
+    inputFelt.on("keydown", async (event) => {
+      if (event.key === "Enter") {
+        const userInput = inputFelt.property("value").toLowerCase();
+
+        // Find den tætteste værdi
+        const closestMatch = filteredCountries.find((item) =>
+          item.country.toLowerCase().startsWith(userInput)
+        );
+
+        if (closestMatch) {
+          // Brug den fundne værdi
+          const selectedCountry = closestMatch.country;
+          inputFelt.property("value", selectedCountry);
+          kikkertKnap.property("value", selectedCountry);
+          resultsDiv.classed("hidden", true);
+          await loadCountryData(selectedCountry);
+        } else {
+          console.log("Ingen match fundet!");
+        }
+      }
     });
   } catch (error) {
     console.log("En fejl opstod:", error);
@@ -88,7 +116,8 @@ d3.select("body").on("click", (event) => {
   const clickedElement = event.target;
   if (
     !inputFelt.node().contains(clickedElement) &&
-    !resultsDiv.node().contains(clickedElement)
+    !resultsDiv.node().contains(clickedElement) &&
+    !kikkertKnap.node().contains(clickedElement)
   ) {
     resultsDiv.classed("hidden", true); // gem resultater
   }
