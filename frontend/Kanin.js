@@ -292,7 +292,13 @@ function getOffsetTop(element) {
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
   const offset =
-    sectionId === "sektion1" ? 100 : window.innerWidth < 1300 ? -10 : 100;
+    sectionId === "sektion1"
+      ? 100
+      : sectionId === "sektion4"
+      ? -10
+      : window.innerWidth < 1300
+      ? -10
+      : 100;
 
   const targetTop = getOffsetTop(section) - offset;
   const scrollDuration = 500;
