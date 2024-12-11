@@ -45,11 +45,10 @@ yearDiv.setAttribute("data-selected-year", "1990");
 // Sætter 1990 som standardværdi i year-wheelet. Dvs første gang du åbner siden så er det, det den er på.
 
 let startx = 0;
-// Initialiserer startpositionen for de årstal, der skal placeres.
+// Start positionen for årstallene/diverne hvor årstallene ligger i.
 for (let year = 1990; year <= 2022; year++) {
   // for-Loop, der opretter årstalselementer fra 1990 til 2022.
   if (year == 1990) {
-    // Hvis året er 1990, tilføj to pladsholdere foran for at centrere.
     yearDiv.getAttribute("data-selected-year");
     const placeholder1 = document.createElement("div");
     placeholder1.className = "year";
@@ -62,32 +61,34 @@ for (let year = 1990; year <= 2022; year++) {
   const yearElement = document.createElement("div");
   // Opretter en ny div til hvert år.
   yearElement.dataset.xvalue = startx;
-  // Tildeler en x-position for dette år.
+  // sætter startx som valgte år
   startx = startx + 47;
   // Opdaterer x-positionen for det næste element.
   yearElement.innerText = year;
-  // Indsætter årstallet som tekst i div'en.
+  // Indsætter årstallet som tekst i diverne
   yearElement.className = "year";
-  // Giver div'en klassen "year".
+  // Giver diverne klassen "year".
   yearElement.dataset.year = year;
-  // Tilføjer en data-attribut med årstallet.
+  // Tilføjer en data-attribut med årstallet. (data-year="1990")
 
   yearElement.onclick = () => {
     // Følgende skal ske når der bliver trykket på et yearelement som er en af de diver som årende står i.
     const x = yearElement.dataset.xvalue;
-    // Positionen for det klikkede element
+    // Positionen for det klikkede element.
     scrollToPosition(x, 200);
-    // Ruller til x-positionen på 200 ms. Ms er hvor hurtigt den skal scrolle over til position x
+    // Ruller til x-positionen på 200 ms. 200 er hvor hurtigt den skal scrolle over til position x i milisekunder.
     scrollableDiv.scrollLeft = x;
-    // Flytter scroll-positionen direkte.
+    // Flytter scroll-positionen.
     yearDiv.setAttribute("data-selected-year", year);
-    // Opdaterer det valgte år i 'data-selected-year'.
+    // Sætter det valgte år som data-selected year.
+    //Det er den her attr som mappet søger efter (se starten af script)
     document
       .querySelectorAll(".year")
       .forEach((el) => el.classList.remove("selected"));
-    // Fjerner klassen "selected" fra alle år.
+    // Fjerner klassen "selected" fra alle år. (den tager alle i tilfælde fejl, så )
     yearElement.classList.add("selected");
-    // Tilføjer klassen "selected" til det klikkede år. Derfor den bliver grå
+    // Efter den har fjernet alle skal den sætte selected på den som er valgt (yearElement)
+    console.log("Året:", year, "Bliver vist nu, igennem et tryk.");
   };
 
   yearDiv.appendChild(yearElement);
@@ -115,7 +116,7 @@ if (yearDiv.getAttribute("data-selected-year")) {
     yearDiv.setAttribute("data-selected-year", "1990");
     // Indstiller 1990 som det valgte år.
   }
-}
+} //slutning af for-loopet
 
 let timer = null;
 // Initialiserer timer-variablen til at tracke scroll.
@@ -193,7 +194,7 @@ scrollableDiv.addEventListener("scroll", () => {
         // Tillad normale scroll-events igen.
       }, 300); // Skal være lidt længere end varigheden af scrollToPosition.
 
-      console.log("Året:", year, "Bliver vist nu.");
+      console.log("Året:", year, "Bliver vist nu, igennem et scroll.");
       // Log det valgte år til konsollen.
     }
   }, 200); // Ventetid i millisekunder før timeout-funktionen aktiveres.
