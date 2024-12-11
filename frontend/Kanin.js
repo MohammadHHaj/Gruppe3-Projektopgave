@@ -45,11 +45,10 @@ yearDiv.setAttribute("data-selected-year", "1990");
 // Sætter 1990 som standardværdi i year-wheelet. Dvs første gang du åbner siden så er det, det den er på.
 
 let startx = 0;
-// Initialiserer startpositionen for de årstal, der skal placeres.
+// Start positionen for årstallene/diverne hvor årstallene ligger i.
 for (let year = 1990; year <= 2022; year++) {
   // for-Loop, der opretter årstalselementer fra 1990 til 2022.
   if (year == 1990) {
-    // Hvis året er 1990, tilføj to pladsholdere foran for at centrere.
     yearDiv.getAttribute("data-selected-year");
     const placeholder1 = document.createElement("div");
     placeholder1.className = "year";
@@ -62,32 +61,35 @@ for (let year = 1990; year <= 2022; year++) {
   const yearElement = document.createElement("div");
   // Opretter en ny div til hvert år.
   yearElement.dataset.xvalue = startx;
-  // Tildeler en x-position for dette år.
+  // sætter startx som valgte år
   startx = startx + 47;
   // Opdaterer x-positionen for det næste element.
   yearElement.innerText = year;
-  // Indsætter årstallet som tekst i div'en.
+  // Indsætter årstallet som tekst i diverne
   yearElement.className = "year";
-  // Giver div'en klassen "year".
+  // Giver diverne klassen "year".
   yearElement.dataset.year = year;
-  // Tilføjer en data-attribut med årstallet.
+  // Tilføjer en data-attribut med årstallet. (data-year="1990")
 
   yearElement.onclick = () => {
     // Følgende skal ske når der bliver trykket på et yearelement som er en af de diver som årende står i.
     const x = yearElement.dataset.xvalue;
-    // Positionen for det klikkede element
+    // Positionen for det klikkede element.
     scrollToPosition(x, 200);
-    // Ruller til x-positionen på 200 ms. Ms er hvor hurtigt den skal scrolle over til position x
+    // Ruller til x-positionen på 200 ms. 200 er hvor hurtigt den skal scrolle over til position x i milisekunder.
+    // scrollToPosition er en func der bliver lavet længere nede
     scrollableDiv.scrollLeft = x;
-    // Flytter scroll-positionen direkte.
+    // Sætter x til til
     yearDiv.setAttribute("data-selected-year", year);
-    // Opdaterer det valgte år i 'data-selected-year'.
+    // Sætter det valgte år som data-selected year.
+    //Det er den her attr som mappet søger efter (se starten af script)
     document
       .querySelectorAll(".year")
       .forEach((el) => el.classList.remove("selected"));
-    // Fjerner klassen "selected" fra alle år.
+    // Fjerner klassen "selected" fra alle år. (den tager alle i tilfælde fejl, så )
     yearElement.classList.add("selected");
-    // Tilføjer klassen "selected" til det klikkede år. Derfor den bliver grå
+    // Efter den har fjernet alle skal den sætte selected på den som er valgt (yearElement)
+    console.log("Året:", year, "Bliver vist nu, igennem et tryk.");
   };
 
   yearDiv.appendChild(yearElement);
@@ -115,39 +117,45 @@ if (yearDiv.getAttribute("data-selected-year")) {
     yearDiv.setAttribute("data-selected-year", "1990");
     // Indstiller 1990 som det valgte år.
   }
-}
+} //slutning af for-loopet
 
 let timer = null;
-// Initialiserer timer-variablen til at tracke scroll.
+// Laver et varibalt object der hedder timer med en værdi på null.
 let ignorescrolling = false;
 // En flag-variabel, der forhindrer gentagne scroll-hændelser.
 
-// Forbered 'childDivs' og 'xValues' én gang
 const childDivs = Array.from(yearDiv.querySelectorAll("div"));
-// Henter alle div-elementer i yearDiv som en array.
+//kalder alle diverne med år i for childDivs. I ét samlet array
 const xValues = childDivs
+  // Starter med at definere en konstant, der skal indeholde den filtrerede liste.
   .map((div) => parseInt(div.getAttribute("data-xvalue")))
+  // For hver "div" i "childDivs" udfører den map-funktionen:
+  // - Henter værdien af "data-xvalue"-attributten for det enkelte element.
+  // - Konverterer den hentede værdi fra en streng til et heltal ved hjælp af parseInt.
   .filter((value) => !isNaN(value));
-// Opretter en liste over x-positioner, hvor værdier ikke er NaN.
+// Filtrerer resultatet af map:
+// - Tjekker om værdien ikke er NaN (dvs. at det er et gyldigt tal).
+// - Kun værdier, der er tal, bevares i den endelige liste.
 
-let isProgrammaticScroll = false; // Flag for programmatisk scrolling
+let isProgrammaticScroll = false;
+// Flag for programmatisk scrolling
 
 scrollableDiv.addEventListener("scroll", () => {
   // Lyt efter scroll-events på scrollableDiv.
   if (ignorescrolling || isProgrammaticScroll) return;
   // Hvis ignorescrolling eller programmatisk scrolling er aktivt, afbryd håndtering.
+  //Dette er så den ikke forveksler scrolltoposition med et scroll, og dermed kører denne kommando to gange.
 
   if (timer !== null) {
     clearTimeout(timer);
-    // Nulstil timeren, hvis der allerede er en i gang.
+    // Hvis timer ikke er lige med null så skal den nulstil timeren
   }
 
   timer = setTimeout(function () {
-    // Start en ny timeout, der aktiveres, når brugeren stopper med at scrolle.
+    // functionen herunder starter når brugeren stopper med at scrolle
     let scrollX = scrollableDiv.scrollLeft;
-    // Hent den aktuelle scroll-position i scrollableDiv.
+    // Finder ud af hvor meget scroll der er scrollet i diven fra venstre side og kalder det tal for scrollX
 
-    // Find den nærmeste xValue
     let closestValue = null;
     let smallestdifference = Infinity;
     xValues.forEach((index) => {
@@ -156,7 +164,8 @@ scrollableDiv.addEventListener("scroll", () => {
       if (forskel < smallestdifference) {
         smallestdifference = forskel;
         closestValue = index;
-        // Opdater den tætteste værdi.
+        // den tætteste xvalue bliver fundet. Xvalue er de forskellige værdi der er i et array. de værdier er de forskellige divers længde af scroll i hele scrollablediven.
+        //Dette bliver brugt som et id (plads)
       }
     });
 
@@ -169,7 +178,6 @@ scrollableDiv.addEventListener("scroll", () => {
       const year = closestYearElement.getAttribute("data-year");
       // Hent årstallet for det nærmeste element.
 
-      // Tilføj 'selected' class til det nærmeste år
       document
         .querySelectorAll(".year")
         .forEach((el) => el.classList.remove("selected"));
@@ -177,46 +185,59 @@ scrollableDiv.addEventListener("scroll", () => {
       closestYearElement.classList.add("selected");
       // Tilføj 'selected' til det nærmeste år.
 
-      isProgrammaticScroll = true; // Angiv, at scrollen nu er programmatisk
+      isProgrammaticScroll = true;
       scrollToPosition(closestValue, 200);
       // Scroll til den nærmeste x-position med en smooth animation.
+      // 200 er milisekunder som er hvor lang tid den skal bruge for at scrollToPosition
       yearDiv.setAttribute("data-selected-year", year);
       // Opdater attributten 'data-selected-year' med det nye valgte år.
 
-      // Sæt scroll-positionen direkte til den nærmeste værdi.
       scrollableDiv.scrollLeft = closestValue;
+      // Sæt scroll-positionen direkte til den nærmeste værdi.
 
       setTimeout(() => {
         // Nulstil både ignorescrolling og programmatisk scrolling efter en kort tid
         ignorescrolling = false;
         isProgrammaticScroll = false;
         // Tillad normale scroll-events igen.
-      }, 300); // Skal være lidt længere end varigheden af scrollToPosition.
+      }, 300);
+      // Skal være lidt længere end varigheden af scrollToPosition. Så at den ikke ender med at fange et scrollToPosition som et scroll.
 
-      console.log("Året:", year, "Bliver vist nu.");
+      console.log("Året:", year, "Bliver vist nu, igennem et scroll.");
       // Log det valgte år til konsollen.
     }
   }, 200); // Ventetid i millisekunder før timeout-funktionen aktiveres.
-});
+}); //slutning af eventlistener
 
 function scrollToPosition(targetPosition, duration) {
-  // Funktion til at scrolle til en given position over en given tid.
+  // Funktion til at scrolle til en årets position i løbet af tidsrummet (duration)
   const element = document.getElementById("year-selector");
   const startPosition = element.scrollLeft;
+  //sætter startposition til den mængde der kan scrolles fra elementet(diven) og til venstrekant.
   const distance = targetPosition - startPosition;
+  //laver distance til targetposition - startposition.
+  //Så distance er den distance der skal scrolles for at man ender med diven i under pilen.
   const startTime = performance.now();
-
+  //StartTime sadt til performance.now(); som holder øje med hvornår func starer.
   function animateScroll(currentTime) {
     const elapsedTime = currentTime - startTime;
+    // sætter elapased til at beregne hvor lang tid der er gået siden animationen begyndte.
     // Beregner hvor meget tid der er gået siden scroll-start.
     const progress = Math.min(elapsedTime / duration, 1);
     // Beregner progress fra 0 til 1.
 
+    // Beregner easing for animationen baseret på progress (hvor langt animationen er nået).
     const easing =
       progress < 0.5
-        ? 2 * progress * progress
-        : -1 + (4 - 2 * progress) * progress;
-    // Brug en ease-in-out funktion for at gøre animationen glat.
+        ? // Hvis progress er mindre end 0.5 (første halvdel af animationen):
+          2 * progress * progress
+        : // En formel for "ease-in" effekt:
+          // - Bevægelsen starter langsomt og accelererer.
+
+          -1 + (4 - 2 * progress) * progress;
+    // Hvis progress er større eller lig med 0.5 (anden halvdel af animationen):
+    //en formel for "ease-out" effekt:
+    //Bevægelsen sænker farten mod slutningen.
 
     element.scrollLeft = startPosition + distance * easing;
     // Opdaterer scroll-positionen baseret på easing og progress.
@@ -231,7 +252,7 @@ function scrollToPosition(targetPosition, duration) {
   }
 
   ignorescrolling = true;
-  // Forhindrer scroll-hændelser under animationen.
+  // Forhindrer scroll-detektion under animationen. Ved første at erklerer den true her.
 
   requestAnimationFrame(animateScroll);
   // Starter animationen.
