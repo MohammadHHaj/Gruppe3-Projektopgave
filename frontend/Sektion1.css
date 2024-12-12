@@ -139,10 +139,11 @@ body {
 #autoskrivning {
   text-align: center;
   text-shadow: 1px 1px 2px black;
+  min-height: 2em;
 }
 
 #brodtekst {
-  position: relative;
+  position: absolute;
   background: linear-gradient(
     to bottom,
     rgba(248, 95, 0, 0.7) 5%,
@@ -172,7 +173,7 @@ body {
   z-index: -1;
 }
 /* Media Query for mindre skærme (telefoner) */
-@media (max-width: 50vwpx) {
+@media (max-width: 50vw) {
   #brodtekst {
     width: 80vw; /* Gør bredden mere passende for små skærme */
     left: 5%; /* Reducerer margin fra venstre */
@@ -232,6 +233,7 @@ body {
 
   #autoskrivning {
     margin-top: -0%;
+    min-height: 2em;
   }
 
   #brodtekst {
