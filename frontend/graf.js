@@ -313,7 +313,7 @@ function updateGraph() {
     .attr("text-anchor", "middle")
     .style("font-size", "12px")
     .style("font-weight", "bold")
-    .text("% / ANTAL");
+    .text("Procent");
 
   // Opret en gruppe til labels
   const labelGroup = svg.append("g").attr("class", "label-group");
@@ -441,17 +441,6 @@ function createGraphLine(
 
   const x = xScale(topPoint.year);
   const yOriginal = yScale(topPoint.value);
-
-  // Tegn den stiplede linje
-  svg
-    .append("line")
-    .attr("x1", x)
-    .attr("x2", margin.left)
-    .attr("y1", yOriginal)
-    .attr("y2", yOriginal)
-    .attr("stroke", color)
-    .attr("stroke-dasharray", "4 2")
-    .attr("stroke-width", 1);
 
   // Definér kolonnepositioner for labels
   const columnPositions = [
