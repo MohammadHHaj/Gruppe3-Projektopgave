@@ -23,6 +23,7 @@ const port = process.env.PORT || 3000;
 const server = express();
 
 server.use(express.static("frontend"));
+server.use("/data", express.static("data"));
 server.use(onEachRequest);
 server.get("/api/internet_usage", onGetData);
 server.get("/api/telephones_100", onGetTelephones);
