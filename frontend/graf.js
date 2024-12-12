@@ -244,7 +244,7 @@ function updateGraph() {
     .attr("text-anchor", "middle")
     .style("font-size", "12px")
     .style("font-weight", "bold")
-    .text("% / ANTAL");
+    .text("PROCENT");
 
   if (dataLoaded.internet && graphData.internet) {
     createGraphLine(
