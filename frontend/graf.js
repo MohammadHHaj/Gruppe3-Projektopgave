@@ -158,16 +158,13 @@ async function loadCountryData(country) {
   }
 }
 
-// Function til at opdaterer grafen
 function updateGraph() {
-  // Check hvis dataen er hentet rigtigt
   if (!graphData.internet || !graphData.mobile || !graphData.electricity) {
     console.log("Data blev ikke hentet rigtigt.");
     return;
   }
 
-  // Ryd eksisterende
-  chartDiv.html("");
+  chartDiv.html(""); // Clear previous graph
 
   // Define dimensions and margins
   let width = 800;
@@ -190,10 +187,7 @@ function updateGraph() {
     }
   }
 
-  // Lyt efter vinduesændringer
   window.addEventListener("resize", updateDimensions);
-
-  // Initial opdatering
   updateDimensions();
 
   const svg = chartDiv
@@ -224,18 +218,15 @@ function updateGraph() {
     .x((d) => xScale(d.year))
     .y((d) => yScale(d.value));
 
-  // tilføj axer
   svg
     .append("g")
     .attr("transform", `translate(0,${height - margin.bottom})`)
     .call(d3.axisBottom(xScale).tickFormat(d3.format("d")));
-
   svg
     .append("g")
     .attr("transform", `translate(${margin.left},0)`)
     .call(d3.axisLeft(yScale));
 
-  // X-akse label
   svg
     .append("text")
     .attr("x", width / 2)
@@ -245,7 +236,6 @@ function updateGraph() {
     .style("font-weight", "bold")
     .text("ÅRSTAL");
 
-  // Y-akse label
   svg
     .append("text")
     .attr("transform", "rotate(-90)")
@@ -264,8 +254,7 @@ function updateGraph() {
       "steelblue",
       line,
       xScale,
-      yScale,
-      margin
+      yScale
     );
   }
 
@@ -277,8 +266,7 @@ function updateGraph() {
       "green",
       line,
       xScale,
-      yScale,
-      margin
+      yScale
     );
   }
 
@@ -290,13 +278,12 @@ function updateGraph() {
       "orange",
       line,
       xScale,
-      yScale,
-      margin
+      yScale
     );
   }
 }
 
-function createGraphLine(svg, data, type, color, line, xScale, yScale, margin) {
+function createGraphLine(svg, data, type, color, line, xScale, yScale) {
   const formattedData = data.map((d) => ({
     year: +d.year,
     value:
@@ -309,54 +296,65 @@ function createGraphLine(svg, data, type, color, line, xScale, yScale, margin) {
             : "electricity_access_percentage"
         }`
       ],
+    type, // Added data type for tooltip
   }));
 
-  svg
+  // Create the line with thicker stroke
+  const graphLine = svg
     .append("path")
     .datum(formattedData)
     .attr("fill", "none")
     .attr("stroke", color)
-    .attr("stroke-width", 2)
+    .attr("stroke-width", 4.5) // Increased stroke width for thicker line
     .attr("d", line);
 
-  // Find top værdien
-  const topPoint = formattedData.reduce((max, d) =>
-    d.value > max.value ? d : max
-  );
+  // Add hover functionality to the line
+  const tooltip = d3
+    .select("body")
+    .append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
 
-  // Tilføj en stiplet linje
-  svg
-    .append("line")
-    .attr("x1", xScale(topPoint.year))
-    .attr("x2", margin.left)
-    .attr("y1", yScale(topPoint.value))
-    .attr("y2", yScale(topPoint.value))
-    .attr("stroke", color)
-    .attr("stroke-dasharray", "4 2")
-    .attr("stroke-width", 1);
+  // Add circles for hover interaction
+  graphLine
+    .on("mouseover", function (event, d) {
+      // Find the exact point that the mouse is hovering over
+      const mouseX = d3.pointer(event)[0];
+      const mouseY = d3.pointer(event)[1];
 
-  let offset = -0;
-  svg.selectAll("text").each(function () {
-    const currentText = d3.select(this);
-    const currentY = parseFloat(currentText.attr("y"));
-    const currentDy = parseFloat(currentText.attr("dy")) || 0;
-    const distance = Math.abs(currentY - (yScale(topPoint.value) + currentDy));
+      // Find the closest data point to the mouse position
+      const closestData = formattedData.reduce((prev, curr) => {
+        return Math.abs(xScale(curr.year) - mouseX) <
+          Math.abs(xScale(prev.year) - mouseX)
+          ? curr
+          : prev;
+      });
 
-    if (distance < 10) {
-      offset += 25; // Ændre mellemrummet mellem to labels
-    }
-  });
+      // Add larger circle for hover effect
+      svg
+        .append("circle")
+        .attr("cx", xScale(closestData.year))
+        .attr("cy", yScale(closestData.value))
+        .attr("r", 8) // Larger radius for easier interaction
+        .attr("fill", color)
+        .style("pointer-events", "none"); // Prevent the circle from interfering with other events
 
-  // tilføj en text til den stiplede linje
-  svg
-    .append("text")
-    .attr("x", margin.left + 10)
-    .attr("y", yScale(topPoint.value) + offset)
-    .attr("dy", "-0.3em")
-    .style("fill", color)
-    .style("font-size", "12px")
-    .style("text-anchor", "start")
-    .text(`${topPoint.value}`);
+      // Show tooltip with year, value, and data type
+      tooltip.transition().duration(200).style("opacity", 1);
+      tooltip
+        .html(
+          `År: ${closestData.year}<br>Værdi: ${closestData.value}<br>Datatype: ${closestData.type}`
+        )
+        .style("left", `${event.pageX + 5}px`)
+        .style("top", `${event.pageY - 28}px`);
+    })
+    .on("mouseout", function () {
+      // Remove the circle when mouseout
+      svg.selectAll("circle").remove();
+
+      // Hide tooltip
+      tooltip.transition().duration(500).style("opacity", 0);
+    });
 }
 
 // Sæt Denmark til at være default
