@@ -1,9 +1,13 @@
 body {
   background-color: #fff;
   overflow-x: hidden;
+  margin: 0;
 }
 .UmutsFar {
   font-size: 14px;
+}
+.popbox {
+  word-spacing: -1.5px;
 }
 /* Fullscreen overlay styles*/
 #introOverlay {

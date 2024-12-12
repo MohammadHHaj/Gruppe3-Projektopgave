@@ -64,6 +64,14 @@
   border-radius: 10px;
   z-index: 1;
   font-size: 12px;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 250ms ease, visibility 150ms ease;
+}
+.dropdown-content.visible {
+  opacity: 1;
+  visibility: visible;
 }
 .dropdown:hover .dropdown-content {
   display: block;

@@ -188,7 +188,7 @@ scrollableDiv.addEventListener("scroll", () => {
       isProgrammaticScroll = true;
       scrollToPosition(closestValue, 200);
       // Scroll til den nærmeste x-position med en smooth animation.
-      // 200 er milisekunder som er hvor lang tid den skal bruge for at scrollToPosition
+      // 200 er milisekunder som er hvor lang tid den skal bruge for at scrollToPosition.
       yearDiv.setAttribute("data-selected-year", year);
       // Opdater attributten 'data-selected-year' med det nye valgte år.
 
@@ -276,11 +276,11 @@ let typed = new Typed("#autoskrivning", {
 //Ny func herunder
 const texts = {
   PopMobil:
-    "Siden 1990’erne har der været fart på mobilens udvikling. Både vægten og prisen styrtdykkede, og i 1995 var der flere end én million mobiltelefonejere på verdensplan. Så altså stadig forsvindende få i forhold til i dag. I 2004 overhalede antallet af mobilabonnenter antallet af fastnetabonnenter, og i dag bruger 97 procent af danskerne en mobiltelefon eller smartphone. <b class='UmutsFar'> Tryk på mobiltelefoner for at læse mere. </b>",
+    "<p class='popbox'>Siden 1990’erne har der været fart på mobilens udvikling. Både vægten og prisen styrtdykkede, og i 1995 var der flere end én million mobiltelefonejere på verdensplan. Så altså stadig forsvindende få i forhold til i dag. I 2004 overhalede antallet af mobilabonnenter antallet af fastnetabonnenter, og i dag bruger 97 procent af danskerne en mobiltelefon eller smartphone. <b class='UmutsFar'> Tryk på mobiltelefoner for at læse mere. </b> </p>",
   PopInternet:
-    "Et internet er betegnelsen for et netværk af computernetværk, som er koblet sammen. Ofte taler man om internettet, der så betegner et globalt netværk af datanet-værter (computere). Internettet er en af de vigtigste opfindelser fra det 20. århundrede. Ikke fordi det i sig selv er noget teknisk vidunder, men på grund af de store konsekvenser det allerede har for vores måde at leve vores liv på. <b class='UmutsFar'> Tryk på internet for at læse mere. </b>",
+    "<p class='popbox'>Et internet er betegnelsen for et netværk af computernetværk, som er koblet sammen. Ofte taler man om internettet, der så betegner et globalt netværk af datanet-værter (computere). Internettet er en af de vigtigste opfindelser fra det 20. århundrede. Ikke fordi det i sig selv er noget teknisk vidunder, men på grund af de store konsekvenser det allerede har for vores måde at leve vores liv på. <b class='UmutsFar'> Tryk på internet for at læse mere.</b></p>",
   PopEl:
-    "Danmark blev i 1997 for første gang i nyere tid selvforsynende med energi. En stigende produktion fra olie- og gasfelterne i Nordsøen sammenholdt med et stagnerende forbrug betød, at selvforsyningsgraden voksede til 155 % i 2004 mod 52 % i 1990 og 5% i 1980. Siden er produktionen af både olie og gas faldet, så selvforsyningsgraden i 2021 var 55 %. <b class='UmutsFar'> Tryk på elektricitet for at læse mere. </b>",
+    "<p class='popbox'>Danmark blev i 1997 for første gang i nyere tid selvforsynende med energi. En stigende produktion fra olie- og gasfelterne i Nordsøen sammenholdt med et stagnerende forbrug betød, at selvforsyningsgraden voksede til 155 % i 2004 mod 52 % i 1990 og 5% i 1980. Siden er produktionen af både olie og gas faldet, så selvforsyningsgraden i 2021 var 55 %. <b class='UmutsFar'> Tryk på elektricitet for at læse mere. </b></p>",
 };
 
 // Store the original content
