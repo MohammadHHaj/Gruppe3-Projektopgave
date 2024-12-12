@@ -38,6 +38,20 @@ const countryColors = [
   "#17becf",
 ];
 
+// Farver for forskellige datatyper (komplementerende)
+const dataColors = {
+  0: {
+    internet: "steelblue",
+    mobile: "green",
+    electricity: "orange",
+  },
+  1: {
+    internet: "#FF6B6B", // Rød-pink nuance
+    mobile: "#4ECDC4", // Grøn-blå nuance
+    electricity: "#FFA726", // Lysere orange
+  },
+};
+
 function toggleOpacity(layer, knappen) {
   const opacity = layer.style("opacity");
   if (opacity === "1") {
@@ -301,13 +315,28 @@ function updateGraph() {
     .style("font-weight", "bold")
     .text("% / ANTAL");
 
+  // Opret en gruppe til labels
+  const labelGroup = svg.append("g").attr("class", "label-group");
+
   // Iterér over hvert land
   selectedCountries.forEach((country, countryIndex) => {
     const countryColor = countryColors[countryIndex % countryColors.length];
     const dataTypes = [
-      { type: "internet", color: "steelblue", label: "Internet Usage" },
-      { type: "mobile", color: "green", label: "Mobile Phones" },
-      { type: "electricity", color: "orange", label: "Electricity Access" },
+      {
+        type: "internet",
+        color: dataColors[countryIndex].internet,
+        label: "Internet Usage",
+      },
+      {
+        type: "mobile",
+        color: dataColors[countryIndex].mobile,
+        label: "Mobile Phones",
+      },
+      {
+        type: "electricity",
+        color: dataColors[countryIndex].electricity,
+        label: "Electricity Access",
+      },
     ];
 
     const usedYPositions = [];
@@ -316,6 +345,7 @@ function updateGraph() {
       if (dataLoaded[type] && graphData[country][type]) {
         createGraphLine(
           svg,
+          labelGroup,
           graphData[country][type],
           type,
           color,
@@ -325,7 +355,9 @@ function updateGraph() {
           margin,
           country,
           countryColor,
-          usedYPositions
+          usedYPositions,
+          width,
+          countryIndex
         );
       }
     });
@@ -367,6 +399,7 @@ function updateGraph() {
 
 function createGraphLine(
   svg,
+  labelGroup,
   data,
   type,
   color,
@@ -377,7 +410,8 @@ function createGraphLine(
   country,
   countryColor,
   usedLabels,
-  width
+  width,
+  countryIndex
 ) {
   const formattedData = data.map((d) => ({
     year: +d.year,
@@ -406,47 +440,7 @@ function createGraphLine(
   );
 
   const x = xScale(topPoint.year);
-  let yOriginal = yScale(topPoint.value);
-
-  // Forbedret funktion til at finde label-position
-  function findLabelPosition(x, yOriginal, usedLabels) {
-    const padding = 20;
-    const labelWidth = 100; // Estimeret bredde af label
-    const labelHeight = 15; // Estimeret højde af label
-
-    const possiblePositions = [
-      { x: x, y: yOriginal - padding }, // Over punktet
-      { x: x, y: yOriginal + padding }, // Under punktet
-      { x: x + labelWidth, y: yOriginal - padding }, // Forskudt over
-      { x: x + labelWidth, y: yOriginal + padding }, // Forskudt under
-      { x: x - labelWidth, y: yOriginal - padding }, // Venstre side over
-      { x: x - labelWidth, y: yOriginal + padding }, // Venstre side under
-    ];
-
-    for (let pos of possiblePositions) {
-      // Tjek om positionen er inden for svg-bredden
-      if (pos.x < 0 || pos.x + labelWidth > width) continue;
-
-      const overlap = usedLabels.some(
-        (label) =>
-          Math.abs(label.x - pos.x) < labelWidth &&
-          Math.abs(label.y - pos.y) < labelHeight
-      );
-
-      if (!overlap) {
-        usedLabels.push(pos);
-        return pos;
-      }
-    }
-
-    // Hvis ingen position virker, forskyd yderligere
-    return possiblePositions[0];
-  }
-
-  // Ryd listen over brugte labels før hver opdatering
-  usedLabels.length = 0;
-
-  const { x: labelX, y: labelY } = findLabelPosition(x, yOriginal, usedLabels);
+  const yOriginal = yScale(topPoint.value);
 
   // Tegn den stiplede linje
   svg
@@ -459,12 +453,27 @@ function createGraphLine(
     .attr("stroke-dasharray", "4 2")
     .attr("stroke-width", 1);
 
-  // Tilføj tekstlabel
-  svg
+  // Definér kolonnepositioner for labels
+  const columnPositions = [
+    { x: margin.left + 10, y: margin.top + 20 },
+    { x: width - margin.right + 10, y: margin.top + 20 },
+  ];
+
+  // Vælg kolonneposition baseret på landets indeks
+  const labelPosition = columnPositions[countryIndex];
+
+  // Beregn vertikal offset for hver datatype
+  const verticalOffset = {
+    internet: 0,
+    mobile: 20,
+    electricity: 40,
+  };
+
+  // Tilføj tekstlabel i kolonnen
+  labelGroup
     .append("text")
-    .attr("x", labelX)
-    .attr("y", labelY)
-    .attr("dy", "-0.3em")
+    .attr("x", labelPosition.x)
+    .attr("y", labelPosition.y + verticalOffset[type])
     .style("fill", color)
     .style("font-size", "12px")
     .style("font-weight", "bold")
