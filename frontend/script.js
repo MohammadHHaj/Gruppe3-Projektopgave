@@ -99,7 +99,7 @@ const factsWifi = [
 const factsMobil = [
   "I De Forenede Arabiske Emirater havde de i 2022 det højeste antal mobilabonnementer pr indbygger: 212 abonnenter pr. 100 indbyggere. I 2016 havde de 221 abonnementer. ",
   "2005 var året, hvor der var lige så mange indbyggere som mobilabonnementer i Danmark.",
-  "Palestina blev i 2003 det første land i verden til at have mere end 100 telefoner pr. 100 indbyggere. Året efter blev de i 2004 fulgt af Italien og Portugal.",
+  "Palæstina blev i 2003 det første land i verden til at have mere end 100 telefoner pr. 100 indbyggere. Året efter blev de i 2004 fulgt af Italien og Portugal.",
   "I 2022 var der 132 lande, som havde mere end 100 telefoner pr. 100 indbygger",
   "I 2022 havde Danmark 127 abonnementer pr. 100 indbygger",
 ];

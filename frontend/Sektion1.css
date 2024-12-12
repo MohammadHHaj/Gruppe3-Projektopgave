@@ -131,7 +131,6 @@ body {
 }
 .bold {
   font-weight: bold;
-  text-decoration: none;
   color: black;
   transition: 0.169s ease;
 }
@@ -232,8 +231,8 @@ body {
   }
 
   #autoskrivning {
-    margin-top: -0%;
-    min-height: 2em;
+    margin-top: 2%;
+    min-height: 1em;
   }
 
   #brodtekst {
