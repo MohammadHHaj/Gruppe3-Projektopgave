@@ -1,28 +1,32 @@
+/* Juster margin-top for sektion3 */
 #sektion3 {
   margin-top: 87px;
 }
-/*Grafstart*/
-#grafoverskrift {
-  top: 39px;
-}
+
+/* Markeringsfarve og placering for internet-knap */
 #checkedinternet {
   background-color: #0065a8;
   top: -15px;
 }
-#GrafElektricitetLabel {
-  top: 43px;
-}
+/* Markeringsfarve og placering for mobil-knap */
 #checkedmobil {
   background-color: #0a6700;
   top: 132px;
 }
-#GrafMobilLabel {
-  top: 24px;
-}
+/* Markeringsfarve og placering for elektricitet-knap */
 #checkedelektricitet {
   background-color: rgb(231, 231, 76);
   top: 277px;
 }
+/* Label position for elektricitet */
+#GrafElektricitetLabel {
+  top: 43px;
+}
+/* Label position for mobil */
+#GrafMobilLabel {
+  top: 24px;
+}
+/* Standardindstillinger for markerede elementer */
 .checkedstr {
   height: 80px;
   width: 80px;
@@ -32,9 +36,11 @@
   right: 385px;
   opacity: 0;
 }
+/* Skjuler checkbox for knapperne */
 .grafinput {
   display: none;
 }
+/* Konfigurerer grafbilleder som fleks-kolonne */
 .grafbilleder {
   display: flex;
   flex-direction: column;
@@ -43,6 +49,7 @@
   cursor: pointer;
   z-index: 2;
 }
+/* Indstiller grafkategoriernes layout */
 #grafkategorier {
   display: flex;
   flex-direction: column;
@@ -53,6 +60,7 @@
   width: max-content;
   left: 400px;
 }
+/* Definerer grafens boksdimensioner og rammer */
 #grafenbox {
   height: 534px;
   width: 885px;
@@ -63,19 +71,21 @@
   left: 110px;
   border-radius: 80px 0px 0px 0px;
 }
+/* Justerer søgeknappens placering */
 #sogknap {
   position: relative;
   left: 10px;
   top: -2px;
 }
-#GrafInfoBox {
+/* Indstiller labels layout */
+#grafLabels {
   position: absolute;
   right: 120px;
   width: 160px;
   top: 100px;
   font-size: 20px;
 }
-
+/* Animerer fade-effekt for internetindikator */
 .fade-box {
   width: 400px;
   height: 80px;
@@ -87,30 +97,34 @@
   margin-bottom: 75px;
   font-size: 15px;
 }
-
+/* Animerer fade-effekt for internetindikatoren */
 .fade-box-internet {
   background: linear-gradient(to right, #fff 3%, #0065a8);
 }
+/* Animerer fade-effekt for mobilindikatoren */
 .fade-box-mobil {
   background: linear-gradient(to right, #fff 3%, #0a6700);
 }
+/* Animerer fade-effekt for elektricitetindikator */
 .fade-box-elektricitet {
   background: linear-gradient(to right, #fff 3%, rgb(231, 231, 76));
   position: absolute;
   top: 305px;
 }
-/*Grafknapperstart*/
-.mat-input {
-  position: relative;
-  font-size: inherit;
-}
-
+/* Indstiller søgeikonets placering */
 #kikkert {
   position: absolute;
   top: 34px;
   left: 204px;
 }
-
+/* Indstiller input-feltets layout */
+.mat-input {
+  position: relative;
+  font-size: inherit;
+  width: 300px;
+  left: 43px;
+}
+/* Indstiller søgefeltets layout og animationer */
 .mat-input input {
   border-width: 0 0 1px;
   outline: none;
@@ -121,21 +135,21 @@
   font-size: inherit;
   transition: 0.1s;
 }
-
+/* Animation ved hover og fokus på inputfelt */
 .mat-input input:hover,
 .mat-input input:focus {
   border-bottom-width: 2px;
   padding-bottom: calc(0.75em - 1px);
 }
-
+/* Ændrer kantfarve ved hover */
 .mat-input input:hover {
   border-color: #121212;
 }
-
+/* Ændrer kantfarve ved fokus */
 .mat-input input:focus {
   border-color: #eb630e;
 }
-
+/* Konfigurerer labelens placering og animation */
 .mat-input label {
   position: absolute;
   top: 22.4px;
@@ -144,35 +158,32 @@
   transition: 0.2s;
   color: #0009;
 }
-
+/* Animation ved input-fokus */
 .mat-input:has(input:focus) label {
   color: #eb630e;
 }
-
+/* Flytter label ved ikke-tom input */
 .mat-input:has(input:focus) label,
 .mat-input:not(:has(input:placeholder-shown)) label {
   top: 0.75em;
   font-size: 0.8em;
 }
-
+/* Indstiller placeholderens synlighed */
 .mat-input input::placeholder {
   opacity: 0;
   transition: 0.2s;
   color: #aaa;
 }
-
+/* Gør placeholderen synlig ved fokus */
 .mat-input input:focus::placeholder {
   opacity: 1;
 }
+
 #grafinputfelt {
   display: flex;
   justify-content: center;
 }
-.mat-input {
-  position: relative;
-  width: 300px;
-  left: 43px;
-}
+/* Indstiller søgeresultaternes layout */
 #results {
   position: absolute;
   top: 100%;
@@ -187,26 +198,26 @@
   z-index: 1000;
   width: 219px;
 }
-
+/* Skjuler resultater, når de ikke bruges */
 #results.hidden {
   display: none;
 }
-
+/* Indstiller søgeresultaternes styling */
 #results div {
   padding: 10px;
   cursor: pointer;
   background-color: transparent;
 }
-
+/* Fremhæver søgeresultater ved hover */
 #results div:hover {
   background-color: #f0f0f0;
 }
-
+/* Indstiller grafens dimensioner */
 #chart {
   width: 100%;
   height: 500px;
 }
-
+/* Boks til når man hover over en linje */
 .tooltip {
   position: absolute;
   text-align: left;
@@ -218,13 +229,13 @@
   font-size: 12px;
   opacity: 0;
   transition: opacity 0.3s;
-  z-index: 10; /* Ensure tooltip is visible above the graph */
+  z-index: 10;
 }
 
 path {
-  cursor: pointer; /* Change cursor to pointer when hovering over the graph line */
+  cursor: pointer;
 }
-
+/* Medieforespørgsel for mindre skærme */
 @media screen and (max-width: 1280px) {
   #grafenbox {
     height: 475px;
