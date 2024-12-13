@@ -149,7 +149,7 @@ function autoChangeFact() {
   }
 }
 
-// Håndter kategoriudvælgelse
+// Håndter kategoriudvælgelse, til facts og farver på cirkelrne
 function handleCategorySelection(category) {
   if (category === "forlaginternet" || category === "Wifi") {
     selectedFacts = factsWifi;
@@ -200,7 +200,7 @@ document
     radio2.addEventListener("click", function () {
       let valgtkategori = radio2.id; // Få ID'et af den klikkede knap
 
-      // Tjek hvilken kategori er valgt og sæt den relevante radio-knap
+      // Tjek hvilken kategori er valgt og sæt den relevante radio-knap, samt fetche data for valgte kategori
       if (valgtkategori === "forlaginternet") {
         document.getElementById("Wifi").checked = true;
         fetchDataWifi(); // Fetch data for Wifi
@@ -213,6 +213,22 @@ document
       }
     });
   });
+
+// fetche data for calgt kategori
+const observer = new MutationObserver(() => {
+  const selected = document.querySelector("#year-selector .selected");
+  if (selected) {
+    if (document.getElementById("Wifi").checked) {
+      fetchDataWifi();
+    } else if (document.getElementById("Mobil").checked) {
+      fetchDataMobil();
+    } else if (document.getElementById("Computer").checked) {
+      fetchDataElectricity();
+    }
+  } else {
+    console.log("Ingen valg fundet.");
+  }
+});
 
 const wifitext = "Internet er baseret på brug af internet.";
 const mobiltext = "Mobil er baseret på abonommenter pr 100 indbygger.";
@@ -254,7 +270,7 @@ function setTextWithAnimation(text) {
     }
   });
 }
-
+// Skift tekst baseret på hvilken knap der er valgt
 document
   .querySelectorAll('input[name="value-radio"]')
   .forEach(function (radio) {
@@ -269,6 +285,7 @@ document
     });
   });
 
+// Skift tekst baseret på hvilken knap der er valgt
 document
   .querySelectorAll('input[name="value-radio2"]')
   .forEach(function (radio) {
@@ -289,21 +306,6 @@ document
         });
     });
   });
-
-const observer = new MutationObserver(() => {
-  const selected = document.querySelector("#year-selector .selected");
-  if (selected) {
-    if (document.getElementById("Wifi").checked) {
-      fetchDataWifi();
-    } else if (document.getElementById("Mobil").checked) {
-      fetchDataMobil();
-    } else if (document.getElementById("Computer").checked) {
-      fetchDataElectricity();
-    }
-  } else {
-    console.log("Ingen valg fundet.");
-  }
-});
 
 // Overvåg ændringer i #year-selector
 const yearSelector = document.getElementById("year-selector");
