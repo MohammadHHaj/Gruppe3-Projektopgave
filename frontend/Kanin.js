@@ -227,17 +227,17 @@ function scrollToPosition(targetPosition, duration) {
     // Beregner progress fra 0 til 1.
 
     // Beregner easing for animationen baseret på progress (hvor langt animationen er nået).
-    const easing =
-      progress < 0.5
-        ? // Hvis progress er mindre end 0.5 (første halvdel af animationen):
-          2 * progress * progress
-        : // En formel for "ease-in" effekt:
-          // - Bevægelsen starter langsomt og accelererer.
-
-          -1 + (4 - 2 * progress) * progress;
-    // Hvis progress er større eller lig med 0.5 (anden halvdel af animationen):
-    //en formel for "ease-out" effekt:
-    //Bevægelsen sænker farten mod slutningen.
+    function easeIn(progress) {
+      return 2 * progress * progress;
+      // "Ease-in": Animationen starter langsomt og accelererer mod midten.
+    }
+    function easeOut(progress) {
+      return -1 + (4 - 2 * progress) * progress;
+      // "Ease-out": Animationen begynder at bremse ned i den sidste halvdel.
+    }
+    const easing = progress < 0.5 ? easeIn(progress) : easeOut(progress);
+    // Hvis progress er mindre end 0.5 (første halvdel), bruges easeIn.
+    // Hvis progress er 0.5 eller mere (anden halvdel), bruges easeOut.
 
     element.scrollLeft = startPosition + distance * easing;
     // Opdaterer scroll-positionen baseret på easing og progress.
