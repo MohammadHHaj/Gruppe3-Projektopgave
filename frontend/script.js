@@ -351,6 +351,7 @@ function updateFarveInfo(dataType) {
   const farveInfo = d3.select("#farve-info");
   farveInfo.html(""); // Ryd eksisterende indhold
 
+  // Colorscale farverne kommer fra calculateColor
   let colorScale = [];
   if (dataType === "internet_usage") {
     colorScale = [
